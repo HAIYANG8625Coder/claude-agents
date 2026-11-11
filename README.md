@@ -24,7 +24,6 @@ A small multi-agent setup that drafts, reviews, illustrates and publishes posts 
 | `x-assistant/playbook.md` | What works on X, learned from real posts |
 | `x-assistant/posts.md` | Everything posted so far (agents use it to avoid repeats) |
 | `x-assistant/voice.example.md` | Template for your own `voice.md` (mine is kept private) |
-| `global/CLAUDE.md` | Backup of my global Claude Code rules (`~/.claude/CLAUDE.md`) |
 
 ## Use it yourself
 
