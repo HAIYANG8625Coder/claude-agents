@@ -5,7 +5,7 @@ description: Write, design and (after the user approves) publish a Chinese image
 
 # Xiaohongshu post
 
-Flow: **gather facts → write Chinese note → make cards → user approves → publish in Chrome → log.** Never publish without a clear yes.
+Flow: **gather facts → write Chinese note → make cards → review and improve → user approves → publish in Chrome → log.** Never publish without a clear yes.
 
 This was first done by hand on 2026-11-11 for the note "Telegram遥控Claude踩坑记". If `x-assistant/xhs-telegram-post.md` and the `x-assistant/images/xhs-tg-*` cards exist, they are the worked example, so look at them before you write.
 
@@ -41,7 +41,10 @@ Before the first run, check each item below. If one is missing, tell the user ex
 - If the topic is "how I did X" or "refer to session …", read the real commands, errors and fixes from that session's transcript (`~/.claude/projects/<project>/<session-id>.jsonl`). Pull out user and assistant text plus tool calls with a small Python script run with `python3 -I`. Don't use f-strings with backslashes inside them, because that's a syntax error on this Python.
 - Everything in the note must be true and come from the session or from the user. No invented numbers. Never include tokens, keys, pairing codes, emails or any other secret, even ones that are already revoked.
 
-## 2. Write the note (Chinese)
+## 2. Write the note (Chinese by default)
+Read `writing-guide.md` (next to this file) first. It covers what makes a post useful and attractive: topic, search keywords, title, cover, body and closing question. This section covers the format.
+
+Write in Chinese unless the user asks for another language (e.g. "in English", "bilingual"). Their request wins.
 Save it to `x-assistant/xhs-<slug>-post.md` with `# 标题` and `# 正文` sections.
 - **Title: 20 characters max.** Make it concrete and a little personal, e.g. "Telegram遥控Claude踩坑记".
 - **Body: 1,000 characters max.** The editor's counter includes the topic tags you add later, so aim for about **950** before tags. Count with Bash: `python3 -I -c "import sys;print(len(sys.argv[1]))" "<body>"`.
@@ -67,10 +70,29 @@ Templates live in `templates/` and reuse the x-image brand (`.claude/skills/x-im
    - Chinese font: `-apple-system,"PingFang SC",sans-serif`.
 4. Order that worked (9 images max): cover, then overview, then step 1…N, then pitfalls.
 
-## 4. Ask the user
-Send the cards to them (SendUserFile, or as `files` in the Telegram reply if they're on Telegram) and show the title, the body and the character counts. Ask "Publish?" and **stop and wait**. If they ask for changes, apply them and show the result again.
+## 4. Review and improve (before showing the user)
+Never show a first draft. Check the note and the cards against `writing-guide.md`, fix what fails, then check again.
 
-## 5. Publish in Chrome (Claude in Chrome)
+1. Score each item **pass / fix**:
+   - **Topic:** one line each for who it's for, what problem it solves, and what they take away. If it reads like a diary, change the angle.
+   - **Keyword:** the main search phrase (in Chinese) is in the first 10–12 characters of the title, in the first line of the body, on the cover, and matched by a topic.
+   - **Title:** 20 characters max, keyword first, a specific promise (number, question or result), matches the content, not clickbait.
+   - **Cover:** big text, few words, readable at thumbnail size, repeats the keyword and the promise, clear original image.
+   - **Hook:** the first line says who I am and what the reader gets.
+   - **Worth saving:** there is a checklist, steps, real numbers, a template or a summary card. Ask "would someone save this?" If not, add the useful part or cut the post.
+   - **Specific and true:** real numbers, dates and steps from the facts gathered in step 1. Nothing invented, nothing vague where a number exists.
+   - **Scannable:** short lines, numbered steps or ✅ items, blank lines between sections, emoji as markers only.
+   - **Closing question:** a real question the reader can answer from their own life, not just "欢迎评论".
+   - **Topics:** 3–5, one big plus niche ones, all relevant.
+   - **Privacy and safety:** no names, IDs, addresses, children's faces, tokens or other secrets in the text or images.
+   - **Limits:** title ≤20, body ≤1000 including topics (aim for about 950 before topics), 9 images max.
+2. Fix every **fix** item (rewrite the line, re-render the card) and run the checklist again. Stop after 2 rounds. If something still fails, say so to the user instead of hiding it.
+3. Write 2–3 short review notes for the user: what you changed and why, plus any item that still needs their input (e.g. a missing real number only they know).
+
+## 5. Ask the user
+Send the cards to them (SendUserFile, or as `files` in the Telegram reply if they're on Telegram) and show the title, the body, the character counts and the review notes from step 4. Ask "Publish?" and **stop and wait**. If they ask for changes, apply them and show the result again.
+
+## 6. Publish in Chrome (Claude in Chrome)
 The user must already be logged in (see "Before first use"). This flow uses the website, not the phone app.
 1. `tabs_context_mcp`, then open `https://www.xiaohongshu.com/explore` and click **发布 / Post** in the sidebar. It opens the creator center in a **new tab** (`creator.rednote.com`, or `creator.xiaohongshu.com`), so run `tabs_context_mcp` again and switch to that tab ID. Going straight to the creator URL can land on a login page even when he's logged in. Check the screenshot shows their account name.
 2. Click the **上传图文** tab (the default tab is video). Use `find` to locate the **hidden file input**, then call `file_upload` with all the PNG paths in order (absolute paths, under about 20 MB total). Wait about 4 seconds and confirm the screenshot shows all the thumbnails.
@@ -85,8 +107,9 @@ The user must already be logged in (see "Before first use"). This flow uses the 
 5. Topics: move the cursor to the end (`ed.focus(); getSelection().selectAllChildren(ed); getSelection().collapseToEnd()`), `type` `#ClaudeCode`, wait 2 seconds, then press **Return** (or click the first suggestion) to turn it into a real topic. Repeat for each tag. Verify that each tag shows up as `#name[话题]#` in the editor text. A tag that is still plain text gets no reach.
 6. Scroll down and take a screenshot: check the images, the title, the body counter (≤1000) and the topics. Then click **发布** and take a screenshot. Success shows **发布成功**.
 
-## 6. Log and save
+## 7. Log and save
 - Append to `x-assistant/posts.md`: date, "(Xiaohongshu)", the title, the post file, the topics and the image list.
+- Remind the user to reply to comments in the first 1–2 hours after publishing (see `writing-guide.md` §7).
 - If the folder is a git repo, offer to commit the post file and the cards. Don't commit until they say yes, and check for secrets before you push.
 
 ## Pitfalls seen
