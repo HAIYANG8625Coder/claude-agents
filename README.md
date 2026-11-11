@@ -35,6 +35,8 @@ A small multi-agent setup that drafts, reviews, illustrates and publishes posts 
 
 `/x-image` needs Google Chrome on macOS (it renders with headless Chrome).
 
+**Xiaohongshu (`/xhs-post`):** connect Claude in Chrome to Claude Code (`claude --chrome` or `/chrome`), log in at xiaohongshu.com in that Chrome profile, and open creator.xiaohongshu.com once to finish its first-time prompts. Then change the card footer in `.claude/skills/xhs-post/templates/` to your own name. The full checklist is in the skill's "Before first use" section.
+
 ## Design principles
 
 - One agent per job; a second agent only where it adds a fresh perspective (review).
