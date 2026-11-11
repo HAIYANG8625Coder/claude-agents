@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="x-size" content="1080x1440"><link rel="stylesheet" href="../../.claude/skills/x-image/templates/brand.css"><style>body{width:1080px;height:1440px;font-family:-apple-system,"PingFang SC",sans-serif}
+.wrap{padding:84px 80px 64px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.kicker{font-size:30px}.prog{display:flex;gap:10px}.prog i{width:44px;height:8px;border-radius:4px;background:var(--line);display:block}.prog i.on{background:var(--grad)}
+h2{font-size:76px;line-height:1.18;font-weight:800;margin-top:34px}
+.sub{font-size:34px;color:var(--muted);margin-top:16px}
+.body{margin:auto 0;display:flex;flex-direction:column;gap:22px;padding:40px 0}
+.do{font-size:38px;line-height:1.45;display:flex;gap:18px}.do:before{content:"→";color:var(--a2);font-weight:700}
+.cmd{font-family:var(--mono);font-size:30px;line-height:1.45;background:#05070c;color:#e2e8f0;border:1.5px solid var(--line);border-radius:18px;padding:22px 26px;overflow-wrap:anywhere}
+.cmd:before{content:"$ ";color:var(--a2)}
+.pit{border-radius:22px;padding:22px 28px;background:color-mix(in srgb,var(--a3) 12%,transparent);border:1.5px solid color-mix(in srgb,var(--a3) 45%,transparent)}
+.pit .t{font-size:36px;font-weight:800;color:var(--a3)}.pit .t:before{content:"⚠️ 坑："}
+.pit .d{font-size:30px;line-height:1.45;margin-top:8px;white-space:pre-line;word-break:break-all}
+.foot{font-size:26px}</style></head>
+<body><div class="bg"></div><div class="grid"></div><div class="wrap">
+<div class="top"><div class="kicker">STEP 3 / 6</div><div class="prog"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+<h2>安装 Bun</h2><div class="sub">插件靠 Bun 运行，不装就没反应</div>
+<div class="body"><div class="cmd">curl -fsSL https://bun.sh/install | bash</div><div class="cmd">echo &#x27;export PATH=&quot;$HOME/.bun/bin:$PATH&quot;&#x27; &gt;&gt; ~/.zshrc</div><div class="do">完全退出 Claude，再重新打开</div><div class="pit"><div class="t">机器人完全不回消息</div><div class="d">多半是 Bun 没装或不在 PATH</div></div><div class="pit"><div class="t">装好了还是不行</div><div class="d">失败会被缓存，约 15 分钟后开新会话才会重试</div></div></div>
+<div class="foot"><span><b>Programmer in Singapore</b> · learning AI agents in public</span><div class="dots"><i></i><i></i><i></i></div></div>
+</div></body></html>
