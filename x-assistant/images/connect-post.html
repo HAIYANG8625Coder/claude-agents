@@ -1,0 +1,71 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1600px; height: 900px; }
+  body {
+    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    background: #0b0f17;
+    color: #f2f4f8;
+    position: relative;
+    overflow: hidden;
+  }
+  /* soft glow + dotted grid */
+  .bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(900px 600px at 85% 15%, rgba(99,102,241,.28), transparent 60%),
+      radial-gradient(700px 500px at 10% 100%, rgba(20,184,166,.20), transparent 60%);
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,.07) 1.5px, transparent 1.5px);
+    background-size: 36px 36px;
+  }
+  .wrap { position: relative; height: 100%; padding: 96px 110px; display: flex; flex-direction: column; }
+  .prompt {
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 30px; color: #5eead4; letter-spacing: .5px;
+  }
+  .prompt .cursor { display: inline-block; width: 16px; height: 32px; background: #5eead4; vertical-align: -5px; margin-left: 6px; }
+  h1 {
+    margin-top: 36px;
+    font-size: 104px; line-height: 1.05; font-weight: 800; letter-spacing: -2.5px;
+    max-width: 1250px;
+  }
+  h1 .hl { background: linear-gradient(90deg, #a5b4fc, #5eead4); -webkit-background-clip: text; color: transparent; }
+  .chips { margin-top: 56px; display: flex; gap: 18px; flex-wrap: wrap; }
+  .chip {
+    font-size: 30px; font-weight: 600; padding: 14px 28px; border-radius: 999px;
+    background: rgba(255,255,255,.06); border: 1.5px solid rgba(255,255,255,.16); color: #dbe1ea;
+  }
+  .foot {
+    margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end;
+    font-size: 30px; color: #94a3b8;
+  }
+  .foot b { color: #f2f4f8; font-weight: 700; }
+  .agents { display: flex; gap: 14px; align-items: center; font-family: "SF Mono", Menlo, monospace; font-size: 24px; }
+  .dot { width: 18px; height: 18px; border-radius: 50%; }
+</style></head>
+<body>
+  <div class="bg"></div><div class="grid"></div>
+  <div class="wrap">
+    <div class="prompt">&gt; say hi, show me your project<span class="cursor"></span></div>
+    <h1>What are you <span class="hl">building with AI</span> right now?</h1>
+    <div class="chips">
+      <div class="chip">AI agents</div>
+      <div class="chip">AI coding</div>
+      <div class="chip">Evals</div>
+      <div class="chip">AI anime</div>
+      <div class="chip">Blockchain</div>
+    </div>
+    <div class="foot">
+      <div><b>Programmer in Singapore</b> · learning AI agents in public</div>
+      <div class="agents">
+        <span class="dot" style="background:#a5b4fc"></span>
+        <span class="dot" style="background:#5eead4"></span>
+        <span class="dot" style="background:#fbbf24"></span>
+      </div>
+    </div>
+  </div>
+</body></html>

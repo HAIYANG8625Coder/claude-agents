@@ -1,0 +1,52 @@
+/* Michael's X image brand. Every template imports this, so images look like one account.
+   Change colors/fonts here once and all templates follow. */
+:root {
+  --bg: #0b0f17;
+  --bg-2: #121826;
+  --fg: #f2f4f8;
+  --muted: #94a3b8;
+  --line: rgba(255,255,255,.14);
+  --card: rgba(255,255,255,.05);
+  --a1: #a5b4fc;   /* indigo  */
+  --a2: #5eead4;   /* teal    */
+  --a3: #fbbf24;   /* amber   */
+  --grad: linear-gradient(90deg, var(--a1), var(--a2));
+  --sans: -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --mono: "SF Mono", Menlo, Consolas, monospace;
+}
+/* light theme: add class="light" on <body> */
+body.light {
+  --bg: #f7f7f4; --bg-2: #ffffff; --fg: #0f172a; --muted: #64748b;
+  --line: rgba(15,23,42,.12); --card: rgba(15,23,42,.04);
+  --a1: #4f46e5; --a2: #0d9488; --a3: #d97706;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  --grad: linear-gradient(90deg, var(--a1), var(--a2)); /* re-declared so light theme uses its own accents */
+  font-family: var(--sans); color: var(--fg); background: var(--bg);
+  position: relative; overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+.bg { position: absolute; inset: 0;
+  background:
+    radial-gradient(900px 600px at 88% 10%, color-mix(in srgb, var(--a1) 28%, transparent), transparent 60%),
+    radial-gradient(700px 500px at 5% 100%, color-mix(in srgb, var(--a2) 20%, transparent), transparent 60%); }
+.grid { position: absolute; inset: 0;
+  background-image: radial-gradient(color-mix(in srgb, var(--fg) 8%, transparent) 1.5px, transparent 1.5px);
+  background-size: 36px 36px; }
+.wrap { position: relative; height: 100%; display: flex; flex-direction: column; }
+.hl { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.kicker { font-family: var(--mono); color: var(--a2); letter-spacing: .5px; }
+.cursor { display: inline-block; width: .5em; height: 1.05em; background: var(--a2); vertical-align: -.15em; margin-left: .2em; }
+.chip { font-weight: 600; padding: .45em .95em; border-radius: 999px;
+  background: var(--card); border: 1.5px solid var(--line); }
+
+/* footer = the brand signature on every image */
+.foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); }
+.foot b { color: var(--fg); font-weight: 700; }
+.dots { display: flex; gap: 12px; }
+.dots i { width: 16px; height: 16px; border-radius: 50%; display: block; }
+.dots i:nth-child(1) { background: var(--a1); }
+.dots i:nth-child(2) { background: var(--a2); }
+.dots i:nth-child(3) { background: var(--a3); }

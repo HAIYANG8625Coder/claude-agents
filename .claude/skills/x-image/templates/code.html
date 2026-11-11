@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- CODE / TERMINAL WINDOW: a code snippet, prompt, config or terminal output in a macOS-style window on a gradient backdrop. Style: the "Carbon / ray.so" code screenshot, the standard for dev X. -->
+<html><head><meta charset="utf-8"><meta name="x-size" content="1600x900">
+<link rel="stylesheet" href="../../.claude/skills/x-image/templates/brand.css">
+<style>
+  html, body { width: 1600px; height: 900px; }
+  body { background: linear-gradient(135deg, color-mix(in srgb, var(--a1) 55%, #1e1b4b), color-mix(in srgb, var(--a2) 45%, #042f2e)); }
+  .wrap { padding: 70px 120px 56px; align-items: center; }
+  .cap { font-size: 44px; font-weight: 800; letter-spacing: -1px; color: #fff; text-align: center; text-shadow: 0 2px 20px rgba(0,0,0,.25); }
+  .win { margin: auto 0; width: 100%; border-radius: 22px; background: #0d1117; box-shadow: 0 40px 80px rgba(0,0,0,.45), 0 0 0 1.5px rgba(255,255,255,.08); overflow: hidden; }
+  .bar { height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 24px; background: #161b22; }
+  .bar i { width: 15px; height: 15px; border-radius: 50%; display: block; }
+  .bar .f { margin-left: 18px; font-family: var(--mono); font-size: 20px; color: #7d8590; }
+  pre { padding: 34px 40px 40px; font-family: var(--mono); font-size: 29px; line-height: 1.55; color: #e6edf3; white-space: pre-wrap; }
+  .c { color: #7d8590; } .k { color: #ff7b72; } .s { color: #a5d6ff; } .f2 { color: #d2a8ff; } .g { color: #7ee787; }
+  .foot { width: 100%; margin-top: 0; font-size: 24px; color: rgba(255,255,255,.75); }
+  .foot b { color: #fff; }
+</style></head>
+<body>
+<div class="wrap">
+  <div class="cap"><!--EDIT caption, optional-->My X assistant: 2 agents, 1 human approval</div>
+  <div class="win">
+    <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="f"><!--EDIT filename-->x-post / flow</span></div>
+<!--EDIT code below: max ~11 lines × ~60 chars; first line must start right after <pre>. Colour with spans: .c comment .k keyword .s string .f2 function .g success-->
+<pre><span class="c"># draft → review → approve → post</span>
+<span class="k">drafts</span>  = <span class="f2">x_drafter</span>(topic)        <span class="c"># 3 options</span>
+<span class="k">checked</span> = <span class="f2">x_reviewer</span>(drafts)      <span class="c"># typos, tone, facts</span>
+<span class="k">choice</span>  = <span class="f2">ask_michael</span>(checked)    <span class="c"># nothing posts without me</span>
+<span class="f2">post_to_x</span>(choice)
+<span class="g">✓ Your post was sent.</span></pre>
+  </div>
+  <div class="foot"><div><b>Programmer in Singapore</b> · learning AI agents in public</div><div class="dots"><i></i><i></i><i></i></div></div>
+</div>
+</body></html>

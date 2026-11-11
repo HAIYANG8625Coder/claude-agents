@@ -1,0 +1,17 @@
+# Personal: stays on this laptop only (see x-assistant/voice.example.md)
+x-assistant/voice.md
+
+# Generated template samples (re-render any time)
+x-assistant/images/sample-*
+
+# Secrets — never commit
+.env
+.env.*
+*.pem
+*.key
+**/credentials*
+.claude/settings.local.json
+
+# OS / editor noise
+.DS_Store
+*.swp

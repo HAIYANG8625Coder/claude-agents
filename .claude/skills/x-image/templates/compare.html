@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- BEFORE → AFTER / COMPARISON: two columns, e.g. old way vs new way, prompt A vs B, myth vs reality. Style: split comparison card, very shareable. -->
+<html><head><meta charset="utf-8"><meta name="x-size" content="1600x900">
+<link rel="stylesheet" href="../../.claude/skills/x-image/templates/brand.css">
+<style>
+  html, body { width: 1600px; height: 900px; }
+  .wrap { padding: 80px 100px 64px; }
+  h1 { font-size: 66px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; }
+  .cols { margin: auto 0; display: grid; grid-template-columns: 1fr 90px 1fr; align-items: stretch; }
+  .col { border-radius: 28px; padding: 52px 48px; border: 1.5px solid var(--line); background: var(--card); }
+  .col.after { border-color: color-mix(in srgb, var(--a2) 55%, transparent); background: color-mix(in srgb, var(--a2) 9%, transparent); }
+  .lab { font-family: var(--mono); font-size: 24px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .after .lab { color: var(--a2); }
+  ul { list-style: none; margin-top: 22px; display: flex; flex-direction: column; gap: 26px; font-size: 40px; line-height: 1.3; font-weight: 600; }
+  .before li::before { content: "✕  "; color: #f87171; }
+  .after li::before { content: "✓  "; color: var(--a2); }
+  .arrow { display: grid; place-items: center; font-size: 56px; color: var(--muted); }
+  .foot { font-size: 26px; }
+</style></head>
+<body>
+<div class="bg"></div><div class="grid"></div>
+<div class="wrap">
+  <h1><!--EDIT title-->How I post on X <span class="hl">now</span></h1>
+  <div class="cols">
+    <div class="col before"><div class="lab"><!--EDIT-->Before</div>
+      <ul><!--EDIT 3–4 short lines, ~28 chars each--><li>Write it alone</li><li>Typos slip through</li><li>Post and hope</li></ul></div>
+    <div class="arrow">→</div>
+    <div class="col after"><div class="lab"><!--EDIT-->After</div>
+      <ul><!--EDIT--><li>Agent drafts 3 options</li><li>Agent reviews them</li><li>I pick, then it posts</li></ul></div>
+  </div>
+  <div class="foot"><div><b>Programmer in Singapore</b> · learning AI agents in public</div><div class="dots"><i></i><i></i><i></i></div></div>
+</div>
+</body></html>
