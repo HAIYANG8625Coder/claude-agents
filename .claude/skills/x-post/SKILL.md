@@ -1,6 +1,6 @@
 ---
 name: x-post
-description: Draft, review and (after Michael approves) publish a post on his X account. Use when Michael asks to post on X, tweet something, or runs /x-post <topic or rough text>.
+description: Draft, review and (after Michael approves) publish a post on his X account, optionally with an image. Use when Michael asks to post on X, tweet something, or runs /x-post <topic> [with image | no image].
 ---
 
 # X assistant
@@ -11,6 +11,8 @@ Both agents use `x-assistant/playbook.md` (what works on X, learned by `/x-resea
 
 ## 1. Get the topic
 Use the text after `/x-post` as the topic. If there is none, ask Michael what he wants to post about and stop.
+
+**Image option.** If the text ends with "with image" / "with picture" / "with pic" (any wording like that), remove it from the topic and set **image mode = on**. If it ends with "no image", image mode = off and don't offer one. Otherwise image mode = ask (offer once in step 4).
 
 If Michael gives **exact wording** ("post exactly this: ..."), skip step 2 and send that text straight to the reviewer as the only draft.
 
@@ -25,11 +27,16 @@ Run the `x-reviewer` agent, passing it all drafts verbatim. Then:
 - If nothing is left, run the drafter once more with the reviewer's feedback, review again. If it still fails, tell Michael and stop.
 
 ## 4. Ask Michael
+**If image mode = on:** before asking, make the image for the reviewer's ⭐ pick by following the `x-image` skill (pick the template, build, render, check it yourself), and send it with SendUserFile. This way Michael approves text and image in one go.
+
 Show the surviving drafts, numbered, each with its character count, the reviewer's pick marked ⭐, and any issues the reviewer fixed. Ask which one to post (or edits). **Stop and wait.** Only post after Michael clearly picks a draft or says to post specific text. "Looks good" without saying which counts only if there's one draft.
 
 If he asks for edits, apply them, recount, show the final text once more and wait for a clear yes.
 
-Also offer an image in one line (e.g. "Want an image? A list card would fit this."). If he says yes, follow the `x-image` skill, show him the PNG, and post only after he approves both text and image.
+Image handling by mode:
+- **on**: if he picks a different draft than ⭐ and the image no longer fits it, re-make the image for his pick and show it before posting. He can say "no image" to post text only.
+- **ask**: offer an image in one line (e.g. "Want an image? A list card would fit this."). If yes, follow `x-image`, show the PNG, and post only after he approves both.
+- **off**: don't mention images.
 
 ## 5. Post via Chrome
 Load the Claude in Chrome tools in one ToolSearch call (tabs_context_mcp, navigate, computer, browser_batch). If Chrome isn't connected, tell Michael and give him the final text to post himself.
