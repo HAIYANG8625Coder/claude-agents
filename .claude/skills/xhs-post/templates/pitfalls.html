@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="x-size" content="1080x1440"><link rel="stylesheet" href="../../.claude/skills/x-image/templates/brand.css"><style>
+body{width:1080px;height:1440px;font-family:-apple-system,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{padding:90px 84px 70px}
+.kicker{font-size:30px}
+.foot{font-size:26px}
+h1{font-size:112px;line-height:1.18;font-weight:800;margin-top:40px;letter-spacing:-1px}
+h2{font-size:72px;line-height:1.2;font-weight:800;margin:28px 0 36px}
+.sub{font-size:40px;color:var(--muted);margin-top:44px;line-height:1.5}
+.chips{display:flex;gap:18px;flex-wrap:wrap;margin-top:60px}.chip{font-size:32px}
+ol{list-style:none;display:flex;flex-direction:column;gap:26px;flex:1;justify-content:center}
+li{display:flex;gap:26px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:26px;padding:26px 30px}
+li .n{flex:none;width:62px;height:62px;border-radius:50%;background:var(--grad);color:#0b0f17;font-weight:800;font-size:32px;display:flex;align-items:center;justify-content:center}
+li .t{font-size:38px;font-weight:700;line-height:1.3}
+li .d{font-size:28px;color:var(--muted);margin-top:8px;font-family:var(--mono),"PingFang SC";line-height:1.4}
+li.c{padding:11px 26px;gap:22px;border-radius:22px} li.c .n{width:52px;height:52px;font-size:27px} li.c .t{font-size:32px} li.c .d{font-size:25px;margin-top:4px}</style></head><body class="light"><div class="bg"></div><div class="grid"></div><div class="wrap">
+<div class="kicker">// 踩坑记录</div><h2 style="margin:18px 0 26px">我踩过的 <span class="hl">9 个坑</span></h2>
+<ol style="gap:12px;margin-bottom:26px">
+<li class="c"><span class="n">1</span><div><div class="t">git 没装，插件装不上</div><div class="d">xcode-select --install</div></div></li>
+<li class="c"><span class="n">2</span><div><div class="t">找不到官方插件市场</div><div class="d">添加 anthropics/claude-plugins-official</div></div></li>
+<li class="c"><span class="n">3</span><div><div class="t">终端里 claude: command not found</div><div class="d">装 CLI，把 ~/.local/bin 加进 PATH</div></div></li>
+<li class="c"><span class="n">4</span><div><div class="t">机器人没反应：缺 Bun</div><div class="d">装 Bun，把 ~/.bun/bin 加进 PATH</div></div></li>
+<li class="c"><span class="n">5</span><div><div class="t">修好了还是不行</div><div class="d">失败被缓存，约 15 分钟后开新会话</div></div></li>
+<li class="c"><span class="n">6</span><div><div class="t">桌面版只能发、收不到</div><div class="d">要用终端 claude --channels 启动</div></div></li>
+<li class="c"><span class="n">7</span><div><div class="t">两个会话抢同一个机器人</div><div class="d">只留一个在运行</div></div></li>
+<li class="c"><span class="n">8</span><div><div class="t">把 token 贴进了聊天</div><div class="d">泄露就去 BotFather /revoke</div></div></li>
+<li class="c"><span class="n">9</span><div><div class="t">电脑睡了，机器人就不回</div><div class="d">终端会话要一直开着</div></div></li>
+</ol>
+<div class="foot"><span><b>Programmer in Singapore</b> · learning AI agents in public</span><div class="dots"><i></i><i></i><i></i></div></div></div></body></html>

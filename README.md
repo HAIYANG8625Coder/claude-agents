@@ -10,6 +10,7 @@ A small multi-agent setup that drafts, reviews, illustrates and publishes posts 
 /x-research  →  studies popular posts in my niches, updates the playbook
 /x-post      →  x-drafter writes 3 drafts → x-reviewer checks them → I pick → posts via Chrome
 /x-image     →  on-brand post image from HTML templates, rendered with headless Chrome
+/xhs-post    →  Chinese image-and-text note on Xiaohongshu (rednote) with 3:4 swipe cards
 ```
 
 | Path | What it is |
@@ -19,6 +20,7 @@ A small multi-agent setup that drafts, reviews, illustrates and publishes posts 
 | `.claude/skills/x-post/` | The full flow: draft → review → approve → post → log |
 | `.claude/skills/x-research/` | Read-only research of popular posts → `playbook.md` |
 | `.claude/skills/x-image/` | 5 templates (hook, list, code, compare, stat), shared `brand.css`, `render.sh` |
+| `.claude/skills/xhs-post/` | Xiaohongshu flow + 4 card templates (cover, overview, step, pitfalls) |
 | `x-assistant/playbook.md` | What works on X, learned from real posts |
 | `x-assistant/posts.md` | Everything posted so far (agents use it to avoid repeats) |
 | `x-assistant/voice.example.md` | Template for your own `voice.md` (mine is kept private) |
