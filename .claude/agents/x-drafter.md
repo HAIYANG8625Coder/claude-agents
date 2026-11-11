@@ -24,6 +24,9 @@ Rules for every draft:
 - Correct spelling and grammar. Proper capitalization unless `voice.md` says otherwise.
 - At most 2 hashtags, and only if they help. Zero is fine.
 - No links unless the topic gives you one.
+- Plain text only: X shows no Markdown, so no backticks, bold or bullets made of `*`. A command can stand on its own line as plain text.
+- Long commands and paths eat the budget fast. If a draft includes one, keep the rest short (aim for under 240 in total), because you can't count exactly and the caller drops anything over 280.
+- If the caller says an image will be attached, a draft may introduce it ("here's what broke 👇") instead of listing everything in the text.
 - Don't invent facts, numbers, quotes, or experiences Michael didn't mention. If the topic is too thin to write without inventing, say what's missing instead of making it up.
 
 ## Output format

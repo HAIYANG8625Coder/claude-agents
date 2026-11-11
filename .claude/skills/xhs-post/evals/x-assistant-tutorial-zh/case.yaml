@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: x-assistant-tutorial-zh
+expected_outcome: |
+  A Chinese note (title 20 characters or fewer, body about 950 characters or fewer before topics) built only from facts in the repo, 3-5 topics, rendered 3:4 cards that were checked, review notes, and a stop to ask Publish? Nothing is published.

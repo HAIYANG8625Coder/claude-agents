@@ -12,12 +12,12 @@ Both agents use `x-assistant/playbook.md` (what works on X, learned by `/x-resea
 ## 1. Get the topic
 Use the text after `/x-post` as the topic. If there is none, ask Michael what he wants to post about and stop.
 
-**Image option.** If the text ends with "with image" / "with picture" / "with pic" (any wording like that), remove it from the topic and set **image mode = on**. If it ends with "no image", image mode = off and don't offer one. Otherwise image mode = ask (offer once in step 4).
+**Image option.** If the text ends with "with image" / "with picture" / "with pic" (any wording like that), remove it from the topic and set **image mode = on**. If it ends with "no image", image mode = off and don't offer one. Otherwise image mode = ask (offer once in step 4). This applies to exact wording too: a trailing "no image" / "with image" is the option, not part of the post.
 
-If Michael gives **exact wording** ("post exactly this: ..."), skip step 2 and send that text straight to the reviewer as the only draft.
+If Michael gives **exact wording** ("post exactly this: ..."), skip step 2 and send that text straight to the reviewer as the only draft, telling it this is Michael's own wording, so it should flag only real mistakes. His words stay as they are: if the reviewer marks it FIX, show the fix as a suggestion next to his text and let him choose. Only a real mistake (typo, grammar, private info) is worth raising; skip style nitpicks on text he wrote himself.
 
 ## 2. Draft
-Run the `x-drafter` agent with the topic. If it says the topic is too thin, ask Michael for the missing details and stop.
+Run the `x-drafter` agent with the topic and any facts Michael gave. If image mode = on, tell it an image will be attached, so a draft can lean on the image (e.g. "here's what I learned 👇" with a list card). If it says the topic is too thin, ask Michael for the missing details and stop.
 
 ## 3. Review
 Run the `x-reviewer` agent, passing it all drafts verbatim. Then:
@@ -27,9 +27,9 @@ Run the `x-reviewer` agent, passing it all drafts verbatim. Then:
 - If nothing is left, run the drafter once more with the reviewer's feedback, review again. If it still fails, tell Michael and stop.
 
 ## 4. Ask Michael
-**If image mode = on:** before asking, make the image for the reviewer's ⭐ pick by following the `x-image` skill (pick the template, build, render, check it yourself), and send it with SendUserFile. This way Michael approves text and image in one go.
+**If image mode = on:** before asking, make the image for the reviewer's ⭐ pick by following the `x-image` skill (pick the template, build, render, check it yourself). If the draft names a count ("3 things…"), the image shows exactly that many items. Send the PNG once with SendUserFile (x-image doesn't send it when called from here). This way Michael approves text and image in one go. Say in one line which other draft the image also fits, if any.
 
-Show the surviving drafts, numbered, each with its character count, the reviewer's pick marked ⭐, and any issues the reviewer fixed. Ask which one to post (or edits). **Stop and wait.** Only post after Michael clearly picks a draft or says to post specific text. "Looks good" without saying which counts only if there's one draft.
+Show the surviving drafts, numbered, each with its character count, the reviewer's pick marked ⭐, and any issues the reviewer fixed. Ask which one to post (or edits); with a single draft, just ask "Post this?". **Stop and wait.** Only post after Michael clearly picks a draft or says to post specific text. "Looks good" without saying which counts only if there's one draft.
 
 If he asks for edits, apply them, recount, show the final text once more and wait for a clear yes.
 

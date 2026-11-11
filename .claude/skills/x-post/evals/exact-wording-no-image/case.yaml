@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: exact-wording-no-image
+expected_outcome: |
+  The drafter is skipped, the exact text goes to the reviewer as the only draft, its character count is shown, no image is made or offered, and the run waits for a clear yes. Nothing is posted.

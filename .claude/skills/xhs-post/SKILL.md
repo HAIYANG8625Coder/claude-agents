@@ -39,16 +39,18 @@ Before the first run, check each item below. If one is missing, tell the user ex
 ## 1. Get the topic and the facts
 - Use the text after `/xhs-post` as the topic. If there is none, ask and stop.
 - If the topic is "how I did X" or "refer to session …", read the real commands, errors and fixes from that session's transcript (`~/.claude/projects/<project>/<session-id>.jsonl`). Pull out user and assistant text plus tool calls with a small Python script run with `python3 -I`. Don't use f-strings with backslashes inside them, because that's a syntax error on this Python.
-- Everything in the note must be true and come from the session or from the user. No invented numbers. Never include tokens, keys, pairing codes, emails or any other secret, even ones that are already revoked.
+- If the topic points at files ("参考 .claude/agents …"), read those files and take the facts from them. Describe what they actually say: when a claim covers several files ("全是 Markdown"), check every one.
+- Everything in the note must be true and come from the session, the files or the user. No invented numbers. Never include tokens, keys, pairing codes, emails or any other secret, even ones that are already revoked.
 
 ## 2. Write the note (Chinese by default)
 Read `writing-guide.md` (next to this file) first. It covers what makes a post useful and attractive: topic, search keywords, title, cover, body and closing question. This section covers the format.
 
-Write in Chinese unless the user asks for another language (e.g. "in English", "bilingual"). Their request wins.
-Save it to `x-assistant/xhs-<slug>-post.md` with `# 标题` and `# 正文` sections.
+Write in Chinese unless the user asks for another language (e.g. "in English", "bilingual"). Their request wins, and covers the title, body and card text. For an English note, keep the keyword people search for (often English already, e.g. "Claude Code"), use English section labels instead of 准备/坑, and still include one Chinese topic such as #AI编程 so Chinese searches find it. English titles are tight at 20 characters, so lead with the keyword and a number; if the user's own word doesn't fit, use a short synonym and say so in the review notes. An English body runs about twice as long as the same Chinese one, so plan for fewer, shorter points from the start.
+Save it to `x-assistant/xhs-<slug>-post.md` with `# 标题` and `# 正文` sections. Put the topics on the last line of `# 正文`, as in the worked example.
 - **Title: 20 characters max.** Make it concrete and a little personal, e.g. "Telegram遥控Claude踩坑记".
-- **Body: 1,000 characters max.** The editor's counter includes the topic tags you add later, so aim for about **950** before tags. Count with Bash: `python3 -I -c "import sys;print(len(sys.argv[1]))" "<body>"`.
+- **Body + topics: 1,000 characters max.** The editor counts the topic tags in the same box and counts each emoji as 2. Check with `python3 -I .claude/skills/xhs-post/scripts/count.py x-assistant/xhs-<slug>-post.md "#tag1 #tag2 ..."`, which counts the way the editor does and prints OK or TOO LONG for both limits. Don't count by eye or with plain `len()`.
 - Structure that worked: a one-line personal hook (who I am + why) ending in 👇, then 🧰 准备 (what you need), then numbered steps ①②③ with the exact commands, each pitfall as `⚠️坑N：problem → fix`, and a closing question that invites comments (你们还踩过什么坑？评论区聊聊～).
+- That structure fits a "how I set up X" story. For other kinds of posts (lessons, design rules, a checklist), keep the hook, numbered points and closing question, but only call something a 坑 if someone really hit it. Safeguards or rules are 注意 / 💡, not pitfalls. Never invent problems to fill a slot.
 - Plain text only: no Markdown. Leave a blank line between sections. Emoji are fine as section markers, but not in every line.
 - If the draft is too long, cut filler phrases first (折腾了好几天, 最关键) and the weakest tag. Never cut a command or a fix.
 - Pick 3–5 topics (话题), mixing a big one with niche ones, e.g. #ClaudeCode #AI编程 #Telegram #AIAgent.
@@ -60,14 +62,17 @@ Templates live in `templates/` and reuse the x-image brand (`.claude/skills/x-im
 |---|---|
 | `cover.html` | Cover: big hook title plus a subtitle. This is the thumbnail in the feed, so it must read at a glance. |
 | `overview.html` | Numbered list of all steps (the "save this" card). |
-| `step.html` | One card per step: kicker, a progress bar (`.prog i.on` marks done steps), title, `.do` actions, `.cmd` code boxes and `.pit` pitfall boxes. |
-| `pitfalls.html` | Every pitfall on one card (good as the last card). |
+| `step.html` | One card per step: kicker, a progress bar (`.prog i.on` marks done steps), title, `.do` actions, `.cmd` code boxes and `.pit` boxes. Write the box label yourself in `.pit .t`: "⚠️ 坑：" for a real problem, "💡 注意：" for a rule or tip. |
+| `pitfalls.html` | Every pitfall on one card (good as the last card). Optional: skip it when there are no real pitfalls or it would only repeat the overview. |
 
-1. Copy each template into `x-assistant/images/xhs-<slug>-<name>.html`. The brand.css link is relative to that folder, so keep it as is. Replace the example content.
+1. Copy the cover, overview and (if used) pitfalls templates into `x-assistant/images/xhs-<slug>-<name>.html` and replace the example content. The brand.css link is relative to that folder, so keep it as is there.
+   For the step cards, don't copy `step.html` N times. Write the steps into a small JSON file and run `python3 -I .claude/skills/xhs-post/scripts/make_steps.py steps.json x-assistant/images`. It builds every card with the right kicker and progress bar, and handles the light/dark alternation and `roomy`. The format is at the top of the script.
 2. Render: `bash .claude/skills/x-image/render.sh x-assistant/images/<file>.html` writes a PNG next to it at the size in `<meta name="x-size">`.
-3. Check each PNG yourself. To review several at once, build a contact sheet in the scratchpad (an HTML grid of the PNGs at 540×720), screenshot it with headless Chrome and Read it. Fix overflow, empty space at the bottom, and lone words on a line, then re-render.
-   - Long commands in `.cmd`: use `overflow-wrap:anywhere` (not `word-break:break-all`) and put `<wbr>` after `@` so they break at sensible points.
+3. Check all PNGs on one contact sheet: `bash .claude/skills/x-image/contact.sh <scratchpad>/sheet.png x-assistant/images/xhs-<slug>-*.png`, then Read the sheet. Look for overflow, big empty space, and lone words or characters on a line. Write down every problem across all cards, fix them all in one pass, re-render everything, and check the sheet again. Aim for 2–3 render rounds in total; card fixes are part of these rounds, not extra. A small leftover (one lone word) is fine to mention in the review notes rather than spending another round on it.
+   - **Size text to the content.** The template sizes fit the Telegram example (many lines per card). For a step card with less content (about 4 lines or fewer), add `class="roomy"` to `<body>`: it scales up every part at once. On other cards, make the fonts bigger rather than leaving the card half empty. With more text, cut words before you shrink fonts.
+   - Long commands in `.cmd`: they already use `overflow-wrap:anywhere`; put `<wbr>` after `@` and `/` so they break at sensible points. Keep short names like "Claude Code" or "posts.md" together with `&nbsp;` (safer than nowrap spans).
    - Chinese font: `-apple-system,"PingFang SC",sans-serif`.
+   - A 2-character Chinese word split across lines (前/后, 清/晰): wrap it in `<span style="white-space:nowrap">` or shorten the line.
 4. Order that worked (9 images max): cover, then overview, then step 1…N, then pitfalls.
 
 ## 4. Review and improve (before showing the user)
@@ -75,22 +80,22 @@ Never show a first draft. Check the note and the cards against `writing-guide.md
 
 1. Score each item **pass / fix**:
    - **Topic:** one line each for who it's for, what problem it solves, and what they take away. If it reads like a diary, change the angle.
-   - **Keyword:** the main search phrase (in Chinese) is in the first 10–12 characters of the title, in the first line of the body, on the cover, and matched by a topic.
+   - **Keyword:** the main search phrase (in Chinese, or the English name when that's what people type, e.g. Claude Code) is in the first 10–12 characters of the title, in the first line of the body, on the cover, and matched by a topic.
    - **Title:** 20 characters max, keyword first, a specific promise (number, question or result), matches the content, not clickbait.
    - **Cover:** big text, few words, readable at thumbnail size, repeats the keyword and the promise, clear original image.
-   - **Hook:** the first line says who I am and what the reader gets.
+   - **Hook:** the first line says who I am and what the reader gets, and carries the keyword. One line can do all three, e.g. "在新加坡写代码，用 Claude Code 搭了个 X 发帖助手👇".
    - **Worth saving:** there is a checklist, steps, real numbers, a template or a summary card. Ask "would someone save this?" If not, add the useful part or cut the post.
    - **Specific and true:** real numbers, dates and steps from the facts gathered in step 1. Nothing invented, nothing vague where a number exists.
    - **Scannable:** short lines, numbered steps or ✅ items, blank lines between sections, emoji as markers only.
    - **Closing question:** a real question the reader can answer from their own life, not just "欢迎评论".
    - **Topics:** 3–5, one big plus niche ones, all relevant.
    - **Privacy and safety:** no names, IDs, addresses, children's faces, tokens or other secrets in the text or images.
-   - **Limits:** title ≤20, body ≤1000 including topics (aim for about 950 before topics), 9 images max.
-2. Fix every **fix** item (rewrite the line, re-render the card) and run the checklist again. Stop after 2 rounds. If something still fails, say so to the user instead of hiding it.
+   - **Limits:** `scripts/count.py` prints OK for the title (≤20) and body + topics (≤1000); 9 images max.
+2. Fix every **fix** item (rewrite the line, re-render the card) and run the checklist again. Stop after 2 checklist rounds (separate from the card render rounds in step 3). If something still fails, say so to the user instead of hiding it.
 3. Write 2–3 short review notes for the user: what you changed and why, plus any item that still needs their input (e.g. a missing real number only they know).
 
 ## 5. Ask the user
-Send the cards to them (SendUserFile, or as `files` in the Telegram reply if they're on Telegram) and show the title, the body, the character counts and the review notes from step 4. Ask "Publish?" and **stop and wait**. If they ask for changes, apply them and show the result again.
+Send the cards to them (SendUserFile, or as `files` in the Telegram reply if they're on Telegram; if neither is available, list the full PNG paths in order) and show the title, the body, the character counts and the review notes from step 4. Ask "Publish?" and **stop and wait**. If they ask for changes, apply them and show the result again.
 
 ## 6. Publish in Chrome (Claude in Chrome)
 The user must already be logged in (see "Before first use"). This flow uses the website, not the phone app.

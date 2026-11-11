@@ -21,7 +21,7 @@ What tends not to work: vague diary titles, photos with no story, and posts that
 
 ## 2. Search keywords
 A large share of views comes from search, so write for it:
-- Find the 1–2 phrases a reader would actually type (e.g. 新加坡小一, 新加坡PR, HDB开销, Claude Code教程). Use the Chinese term people search for, not only the English one.
+- Find the 1–2 phrases a reader would actually type (e.g. 新加坡小一, 新加坡PR, HDB开销, Claude Code教程). Use the Chinese term people search for, not only the English one. Some products have a common Chinese name besides the official one, e.g. 推特 for X: use the one readers search for in the title and the other in the body or a topic.
 - Put the main keyword in the **title, ideally in the first 10–12 characters**, then again in the **first line of the body** and on the **cover**.
 - Make the topics (话题) match the keywords: one big topic plus 2–4 niche ones.
 

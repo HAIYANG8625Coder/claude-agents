@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: list-card-from-post
+expected_outcome: |
+  Uses the list template, puts the 4 lessons on the card, highlights 2-4 words, renders a PNG, checks the render, and names the template used.

@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: update-playbook-from-sample
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  Uses the collected posts in sample-posts.md instead of browsing, finds patterns, merges them into a copy of the playbook without duplicates or copied posts, adds accounts and a research log line, and reports 3-5 lessons, accounts and 2-3 post ideas.

@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: english-request
+expected_outcome: |
+  The note and the card text are in English because the user asked, limits are respected, cards are rendered and checked, and it stops for approval.

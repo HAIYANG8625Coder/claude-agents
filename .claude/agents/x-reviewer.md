@@ -35,6 +35,8 @@ DRAFT 3: ...
 BEST: <number> — <one-line reason, including why it would grab attention>
 ```
 
+Give exactly one final verdict per draft. If a fix would rescue a draft, it's FIX; don't write REJECT and then FIX. If the caller says the text is Michael's own wording, flag only real mistakes (typos, grammar, private info, factual errors), not style.
+
 - PASS: ready as written.
 - FIX: small problems; give the corrected text, changing as little as possible.
 - REJECT: invented content, risky, or off-voice beyond a small fix.

@@ -14,6 +14,15 @@
        font-family: var(--mono); font-size: 32px; font-weight: 700; color: var(--bg); background: var(--grad); }
   .t { font-size: 42px; font-weight: 700; line-height: 1.2; }
   .d { margin-top: 10px; font-size: 30px; line-height: 1.35; color: var(--muted); }
+  /* 5–6 items: compact so the footer never gets pushed off. 3–4 items: bigger text so the card isn't empty. */
+  ol:has(li:nth-child(5)) { gap: 18px; padding: 36px 0; }
+  ol:has(li:nth-child(5)) li { padding: 22px 30px; }
+  ol:has(li:nth-child(5)) .t { font-size: 38px; }
+  ol:has(li:nth-child(5)) .d { font-size: 27px; margin-top: 6px; }
+  ol:not(:has(li:nth-child(5))) { gap: 34px; }
+  ol:not(:has(li:nth-child(5))) li { padding: 40px 40px; }
+  ol:not(:has(li:nth-child(5))) .t { font-size: 54px; }
+  ol:not(:has(li:nth-child(5))) .d { font-size: 36px; }
   .foot { font-size: 26px; }
 </style></head>
 <body>
@@ -21,7 +30,7 @@
 <div class="wrap">
   <div class="kicker">// <!--EDIT kicker-->save this</div>
   <h1><!--EDIT title-->4 things I learned building my <span class="hl">first AI agents</span></h1>
-  <ol><!--EDIT 3–6 items; keep .t under ~40 chars and .d under ~70 chars-->
+  <ol><!--EDIT 3–6 items; keep .t under ~40 chars and .d under ~70 chars. .d is optional: leave it out rather than invent text the post doesn't say.-->
     <li><div class="n">1</div><div><div class="t">Start with one agent</div><div class="d">Add a second only when one clearly isn't enough.</div></div></li>
     <li><div class="n">2</div><div><div class="t">Write the rules down</div><div class="d">Instructions in a file beat explaining every time.</div></div></li>
     <li><div class="n">3</div><div><div class="t">Add a reviewer</div><div class="d">A second agent catches mistakes the first one misses.</div></div></li>
