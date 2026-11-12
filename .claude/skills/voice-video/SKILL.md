@@ -14,8 +14,15 @@ Why it works this way (learned the hard way on that video):
 
 Scripts are in this skill's `scripts/` folder (call it `$S`: `.claude/skills/voice-video/scripts`). Run them from the repo root. Put Node on the PATH for every `npx`: `export PATH="$HOME/.local/node/bin:$PATH"`.
 
+## Using this skill yourself (not Michael)
+1. Clone https://github.com/HAIYANG8625Coder/claude-agents and run `npm install` in its `avatar-video/` folder (installs HyperFrames, ffmpeg and ffprobe). Needs Node.js 22+ and the Claude Code CLI.
+2. Clone your own voice by hand in the HeyGen web app (https://app.heygen.com/avatar/voices → instant clone, free plan) from 1–2 min of clean speech.
+3. In a terminal, run `claude`, type `/mcp`, pick heygen and sign in (the repo's `.mcp.json` already lists HeyGen's MCP server).
+4. Create `AVATAR-<yourname>.md` at the repo root (git-ignored) with `voice_id: <your voice id>`, `voice_model: heygen-voice-1-turbo-free` and `pace: 0.92`, or set `VOICE_ID` in the environment.
+5. Ask Claude Code: "make a video in my voice from avatar-video/videos/<folder>". Wherever this file says Michael, read "you".
+
 ## 0. Check the setup (stop and tell Michael what's missing)
-- `AVATAR-MICHAEL.md` at the repo root has `voice_id`, `voice_model` and `pace`. It is git-ignored; never copy the id into a tracked file.
+- An `AVATAR-*.md` at the repo root (Michael's is `AVATAR-MICHAEL.md`) has `voice_id`, `voice_model` and `pace`, or `VOICE_ID` is set. It is git-ignored; never copy the id into a tracked file.
 - `avatar-video/node_modules` exists (it holds ffmpeg/ffprobe and HyperFrames). If not: `npm install` in `avatar-video/`.
 - The HeyGen MCP is signed in **in the Claude Code CLI**. The desktop app's own sign-in is broken ("Invalid redirect URI"), so `heygen_take.sh` calls HeyGen through `claude -p`. If the take fails with an auth error, ask Michael to run `claude` in a terminal, type `/mcp`, sign in to heygen, and tell you when it's done.
 - The free model costs nothing, but still say before the take that you are about to call HeyGen.

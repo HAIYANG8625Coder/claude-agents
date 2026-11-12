@@ -4,13 +4,17 @@
 #
 # Why a nested `claude -p`: the HeyGen MCP sign-in only works from the Claude Code CLI; the desktop app's
 # OAuth fails with "Invalid redirect URI" (anthropics/claude-code#108607). The CLI keeps its own sign-in.
-# Usage: zsh heygen_take.sh <video folder>      (run from the repo root; reads the voice id from AVATAR-MICHAEL.md)
+# Usage: zsh heygen_take.sh <video folder>      (run from the repo root; voice id from $VOICE_ID or AVATAR-*.md)
 set -eu
 V=${1:?video folder}
 ROOT=$(git -C "$(dirname "$0")" rev-parse --show-toplevel)
-VOICE=$(sed -n 's/^voice_id: *//p' "$ROOT/AVATAR-MICHAEL.md")
-MODEL=$(sed -n 's/^voice_model: *\([^ ]*\).*/\1/p' "$ROOT/AVATAR-MICHAEL.md")
-[ -n "$VOICE" ] || { echo "no voice_id in AVATAR-MICHAEL.md"; exit 1; }
+# Voice settings: $VOICE_ID / $VOICE_MODEL, else the first AVATAR-*.md at the repo root (git-ignored), e.g.
+#   voice_id: <your HeyGen voice id>
+#   voice_model: heygen-voice-1-turbo-free
+CFG=$(ls "$ROOT"/AVATAR-*.md 2>/dev/null | head -1)
+VOICE=${VOICE_ID:-$([ -n "$CFG" ] && sed -n 's/^voice_id: *//p' "$CFG")}
+MODEL=${VOICE_MODEL:-$([ -n "$CFG" ] && sed -n 's/^voice_model: *\([^ ]*\).*/\1/p' "$CFG")}
+[ -n "$VOICE" ] || { echo "no voice id: set VOICE_ID or create AVATAR-<you>.md with a voice_id: line"; exit 1; }
 D="$V/.voice-heygen-full"; mkdir -p "$D"; rm -f "$D/full.raw" "$D/words.json"
 TXT=$(python3 -I -c 'import json,re,sys;print("".join(re.sub(r"(?<![A-Za-z])[A-Za-z](?: [A-Za-z](?![A-Za-z]))+",lambda m:m.group(0).replace(" ",""),l["say"]) for l in json.load(open(sys.argv[1]))))' "$V/script.json")
 CLAUDE=$(command -v claude || echo "$HOME/.local/bin/claude")
