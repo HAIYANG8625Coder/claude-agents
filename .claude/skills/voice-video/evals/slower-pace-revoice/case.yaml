@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: slower-pace-revoice
+expected_outcome: |
+  The voice is slowed one step below the approved 0.92 (to about 0.88) from the existing one-take recording, pitch kept; the previous version is backed up; scenes and captions are re-synced to the new word times; the video is rendered and checked; the new MP4 is offered for review and nothing is posted.

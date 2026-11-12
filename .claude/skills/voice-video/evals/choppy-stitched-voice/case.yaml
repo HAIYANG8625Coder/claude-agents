@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: choppy-stitched-voice
+expected_outcome: |
+  The stitched per-sentence voice-over is replaced by the one-take recording at Michael's usual pace (0.92), the old version is backed up, scenes and captions follow the new word timestamps with no overlaps or blank gaps, and a new render is checked and offered for review.

@@ -23,6 +23,7 @@ Run the `x-drafter` agent with the topic and any facts Michael gave. If image mo
 Run the `x-reviewer` agent, passing it all drafts verbatim. Then:
 - Use the **fixed version** for any draft marked FIX.
 - Drop drafts marked REJECT (mention why in one line).
+- Run the `humanizer` skill over each remaining draft in embedded mode (final text only), so it reads like Michael and not a chatbot. Watch most for its strongest tells: "not X but Y" contrasts, one-line closers, "Here's the thing" openers, forced triads, dashes (none in the final post), stock AI words (delve, crucial, robust, testament) and bold or labelled lists. Keep every fact, number, @handle, link and hashtag exactly; X posts may keep a short emoji marker or line breaks if the draft had them. Skip this for Michael's own exact wording.
 - Count each remaining draft exactly with Bash, e.g. `python3 -c 'import sys;print(len(sys.argv[1]))' "<text>"`. Drop any over 280.
 - If nothing is left, run the drafter once more with the reviewer's feedback, review again. If it still fails, tell Michael and stop.
 

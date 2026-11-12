@@ -19,3 +19,8 @@ Images: xhs-tg-1, xhs-tg-2, xhs-tg-step1…6, xhs-tg-3 (9 cards)
 Title: 新加坡小一家长会｜3件事先做好🥹 (edited 2026-11-11; was "儿子明年上小一了🥹家长会3件事先做好", "新加坡" added to first line)
 Topics: #新加坡小学 #小一 #新加坡育儿 #家长会 #正向教养
 7 images: cover, water, parent zone card, kids zone card, gym, chairs, building
+
+## 2026-11-11 (Xiaohongshu)
+Title: 新加坡小一｜外国人报名5步全流程
+Text: see x-assistant/xhs-p1-post.md (+ topics #新加坡小一 #新加坡教育 #P1报名 #新加坡生活 #国际学生), 923/1000 in the editor, MOE links at the end
+Images: xhs-p1-cover, xhs-p1-overview, xhs-p1-step1…5, xhs-p1-docs, xhs-p1-fees (9 cards)

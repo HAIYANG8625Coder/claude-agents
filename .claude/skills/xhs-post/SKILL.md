@@ -89,6 +89,7 @@ Never show a first draft. Check the note and the cards against `writing-guide.md
    - **Scannable:** short lines, numbered steps or ✅ items, blank lines between sections, emoji as markers only.
    - **Closing question:** a real question the reader can answer from their own life, not just "欢迎评论".
    - **Topics:** 3–5, one big plus niche ones, all relevant.
+   - **Sounds human (humanizer pass):** run the `humanizer` skill's process over the title and body in embedded mode, applying its structural patterns to Chinese, since they appear in every language: 不是…而是… contrasts that only add weight (§1), a closing line that repeats the point (§2), 说白了/本质上/真正的问题是 sayings (§3), 话不多说/今天来聊聊/直接上干货 run-ups (§4), forced threes (§6), dashes (——) as the all-purpose connector (§8). Also cut Chinese AI stock words: 赋能, 助力, 打造, 全方位, 深度解析, 值得一提的是, 总而言之, 综上所述, 不得不说, and 首先…其次…最后 used on everything. Keep emoji as section markers and the numbered steps: on Xiaohongshu they are the norm, not decoration (this overrides humanizer §19–20 here). Keep every fact and number exactly.
    - **Privacy and safety:** no names, IDs, addresses, children's faces, tokens or other secrets in the text or images.
    - **Limits:** `scripts/count.py` prints OK for the title (≤20) and body + topics (≤1000); 9 images max.
 2. Fix every **fix** item (rewrite the line, re-render the card) and run the checklist again. Stop after 2 checklist rounds (separate from the card render rounds in step 3). If something still fails, say so to the user instead of hiding it.

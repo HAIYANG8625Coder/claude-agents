@@ -18,3 +18,24 @@ x-assistant/images/sample-*
 
 # Global Claude rules stay local (never commit)
 global/
+
+# Avatar video: personal media and HeyGen ids stay on this laptop
+AVATAR-*.md
+avatar-video/node_modules/
+avatar-video/videos/*/
+!avatar-video/videos/.gitkeep
+avatar-video/**/.hyperframes/
+avatar-video/**/renders/
+avatar-video/**/*.mp4
+avatar-video/**/*.mp3
+avatar-video/**/*.wav
+avatar-video/**/*.m4a
+avatar-video/**/*.mov
+avatar-video/.venv/
+avatar-video/.venv-tts/
+avatar-video/voice-samples/
+avatar-video/.bin/
+
+# Python bytecode
+__pycache__/
+*.pyc

@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: caption-digits-new-page
+expected_outcome: |
+  Captions whose text differs from the spoken words (digits like +65, 5步, 10月20号) get data-say spoken forms, the timeline block between the sync markers is generated from the word timestamps at 0.92 pace, the video renders, and the result is checked and offered for review without posting.

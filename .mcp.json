@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "heygen": {
+      "type": "http",
+      "url": "https://mcp.heygen.com/mcp/v1/"
+    },
+    "buzzy": {
+      "type": "http",
+      "url": "https://mcp.buzzy.now/mcp"
+    }
+  }
+}

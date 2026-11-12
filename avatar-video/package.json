@@ -1,0 +1,11 @@
+{
+  "name": "avatar-video",
+  "private": true,
+  "description": "Michael's digital-twin videos: HeyGen avatar + HyperFrames editing",
+  "type": "module",
+  "devDependencies": {
+    "@ffmpeg-installer/ffmpeg": "1.1.0",
+    "@ffprobe-installer/ffprobe": "2.1.2",
+    "hyperframes": "0.9.33"
+  }
+}

@@ -36,6 +36,28 @@ A small multi-agent setup that drafts, reviews, illustrates and publishes posts 
 
 **Xiaohongshu (`/xhs-post`):** connect Claude in Chrome to Claude Code (`claude --chrome` or `/chrome`), log in at xiaohongshu.com in that Chrome profile, and open creator.xiaohongshu.com once to finish its first-time prompts. Then change the card footer in `.claude/skills/xhs-post/templates/` to your own name. The full checklist is in the skill's "Before first use" section.
 
+## Avatar video (digital twin)
+
+Short vertical videos where my AI twin (HeyGen avatar + my cloned voice) explains a topic, edited in code with [HyperFrames](https://github.com/heygen-com/hyperframes) (HTML → MP4).
+
+```
+/avatar-video <topic> [xhs|x] [NN s]
+  video-scripter writes 2 spoken scripts → video-reviewer checks them → I pick
+  → storyboard (I approve before any credits are spent) → voice in one take (I listen)
+  → avatar lip-synced to that exact audio → captions, B-roll, cards in HyperFrames
+  → preview (I approve) → render → hand off to /xhs-post or /x-post
+```
+
+| Path | What it is |
+|---|---|
+| `.claude/skills/avatar-video/` | The full flow, with approval gates before every paid step |
+| `.claude/agents/video-scripter.md`, `video-reviewer.md` | Script writer and independent script check |
+| `avatar-video/brand/DESIGN.md` | Video look: colors, safe zones, captions, the 3 effects |
+| `avatar-video/videos.md` | Every video made (avoids repeats, notes what to improve) |
+| `.claude/skills/hyperframes*`, `media-use`, `heygen-*` | Third-party skills from HeyGen, pinned in `skills-lock.json` |
+
+Setup: Node.js 22+ (`npm install` in `avatar-video/` adds FFmpeg), a HeyGen plan, `npx hyperframes auth login`, and `/mcp` → heygen. Your `AVATAR-*.md`, recordings and renders are git-ignored.
+
 ## Design principles
 
 - One agent per job; a second agent only where it adds a fresh perspective (review).
