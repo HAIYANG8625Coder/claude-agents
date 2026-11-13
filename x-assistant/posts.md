@@ -65,3 +65,4 @@ Image note, follow-up to "Claude Code手机遥控｜9个坑". Post file: x-assis
 Topics: #ClaudeCode #AI编程 #Telegram #AIAgent
 Images: x-assistant/images/xhs-tgfix-{cover,overview,step1,step2,step3,step4}.png
 Fix ④ (turn off macOS auto-install) is presented as optional; Michael keeps auto-updates on.
+Style: terminal

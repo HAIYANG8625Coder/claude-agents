@@ -1,0 +1,82 @@
+/* Card style presets for xhs-post. Loaded AFTER each template's own <style>, so these rules win.
+   Pick one per note with a class on <body>:
+     (none)        A. Terminal  - the default dark brand look from x-image/brand.css
+     s-notebook    B. Notebook  - warm ruled paper, highlighter marks, sticky-note boxes
+     s-bigtype     C. Big type  - one solid colour per card, huge bold text; add bt-0 … bt-5 for the colour
+   What never changes: the footer signature, the dots, the card order. */
+
+/* ---------- B. Notebook ---------- */
+body.s-notebook {
+  --bg: #fbf8f1; --bg-2: #ffffff; --fg: #1f2328; --muted: #6b6f76;
+  --line: rgba(31,35,40,.14); --card: #ffffff;
+  --a1: #ffd84d;   /* highlighter */
+  --a2: #e0533d;   /* red pen     */
+  --a3: #2f6fdb;   /* blue pen    */
+  --grad: linear-gradient(90deg, var(--a2), var(--a2));
+  --hand: "Kaiti SC", "STKaiti", "KaiTi", serif;
+}
+body.s-notebook .bg { background: none; }
+body.s-notebook .grid {
+  background-image:
+    linear-gradient(90deg, transparent 58px, rgba(224,83,61,.35) 58px, rgba(224,83,61,.35) 61px, transparent 61px),
+    repeating-linear-gradient(180deg, transparent 0 55px, rgba(47,111,219,.13) 55px 57px);
+  background-size: auto;
+}
+body.s-notebook .hl {
+  background: linear-gradient(180deg, transparent 52%, var(--a1) 52%, var(--a1) 92%, transparent 92%);
+  -webkit-background-clip: border-box; background-clip: border-box; color: inherit; padding: 0 .06em;
+}
+body.s-notebook .kicker { font-family: var(--hand); color: var(--a2); font-size: 38px; letter-spacing: 1px; }
+body.s-notebook .cursor { display: none; }
+body.s-notebook .chip { background: #fff; border: 2px dashed rgba(31,35,40,.3); }
+body.s-notebook .prog i { background: rgba(31,35,40,.12); }
+body.s-notebook .prog i.on { background: var(--a2); }
+body.s-notebook .sub { font-family: var(--hand); color: var(--muted); }
+body.s-notebook .do:before { content: "✓"; color: var(--a2); }
+body.s-notebook .cmd { background: #fff; color: var(--fg); border: 2px dashed rgba(31,35,40,.28); box-shadow: 0 2px 0 rgba(31,35,40,.06); }
+body.s-notebook .cmd:before { color: var(--a2); }
+body.s-notebook .pit {
+  background: #fff3a8; border: none; border-radius: 6px;
+  box-shadow: 0 10px 22px rgba(31,35,40,.12); transform: rotate(-.7deg);
+}
+body.s-notebook .pit .t { color: #b8401f; }
+body.s-notebook li { background: #fff; border: 1.5px solid var(--line); box-shadow: 0 3px 0 rgba(31,35,40,.05); }
+body.s-notebook li .n { background: transparent; border: 3px solid var(--a2); color: var(--a2); font-family: var(--hand); }
+
+/* ---------- C. Big type ---------- */
+body.s-bigtype { --muted: color-mix(in srgb, var(--fg) 70%, transparent); --line: color-mix(in srgb, var(--fg) 22%, transparent);
+  --card: color-mix(in srgb, var(--fg) 10%, transparent); }
+body.s-bigtype.bt-0 { --bg: #111111; --fg: #ffffff; --a1: #ffd400; --a2: #ffd400; --a3: #ffd400; }
+body.s-bigtype.bt-1 { --bg: #ff5a36; --fg: #ffffff; --a1: #111111; --a2: #111111; --a3: #111111; }
+body.s-bigtype.bt-2 { --bg: #2a5cff; --fg: #ffffff; --a1: #ffd400; --a2: #ffd400; --a3: #ffd400; }
+body.s-bigtype.bt-3 { --bg: #ffd400; --fg: #111111; --a1: #ff3b1f; --a2: #ff3b1f; --a3: #ff3b1f; }
+body.s-bigtype.bt-4 { --bg: #00a878; --fg: #ffffff; --a1: #111111; --a2: #111111; --a3: #111111; }
+body.s-bigtype.bt-5 { --bg: #f2efe8; --fg: #111111; --a1: #2a5cff; --a2: #2a5cff; --a3: #2a5cff; }
+body.s-bigtype { --grad: linear-gradient(90deg, var(--a2), var(--a2)); }
+body.s-bigtype .bg, body.s-bigtype .grid { display: none; }
+body.s-bigtype .hl {
+  background: var(--fg); color: var(--bg); -webkit-background-clip: border-box; background-clip: border-box;
+  padding: 0 .12em; margin: 0 .04em; border-radius: .08em; line-height: 1.15; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+body.s-bigtype .kicker { font-family: var(--sans); font-weight: 800; color: var(--fg); opacity: .75; letter-spacing: 3px; }
+body.s-bigtype .cursor { display: none; }
+body.s-bigtype h1 { font-size: 120px; font-weight: 900; letter-spacing: -3px; line-height: 1.3; }
+body.s-bigtype h2 { font-size: 88px; font-weight: 900; letter-spacing: -2px; line-height: 1.3; }
+body.s-bigtype.roomy h2 { font-size: 96px; }
+body.s-bigtype .sub { color: var(--muted); font-weight: 600; }
+body.s-bigtype .chip { background: transparent; border: 3px solid var(--fg); font-weight: 800; }
+body.s-bigtype .prog i { background: color-mix(in srgb, var(--fg) 25%, transparent); }
+body.s-bigtype .prog i.on { background: var(--fg); }
+body.s-bigtype .do { font-weight: 700; font-size: 42px; }
+body.s-bigtype.roomy .do { font-size: 52px; }
+body.s-bigtype .do:before { content: "●"; color: var(--a2); font-size: .6em; top: .45em; }
+body.s-bigtype .cmd { background: color-mix(in srgb, #000 22%, transparent); color: var(--fg); border: none; border-radius: 14px; }
+body.s-bigtype .cmd:before { color: var(--a2); }
+body.s-bigtype .pit { background: var(--fg); border: none; border-radius: 14px; }
+body.s-bigtype .pit .t { color: var(--bg); }
+body.s-bigtype .pit .d { color: var(--bg); opacity: .85; }
+body.s-bigtype li { background: transparent; border: none; border-bottom: 3px solid var(--line); border-radius: 0; padding-left: 0; }
+body.s-bigtype li .n { background: var(--fg); color: var(--bg); border-radius: 12px; }
+body.s-bigtype li .t { font-weight: 800; }
+body.s-bigtype .foot b { color: var(--fg); }
+body.s-bigtype .dots i { background: var(--fg) !important; opacity: .8; }

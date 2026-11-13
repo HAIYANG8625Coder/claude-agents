@@ -58,6 +58,20 @@ Save it to `x-assistant/xhs-<slug>-post.md` with `# 标题` and `# 正文` secti
 - Pick 3–5 topics (话题), mixing a big one with niche ones, e.g. #ClaudeCode #AI编程 #Telegram #AIAgent.
 
 ## 3. Make the cards (3:4, 1080×1440)
+
+### Pick a style first
+Every note uses one of 3 presets (`templates/styles.css`). The footer signature, the dots and the card order (cover, overview, details) never change, so the account still looks like one person.
+
+| Style | `<body>` class | Looks like | Use it for |
+|---|---|---|---|
+| A. Terminal | (none; `light` on alternate steps) | dark, gradient highlight, code boxes | setup guides, bug write-ups, anything with commands |
+| B. Notebook | `s-notebook` | warm ruled paper, highlighter marks, sticky-note boxes | lessons, checklists, Singapore-life and personal posts |
+| C. Big type | `s-bigtype bt-N` (N = 0–5, one colour per card) | a solid colour per card, huge bold text | opinions and "N things" posts with short points |
+
+- Choose by topic, and **don't use the same style as the last Xiaohongshu image note** in `x-assistant/posts.md` (each entry has a `Style:` line). If the topic only fits the same style, say so in the review notes.
+- Step cards: set `"style": "terminal" | "notebook" | "bigtype"` in steps.json; `make_steps.py` adds the classes (Big type: cover `bt-0`, overview `bt-1`, then step N gets `bt-(N+1)`).
+- Cover and overview: add the class to `<body>` yourself (`s-notebook`, or `s-bigtype bt-0` / `s-bigtype bt-1`).
+- Big type works best with 1–3 short items per card: cut words and use `roomy` rather than squeezing a long card into it.
 Templates live in `templates/` and reuse the x-image brand (`.claude/skills/x-image/templates/brand.css`):
 
 | Template | Card |
@@ -117,7 +131,7 @@ The user must already be logged in (see "Before first use"). This flow uses the 
 6. Scroll down and take a screenshot: check the images, the title, the body counter (≤1000) and the topics. Then click **发布** and take a screenshot. Success shows **发布成功**.
 
 ## 7. Log and save
-- Append to `x-assistant/posts.md`: date, "(Xiaohongshu)", the title, the post file, the topics and the image list.
+- Append to `x-assistant/posts.md`: date, "(Xiaohongshu)", the title, the post file, the topics, the image list and a `Style:` line (terminal / notebook / bigtype; "video" for a video note).
 - Remind the user to reply to comments in the first 1–2 hours after publishing (see `writing-guide.md` §7).
 - If the folder is a git repo, offer to commit the post file and the cards. Don't commit until they say yes, and check for secrets before you push.
 

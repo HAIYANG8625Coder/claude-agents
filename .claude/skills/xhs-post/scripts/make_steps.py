@@ -8,7 +8,8 @@ steps.json:
 {
   "slug": "tg",                 # files are named xhs-<slug>-step<N>.html
   "kicker": "STEP",             # optional, e.g. "第" / "LESSON"; shown as "STEP 1 / 6"
-  "alternate": true,            # optional: even steps use the light theme
+  "alternate": true,            # optional, terminal style only: even steps use the light theme
+  "style": "terminal",          # optional: terminal (default) | notebook | bigtype (see templates/styles.css)
   "steps": [
     {"title": "建机器人，拿 token", "sub": "在 Telegram 里操作", "roomy": false,
      "items": [
@@ -29,13 +30,19 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE = os.path.join(HERE, "..", "templates", "step.html")
 BRAND = os.path.abspath(os.path.join(HERE, "..", "..", "x-image", "templates", "brand.css"))
+STYLES = os.path.abspath(os.path.join(HERE, "..", "templates", "styles.css"))
+STYLE = None  # set below from the spec
 
 spec = json.load(open(sys.argv[1], encoding="utf-8"))
 out = sys.argv[2]
 os.makedirs(out, exist_ok=True)
 tpl = open(TEMPLATE, encoding="utf-8").read()
-# Absolute link, so the cards render from any folder.
-tpl = re.sub(r'href="[^"]*brand\.css"', 'href="file://%s"' % BRAND, tpl)
+# Relative links from the output folder, so the cards render there and no home-folder path lands in git.
+tpl = re.sub(r'href="[^"]*brand\.css"', lambda m: 'href="%s"' % os.path.relpath(BRAND, out), tpl)
+tpl = re.sub(r'href="[^"]*styles\.css"', lambda m: 'href="%s"' % os.path.relpath(STYLES, out), tpl)
+STYLE = spec.get("style", "terminal")
+if STYLE not in ("terminal", "notebook", "bigtype"):
+    raise SystemExit("unknown style: %r" % STYLE)
 steps = spec["steps"]
 n = len(steps)
 
@@ -60,8 +67,13 @@ for i, st in enumerate(steps, 1):
     html = re.sub(r'<div class="top">.*?(?=<div class="foot">)', lambda m: top + "\n" + head + "\n" + body + "\n",
                   tpl, flags=re.S)
     classes = []
-    if spec.get("alternate") and i % 2 == 0:
+    if STYLE == "terminal" and spec.get("alternate") and i % 2 == 0:
         classes.append("light")
+    elif STYLE == "notebook":
+        classes.append("s-notebook")
+    elif STYLE == "bigtype":
+        # cover = bt-0, overview = bt-1, so step i gets the next colour along
+        classes += ["s-bigtype", "bt-%d" % ((i + 1) % 6)]
     if st.get("roomy"):
         classes.append("roomy")
     if classes:
