@@ -10,7 +10,7 @@ Flow: **draft → review → Michael approves → post → log.** Never skip the
 Both agents use `x-assistant/playbook.md` (what works on X, learned by `/x-research`). If its "Research log" shows no live research yet or nothing in the last 2 weeks, mention once that running `/x-research` would make drafts sharper.
 
 ## 1. Get the topic
-Use the text after `/x-post` as the topic. If there is none, ask Michael what he wants to post about and stop.
+Use the text after `/x-post` as the topic. If there is none, ask Michael what he wants to post about and stop. If the topic is off his theme (AI agents, Claude Code, AI video) or only about his own setup, say so in one line and suggest a reader-benefit angle (see the playbook's "Reach for a new account"), then follow his choice.
 
 **Image option.** If the text ends with "with image" / "with picture" / "with pic" (any wording like that), remove it from the topic and set **image mode = on**. If it ends with "no image", image mode = off and don't offer one. Otherwise image mode = ask (offer once in step 4). This applies to exact wording too: a trailing "no image" / "with image" is the option, not part of the post.
 

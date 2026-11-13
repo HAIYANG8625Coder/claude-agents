@@ -38,6 +38,7 @@ Before the first run, check each item below. If one is missing, tell the user ex
 
 ## 1. Get the topic and the facts
 - Use the text after `/xhs-post` as the topic. If there is none, ask and stop.
+- If the topic only matters to people with the user's own setup (a fix for their bot, an update to their skill), suggest a broader reader-benefit angle in one line before writing (see writing-guide.md §1), then follow the user's choice.
 - If the topic is "how I did X" or "refer to session …", read the real commands, errors and fixes from that session's transcript (`~/.claude/projects/<project>/<session-id>.jsonl`). Pull out user and assistant text plus tool calls with a small Python script run with `python3 -I`. Don't use f-strings with backslashes inside them, because that's a syntax error on this Python.
 - If the topic points at files ("参考 .claude/agents …"), read those files and take the facts from them. Describe what they actually say: when a claim covers several files ("全是 Markdown"), check every one.
 - **News and market topics:** every number comes from a source file (RESEARCH.md, or data pulled by code), and you recompute it yourself before writing; don't estimate a share or a percentage by eye. A price is a 收盘价 only after that market has closed; otherwise label it with the time (11月12日盘中). Stock and crypto notes end with "不构成投资建议" and never say to buy or sell.
@@ -51,7 +52,7 @@ Write in Chinese unless the user asks for another language (e.g. "in English", "
 Save it to `x-assistant/xhs-<slug>-post.md` with `# 标题` and `# 正文` sections. Put the topics on the last line of `# 正文`, as in the worked example.
 - **Title: 20 characters max.** Make it concrete and a little personal, e.g. "Telegram遥控Claude踩坑记".
 - **Body + topics: 1,000 characters max.** The editor counts the topic tags in the same box and counts each emoji as 2. Check with `python3 -I .claude/skills/xhs-post/scripts/count.py x-assistant/xhs-<slug>-post.md "#tag1 #tag2 ..."`, which counts the way the editor does and prints OK or TOO LONG for both limits. Don't count by eye or with plain `len()`.
-- Structure that worked: a one-line personal hook (who I am + why) ending in 👇, then 🧰 准备 (what you need), then numbered steps ①②③ with the exact commands, each pitfall as `⚠️坑N：problem → fix`, and a closing question that invites comments (你们还踩过什么坑？评论区聊聊～).
+- Structure that worked: a one-line hook (the reader's problem or the result, with the keyword) ending in 👇, then 🧰 准备 (what you need), then numbered steps ①②③ with the exact commands, each pitfall as `⚠️坑N：problem → fix`, and a closing question that invites comments (你们还踩过什么坑？评论区聊聊～).
 - That structure fits a "how I set up X" story. For other kinds of posts (lessons, design rules, a checklist), keep the hook, numbered points and closing question, but only call something a 坑 if someone really hit it. Safeguards or rules are 注意 / 💡, not pitfalls. Never invent problems to fill a slot.
 - Plain text only: no Markdown. Leave a blank line between sections. Emoji are fine as section markers, but not in every line.
 - If the draft is too long, cut filler phrases first (折腾了好几天, 最关键) and the weakest tag. Never cut a command or a fix.
@@ -99,7 +100,7 @@ Never show a first draft. Check the note and the cards against `writing-guide.md
    - **Keyword:** the main search phrase (in Chinese, or the English name when that's what people type, e.g. Claude Code) is in the first 10–12 characters of the title, in the first line of the body, on the cover, and matched by a topic.
    - **Title:** 20 characters max, keyword first, a specific promise (number, question or result), matches the content, not clickbait.
    - **Cover:** big text, few words, readable at thumbnail size, repeats the keyword and the promise, clear original image.
-   - **Hook:** the first line says who I am and what the reader gets, and carries the keyword. One line can do all three, e.g. "在新加坡写代码，用 Claude Code 搭了个 X 发帖助手👇".
+   - **Hook:** the first line names the reader's problem or the result they get, and carries the keyword, e.g. "用手机 Telegram 遥控 Claude Code，聊着聊着就收不到回复？👇". Don't open with who the author is ("在新加坡写代码…"): the profile already says it, and repeated on every note it reads like a template. Mention the author only when it makes the note more credible for this topic (e.g. 在新加坡办过 PR on a PR note).
    - **Worth saving:** there is a checklist, steps, real numbers, a template or a summary card. Ask "would someone save this?" If not, add the useful part or cut the post.
    - **Specific and true:** real numbers, dates and steps from the facts gathered in step 1. Nothing invented, nothing vague where a number exists.
    - **Scannable:** short lines, numbered steps or ✅ items, blank lines between sections, emoji as markers only.

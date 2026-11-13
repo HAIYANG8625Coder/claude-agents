@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="x-size" content="1080x1440"><link rel="stylesheet" href="../../.claude/skills/x-image/templates/brand.css"><style>body{width:1080px;height:1440px;font-family:-apple-system,"PingFang SC",sans-serif}
+.wrap{padding:84px 80px 64px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.kicker{font-size:30px}.prog{display:flex;gap:10px}.prog i{width:44px;height:8px;border-radius:4px;background:var(--line);display:block}.prog i.on{background:var(--grad)}
+h2{font-size:76px;line-height:1.18;font-weight:800;margin-top:34px}
+.sub{font-size:34px;color:var(--muted);margin-top:16px}
+.body{margin:auto 0;display:flex;flex-direction:column;gap:22px;padding:40px 0}
+.do{font-size:38px;line-height:1.45;position:relative;padding-left:56px}.do:before{content:"→";color:var(--a2);font-weight:700;position:absolute;left:0}
+.cmd{font-family:var(--mono);font-size:30px;line-height:1.45;background:#05070c;color:#e2e8f0;border:1.5px solid var(--line);border-radius:18px;padding:22px 26px;overflow-wrap:anywhere}
+.cmd:before{content:"$ ";color:var(--a2)}
+.pit{border-radius:22px;padding:22px 28px;background:color-mix(in srgb,var(--a3) 12%,transparent);border:1.5px solid color-mix(in srgb,var(--a3) 45%,transparent)}
+.pit .t{font-size:36px;font-weight:800;color:var(--a3)}
+.pit .d{font-size:30px;line-height:1.45;margin-top:8px;white-space:pre-line;overflow-wrap:anywhere}
+/* Fewer than ~5 lines of content? Add class="roomy" to the body tag for bigger text instead of an empty card. */
+.roomy h2{font-size:92px}.roomy .sub{font-size:40px}.roomy .body{gap:34px}.roomy .do{font-size:48px;padding-left:66px}.roomy .cmd{font-size:36px;padding:28px 32px}.roomy .pit{padding:30px 34px}.roomy .pit .t{font-size:44px}.roomy .pit .d{font-size:36px}
+.foot{font-size:26px;margin-top:0} /* the centred .body takes the free space; brand.css's auto margin here would push content up */</style><link rel="stylesheet" href="../../.claude/skills/xhs-post/templates/styles.css"></head>
+<body class="s-notebook roomy"><div class="bg"></div><div class="grid"></div><div class="wrap">
+<div class="top"><div class="kicker">PART 1 / 4</div><div class="prog"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+<h2>① 全局关掉插件</h2><div class="sub">不然每个会话都会抢机器人</div>
+<div class="body"><div class="do">打开 ~/.claude/<wbr>settings.json</div><div class="cmd">"telegram@<wbr>claude-plugins-official": false</div><div class="pit"><div class="t">💡 注意：</div><div class="d">改完以后，普通会话不再启动 Telegram 机器人</div></div></div>
+<div class="foot"><span><b>Programmer in Singapore</b> · learning AI agents in public</span><div class="dots"><i></i><i></i><i></i></div></div>
+</div></body></html>

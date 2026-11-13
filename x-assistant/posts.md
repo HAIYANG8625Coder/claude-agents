@@ -60,9 +60,10 @@ Topics: #ClaudeCode #AI视频 #视频剪辑 #HeyGen #AI工具
 Video: avatar-video/videos/2026-11-13-video-styles/renders/2026-11-13-video-styles_xhs.mp4 (3.2 MB copy of the 09-30-45 render, 48 s); cover = first frame.
 Published 21:13 after video-style-presets was merged into main (the note says the skill is on GitHub).
 
-## 2026-11-13 (Xiaohongshu) — Claude Code遥控断联｜2个根因
+## 2026-11-13 (Xiaohongshu) — Claude Code遥控不掉线｜3步 (edited 2026-11-13; was "Claude Code遥控断联｜2个根因")
 Image note, follow-up to "Claude Code手机遥控｜9个坑". Post file: x-assistant/xhs-tg-disconnect-post.md
 Topics: #ClaudeCode #AI编程 #Telegram #AIAgent
 Images: x-assistant/images/xhs-tgfix-{cover,overview,step1,step2,step3,step4}.png
+- Edit 2026-11-13 (reader-benefit rewrite after research: fix first, cause last): post file x-assistant/xhs-tg-stable-post.md, images x-assistant/images/xhs-tgok-{cover,overview,step1,step2,step3,step4}.png, topics #ClaudeCode #AI编程 #Telegram #AIAgent #效率工具, Style: notebook. Before the edit: 44 views, 1 like. Creator center showed 更新成功.
 Fix ④ (turn off macOS auto-install) is presented as optional; Michael keeps auto-updates on.
-Style: terminal
+Style: notebook (was terminal before the edit)

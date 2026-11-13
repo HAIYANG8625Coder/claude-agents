@@ -17,7 +17,11 @@ What tends to work:
 - **Real numbers and details.** Prices, dates, timelines, steps, screenshots with private data hidden. Specific beats general every time.
 - **Series.** Follow-ups to a story people already care about ("PR month 3 → month 6 → result") bring readers back.
 
-What tends not to work: vague diary titles, photos with no story, and posts that only help the author (asking for tickets, asking for recommendations, selling something).
+**Reader's problem, not the author's project.** On 2026-11-13 the top Claude Code notes were about what every user needs: 千万别裸装，这几个skills必须装上 (6,179 likes), 每月70亿token，四家额度跑Claude Code (1,484), Claude Code桌面端APP保姆级全攻略 (1,426), 9个Mod实测推荐 (719). Michael's notes about his own setup (新加4种风格: 2, 遥控断联｜2个根因: 1) reached almost no one, because only people who copied his setup care. Use the author's experience as proof inside a broad topic: "我每天在用的5个skills" beats "我的skill更新了". On the same day, voice-clone hits were 完全免费 / 3步学会 / 保姆级 tutorials (1–5k) and an emotional story (29.4k).
+
+The account's own data says the same: Michael's best notes are honest Singapore life posts (新加坡PR被拒: 92, 一家三口开销: 29), far above any tutorial. Keep two lanes: Claude Code for regular users, and life in Singapore as a programmer.
+
+What tends not to work: niche fixes for the author's own setup, vague diary titles, photos with no story, and posts that only help the author (asking for tickets, asking for recommendations, selling something).
 
 ## 2. Search keywords
 A large share of views comes from search, so write for it:
@@ -28,6 +32,7 @@ A large share of views comes from search, so write for it:
 ## 3. Title (20 characters max)
 - Lead with the keyword, then a specific promise.
 - Numbers and questions help: "3件事", "9个坑", "真实开销", "被拒后怎么办？".
+- Reader-benefit words that win in AI notes: 必装, 保姆级, 免费/完全免费, 一次讲清, 实测, N步学会. Use them only when true.
 - Add a light personal or emotional touch if it fits (🥹, 踩坑, 真实), but the promise comes first.
 - The title must match the content. No clickbait. A reader who feels tricked won't save or follow.
 - Patterns: `<keyword>｜<number>个<thing>`, `<keyword>真实<thing>｜<year>版`, `<situation>？<number>件事先做好`.
@@ -41,7 +46,7 @@ People see only the cover and title in the feed and must tap to see more, so the
 - Keep a consistent style across posts so followers recognise the account.
 
 ## 5. Body
-- **First line = hook.** Who I am plus why this matters to the reader, with the keyword in it. Show what they'll get ("9个坑都整理好了").
+- **First line = hook.** The reader's problem or the result they get, with the keyword in it ("9个坑都整理好了"). Leave out who the author is unless it makes this topic more credible (a Singapore PR note, say); the profile already introduces them, and the same intro on every note reads like a template.
 - **Make it worth saving.** Saves count for a lot. Checklists, step-by-step guides, cost breakdowns, templates and summary cards get saved. A short "建议先收藏⭐" is fine when the post really is reference material.
 - **Scannable.** Short lines, one idea per line, numbered steps or ✅ items, a blank line between sections.
 - **True and specific.** Real numbers, real steps, real outcomes. No invented facts.
