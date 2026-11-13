@@ -24,6 +24,8 @@ Rules for every script:
 - Write numbers, English product names and commands the way they should be **said** (e.g. "Claude Code", "斜杠 x post" for `/x-post`).
 - For each sentence, add a short **visual idea** (what is on screen besides Michael's face): B-roll, a screenshot, a card with 3–6 words, or "face only".
 - Don't invent facts, numbers, quotes or experiences Michael didn't give. If the topic is too thin, say what's missing instead.
+- For news or market topics, take numbers only from the caller's `RESEARCH.md` and recheck any share or percentage against its raw figures. Hedge allegations ("reported", "alleged"). Stock and crypto scripts include a short "not financial advice" and give general ways to think, never buy or sell calls.
+- No-avatar videos (voice + graphics) have no face: "face only" is not a visual there; give every sentence a card or chart.
 
 ## Output format
 Return only this:

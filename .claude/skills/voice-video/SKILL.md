@@ -34,6 +34,8 @@ Scripts are in this skill's `scripts/` folder (call it `$S`: `.claude/skills/voi
   - numbers as Chinese words (加六五, 十月二十号), because the voice reads what it sees;
   - acronyms letter by letter with spaces (`M O E`, `P D F`), so they aren't read as a word;
   - punctuation sets the breathing: `，` short, `。` / `？` a sentence break. Any `pause` fields are ignored in a one-take voice.
+  - **English** (worked example `videos/2026-11-13-nvda-huang/`): dates as spoken ordinals ("November sixth", "the twelfth"), percentages as digits ("31 percent" is read fine), "U.S." with periods, and acronyms written as normal (CEO, AMD, AI). The take script joins spaced capitals back together, so "C E O" gains nothing. Captions can show the same words. Use `data-say` only where a caption shows a form the voice doesn't say (a caption reading "Nov 6" over "November sixth").
+  - The take's language is detected from `script.json` (Chinese characters → zh, otherwise en). Set `VOICE_LANG` only to override it.
 
 ## 2. Record one take
 ```bash
@@ -60,7 +62,8 @@ python3 -I $S/sync.py avatar-video/videos/<folder>
 Optional extras (use them for Xiaohongshu; they come from studying a top AI-tutorial creator there, 2026-11-12):
 - `--karaoke`: caption characters light up as they are spoken (add `.cap .k { opacity:.35 }` to the CSS);
 - `--push`: every scene zooms slowly 1 → 1.04, so a still card never looks frozen;
-- an element `#progress` gets a bar filling over the video; `#tc` gets a running timecode; `#vbars` (bars as `<i>`) becomes a "LIVE" voice meter that moves only while the voice speaks: our stand-in for the face picture-in-picture other creators use;
+- an element `#progress` gets a bar filling over the video; `#tc` gets a running timecode; `#vbars` (bars as `<i>`) becomes a "LIVE" voice meter that moves only while the voice speaks: our stand-in for the face picture-in-picture other creators use. **Leave the voice-meter box out on X and English videos**: Michael had it removed on 2026-11-13. It's fine for Xiaohongshu if he wants it. If you remove any synced element (#vbars, #tc, #progress, a caption), run `sync.py` again, so its generated lines go too (a stale block gave 573 lint warnings);
+- hand-made tweens (a chart bar growing, a line drawing) go below the `// voice-video:sync:end` line and are timed with the word anchors the block defines: `tl.fromTo("#bar", {...}, {...}, AT["fell"])`. Repeated words are `AT["nvidia.2"]`. Never copy a number from the timing: it goes stale with the next take;
 - worked example with all of these, a HUD frame, flow-diagram scenes, real waveform proof images and a save call to action: `avatar-video/videos/2026-11-12-how-i-make/` (v2).
 - Music and sound: a quiet catalog track (`media-use` audio engine, `bgm.mode: "retrieve"`, free when HyperFrames is signed in) at volume ≈ 0.11 under the voice, plus 5–7 bundled sound effects only at section changes (pop on the hook, whoosh into a new section, glitch on the mistake, sparkle on the fix, ping on the final question). Mix into `assets/mix.wav` with ffmpeg (`aformat=sample_fmts=fltp:sample_rates=44100:channel_layouts=stereo` on every input) and point the `<audio>` at it; keep `vo.wav` for the timing. Any new clip element must use the same `data-duration` as the root.
 
@@ -75,7 +78,8 @@ Read `renders/qa.png` and look at it yourself. What you're checking:
 - the length matches the timing;
 - the peak is below −1 dB;
 - there are no silences over 0.7 s before the last word;
-- the frames show no blank stage, captions that match the words, and the end card visible.
+- the frames show no blank stage, captions that match the words, and the end card visible;
+- frame 0 (the thumbnail on X and Xiaohongshu) shows the hook clearly, and the end of the first scene shows that `--push`'s slow zoom hasn't pushed big hook text into the top label. On 2026-11-13 a 190 px hook did; 150 px fits.
 
 Fix what's wrong before Michael sees it.
 

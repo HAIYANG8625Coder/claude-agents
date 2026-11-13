@@ -14,6 +14,10 @@ Use the text after `/x-post` as the topic. If there is none, ask Michael what he
 
 **Image option.** If the text ends with "with image" / "with picture" / "with pic" (any wording like that), remove it from the topic and set **image mode = on**. If it ends with "no image", image mode = off and don't offer one. Otherwise image mode = ask (offer once in step 4). This applies to exact wording too: a trailing "no image" / "with image" is the option, not part of the post.
 
+**Video option.** If Michael names a video to attach, or `/avatar-video` hands one over, set **media = video** with that MP4's path: no image is offered, and the post goes out with the video (step 5). Find the video's folder (`avatar-video/videos/<folder>/`). Its `script.json` is what the video says, and its `RESEARCH.md`, if there is one, holds the facts. Pass both to the drafter and the reviewer.
+
+**News and market topics.** Every number must come from a source file (RESEARCH.md, or data pulled by code). A price is called a "close" only after that market has closed; otherwise label it with its time ("midday Nov 12"). Stock or crypto topics always say "Not financial advice", spelled out, and never give buy or sell calls.
+
 If Michael gives **exact wording** ("post exactly this: ..."), skip step 2 and send that text straight to the reviewer as the only draft, telling it this is Michael's own wording, so it should flag only real mistakes. His words stay as they are: if the reviewer marks it FIX, show the fix as a suggestion next to his text and let him choose. Only a real mistake (typo, grammar, private info) is worth raising; skip style nitpicks on text he wrote himself.
 
 ## 2. Draft
@@ -23,7 +27,8 @@ Run the `x-drafter` agent with the topic and any facts Michael gave. If image mo
 Run the `x-reviewer` agent, passing it all drafts verbatim. Then:
 - Use the **fixed version** for any draft marked FIX.
 - Drop drafts marked REJECT (mention why in one line).
-- Run the `humanizer` skill over each remaining draft in embedded mode (final text only), so it reads like Michael and not a chatbot. Watch most for its strongest tells: "not X but Y" contrasts, one-line closers, "Here's the thing" openers, forced triads, dashes (none in the final post), stock AI words (delve, crucial, robust, testament) and bold or labelled lists. Keep every fact, number, @handle, link and hashtag exactly; X posts may keep a short emoji marker or line breaks if the draft had them. Skip this for Michael's own exact wording.
+- With media = video, the reviewer also checks that every number in the post matches what the video says (`script.json`) and what it shows. On 2026-11-13 the reviewer rounded −11.6% to "about 12%", while the video said "11 percent". When the two disagree, use the video's number, or drop the number from the post. Pointers like 👇 or "link below" point at nothing when the media is attached, so cut them.
+- **Always** invoke the `humanizer` skill (the Skill tool, embedded mode, final text only) over each remaining draft, so it reads like Michael and not a chatbot. This step was skipped on 2026-11-13. The next step counts the humanizer's output, so a draft that skipped it has nothing to count and can't be shown. Watch most for its strongest tells: "not X but Y" contrasts, one-line closers, "Here's the thing" openers, forced triads, dashes (none in the final post), stock AI words (delve, crucial, robust, testament) and bold or labelled lists. Keep every fact, number, @handle, link and hashtag exactly; X posts may keep a short emoji marker or line breaks if the draft had them. Skip this for Michael's own exact wording.
 - Count each remaining draft exactly with Bash, e.g. `python3 -c 'import sys;print(len(sys.argv[1]))' "<text>"`. Drop any over 280.
 - If nothing is left, run the drafter once more with the reviewer's feedback, review again. If it still fails, tell Michael and stop.
 
@@ -45,7 +50,9 @@ Load the Claude in Chrome tools in one ToolSearch call (tabs_context_mcp, naviga
 1. `tabs_context_mcp` with `createIfEmpty: true`, then navigate to `https://x.com/compose/post`.
 2. Screenshot. If it shows a login page, stop and ask Michael to sign in.
 3. If there's an approved image: `find` the composer's hidden file-input and upload the PNG with `file_upload` (never click the media button; it opens a native file picker).
-   Click the "What's happening?" box and type the approved text **exactly** (use the Enter key for blank lines). Screenshot and check the composer shows exactly that text, plus the image preview if any.
+   If media = video: upload the MP4 the same way (into the hidden file input of the **compose dialog**, the first match; never click the media button). `file_upload` takes at most 10 MB per call. If the MP4 is bigger, first make a smaller copy in the scratchpad with ffmpeg from `avatar-video/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg` (`-c:v libx264 -crf 26 -preset slow -c:a aac -b:a 128k -movflags +faststart`), check it, and upload that.
+   Click the "What's happening?" box and type the approved text **exactly** (use the Enter key for blank lines). Screenshot and check the composer shows exactly that text, plus the image or video preview if any.
+   For a video, wait until the preview shows its first frame and the **Post** button is enabled before you click it (check again after about 10 s for a long video). The ring next to the "+" is the character counter, not an upload spinner.
 4. Click **Post**, wait 3 seconds, screenshot. Success = the "Your post was sent" notice. If you don't see it, say so; don't claim success and don't post again without asking (avoids a duplicate).
 5. Close any "Got it" popup only if it blocks reading the result.
 
@@ -55,6 +62,7 @@ Append to `x-assistant/posts.md`:
 ```
 ## YYYY-MM-DD
 <exact posted text>
+(with video: <path to the MP4>)   ← only when a video was attached; with an image, its path the same way
 ```
 
 Then tell Michael in one or two lines: posted (or not), and the exact text.

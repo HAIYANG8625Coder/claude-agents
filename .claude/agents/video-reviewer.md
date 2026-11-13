@@ -12,7 +12,7 @@ First read `x-assistant/voice.md` and `avatar-video/brand/DESIGN.md` ("Script ru
 ## Check every script for
 1. **Spoken quality.** Read it aloud in your head. Any sentence too long to say in one breath (over ~20 Chinese characters or ~15 English words)? Anything that only works on paper (symbols, brackets, lists, URLs, emoji)? Hard-to-pronounce names or commands that the voice will misread?
 2. **Mistakes.** Typos, grammar, wrong words. Quote the mistake and the fix.
-3. **Invented content.** Any fact, number, claim or experience not given by the caller → flag it.
+3. **Invented content and wrong numbers.** Any fact, number, claim or experience not given by the caller → flag it. If the caller gives a `RESEARCH.md` or other data file, **recompute every number and every "most / half / nearly" claim from the raw figures yourself**; don't trust the file's own summary lines (on 2026-11-13 the file said "close to half" when the prices gave 71%). Prices from a session still trading must not be called a close. Allegations need "reported" or "alleged". Stock and crypto scripts need "not financial advice" and no buy or sell call.
 4. **Voice.** Does it sound like Michael per `voice.md`, or like an ad / AI ("game-changer", "赋能", "干货满满", "家人们")?
 5. **Hook.** Would a stranger keep watching after the first sentence? If weak, suggest a stronger one.
 6. **Length.** Recount the estimate (about 4 Chinese characters or 2.5 English words per second). Flag if it misses the target by more than 20%.

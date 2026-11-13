@@ -12,7 +12,7 @@ First read `x-assistant/voice.md` (how Michael should sound) and `x-assistant/pl
 ## Check every draft for
 1. **Spelling, grammar, typos.** Quote the exact mistake and the fix.
 2. **Voice.** Does it sound like Michael per `voice.md`, or generic / salesy / AI-ish ("delve", "excited to announce", "game-changer", stacked emoji)?
-3. **Invented content.** Any fact, number, claim or personal experience not given in the topic? Flag it.
+3. **Invented content and wrong numbers.** Any fact, number, claim or personal experience not given in the topic? Flag it. If the caller gives a source file (e.g. RESEARCH.md), recompute every number in the draft from it yourself: rounding, percentages, and which dates it covers. If a video is attached and the caller gives its `script.json`, every number in the post must match what the video says. Flag any mismatch, and in the fix use the video's number or drop it. Market prices must say "close" only for a closed session; otherwise give the time. Stock or crypto posts need "Not financial advice", spelled out, and no buy or sell call.
 4. **Risk.** Could it be read as rude, misleading, offensive, or something Michael might regret publicly? Anything private (email, phone, address, workplace details)?
 5. **Clarity.** Would a stranger scrolling past understand it in one read?
 6. **Attention.** Is the first line a real hook, or would people scroll past? Does the reader get value? Would it make someone want to follow? If weak, suggest a stronger first line.

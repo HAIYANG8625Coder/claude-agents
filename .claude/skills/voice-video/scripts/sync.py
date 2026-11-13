@@ -16,6 +16,9 @@ Usage: python3 -I sync.py <video folder> [--dir .voice-heygen-full-0.92] [--kara
   --karaoke  captions light up character by character as spoken (needs CSS: .cap .k { opacity:.35 })
   --push     each scene slowly zooms 1 -> 1.04 while it is on screen
   An element with id="progress" gets a bar that fills over the whole video.
+  The generated block starts with `const AT = {...}`: each spoken word's start time (lower-case letters and digits;
+  repeats as "word.2", "word.3"). Time hand-made tweens below the end marker with AT["fell"] instead of a copied
+  number, so they follow a new take. Elements that are gone (e.g. #vbars) lose their lines on the next run.
 """
 import html as H, json, os, re, sys
 
@@ -110,6 +113,14 @@ if B in h and E in h:
         L.append('tl.to({ t: 0 }, { t: %.3f, duration: %.3f, ease: "none", onUpdate: function () { const s = this.targets()[0].t; '
                  'document.getElementById("tc").textContent = [Math.floor(s / 60), Math.floor(s %% 60), Math.floor((s %% 1) * 30)].map(v => String(v).padStart(2, "0")).join(":"); } }, 0);'
                  % (tm["total"], tm["total"]))
+    # word anchors for hand-made tweens outside the block: AT["fell"], AT["nvidia.2"] (2nd time the word is said)
+    seen, at = {}, {}
+    for w in words:
+        key = "".join(U(w["text"]))
+        if not key: continue
+        seen[key] = seen.get(key, 0) + 1
+        at[key if seen[key] == 1 else "%s.%d" % (key, seen[key])] = round(w["start_time"], 3)
+    L.insert(0, "const AT = %s;" % json.dumps(at, separators=(",", ":")))
     if 'id="progress"' in h:  # a thin bar that fills over the whole video
         L.append('tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: %.3f, ease: "none" }, 0);' % tm["total"])
     ind = re.search(r"\n([ \t]*)" + re.escape(B), h).group(1)

@@ -15,7 +15,7 @@ Run every `npx` command with Node 24 on the PATH: `export PATH="$HOME/.local/nod
 1. **Node + FFmpeg:** `cd avatar-video/template && npx hyperframes doctor` shows ✓ for FFmpeg, FFprobe and Chrome. If `avatar-video/node_modules` is missing, run `npm install` in `avatar-video/`.
 2. **HyperFrames signed in to HeyGen:** `npx hyperframes auth status`. If not signed in, ask Michael to type `! export PATH="$HOME/.local/node/bin:$PATH"; cd avatar-video && npx hyperframes auth login` in the prompt, and wait.
 3. **HeyGen MCP** (used by `heygen-avatar`): the `mcp__heygen__*` tools are visible. If not, ask Michael to run `/mcp`, pick **heygen** and sign in, then restart the session.
-4. **His twin exists:** `AVATAR-MICHAEL.md` at the repo root has an avatar look id and a voice id (his cloned voice). If not, stop and run the "Make the twin" steps below first.
+4. **Pick the mode now:** read `AVATAR-MICHAEL.md` at the repo root. It needs a `voice_id` (his cloned voice). If `avatar_look_id` is empty or "(none yet…)", this run is **no-avatar mode** (voice + graphics, see below). Say so in your first message, plan for no face, and skip the avatar-only checks and steps (punch-in, circle inset, step 7). Run "Make the twin" only when Michael asks for his face.
 5. Telemetry stays off: `npx hyperframes telemetry status` says disabled. Don't re-enable it.
 
 ### Make the twin (only once)
@@ -27,14 +27,20 @@ Run every `npx` command with Node 24 on the PATH: `export PATH="$HOME/.local/nod
 ## 1. Get the request
 - Topic = the text after `/avatar-video`. No topic → ask and stop.
 - Platform: `xhs` → **Chinese**, `x` → **English** (global rule). Michael's explicit language request wins. Default when not said: ask once.
-- Length: `NN s` if given, else 30–45 s. First 3 videos: also make a **10 s test** before the full one (Arthur's tip: test small before paying for the whole thing).
+- Length: `NN s` if given, else 30–45 s. With an avatar, make a **10 s test** before the first full avatar render (test small before paying for the whole thing).
 - Facts: from Michael, files he points at, or a session transcript (same rules as `xhs-post` step 1). No invented numbers or experiences.
+- **News, market or other current-event topics:** research first and write the facts to `videos/<folder>/RESEARCH.md` (timeline, numbers, sources) before any script. Worked example: `videos/2026-11-13-nvda-huang/RESEARCH.md`. Rules learned on that video:
+  - Check the core event in a primary source (company press release, SEC filing, official statement), not only news articles.
+  - Pull prices with code (e.g. Yahoo's chart API) and compute every percentage and share with code. "Nearly half" was really 71%.
+  - Check whether the market is still open before calling a price a "close" (the chart API's `regularMarketTime` vs `currentTradingPeriod`). If it's still trading, label the price with its time ("Nov 12 midday").
+  - Compare against the sector and peers (e.g. SMH, QQQ, rivals) to separate company news from a market-wide move.
+  - Hedge allegations ("reported", "alleged"). Stock and crypto videos say "Not financial advice" and give no buy or sell calls.
 
 ## 2. Script
 Run the `video-scripter` agent with topic, language, target seconds and the facts. If it says the topic is too thin, ask Michael for what's missing and stop.
 
 ## 3. Review
-Run the `video-reviewer` agent with both scripts verbatim. Use the fixed version for FIX, drop REJECT (one-line reason). Count the real length with Bash (Chinese: characters ÷ 4; English: words ÷ 2.5). If nothing survives, re-run the scripter once with the feedback; if it fails again, tell Michael and stop.
+Run the `video-reviewer` agent with both scripts verbatim, plus the path to `RESEARCH.md` if there is one (it recomputes every number from it). Use the fixed version for FIX, drop REJECT (one-line reason). Count the real length with Bash (Chinese: characters ÷ 4; English: words ÷ 2.5). If nothing survives, re-run the scripter once with the feedback; if it fails again, tell Michael and stop.
 
 ## 4. Michael approves the script
 Show the surviving scripts numbered, with seconds, the ⭐ pick and what the reviewer fixed. **Stop and wait** for a clear pick or edits. Apply edits, show the final text once more, wait for yes.
@@ -75,7 +81,7 @@ Follow the `/hyperframes` skill (read `references/types/vertical.md`, `captions.
 Start `npx hyperframes preview` and tell Michael he can watch it (and edit in the HyperFrames desktop app if he likes). **Wait** for approval or changes. Then render: `npx hyperframes render` → MP4 in the video folder. Send the MP4 with SendUserFile.
 
 ## 10. Hand off to publish
-Ask where to post. Write the caption with the platform's skill rules: Chinese title/body/topics for Xiaohongshu (`xhs-post` writing guide), English text under 280 for X (`x-post` drafter + reviewer). The posting skills don't upload video yet: until they do, give Michael the MP4 and the final caption to post himself, or, if he asks, upload through Chrome the same careful way those skills post (file input, check preview, wait for his yes before clicking publish).
+Ask where to post, then run that platform's skill with the MP4 as its video: `x-post` (media = video, English under 280) or `xhs-post` (video note, Chinese). Both now upload video. Each still waits for Michael's yes on the exact text before publishing. Give them the video folder, so they can check the post's numbers against `script.json` and `RESEARCH.md`.
 
 ## 11. Log
 Append to `avatar-video/videos.md`:

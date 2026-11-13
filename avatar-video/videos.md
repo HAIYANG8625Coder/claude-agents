@@ -29,3 +29,26 @@ What to improve next time: the take script used to strip all spaces, so HeyGen r
 
 ### 2026-11-12 — 我怎么做这条视频 v2: made more attractive after studying 数字人小米 on Xiaohongshu
 Their top tutorial (不会剪辑也能出片, 675 likes / 1571 saves / 169 comments) uses a HUD "studio" frame, a LIVE face picture-in-picture, flow diagrams, real proof visuals, keyword-highlighted captions and a save / comment-keyword call to action. Applied (same voice, same script): HUD frame + timecode + progress bar, a LIVE voice meter that moves with the speech (our face stand-in), karaoke captions, slow zoom per scene, a flow diagram (整篇稿子 → 一次录完 → 慢 8%), the real stitched-vs-one-take waveforms on the 坑 / fix scenes, a "先收藏 · 下次照着做" chip, a quiet music bed and 7 sound effects. v1 kept in v1/. Render: renders/2026-11-12-how-i-make_2026-11-12_22-22-57.mp4 — APPROVED by Michael.
+
+### 2026-11-12 — 我怎么做这条视频 v3: humanized script (APPROVED by Michael, replaces v2)
+Ran the humanizer skill over the voice-over: cut the slogan closer "剩下的交给 Claude Code" (now "剩下的步骤，Claude Code 帮我跑完"), merged the fragment row "一句一张卡片，字幕对准每个字" into one sentence, and replaced the repeated "所以只能手动" with a true first-person detail ("我试过走接口克隆，免费版直接拒绝" / "桌面版我一直登不上"). Same facts and 13 scenes; new take, 0.92 pace, re-synced and remixed. Length 46.5 s. Render: renders/2026-11-12-how-i-make_2026-11-12_22-50-38.mp4. v2 kept in v2/.
+
+### 2026-11-12 — 我怎么做这条视频 v4: on-screen links (waiting for Michael's review)
+Same voice and script as v3. Added app.heygen.com/avatar/voices under the step 2 card, "skill: voice-video · 已开源" on the Claude Code card, and github.com/HAIYANG8625Coder/claude-agents on the end card. Length 46.5 s. Render: renders/2026-11-12-how-i-make_2026-11-12_22-58-27.mp4. v3 kept in v3/. Note: Xiaohongshu may limit reach for notes that show outside links; there is a v3 without them.
+
+### 2026-11-12 — 我怎么做这条视频 v5: "just give a topic" (waiting for Michael's review)
+Michael's change: the viewer doesn't record or write anything per video; they give Claude Code a topic, it writes 2 scripts, they pick one, and it voices it in one take and makes the cards and captions. Lines 7, 8, 11, 12 rewritten (humanizer rules), scenes 6, 7, 10, 11 redrawn (题目 → Claude Code; 写 2 版稿子 → 我挑 1 版 → 一次录完; 卡片 + 字幕; 不用录 · 不用剪 · 10 分钟一条). Links kept. Length 47.3 s. Render: renders/2026-11-12-how-i-make_2026-11-12_23-03-41.mp4. v4 kept in v4/.
+
+### 2026-11-12 — 我怎么做这条视频 v6: no recording per video, coherent story (FINAL, approved by Michael; published on Xiaohongshu 2026-11-12)
+Michael's change: drop the stitched-voice mistake; make clear nothing is recorded or edited per video (Claude Code does script, voice-over and visuals); whole video logically coherent; review before changing. video-reviewer verdict FIX: added "what this is" (open-source skill on GitHub), removed the line 2 / line 7 repetition, dropped jargon (接口) and the invented quiet-room advice, "一条我只花十分钟" (his time). Story: hook → only a topic → open-source skill → one-time setup (3 steps, only recording is the 2-min sample) → every video: topic → 2 scripts, pick 1 → cloned-voice voice-over + cards + captions → 不用录 不用剪 10 分钟 → question. 12 scenes, 44.3 s. Render: renders/2026-11-12-how-i-make_2026-11-12_23-13-11.mp4. v5 kept in v5/.
+
+### 2026-11-12 how-i-make-en v1 (English version for X; APPROVED, posted on X 2026-11-12)
+- English translation of how-i-make v6: same 12 scenes, music and sound cues; new one-take English voice (HeyGen, language en), pace 0.92, karaoke + push.
+- heygen_take.sh now takes VOICE_LANG (default zh); acronym joining only touches capital letters, so "there's a" is no longer merged.
+- Length 46.6 s. Render: `avatar-video/videos/2026-11-12-how-i-make-en/renders/2026-11-12-how-i-make-en_2026-11-12_23-45-54.mp4`
+
+## 2026-11-13 — Jensen Huang is out: what NVDA's price really says
+Platform: x · Length: 43.3 s · Folder: videos/2026-11-13-nvda-huang (no-avatar mode: cloned voice, one take, pace 0.92, karaoke + push, music bed)
+Script: Nvidia is down 31 percent from its high. Most of that happened before the scandal. On November sixth, the New York Times reported on a U.S. intelligence memo. It linked CEO Jensen Huang to an alleged Chinese intelligence asset. Six days later, Huang resigned. That's a governance and national-security risk, not gossip. From November sixth to the twelfth, Nvidia fell 11 percent. AMD rose 31 percent. Money moved inside AI chips. It didn't leave AI. General thinking only. Separate three shocks: the sector crash, the scandal, and the fundamentals. Then watch what's next: earnings on November seventeenth, and a permanent CEO. Not financial advice. How do you handle headline risk?
+Render: renders/2026-11-13-nvda-huang_2026-11-13_00-30-45.mp4 (v2: removed the "Michael's cloned voice" box at Michael's request; v1 kept in v1/). APPROVED, posted on X 2026-11-13 with video.
+What to improve next time: check the market is closed before calling a price a "close" (Nov 12 was still trading, so the figures are labeled midday); the reviewer caught "nearly half" vs the real ~71% before the scandal.
