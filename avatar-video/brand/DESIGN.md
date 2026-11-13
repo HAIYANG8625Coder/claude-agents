@@ -62,4 +62,6 @@ The old dark HUD look (`videos/2026-11-11-sg-p1/`, `2026-11-12-how-i-make/`) is 
 - Something changes every 1–2 s (a bar grows, a stamp lands, a line draws, a cut), timed on the spoken word with `AT["word"]`.
 - At least 2 real or real-looking visuals per video (Michael's screenshots or recordings, real price data drawn as a chart, a paraphrased news clipping). Never fake a real outlet's page or logo.
 - Captions carry the words; the stage carries the data. Don't put the caption sentence on the card too.
+- Chinese fonts need an `@font-face { font-family:"PingFang SC"; src: local("PingFang SC"); }` (same for Songti SC), or `check` fails with font_family_without_font_face (2026-11-13).
+- Overlapping headline-card collages (preset A, 小Lin style): keep ~135 px between card tops and rotations under 2°, or the cards cover each other's headlines. Chip rows need `white-space:nowrap`.
 - On X, aim for 30–35 s.

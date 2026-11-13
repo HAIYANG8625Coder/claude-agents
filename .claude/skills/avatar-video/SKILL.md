@@ -34,7 +34,9 @@ Run every `npx` command with Node 24 on the PATH: `export PATH="$HOME/.local/nod
   - Pull prices with code (e.g. Yahoo's chart API) and compute every percentage and share with code. "Nearly half" was really 71%.
   - Check whether the market is still open before calling a price a "close" (the chart API's `regularMarketTime` vs `currentTradingPeriod`). If it's still trading, label the price with its time ("Nov 12 midday").
   - Compare against the sector and peers (e.g. SMH, QQQ, rivals) to separate company news from a market-wide move.
-  - Hedge allegations ("reported", "alleged"). Stock and crypto videos say "Not financial advice" and give no buy or sell calls.
+  - Hedge allegations ("reported", "alleged").
+  - Write the script in the news-analysis style in `avatar-video/brand/NEWS-PLAYBOOK.md` (learned from 小Lin说, 2026-11-13): event + biggest number → the real reason → one analogy → who pays → takeaway or question. News videos may run 45–60 s to fit the analysis.
+  - For a story still unfolding (an outage, a deal, a trial), re-check its status before the storyboard and again right before publishing, and fix any "still recovering" / "not yet" line if it changed. Stock and crypto videos say "Not financial advice" and give no buy or sell calls.
 
 ## 2. Script
 Run the `video-scripter` agent with topic, language, target seconds and the facts. If it says the topic is too thin, ask Michael for what's missing and stop.

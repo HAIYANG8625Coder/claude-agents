@@ -64,3 +64,10 @@ Follow-up to 我怎么做这条视频. Michael picked Script 2 only (the tutoria
 Demo inside: the English NVDA market-news render (muted, scene 5) and the dark vs market versions side by side (scene 7, both from media 21.0 s so the bars grow together); stills of the two X videos in the hook; the real SKILL.md line in a code card.
 Render: renders/2026-11-13-video-styles_2026-11-13_09-30-45.mp4. Note: x-assistant/xhs-video-styles-post.md.
 What to improve next time: a full-frame scene that shows at frame 0 needs `opacity:0` in CSS (sync's set at 0 shows it) or lint errors with gsap_fullscreen_overlay_starts_visible.
+
+## 2026-11-13 — 微软宕机20多小时，到底怎么回事儿？ (published on Xiaohongshu 2026-11-13)
+Platform: xhs · Length: 59.8 s · Folder: videos/2026-11-13-msft-outage · Style: A · news desk ("科技快讯" masthead, status ticker) with 小Lin说-style evidence cards (paraphrased headline collage, highlighter marks, 说法更新 before/after cards, 未证实 stamp)
+Michael first approved a 38 s practical script (Script 2, kept in v1-script2/), then asked to learn from 小Lin说 on Xiaohongshu; her patterns are now in brand/NEWS-PLAYBOOK.md and video-scripter reads it for news topics. He picked the 60 s Version B. One HeyGen take, zh, pace 0.92.
+Script: 微软宕机二十多个小时，到底怎么回事儿？美东周四下午开始，Outlook、Teams、Copilot 都受了影响。但原因，微软的说法更新了。微软一开始说负载太高。后来补充，不是流量变多，而是一批服务器突然不可用。说白了，就像超市收银台突然关了几个，人全挤到剩下的。只是个比方。至于为什么，有报道称可能和配置更改有关，微软没证实。有公司推迟了财报，英国 NHS 部分服务也受影响。现在正在恢复，部分用户可能还有问题。我觉得，邮件、聊天、文件、AI 绑在一家，出事就全停。所以宕机期间发的邮件，先别急着重发。微软说重试延长到四十八小时，邮件可能还会到。先问收件人。再备个渠道，电话、微信群，或者另一个邮箱。你们公司有备用方案吗？
+Render: renders/2026-11-13-msft-outage_2026-11-13_23-42-00.mp4 (xhs upload copy: renders/msft-outage-xhs.mp4).
+What to improve next time: don't force 小Lin's "原因变了" reversal when a source only clarified (the reviewer caught "改口"); declare Chinese fonts with @font-face local() or check fails; give overlapping collage cards ~135 px vertical spacing; chips need white-space:nowrap.

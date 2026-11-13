@@ -67,3 +67,10 @@ Images: x-assistant/images/xhs-tgfix-{cover,overview,step1,step2,step3,step4}.pn
 - Edit 2026-11-13 (reader-benefit rewrite after research: fix first, cause last): post file x-assistant/xhs-tg-stable-post.md, images x-assistant/images/xhs-tgok-{cover,overview,step1,step2,step3,step4}.png, topics #ClaudeCode #AI编程 #Telegram #AIAgent #效率工具, Style: notebook. Before the edit: 44 views, 1 like. Creator center showed 更新成功.
 Fix ④ (turn off macOS auto-install) is presented as optional; Michael keeps auto-updates on.
 Style: notebook (was terminal before the edit)
+
+## 2026-11-13 (Xiaohongshu) — 微软宕机20多小时，到底怎么回事儿？
+Video note, first news-analysis video in the 小Lin说 style (avatar-video/brand/NEWS-PLAYBOOK.md). Post file: x-assistant/xhs-msft-outage-post.md
+Topics: #微软宕机 #微软 #Outlook #Office365 #科技新闻
+Video: avatar-video/videos/2026-11-13-msft-outage/renders/msft-outage-xhs.mp4 (7.5 MB copy of the 23-42-00 render, 59.8 s); cover = first frame (headline collage + "20+ 小时 到底怎么回事儿？").
+Status re-checked right before publishing: still recovering, no all-clear, so "正在恢复" stayed. Editor counted 519/1000. Creator center showed 发布成功.
+Style: video

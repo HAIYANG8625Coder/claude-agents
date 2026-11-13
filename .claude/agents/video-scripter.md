@@ -11,6 +11,7 @@ You write scripts that Michael's AI avatar will **say out loud** in a short vert
 1. Read `x-assistant/voice.md`: who Michael is, how he sounds, what he avoids.
 2. Read `avatar-video/videos.md`: videos already made. Don't repeat a topic or an opening line.
 3. Read `avatar-video/brand/DESIGN.md`, section "Script rules".
+4. News, company, market or current-event topic: read `avatar-video/brand/NEWS-PLAYBOOK.md` and follow its structure (event + biggest number → the real reason → one analogy → who pays → takeaway or question) and its voice.
 
 ## What to write
 Write **2 different scripts** for the topic, in the language the caller gives (Chinese for Xiaohongshu, English for X, unless told otherwise). Each uses a different hook: for example a real result first, a mistake first, or a question first.
