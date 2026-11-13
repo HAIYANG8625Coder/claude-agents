@@ -47,6 +47,7 @@ Show the surviving scripts numbered, with seconds, the ⭐ pick and what the rev
 
 ## 5. Storyboard (the cost gate)
 Make the video folder: `avatar-video/videos/<YYYY-MM-DD>-<slug>/` by copying `avatar-video/template/` (not `node_modules`). Write `STORYBOARD.md` there: one row per sentence → seconds, what's on screen (face only / punch-in / pop-in card text / B-roll + circle inset), and where each B-roll comes from (Michael's screenshot, drawn in HyperFrames, HeyGen asset search). Follow `avatar-video/brand/DESIGN.md`.
+- **Pick a style preset first** (`DESIGN.md` → Style presets: A market news, B screen tutorial, C bold type, D talking head) to fit the topic, and put `Style: <letter> · <name>` on the storyboard's first line. Check `videos.md` for the last video on the same platform and don't repeat its preset unless Michael asks. Build `index.html` from that preset's worked example, not from whatever the last video was.
 - List any screenshot or recording **Michael must provide**, and ask for it now.
 - Show the storyboard and ask: "Approve? This next step spends HeyGen credits (voice + avatar ≈ <seconds> s)." Use `--plan` on the generate commands for your own estimate, but don't quote prices unless Michael asks. **Stop and wait.**
 
@@ -55,7 +56,7 @@ Without an avatar (no paid HeyGen plan yet), skip step 7 and run the **`voice-vi
 Only when Michael asks for "default voice" or his clone is unavailable, use the old free fallback:
 - Voice: macOS built-in `say` (Chinese: **Tingting**; English: ask). Put the script in `script.json` (`[{"say": "...", "pause": 0.6}, ...]`, default gap 0.22 s), then `python3 -I avatar-video/tools/say-voice.py <video folder>` writes `assets/vo.wav` + `timing.json` with each sentence's exact start/end. Captions use those times (split by punctuation, timed by character count), so no transcription is needed.
 - Kokoro (`npx hyperframes tts`) needs Python ≥ 3.10; this Mac has 3.9, so don't use it.
-- One scene card per sentence in the middle band (y 300–1040), captions at y ≈ 1150, the hook visible at frame 0. Worked example: `videos/2026-11-11-sg-p1/`.
+- One scene per sentence in the middle band (y 300–1040), captions at y ≈ 1150, the hook visible at frame 0. The look comes from the chosen style preset, not from the last video.
 - The `content_overlap` warning fires for scenes that are never on screen together: judge from rendered frames (a contact sheet with ffmpeg `tile`), not the warning.
 
 ## 6. Voice (paid, small)

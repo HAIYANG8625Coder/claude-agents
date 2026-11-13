@@ -29,7 +29,8 @@ Scripts are in this skill's `scripts/` folder (call it `$S`: `.claude/skills/voi
 
 ## 1. The video folder
 - **Re-voicing an existing video:** first copy the current `timing.json`, `index.html` and `assets/vo.wav` into a backup subfolder named after the version (e.g. `heygen-v4/`), so Michael can go back.
-- **New video:** the script must already be approved (the `/avatar-video` steps 1–4 handle topic, script, review and approval). Make `avatar-video/videos/<YYYY-MM-DD>-<slug>/` and build `index.html` from the worked example's structure (keep its styles and layout), then follow the conventions in step 4.
+- **New video:** the script must already be approved (the `/avatar-video` steps 1–4 handle topic, script, review and approval). Make `avatar-video/videos/<YYYY-MM-DD>-<slug>/` and build `index.html` from the worked example of the **style preset** in the storyboard (`avatar-video/brand/DESIGN.md` → Style presets). Keep the sync conventions in step 4, but take the look from the preset, not from the last video: copying one example's styles made Michael's first two X videos look the same (2026-11-13).
+- **Re-styling an approved video** (same voice, new look): make a new folder `<date>-<slug>-<style>`, copy `script.json`, `timing.json`, `assets/vo.wav` (and `mix.wav` if the scene times are the same), plus the `.voice-heygen-full*` folders. Write the new `index.html` with plain captions, then run `sync.py`. No new HeyGen take is needed. Worked example: `videos/2026-11-13-nvda-huang-market/`.
 - `script.json` is the list of sentences: `[{"say": "…"}, …]`. Write it for the ear:
   - numbers as Chinese words (加六五, 十月二十号), because the voice reads what it sees;
   - acronyms letter by letter with spaces (`M O E`, `P D F`), so they aren't read as a word;
@@ -62,6 +63,7 @@ python3 -I $S/sync.py avatar-video/videos/<folder>
 Optional extras (use them for Xiaohongshu; they come from studying a top AI-tutorial creator there, 2026-11-12):
 - `--karaoke`: caption characters light up as they are spoken (add `.cap .k { opacity:.35 }` to the CSS);
 - `--push`: every scene zooms slowly 1 → 1.04, so a still card never looks frozen;
+- `--cut`: hard cuts between scenes and snappy pops (style presets A market news and C bold type); without it scenes fade over 0.2 s;
 - an element `#progress` gets a bar filling over the video; `#tc` gets a running timecode; `#vbars` (bars as `<i>`) becomes a "LIVE" voice meter that moves only while the voice speaks: our stand-in for the face picture-in-picture other creators use. **Leave the voice-meter box out on X and English videos**: Michael had it removed on 2026-11-13. It's fine for Xiaohongshu if he wants it. If you remove any synced element (#vbars, #tc, #progress, a caption), run `sync.py` again, so its generated lines go too (a stale block gave 573 lint warnings);
 - hand-made tweens (a chart bar growing, a line drawing) go below the `// voice-video:sync:end` line and are timed with the word anchors the block defines: `tl.fromTo("#bar", {...}, {...}, AT["fell"])`. Repeated words are `AT["nvidia.2"]`. Never copy a number from the timing: it goes stale with the next take;
 - worked example with all of these, a HUD frame, flow-diagram scenes, real waveform proof images and a save call to action: `avatar-video/videos/2026-11-12-how-i-make/` (v2).

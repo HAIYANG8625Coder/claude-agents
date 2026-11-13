@@ -2,6 +2,8 @@
 
 The video version of `.claude/skills/x-image/templates/brand.css`, so videos, X images and Xiaohongshu cards look like one account. Change colors there first, then copy them here.
 
+**What stays the same in every video (the signature):** Michael's cloned voice, the three dots (indigo, teal, amber) + "Michael · learning AI agents in public" on the end card, Inter / JetBrains Mono type, and a question at the end. **Everything else comes from a style preset** (below), picked to fit the topic. Don't copy the last video's look: on 2026-11-13 Michael noticed his first two X videos looked the same (both copied the dark HUD), and the fix was these presets.
+
 ## Format
 - **1080×1920, 30 fps, vertical.** Works on Xiaohongshu and X. (Landscape only if Michael asks.)
 - Length: 30–45 s by default, never over 60 s for the first videos.
@@ -42,3 +44,22 @@ The video version of `.claude/skills/x-image/templates/brand.css`, so videos, X 
 - Speed budget: ~4 Chinese characters/s, ~2.5 English words/s.
 - Hook in the first 3 s; takeaway or question at the end.
 - No invented facts. Nothing private.
+
+## Style presets (pick one per video, in the storyboard)
+Pick the preset that fits the topic and write it at the top of `STORYBOARD.md` (`Style: A · market news`). Don't use the same preset twice in a row on one platform unless Michael asks. The colors and layout below replace the dark tokens above. Only the signature stays.
+
+| | Preset | Use for | Look | Motion | Worked example |
+|---|---|---|---|---|---|
+| **A** | **Market news** | stocks, earnings, economy, current events | Light paper `#f3efe6` with fine grain, ink `#111`, down `#d62828`, up `#0a8a4a`, highlighter `#ffd23f`. Serif masthead strip ("Market Notes · date · ticker chip"), a black ticker tape below the caption band, full-width charts and bars, a news-clipping card (paraphrased, labeled as such, never a real outlet's logo or headline) with a rubber stamp ("ALLEGED"), calendar tiles for dates | Hard cuts (`sync.py --cut`), snappy pops, bars and lines that grow on the spoken word, a stamp slam, a ticker scrolling the whole video | `videos/2026-11-13-nvda-huang-market/` |
+| **B** | **Screen tutorial** | how-to, tools, Claude Code / HeyGen walkthroughs | A real screen recording or screenshots Michael provides, in a rounded window on `--bg`. Zoom-ins on the click, a cursor highlight, the step number as a big corner badge | Zoom/pan on the recording (camera moves), a cut on each step | `videos/2026-11-12-how-i-make/` (v2, HUD look; replace drawn cards with real recordings next time) |
+| **C** | **Bold type** | opinions, hot takes, lists, "3 mistakes" | One huge word or number per beat filling ~70% of the width. The full-screen background color changes every scene (indigo → teal → amber → ink) with text in ink or paper | Hard cuts on every beat, scale punches, a word that slams in on its spoken word, no cards | (none yet) |
+| **D** | **Talking head** | personal stories, announcements, anything where trust matters | Michael's HeyGen avatar full frame (the dark tokens above), B-roll with the circle inset | Punch-in, pop-in card, circle inset (the three effects in "The edit" above) | (needs the paid avatar) |
+
+The old dark HUD look (`videos/2026-11-11-sg-p1/`, `2026-11-12-how-i-make/`) is fine for Xiaohongshu tutorials, but on X it reads as dark-on-dark and every video looks alike.
+
+**Rules for every preset** (from the 2026-11-13 review):
+- Fill the frame: the main element (number, chart, word) takes 60–70% of the width. No small card floating in an empty stage.
+- Something changes every 1–2 s (a bar grows, a stamp lands, a line draws, a cut), timed on the spoken word with `AT["word"]`.
+- At least 2 real or real-looking visuals per video (Michael's screenshots or recordings, real price data drawn as a chart, a paraphrased news clipping). Never fake a real outlet's page or logo.
+- Captions carry the words; the stage carries the data. Don't put the caption sentence on the card too.
+- On X, aim for 30–35 s.

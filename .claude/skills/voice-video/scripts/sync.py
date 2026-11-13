@@ -12,7 +12,8 @@ Two modes:
     timeline position is mapped piecewise-linearly from timing.prev.json (written by build_vo.py).
 Every data-duration equal to the old root duration becomes the new total.
 
-Usage: python3 -I sync.py <video folder> [--dir .voice-heygen-full-0.92] [--karaoke] [--push]
+Usage: python3 -I sync.py <video folder> [--dir .voice-heygen-full-0.92] [--karaoke] [--push] [--cut]
+  --cut      hard cuts between scenes and snappy pops (market / bold styles); default is a soft 0.2 s fade
   --karaoke  captions light up character by character as spoken (needs CSS: .cap .k { opacity:.35 })
   --push     each scene slowly zooms 1 -> 1.04 while it is on screen
   An element with id="progress" gets a bar that fills over the whole video.
@@ -70,12 +71,17 @@ old_root = re.search(r'id="root"[^>]*data-duration="([\d.]+)"', h).group(1)
 B, E = "// voice-video:sync:begin", "// voice-video:sync:end"
 if B in h and E in h:
     L = []
+    cut = "--cut" in sys.argv  # hard cuts + snappy pops (the "market" / "bold" styles) instead of soft fades
     for i in [s for s in scenes if s < len(starts)]:
         L.append('tl.set("#sc%d", { visibility: "visible", opacity: 1 }, %.3f);' % (i, show(i)))
         if has_pop(i):
-            L.append('tl.fromTo("#sc%d .pop", { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power2.out", stagger: 0.28 }, %.3f);' % (i, show(i) + 0.04))
+            if cut:
+                L.append('tl.fromTo("#sc%d .pop", { opacity: 0, y: 70, scale: 1.12 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.6)", stagger: 0.12 }, %.3f);' % (i, show(i)))
+            else:
+                L.append('tl.fromTo("#sc%d .pop", { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power2.out", stagger: 0.28 }, %.3f);' % (i, show(i) + 0.04))
         if i + 1 < len(starts):
-            L.append('tl.to("#sc%d", { opacity: 0, duration: 0.2, ease: "power2.in" }, %.3f);' % (i, starts[i + 1] - 0.2))
+            if not cut:
+                L.append('tl.to("#sc%d", { opacity: 0, duration: 0.2, ease: "power2.in" }, %.3f);' % (i, starts[i + 1] - 0.2))
             L.append('tl.set("#sc%d", { visibility: "hidden" }, %.3f);' % (i, starts[i + 1]))
         if "--push" in sys.argv:  # slow zoom while a scene is up: keeps a still card from feeling frozen
             end = starts[i + 1] if i + 1 < len(starts) else tm["total"]
