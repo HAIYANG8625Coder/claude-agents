@@ -24,6 +24,9 @@ CLAUDE=$(command -v claude || echo "$HOME/.local/bin/claude")
 timeout 580 "$CLAUDE" -p "Do this now without asking questions. Call the heygen MCP tool create_speech ONCE with: voice_id $VOICE, model ${MODEL:-heygen-voice-1-turbo-free}, language $VLANG, withTimestamps true, text:
 $TXT
 Then 1) curl the returned audio URL to $D/full.raw. 2) Use the Write tool to save the response's original_words array, unchanged, as JSON to $D/words.json. Do not create videos, upgrade or buy anything. If the call fails, retry once, then report the exact error. Final reply: duration and whether words were saved." \
-  --allowedTools "mcp__heygen__*" "Bash(curl:*)" "Write" 2>&1 | tail -6
+  --allowedTools "mcp__heygen__*" "Bash(curl:*)" "Write" \
+  --settings '{"enabledPlugins":{"telegram@claude-plugins-official":false}}' 2>&1 | tail -6
+# --settings above: a nested session that loads the Telegram plugin takes the bot over and kills the
+# parent session's poller (only one getUpdates consumer per token), so Michael stops getting messages.
 [ -s "$D/full.raw" ] && [ -s "$D/words.json" ] || { echo "TAKE FAILED: missing $D/full.raw or words.json (if the error mentions auth, run: claude, then /mcp, sign in to heygen)"; exit 1; }
 echo "take ok: $D"

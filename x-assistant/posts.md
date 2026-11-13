@@ -53,3 +53,15 @@ About 71% of NVDA's fall from its Oct 6 high came before the Huang scandal, incl
 
 43 seconds on what the price really says. Not financial advice.
 (with video: avatar-video/videos/2026-11-13-nvda-huang/renders/2026-11-13-nvda-huang_2026-11-13_00-30-45.mp4)
+
+## 2026-11-13 (Xiaohongshu) — Claude Code做视频｜4种风格
+Video note. Post file: x-assistant/xhs-video-styles-post.md
+Topics: #ClaudeCode #AI视频 #视频剪辑 #HeyGen #AI工具
+Video: avatar-video/videos/2026-11-13-video-styles/renders/2026-11-13-video-styles_xhs.mp4 (3.2 MB copy of the 09-30-45 render, 48 s); cover = first frame.
+Published 21:13 after video-style-presets was merged into main (the note says the skill is on GitHub).
+
+## 2026-11-13 (Xiaohongshu) — Claude Code遥控断联｜2个根因
+Image note, follow-up to "Claude Code手机遥控｜9个坑". Post file: x-assistant/xhs-tg-disconnect-post.md
+Topics: #ClaudeCode #AI编程 #Telegram #AIAgent
+Images: x-assistant/images/xhs-tgfix-{cover,overview,step1,step2,step3,step4}.png
+Fix ④ (turn off macOS auto-install) is presented as optional; Michael keeps auto-updates on.
