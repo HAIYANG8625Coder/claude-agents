@@ -1,0 +1,11 @@
+{
+  "_about": "Interest areas. The ledger flags every lead whose title or summary matches, and the editor must decide on each flagged lead. They widen what the editor looks at; they never pick stories on their own. Values are Python regexes. Edit freely. Main focus: immigration, jobs, finance; a little entertainment.",
+  "areas": {
+    "immigration": "(?i)\\b(ica|immigration|employment pass|work pass(es)?|s pass|e-?pass|ep holders?|compass|one pass|dependant'?s? pass|ltvp|permanent residen\\w+|\\bpr\\b|citizenship|new citizens?|visa|foreigners?|foreign talent|expats?)\\b",
+    "jobs": "(?i)\\b(mom|jobs?|hiring|layoffs?|retrench\\w+|unemploy\\w+|salar(y|ies)|wages?|workers?|workforce|employers?|careers?|skillsfuture|fair consideration|tripartite|labour market|manpower)\\b",
+    "finance-markets": "(?i)\\b(sgx|sti|stocks?|shares|reits?|dividends?|ipo|earnings|bank|dbs|ocbc|uob|mas|interest rates?|sora|bonds?|t-bills?|ssb|inflation|gdp|economy|recession|tariffs?)\\b",
+    "personal-money": "(?i)\\b(cpf|medisave|tax|iras|gst|cost of living|prices?|insurance|savings|retirement|payouts?|vouchers?|budget)\\b",
+    "property": "(?i)\\b(hdb|bto|resale|rental|rents?|property|condo|ura|cooling measures?|absd|mortgage|home loan)\\b",
+    "entertainment": "(?i)\\b(concert|celebrit(y|ies)|actor|actress|singer|drama|series|movie|film|mediacorp|star awards|festival|show|getai|influencer|tiktoker|youtuber|netflix|k-?pop|tour)\\b"
+  }
+}

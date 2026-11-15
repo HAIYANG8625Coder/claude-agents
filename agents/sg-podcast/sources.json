@@ -1,0 +1,293 @@
+{
+ "_about": "Singapore daily sources: government newsrooms (gov-*), local media incl. finance (media-*), entertainment (ent-*), community (community-*) and big local creators' YouTube channels (yt-*). Public pages and feeds only; TODAY, HDB and ELD answer 403 to scripts and are left out. kind: feed (RSS/Atom, incl. YouTube channel feeds), html_listing (newsroom page; dated by text or by diff with the last run), hn.",
+ "sources": [
+  {
+   "id": "gov-pmo",
+   "name": "Prime Minister's Office",
+   "kind": "html_listing",
+   "url": "https://www.pmo.gov.sg/Newsroom"
+  },
+  {
+   "id": "gov-govsg",
+   "name": "gov.sg explainers",
+   "kind": "html_listing",
+   "url": "https://www.gov.sg/explainers"
+  },
+  {
+   "id": "gov-mom",
+   "name": "Ministry of Manpower",
+   "kind": "html_listing",
+   "url": "https://www.mom.gov.sg/newsroom/press-releases"
+  },
+  {
+   "id": "gov-mas",
+   "name": "Monetary Authority of Singapore",
+   "kind": "html_listing",
+   "url": "https://www.mas.gov.sg/news"
+  },
+  {
+   "id": "gov-moe",
+   "name": "Ministry of Education",
+   "kind": "html_listing",
+   "url": "https://www.moe.gov.sg/news"
+  },
+  {
+   "id": "gov-moh",
+   "name": "Ministry of Health",
+   "kind": "html_listing",
+   "url": "https://www.moh.gov.sg/newsroom"
+  },
+  {
+   "id": "gov-cpf",
+   "name": "CPF Board",
+   "kind": "html_listing",
+   "url": "https://www.cpf.gov.sg/member/infohub/news"
+  },
+  {
+   "id": "gov-lta",
+   "name": "Land Transport Authority",
+   "kind": "html_listing",
+   "url": "https://www.lta.gov.sg/content/ltagov/en/newsroom.html"
+  },
+  {
+   "id": "gov-iras",
+   "name": "IRAS",
+   "kind": "html_listing",
+   "url": "https://www.iras.gov.sg/news-events/newsroom"
+  },
+  {
+   "id": "gov-mti",
+   "name": "Ministry of Trade and Industry",
+   "kind": "html_listing",
+   "url": "https://www.mti.gov.sg/Newsroom/Press-Releases"
+  },
+  {
+   "id": "gov-mof",
+   "name": "Ministry of Finance",
+   "kind": "html_listing",
+   "url": "https://www.mof.gov.sg/news-resources/newsroom"
+  },
+  {
+   "id": "gov-ica",
+   "name": "ICA",
+   "kind": "html_listing",
+   "url": "https://www.ica.gov.sg/news-and-publications/newsroom"
+  },
+  {
+   "id": "gov-ura",
+   "name": "URA",
+   "kind": "html_listing",
+   "url": "https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases"
+  },
+  {
+   "id": "gov-mnd",
+   "name": "Ministry of National Development",
+   "kind": "html_listing",
+   "url": "https://www.mnd.gov.sg/newsroom/press-releases"
+  },
+  {
+   "id": "gov-msf",
+   "name": "Ministry of Social and Family Development",
+   "kind": "html_listing",
+   "url": "https://www.msf.gov.sg/media-room"
+  },
+  {
+   "id": "yt-govsg",
+   "name": "gov.sg (YouTube)",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCgKjHnMbrOK8xLzAwHO0aSg"
+  },
+  {
+   "id": "yt-pmo",
+   "name": "Prime Minister's Office (YouTube)",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCCW8a4CgTbBWzid3IJYomFQ"
+  },
+  {
+   "id": "media-cna-sg",
+   "name": "CNA Singapore",
+   "kind": "feed",
+   "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=10416"
+  },
+  {
+   "id": "media-st-sg",
+   "name": "The Straits Times · Singapore",
+   "kind": "feed",
+   "url": "https://www.straitstimes.com/news/singapore/rss.xml"
+  },
+  {
+   "id": "media-bt-sg",
+   "name": "The Business Times · Singapore",
+   "kind": "feed",
+   "url": "https://www.businesstimes.com.sg/rss/singapore"
+  },
+  {
+   "id": "media-mothership",
+   "name": "Mothership",
+   "kind": "feed",
+   "url": "https://mothership.sg/feed/"
+  },
+  {
+   "id": "media-8world",
+   "name": "8world (Chinese)",
+   "kind": "feed",
+   "url": "https://www.8world.com/api/v1/rss-outbound-feed?_format=xml"
+  },
+  {
+   "id": "media-independent",
+   "name": "The Independent Singapore",
+   "kind": "feed",
+   "url": "https://theindependent.sg/feed/"
+  },
+  {
+   "id": "media-rice",
+   "name": "RICE Media",
+   "kind": "feed",
+   "url": "https://www.ricemedia.co/feed/"
+  },
+  {
+   "id": "media-smartlocal",
+   "name": "TheSmartLocal",
+   "kind": "feed",
+   "url": "https://thesmartlocal.com/feed/"
+  },
+  {
+   "id": "media-sethlui",
+   "name": "Seth Lui",
+   "kind": "feed",
+   "url": "https://sethlui.com/feed/"
+  },
+  {
+   "id": "media-seedly",
+   "name": "Seedly blog",
+   "kind": "feed",
+   "url": "https://blog.seedly.sg/feed/"
+  },
+  {
+   "id": "community-reddit-sg",
+   "name": "r/singapore",
+   "kind": "feed",
+   "url": "https://www.reddit.com/r/singapore/.rss"
+  },
+  {
+   "id": "yt-cna-insider",
+   "name": "CNA Insider (YouTube)",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_Lnb8ZHqqgLbp-7hltuT9w"
+  },
+  {
+   "id": "yt-straitstimes",
+   "name": "The Straits Times (YouTube)",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC1VjgeQIOpqFLMOr-pUvM2g"
+  },
+  {
+   "id": "yt-mothership",
+   "name": "Mothership (YouTube)",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCNWh9GuY0APdpm6jwbX5JsA"
+  },
+  {
+   "id": "yt-jianhao",
+   "name": "JianHao Tan",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCvzyRGlWQBHhoB2azvXpm5A"
+  },
+  {
+   "id": "yt-sgag",
+   "name": "SGAG",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCJi1_ucXdtQFIhi9Fpxl1bA"
+  },
+  {
+   "id": "yt-kelvin",
+   "name": "Kelvin Learns Investing",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCaJh-OfqbuiVyewBTddcr3g"
+  },
+  {
+   "id": "yt-woke-salaryman",
+   "name": "The Woke Salaryman",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCO6g_6YC8oAJYtM9yyotH-g"
+  },
+  {
+   "id": "yt-zermatt",
+   "name": "Zermatt Neo",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCZlUAff0s1IbMJlIDrw3TKQ"
+  },
+  {
+   "id": "yt-smartlocal",
+   "name": "TheSmartLocal (YouTube)",
+   "kind": "feed",
+   "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC8mO3S_oYIgSA6yduUT-OVg"
+  },
+  {
+   "id": "hn-singapore",
+   "name": "HN singapore",
+   "kind": "hn",
+   "query": "singapore"
+  },
+  {
+   "id": "media-st-business",
+   "name": "The Straits Times · Business",
+   "kind": "feed",
+   "url": "https://www.straitstimes.com/news/business/rss.xml"
+  },
+  {
+   "id": "media-cna-business",
+   "name": "CNA Business",
+   "kind": "feed",
+   "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6936"
+  },
+  {
+   "id": "media-bt-markets",
+   "name": "The Business Times · Companies & Markets",
+   "kind": "feed",
+   "url": "https://www.businesstimes.com.sg/rss/companies-markets"
+  },
+  {
+   "id": "media-bt-property",
+   "name": "The Business Times · Property",
+   "kind": "feed",
+   "url": "https://www.businesstimes.com.sg/rss/property"
+  },
+  {
+   "id": "media-bt-wealth",
+   "name": "The Business Times · Wealth",
+   "kind": "feed",
+   "url": "https://www.businesstimes.com.sg/rss/wealth"
+  },
+  {
+   "id": "media-edge-sg",
+   "name": "The Edge Singapore",
+   "kind": "feed",
+   "url": "https://www.theedgesingapore.com/rss.xml"
+  },
+  {
+   "id": "media-dollarsandsense",
+   "name": "Dollars and Sense",
+   "kind": "feed",
+   "url": "https://dollarsandsense.sg/feed/"
+  },
+  {
+   "id": "ent-8days",
+   "name": "8 Days (entertainment)",
+   "kind": "feed",
+   "url": "https://www.8days.sg/api/v1/rss-outbound-feed?_format=xml"
+  },
+  {
+   "id": "ent-st-life",
+   "name": "The Straits Times · Life",
+   "kind": "feed",
+   "url": "https://www.straitstimes.com/news/life/rss.xml"
+  },
+  {
+   "id": "community-asksingapore",
+   "name": "r/askSingapore",
+   "kind": "feed",
+   "url": "https://www.reddit.com/r/askSingapore/.rss"
+  }
+ ]
+}

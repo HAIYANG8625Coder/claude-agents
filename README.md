@@ -16,7 +16,8 @@ claude-agents/
 │  └─ diagrams/                    chart-draw: clean SVG diagrams for docs
 ├─ agents/                           always-on agents: programs that run on their own schedule
 │  ├─ stats-agent/                   PLAN.md, agent.py, memory/instructions.md
-│  └─ ai-podcast/                    PLAN.md, podcast.py, capture.py, ledger.py, tts.py, sources.json, memory/
+│  ├─ ai-podcast/                    PLAN.md, podcast.py, capture.py, ledger.py, tts.py, sources.json, memory/
+│  └─ sg-podcast/                    the same agent for Singapore news (own sources, rules and 07:30 timer)
 ├─ .claude/skills/, .claude/agents/  links into plugins/ (so this folder loads them with plain names),
 │                                    plus HeyGen's third-party skills pinned in skills-lock.json
 ├─ x-assistant/                      data for x-assistant: playbook, posts log, cards
@@ -112,6 +113,10 @@ A private 10–12 minute English AI news episode every morning, sent to Telegram
 | Deliver | Telegram audio + chapters/ledger + notes |
 
 `python3 -I agents/ai-podcast/podcast.py install` copies it to `~/Library/Application Support/ai-podcast/` and adds a launchd job (edition at 08:00). `event edition` makes one now, `status` shows its tables. The voice needs a one-time Python 3.12 venv and a 2.9 GB model; see [agents/ai-podcast/PLAN.md](agents/ai-podcast/PLAN.md).
+
+## Singapore briefing (`agents/sg-podcast`)
+
+The AI podcast pipeline pointed at Singapore: 15 government newsrooms, local and finance media (CNA, The Straits Times, Business Times, The Edge, Mothership, 8world and more), entertainment (8 Days, ST Life), r/singapore and big local creators' YouTube channels, in a 72-hour window. Each episode focuses on immigration, the job market and finance (2 immigration & jobs, 2 finance), plus 1 entertainment story and 1 top news story. It keeps facts apart from opinion and takes no political side. It runs at 07:30 with its own runtime and timer and shares the local voice with `ai-podcast`. Details: [agents/sg-podcast/PLAN.md](agents/sg-podcast/PLAN.md).
 
 ## Avatar video (plugin `avatar-video`)
 
