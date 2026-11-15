@@ -13,7 +13,7 @@
     {
       "name": "avatar-video",
       "source": "./plugins/avatar-video",
-      "description": "Short vertical videos in my cloned voice (or HeyGen digital twin), scripted, reviewed and edited with HyperFrames."
+      "description": "Videos in my cloned voice (or HeyGen digital twin), scripted, reviewed and edited with HyperFrames: short vertical clips and long 16:9 article deep-dives."
     },
     {
       "name": "outlook-email",

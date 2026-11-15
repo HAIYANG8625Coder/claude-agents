@@ -19,7 +19,7 @@ claude-agents/
 ├─ .claude/skills/, .claude/agents/  links into plugins/ (so this folder loads them with plain names),
 │                                    plus HeyGen's third-party skills pinned in skills-lock.json
 ├─ x-assistant/                      data for x-assistant: playbook, posts log, cards
-└─ avatar-video/                     data for avatar-video: brand, video template, tools
+└─ avatar-video/                     data for avatar-video: brand, video templates (9:16 and 16:9), tools
 ```
 
 **Adding something new**
@@ -98,7 +98,7 @@ A small always-on agent built on the five parts from Anthropic's [Building alway
 
 ## Avatar video (plugin `avatar-video`)
 
-Short vertical videos (also the `voice-video` skill: my cloned voice over graphics, no face) where my AI twin (HeyGen avatar + my cloned voice) explains a topic, edited in code with [HyperFrames](https://github.com/heygen-com/hyperframes) (HTML → MP4).
+Videos where my AI twin (HeyGen avatar + my cloned voice) explains a topic, edited in code with [HyperFrames](https://github.com/heygen-com/hyperframes) (HTML → MP4): short vertical clips (`avatar-video`; `voice-video` for my cloned voice over graphics, no face) and long 16:9 deep-dives of one article or paper (`article-explainer`).
 
 ```
 /avatar-video <topic> [xhs|x] [NN s]
@@ -106,13 +106,22 @@ Short vertical videos (also the `voice-video` skill: my cloned voice over graphi
   → storyboard (I approve before any credits are spent) → voice in one take (I listen)
   → avatar lip-synced to that exact audio → captions, B-roll, cards in HyperFrames
   → preview (I approve) → render → hand off to /xhs-post or /x-post
+
+/article-explainer <url or file>
+  read one article or 1–3 papers → RESEARCH.md with every number's figure/table/page
+  → chapter outline (I approve) → script, one item per slide (I approve)
+  → voice, one take per chapter, joined → 16:9 slide deck (chapter bar, original next to a
+  rebuilt Chinese diagram, source line on every slide, cover as frame 0) → render → note text → /xhs-post
 ```
 
 | Path | What it is |
 |---|---|
 | `plugins/avatar-video/skills/avatar-video/` | The full flow, with approval gates before every paid step |
 | `plugins/avatar-video/agents/video-scripter.md`, `video-reviewer.md` | Script writer and independent script check |
-| `avatar-video/brand/DESIGN.md` | Video look: colors, safe zones, captions, the 3 effects |
+| `plugins/avatar-video/skills/article-explainer/` | 4–8 min 16:9 deep-dive of one article or paper (style preset H), plus `scripts/takes.py` for one take per chapter |
+| `avatar-video/template-explainer/` | The 16:9 starter project for article-explainer |
+| `avatar-video/brand/DESIGN.md` | Video look: colors, safe zones, captions, the 3 effects, style presets A–H |
+| `avatar-video/brand/EXPLAINER-PLAYBOOK.md` | How the deep-dive format works (learned from a Xiaohongshu AI creator, 2026-11-15) |
 | `avatar-video/videos.md` | Every video made (avoids repeats, notes what to improve) |
 | `.claude/skills/hyperframes*`, `media-use`, `heygen-*` | Third-party skills from HeyGen, pinned in `skills-lock.json` |
 

@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "PingFang SC"; src: local("PingFang SC"), local("PingFangSC-Semibold"); }
+      @font-face { font-family: "Songti SC"; src: local("Songti SC"), local("STSongti-SC-Bold"); }
+      @font-face { font-family: "Menlo"; src: local("Menlo"), local("Menlo-Regular"); }
+      /* Style preset H: article deep-dive, 16:9 (avatar-video/brand/DESIGN.md → Style presets,
+         avatar-video/brand/EXPLAINER-PLAYBOOK.md). A cream slide deck: chapter bar on top, a section tag,
+         the source's own figure or words next to a rebuilt Chinese version, a source line on every slide,
+         a serif caption band. The cover card is frame 0, so it is also the thumbnail. */
+      :root { --bg:#fcf0e4; --card:#fffaf4; --ink:#211e1c; --ink-2:#655c55; --line:#e4d5c6; --band:#f1e0d1;
+        --red:#9b1b3f; --blue:#1f5aa6; --green:#0f3d32; --mint:#2f9e83;
+        --sans:"PingFang SC","Inter",sans-serif; --serif:"Songti SC",serif; --mono:"Menlo",monospace;
+        --a1:#a5b4fc; --a2:#5eead4; --a3:#fbbf24; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1920px; height:1080px; overflow:hidden; background:var(--bg); }
+      #root { position:relative; width:100%; height:100%; font-family:var(--sans); color:var(--ink); background:var(--bg); }
+
+      /* chapter bar: one tab per chapter; sync below lights the current one */
+      #chap { position:absolute; left:80px; right:80px; top:34px; height:52px; display:flex; gap:10px; }
+      .tab { flex:1; position:relative; font-size:28px; font-weight:700; color:var(--ink-2); white-space:nowrap; padding-top:6px; }
+      .tab u { position:absolute; left:0; right:0; bottom:0; height:4px; background:var(--line); transform-origin:left center; }
+
+      #stage { position:absolute; left:0; right:0; top:110px; height:740px; }
+      .scene { position:absolute; inset:0; padding:0 80px; visibility:hidden; }
+      #sc0 { visibility:visible; }
+      .sec { position:absolute; left:80px; top:10px; background:var(--red); color:#fff; font-size:30px; font-weight:900; padding:10px 28px; white-space:nowrap; }
+      .src { position:absolute; left:80px; right:80px; bottom:0; font-size:24px; color:var(--ink-2); white-space:nowrap; overflow:hidden; }
+      .card { background:var(--card); border:2px solid var(--line); border-radius:10px; box-shadow:0 14px 36px rgba(60,30,10,.10); }
+      .lbl { font-size:26px; font-weight:800; color:var(--ink-2); }
+      .hl { color:var(--red); }
+      .note { display:inline-block; font-size:22px; color:var(--ink-2); border:1.5px solid var(--ink-2); padding:2px 10px; }
+
+      /* sc0 hook: the biggest number next to the source's first page */
+      .big { position:absolute; left:80px; top:90px; width:1000px; }
+      .big .k { font-size:52px; font-weight:900; }
+      .big .n { font-family:var(--serif); font-size:260px; font-weight:900; line-height:1.05; color:var(--red); }
+      .big .s { font-size:42px; font-weight:800; margin-top:10px; }
+      .paper { position:absolute; right:100px; top:60px; width:640px; height:560px; padding:48px 52px; transform:rotate(1.5deg); }
+      .paper h3 { font-family:var(--serif); font-size:48px; line-height:1.25; }
+      .paper .by { font-size:24px; color:var(--ink-2); margin:14px 0 24px; }
+      .paper p { font-size:28px; line-height:1.6; color:#4a443f; margin-bottom:14px; }
+
+      /* sc1 original next to rebuilt */
+      .orig { position:absolute; left:80px; top:100px; width:760px; padding:36px 40px; }
+      .orig p { font-size:30px; line-height:1.6; color:#3a3532; }
+      .orig .lbl { margin-bottom:14px; }
+      .rebuilt { position:absolute; left:920px; top:110px; width:920px; height:520px; }
+      .node { position:absolute; width:250px; height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+        font-size:34px; font-weight:900; background:#fff; border:3px solid var(--ink); border-radius:10px; white-space:nowrap; }
+      .node small { font-size:21px; font-weight:700; color:var(--ink-2); }
+      .node.on { border-color:var(--red); color:var(--red); }
+      .arr { position:absolute; height:4px; background:var(--ink); transform-origin:left center; }
+      .arr::after { content:""; position:absolute; right:-4px; top:-8px; border-left:16px solid var(--ink); border-top:10px solid transparent; border-bottom:10px solid transparent; }
+
+      /* sc2 inbox table */
+      .tbl { position:absolute; left:80px; top:110px; width:1000px; padding:26px 34px; }
+      .tbl h4 { font-size:32px; font-weight:900; color:var(--red); margin-bottom:12px; }
+      .tr { display:flex; align-items:center; gap:30px; font-size:28px; font-weight:700; padding:16px 20px; margin-top:10px; background:#fff; border:1.5px solid var(--line); border-radius:8px; white-space:nowrap; }
+      .tr .t { font-family:var(--mono); width:110px; }
+      .tr .w { flex:1; }
+      .tr .st { font-weight:900; }
+      .worker { position:absolute; left:1240px; top:200px; width:520px; height:240px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; }
+      .worker b { font-size:56px; }
+      .worker span { font-size:28px; font-weight:800; color:var(--ink-2); }
+
+      /* sc3 bars */
+      .bars { position:absolute; left:200px; top:120px; width:900px; height:580px; }
+      .bar { position:absolute; bottom:110px; width:240px; transform-origin:bottom center; }
+      .bar i { position:absolute; left:0; right:0; top:-120px; text-align:center; font-family:var(--serif); font-style:normal; font-size:84px; font-weight:900; }
+      .bar em { position:absolute; left:-30px; right:-30px; bottom:-60px; text-align:center; font-style:normal; font-size:30px; font-weight:900; color:var(--ink); white-space:nowrap; }
+      .side { position:absolute; left:1160px; top:150px; width:660px; font-size:46px; font-weight:800; line-height:1.6; }
+
+      /* sc4 recap table */
+      .recap { position:absolute; left:80px; top:30px; right:80px; }
+      .rr { display:flex; gap:16px; margin-bottom:16px; }
+      .rr .h { width:330px; padding:22px 30px; background:#f3e3d4; font-size:34px; font-weight:900; white-space:nowrap; }
+      .rr .h b { color:var(--red); font-size:26px; margin-right:14px; }
+      .rr .d { flex:1; padding:22px 30px; background:#fff; border:1.5px solid var(--line); font-size:32px; font-weight:800; white-space:nowrap; }
+      .rr.now .h { background:var(--red); color:#fff; } .rr.now .h b { color:#fff; }
+      .rr.now .d { border:2.5px solid var(--red); }
+
+      /* sc5 question */
+      .ask { position:absolute; left:380px; top:110px; width:1160px; padding:60px 70px; border:3px solid var(--ink); }
+      .ask .lbl { color:var(--red); }
+      .ask .q1 { font-size:46px; font-weight:900; margin-top:18px; }
+      .ask .q2 { font-family:var(--serif); font-size:104px; font-weight:900; margin-top:10px; display:inline-block; border-bottom:6px solid var(--red); }
+
+      /* caption band */
+      #caps { position:absolute; left:0; right:0; top:872px; height:96px; background:var(--band); }
+      .cap { position:absolute; left:80px; right:80px; top:18px; text-align:center; font-family:var(--serif); font-size:48px; font-weight:900; visibility:hidden; white-space:nowrap; }
+      .cap .k { opacity:.35; }
+      #sig { position:absolute; right:80px; top:1000px; display:flex; gap:12px; align-items:center; font-size:22px; font-weight:700; color:var(--ink-2); white-space:nowrap; opacity:0; }
+      #sig i { width:14px; height:14px; border-radius:50%; display:inline-block; }
+
+      /* cover: frame 0 = thumbnail. Covers everything until the first sentence ends */
+      #cover { position:absolute; inset:0; background:linear-gradient(135deg, #5cc2a0 0%, #a9e0c9 55%, #d6f1e4 100%); }
+      .series { position:absolute; left:150px; top:150px; display:flex; border:4px solid var(--green); font-size:52px; font-weight:900; white-space:nowrap; }
+      .series span { background:#fff; color:var(--green); padding:10px 30px; }
+      .series b { background:var(--card); color:var(--green); padding:10px 26px; border-left:4px solid var(--green); }
+      .date { position:absolute; right:150px; top:130px; width:330px; background:var(--green); color:#fff; text-align:center; padding:18px 0 0; }
+      .date b { display:block; font-size:96px; font-weight:900; line-height:1; }
+      .date span { display:block; margin:16px 14px 14px; background:#fff; color:var(--green); font-size:38px; font-weight:900; padding:8px 0; }
+      .ctitle { position:absolute; left:150px; top:330px; font-size:118px; font-weight:900; line-height:1.15; color:#14201c; white-space:nowrap; }
+      .csub { position:absolute; left:150px; top:640px; background:#fff; font-size:50px; font-weight:900; padding:10px 34px; white-space:nowrap; }
+      .pills { position:absolute; left:150px; top:770px; width:1100px; display:flex; flex-wrap:wrap; gap:22px; }
+      .pill { font-size:38px; font-weight:900; color:var(--green); border:3px solid var(--green); border-radius:40px; padding:10px 36px; background:rgba(255,255,255,.55); white-space:nowrap; }
+      .pill i { font-style:normal; margin-right:12px; }
+      .who { position:absolute; right:150px; top:700px; width:300px; height:300px; border-radius:50%; background:#fff; border:6px solid #fff;
+        display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; box-shadow:0 18px 40px rgba(0,0,0,.12); }
+      .who .dots { display:flex; gap:14px; } .who .dots i { width:34px; height:34px; border-radius:50%; display:block; }
+      .who b { font-size:40px; font-weight:900; color:#14201c; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="27" data-width="1920" data-height="1080">
+      <div id="chap" class="clip" data-start="0" data-duration="27" data-track-index="2">
+        <div class="tab" data-ch="1">01 一次 run<u></u></div>
+        <div class="tab" data-ch="2">02 收件箱<u></u></div>
+        <div class="tab" data-ch="3">03 为什么是现在<u></u></div>
+        <div class="tab" data-ch="4">合起来<u></u></div>
+        <div class="tab" data-ch="5">结尾<u></u></div>
+      </div>
+
+      <div id="stage" class="clip" data-start="0" data-duration="27" data-track-index="3" data-track-kind="graphics">
+        <!-- one .scene per script.json item; data-ch = its chapter (lights the chapter bar) -->
+        <div class="scene" id="sc0" data-ch="0">
+          <div class="big">
+            <div class="k">Anthropic 新文章说</div>
+            <div class="n">在睡觉</div>
+            <div class="s">一直在线的 Agent，大部分时间 <span class="hl">一个 token 都不花</span></div>
+          </div>
+          <!-- replace with the real first page: <img class="paper card" src="assets/src-page1.png"> -->
+          <div class="paper card">
+            <h3>Building always-on agents</h3>
+            <div class="by">William Hu · 2026-11-13</div>
+            <p>Always-on agents run indefinitely and decide how and when to act across many sessions.</p>
+            <p>"Always on" describes how it feels to the user. The agent actually sleeps most of the time.</p>
+          </div>
+          <div class="src">原文：Anthropic《Building always-on agents》· William Hu · 2026-11-13</div>
+        </div>
+
+        <div class="scene" id="sc1" data-ch="1">
+          <div class="sec">01 一次 run</div>
+          <div class="orig card pop">
+            <div class="lbl">原文 · A run</div>
+            <p>An event arrives → a session starts → the agent loop runs → the run writes back to stored state.</p>
+          </div>
+          <div class="rebuilt">
+            <div class="node" id="n1a" style="left:0; top:40px">事件<small>event</small></div>
+            <div class="arr" id="r1a" style="left:262px; top:98px; width:60px"></div>
+            <div class="node" id="n1b" style="left:334px; top:40px">开会话<small>session</small></div>
+            <div class="arr" id="r1b" style="left:596px; top:98px; width:60px"></div>
+            <div class="node" id="n1c" style="left:668px; top:40px">跑循环<small>agent loop</small></div>
+            <div class="node on" id="n1d" style="left:334px; top:300px; width:584px">写回状态，再睡回去<small>write back · sleep</small></div>
+          </div>
+          <div class="src">原文：A run 一节 · 右图为本片重画</div>
+        </div>
+
+        <div class="scene" id="sc2" data-ch="2">
+          <div class="sec">02 事件收件箱</div>
+          <div class="tbl card">
+            <h4>收件箱 · 数据库表</h4>
+            <div class="tr pop"><span class="t">09:00</span><span class="w">定时器到点</span><span class="st" style="color:var(--mint)">已完成</span></div>
+            <div class="tr pop"><span class="t">14:05</span><span class="w">你发来一条消息</span><span class="st hl" id="todo2">待处理</span></div>
+          </div>
+          <div class="worker card" id="wk2"><b>Worker</b><span>同一时间只有一个</span></div>
+          <div class="src">原文：Event inbox（handler → table → worker）· <span class="note">示意</span></div>
+        </div>
+
+        <div class="scene" id="sc3" data-ch="3">
+          <div class="sec">03 为什么是现在</div>
+          <div class="bars">
+            <div class="bar" id="b3a" style="left:0; height:340px; background:var(--blue)"><i style="color:var(--blue)">100</i><em>上一代模型</em></div>
+            <div class="bar" id="b3b" style="left:420px; height:75px; background:var(--red)"><i style="color:var(--red)">22</i><em>新模型</em></div>
+          </div>
+          <div class="side pop">长程编程测试<br>每解一题的花费<br><span class="hl">少 78%</span></div>
+          <div class="src">原文：Why now 一节 · 以上一代为 100 换算</div>
+        </div>
+
+        <div class="scene" id="sc4" data-ch="4">
+          <div class="recap">
+            <div class="rr pop"><div class="h"><b>01</b>收件箱</div><div class="d">事件先落表，同一时间一个 worker</div></div>
+            <div class="rr pop"><div class="h"><b>02</b>定时器</div><div class="d">到点了也只往收件箱写一条</div></div>
+            <div class="rr pop"><div class="h"><b>03</b>记忆</div><div class="d">只存查不回来的东西</div></div>
+            <div class="rr pop"><div class="h"><b>04</b>权限</div><div class="d">凭证放在 Agent 外面</div></div>
+            <div class="rr now pop"><div class="h"><b>05</b>发件箱</div><div class="d">一开始宁可少发</div></div>
+          </div>
+          <div class="src">五条为本片归纳，均出自原文</div>
+        </div>
+
+        <div class="scene" id="sc5" data-ch="5">
+          <div class="ask card pop">
+            <div class="lbl">留个问题</div>
+            <div class="q1">收件箱 · 定时器 · 记忆 · 权限 · 发件箱</div>
+            <div class="q2">你的 Agent 有几样？</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="caps" class="clip" data-start="0" data-duration="27" data-track-index="4">
+        <div class="cap" id="c0">你的 Agent 看着一直在线</div>
+        <div class="cap" id="c1">其实大部分时间在睡觉</div>
+        <div class="cap" id="c2">一次运行分四步</div>
+        <div class="cap" id="c3">事件来了，开会话，跑循环，写回状态</div>
+        <div class="cap" id="c4">事件先进收件箱</div>
+        <div class="cap" id="c5">同一时间只让一个 worker 处理</div>
+        <div class="cap" id="c6">文章里唯一的数字</div>
+        <div class="cap" id="c7" data-say="每题花费少百分之七十八">每题花费少 78%</div>
+        <div class="cap" id="c8">合起来，就是五样东西</div>
+        <div class="cap" id="c9">这五样里，你的 Agent 有几样？</div>
+      </div>
+      <div id="sig" class="clip" data-start="0" data-duration="27" data-track-index="6"><i style="background:var(--a1)"></i><i style="background:var(--a2)"></i><i style="background:var(--a3)"></i> Michael · learning AI agents in public</div>
+
+      <div id="cover" data-layout-ignore class="clip" data-start="0" data-duration="27" data-track-index="8">
+        <div class="series"><span>论文精读</span><b>01</b></div>
+        <div class="date"><b>11.13</b><span>最新发布</span></div>
+        <div class="ctitle">Anthropic 怎么做<br>Always-on Agent</div>
+        <div class="csub">大部分时间在睡觉的 Agent</div>
+        <div class="pills">
+          <div class="pill"><i>✉</i>收件箱</div><div class="pill"><i>⏱</i>定时器</div><div class="pill"><i>❐</i>记忆</div>
+          <div class="pill"><i>⚿</i>权限</div><div class="pill"><i>➤</i>发件箱</div>
+        </div>
+        <!-- swap for Michael's photo when he gives one: <img class="who" src="assets/face.jpg" style="object-fit:cover"> -->
+        <div class="who"><div class="dots"><i style="background:var(--a1)"></i><i style="background:var(--a2)"></i><i style="background:var(--a3)"></i></div><b>Michael</b></div>
+      </div>
+      <!-- add after build_vo.py: <audio id="vo" class="clip" src="assets/mix.wav" data-start="0" data-duration="…" data-track-index="5"></audio> -->
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // voice-video:sync:begin
+      const AT = {};
+      tl.set("#sc0", { visibility: "visible", opacity: 1 }, 0.000);
+      tl.set("#sc0", { visibility: "hidden" }, 4.500);
+      tl.set("#sc1", { visibility: "visible", opacity: 1 }, 4.500);
+      tl.fromTo("#sc1 .pop", { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power2.out", stagger: 0.28 }, 4.540);
+      tl.set("#sc1", { visibility: "hidden" }, 9.000);
+      tl.set("#sc2", { visibility: "visible", opacity: 1 }, 9.000);
+      tl.fromTo("#sc2 .pop", { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power2.out", stagger: 0.28 }, 9.040);
+      tl.set("#sc2", { visibility: "hidden" }, 13.500);
+      tl.set("#sc3", { visibility: "visible", opacity: 1 }, 13.500);
+      tl.fromTo("#sc3 .pop", { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power2.out", stagger: 0.28 }, 13.540);
+      tl.set("#sc3", { visibility: "hidden" }, 18.000);
+      tl.set("#sc4", { visibility: "visible", opacity: 1 }, 18.000);
+      tl.fromTo("#sc4 .pop", { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power2.out", stagger: 0.28 }, 18.040);
+      tl.set("#sc4", { visibility: "hidden" }, 22.500);
+      tl.set("#sc5", { visibility: "visible", opacity: 1 }, 22.500);
+      tl.fromTo("#sc5 .pop", { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power2.out", stagger: 0.28 }, 22.540);
+      [[0, 0.1, 2.2], [1, 2.2, 4.4], [2, 4.6, 6.4], [3, 6.4, 8.9], [4, 9.1, 11], [5, 11, 13.4], [6, 13.6, 15.6], [7, 15.6, 17.9], [8, 18.1, 22.4], [9, 22.6, 27]]
+        .forEach(([c, on, off]) => { tl.set("#c" + c, { visibility: "visible" }, on); tl.set("#c" + c, { visibility: "hidden" }, off); });
+      // voice-video:sync:end
+      // (the block above is a stand-in until the first take; sync.py rewrites it from the voice)
+
+      // ---- helpers: at("短语") = when that phrase is spoken (n = which time); before a take, fall back to the scene start
+      const SEQ = Object.entries(AT).map(([k, t]) => [k.replace(/\.\d+$/, ""), t]).sort((a, b) => a[1] - b[1]);
+      const at = (phrase, n = 1, fallback) => {
+        const p = phrase.match(/[a-z0-9]+|\p{Script=Han}/giu).map((s) => s.toLowerCase());  // English word = one key, Chinese = one per character
+        for (let i = 0, hit = 0; i + p.length <= SEQ.length; i++) {
+          if (p.every((ch, j) => SEQ[i + j][0] === ch) && ++hit === n) return SEQ[i][1];
+        }
+        if (fallback !== undefined && !SEQ.length) return fallback;
+        throw new Error("phrase not spoken: " + phrase);
+      };
+      const pop = (sel, t, o) => tl.fromTo(sel, Object.assign({ opacity: 0, y: 30, scale: 0.94 }, o || {}), { opacity: 1, y: 0, x: 0, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, t);
+      const grow = (sel, t) => tl.fromTo(sel, { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "power2.out" }, t);
+      const draw = (sel, t) => tl.fromTo(sel, { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, t);
+
+      // when each scene comes on, read back from the generated block
+      const SHOW = {};
+      tl.getChildren(false, true, false).forEach((tw) => {
+        const el = tw.targets()[0];
+        if (el && el.classList && el.classList.contains("scene") && tw.vars.visibility === "visible") SHOW[el.id] = tw.startTime();
+      });
+      const total = Number(document.getElementById("root").dataset.duration);
+
+      // cover: frame 0 (the thumbnail) for ~2.5 s, then it lifts away and the opening slide builds in behind it
+      const firstCut = Math.min(...Object.values(SHOW).filter((t) => t > 0));
+      const coverOut = Math.min(firstCut - 0.8, 2.5);
+      tl.to("#cover", { opacity: 0, y: -40, duration: 0.3, ease: "power2.in" }, coverOut);
+      tl.set("#cover", { visibility: "hidden" }, coverOut + 0.3);
+      tl.fromTo("#sc0 > *", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out", stagger: 0.15 }, coverOut + 0.3);
+
+      // chapter bar: grey = not yet, red + bold = now, ink underline = done
+      const tabs = Array.from(document.querySelectorAll("#chap .tab"));
+      tl.set(tabs, { color: "#655c55" }, 0);
+      tl.set("#chap .tab u", { backgroundColor: "#e4d5c6", scaleX: 1 }, 0);
+      let lastCh = -1;
+      Array.from(document.querySelectorAll(".scene[data-ch]")).forEach((sc) => {
+        const ch = Number(sc.dataset.ch), t = SHOW[sc.id];
+        if (t === undefined || ch === lastCh) return;
+        lastCh = ch;
+        tabs.forEach((tab) => {
+          const c = Number(tab.dataset.ch), u = tab.querySelector("u");
+          if (c === ch) { tl.set(tab, { color: "#9b1b3f" }, t); tl.set(u, { backgroundColor: "#9b1b3f" }, t); tl.fromTo(u, { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, t); }
+          else tl.set(u, { backgroundColor: c < ch ? "#211e1c" : "#e4d5c6" }, t), tl.set(tab, { color: c < ch ? "#211e1c" : "#655c55" }, t);
+        });
+      });
+
+      // ---- hand-made beats, timed on the spoken words (replace fallbacks with at("短语") once there is a take)
+      const s1 = SHOW.sc1, s2 = SHOW.sc2, s3 = SHOW.sc3;
+      pop("#n1a", at("事件来了", 1, s1 + 0.6)); draw("#r1a", at("开会话", 1, s1 + 1.2));
+      pop("#n1b", at("开会话", 1, s1 + 1.3)); draw("#r1b", at("跑循环", 1, s1 + 1.9));
+      pop("#n1c", at("跑循环", 1, s1 + 2.0)); pop("#n1d", at("写回状态", 1, s1 + 2.3), { scale: 1.1 });
+      tl.fromTo("#wk2", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, at("worker", 1, s2 + 2.0));
+      tl.to("#todo2", { color: "#2f9e83", duration: 0.2 }, at("worker", 1, s2 + 2.0) + 0.6);
+      tl.set("#todo2", { textContent: "处理中" }, at("worker", 1, s2 + 2.0) + 0.6);
+      grow("#b3a", s3 + 0.3); grow("#b3b", at("七十八", 1, s3 + 2.2));
+      tl.to("#sig", { opacity: 1, duration: 0.3 }, total - 2.4);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

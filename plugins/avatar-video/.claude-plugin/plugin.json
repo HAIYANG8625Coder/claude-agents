@@ -1,7 +1,7 @@
 {
   "name": "avatar-video",
-  "version": "0.1.1",
-  "description": "Short vertical videos in my cloned voice (or HeyGen digital twin), scripted, reviewed and edited with HyperFrames.",
+  "version": "0.2.0",
+  "description": "Videos in my cloned voice (or HeyGen digital twin), scripted, reviewed and edited with HyperFrames: short vertical clips and long 16:9 article deep-dives.",
   "author": {
     "name": "Michael Yang"
   },
