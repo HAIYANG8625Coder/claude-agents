@@ -15,7 +15,8 @@ claude-agents/
 │  ├─ outlook-email/
 │  └─ diagrams/                    chart-draw: clean SVG diagrams for docs
 ├─ agents/                           always-on agents: programs that run on their own schedule
-│  └─ stats-agent/                   PLAN.md, agent.py, memory/instructions.md
+│  ├─ stats-agent/                   PLAN.md, agent.py, memory/instructions.md
+│  └─ ai-podcast/                    PLAN.md, podcast.py, capture.py, ledger.py, tts.py, sources.json, memory/
 ├─ .claude/skills/, .claude/agents/  links into plugins/ (so this folder loads them with plain names),
 │                                    plus HeyGen's third-party skills pinned in skills-lock.json
 ├─ x-assistant/                      data for x-assistant: playbook, posts log, cards
@@ -95,6 +96,22 @@ A small always-on agent built on the five parts from Anthropic's [Building alway
 | Outbox | SQLite `outbox` table. The run returns a message or `null`, and a dispatcher sends it |
 
 `python3 -I agents/stats-agent/agent.py install` copies the agent to `~/Library/Application Support/stats-agent/` and adds a launchd job that ticks every 10 minutes while the Mac is awake. A tick with nothing due starts no model and costs nothing. `status` shows its tables, and `event check` asks for the numbers now. It runs entirely outside `~/Documents`, so it needs no Full Disk Access and can't see your private folders. It needs Chrome open with Claude in Chrome connected.
+
+## Always-on AI podcast (`agents/ai-podcast`)
+
+A private 10–12 minute English AI news episode every morning, sent to Telegram with chapter times and English–Chinese notes. A rebuild of [ningcodes/CommuteAIBrief](https://github.com/ningcodes/CommuteAIBrief) (MIT) on the same five parts as the stats agent.
+
+| Step | Here |
+|---|---|
+| Capture | `capture.py`: 113 sources (feeds, HN queries, blog listings, release feeds, follow-builders), one frozen 48 h window, a receipt per source. Standard library only; failures are reported, never worked around |
+| Ledger | `ledger.py`: dedupe, heat, interest flags, the leads the editor must decide on |
+| Collector | `claude -p` session 1: diagnoses failed sources; a new feed is kept only if the program can parse it |
+| Editor | `claude -p` session 2 (never the collector's): decides every required lead, shortlists, reads the originals the program fetched, writes script + evidence + notes |
+| Gate | quotes must be verbatim in the original, numbers must appear in an original, every decision has a reason; one fix round |
+| Voice | `tts.py`: local Qwen3-TTS (MLX) with a fixed built-in speaker, per-chunk QA, AAC via `afconvert` |
+| Deliver | Telegram audio + chapters/ledger + notes |
+
+`python3 -I agents/ai-podcast/podcast.py install` copies it to `~/Library/Application Support/ai-podcast/` and adds a launchd job (edition at 08:00). `event edition` makes one now, `status` shows its tables. The voice needs a one-time Python 3.12 venv and a 2.9 GB model; see [agents/ai-podcast/PLAN.md](agents/ai-podcast/PLAN.md).
 
 ## Avatar video (plugin `avatar-video`)
 

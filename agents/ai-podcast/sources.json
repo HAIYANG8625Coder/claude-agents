@@ -1,0 +1,818 @@
+{
+ "_about": "Daily discovery sources. Adapted from ningcodes/CommuteAIBrief capture/sources-all.json (MIT). kind: feed (RSS/Atom), html_listing (links on a blog index, dated by text or by diff with the last run), hn (Hacker News Algolia query), github_releases, follow_builders (zarazhangrui/follow-builders JSON), x (not captured daily yet). Add or remove entries freely; old runs keep their own copy.",
+ "sources": [
+  {
+   "id": "x-karpathy",
+   "name": "karpathy",
+   "kind": "x",
+   "url": "https://x.com/karpathy",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-swyx",
+   "name": "swyx",
+   "kind": "x",
+   "url": "https://x.com/swyx",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-joshwoodward",
+   "name": "joshwoodward",
+   "kind": "x",
+   "url": "https://x.com/joshwoodward",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-bcherny",
+   "name": "bcherny",
+   "kind": "x",
+   "url": "https://x.com/bcherny",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-thsottiaux",
+   "name": "thsottiaux",
+   "kind": "x",
+   "url": "https://x.com/thsottiaux",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-petergyang",
+   "name": "petergyang",
+   "kind": "x",
+   "url": "https://x.com/petergyang",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-thenanyu",
+   "name": "thenanyu",
+   "kind": "x",
+   "url": "https://x.com/thenanyu",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-realmadhuguru",
+   "name": "realmadhuguru",
+   "kind": "x",
+   "url": "https://x.com/realmadhuguru",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-amandaaskell",
+   "name": "AmandaAskell",
+   "kind": "x",
+   "url": "https://x.com/AmandaAskell",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-_catwu",
+   "name": "_catwu",
+   "kind": "x",
+   "url": "https://x.com/_catwu",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-trq212",
+   "name": "trq212",
+   "kind": "x",
+   "url": "https://x.com/trq212",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-googlelabs",
+   "name": "GoogleLabs",
+   "kind": "x",
+   "url": "https://x.com/GoogleLabs",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-amasad",
+   "name": "amasad",
+   "kind": "x",
+   "url": "https://x.com/amasad",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-rauchg",
+   "name": "rauchg",
+   "kind": "x",
+   "url": "https://x.com/rauchg",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-alexalbert__",
+   "name": "alexalbert__",
+   "kind": "x",
+   "url": "https://x.com/alexalbert__",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-levie",
+   "name": "levie",
+   "kind": "x",
+   "url": "https://x.com/levie",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-ryolu_",
+   "name": "ryolu_",
+   "kind": "x",
+   "url": "https://x.com/ryolu_",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-garrytan",
+   "name": "garrytan",
+   "kind": "x",
+   "url": "https://x.com/garrytan",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-mattturck",
+   "name": "mattturck",
+   "kind": "x",
+   "url": "https://x.com/mattturck",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-zarazhangrui",
+   "name": "zarazhangrui",
+   "kind": "x",
+   "url": "https://x.com/zarazhangrui",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-nikunj",
+   "name": "nikunj",
+   "kind": "x",
+   "url": "https://x.com/nikunj",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-steipete",
+   "name": "steipete",
+   "kind": "x",
+   "url": "https://x.com/steipete",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-danshipper",
+   "name": "danshipper",
+   "kind": "x",
+   "url": "https://x.com/danshipper",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-adityaag",
+   "name": "adityaag",
+   "kind": "x",
+   "url": "https://x.com/adityaag",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-sama",
+   "name": "sama",
+   "kind": "x",
+   "url": "https://x.com/sama",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-claudeai",
+   "name": "claudeai",
+   "kind": "x",
+   "url": "https://x.com/claudeai",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-openai",
+   "name": "OpenAI",
+   "kind": "x",
+   "url": "https://x.com/OpenAI",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-anthropicai",
+   "name": "AnthropicAI",
+   "kind": "x",
+   "url": "https://x.com/AnthropicAI",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-googledeepmind",
+   "name": "GoogleDeepMind",
+   "kind": "x",
+   "url": "https://x.com/GoogleDeepMind",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-officiallogank",
+   "name": "OfficialLoganK",
+   "kind": "x",
+   "url": "https://x.com/OfficialLoganK",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-alibaba_qwen",
+   "name": "Alibaba_Qwen",
+   "kind": "x",
+   "url": "https://x.com/Alibaba_Qwen",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-deepseek_ai",
+   "name": "deepseek_ai",
+   "kind": "x",
+   "url": "https://x.com/deepseek_ai",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-kimi_moonshot",
+   "name": "Kimi_Moonshot",
+   "kind": "x",
+   "url": "https://x.com/Kimi_Moonshot",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-cursor_ai",
+   "name": "cursor_ai",
+   "kind": "x",
+   "url": "https://x.com/cursor_ai",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-cognition",
+   "name": "cognition",
+   "kind": "x",
+   "url": "https://x.com/cognition",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-artificialanlys",
+   "name": "ArtificialAnlys",
+   "kind": "x",
+   "url": "https://x.com/ArtificialAnlys",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-gdb",
+   "name": "gdb",
+   "kind": "x",
+   "url": "https://x.com/gdb",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-polynoamial",
+   "name": "polynoamial",
+   "kind": "x",
+   "url": "https://x.com/polynoamial",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-merettm",
+   "name": "merettm",
+   "kind": "x",
+   "url": "https://x.com/merettm",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-demishassabis",
+   "name": "demishassabis",
+   "kind": "x",
+   "url": "https://x.com/demishassabis",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-jeffdean",
+   "name": "JeffDean",
+   "kind": "x",
+   "url": "https://x.com/JeffDean",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-lilianweng",
+   "name": "lilianweng",
+   "kind": "x",
+   "url": "https://x.com/lilianweng",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-drjimfan",
+   "name": "DrJimFan",
+   "kind": "x",
+   "url": "https://x.com/DrJimFan",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-simonw",
+   "name": "simonw",
+   "kind": "x",
+   "url": "https://x.com/simonw",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-hwchase17",
+   "name": "hwchase17",
+   "kind": "x",
+   "url": "https://x.com/hwchase17",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-natolambert",
+   "name": "natolambert",
+   "kind": "x",
+   "url": "https://x.com/natolambert",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-eugeneyan",
+   "name": "eugeneyan",
+   "kind": "x",
+   "url": "https://x.com/eugeneyan",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-jxnlco",
+   "name": "jxnlco",
+   "kind": "x",
+   "url": "https://x.com/jxnlco",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-hamelhusain",
+   "name": "HamelHusain",
+   "kind": "x",
+   "url": "https://x.com/HamelHusain",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-sh_reya",
+   "name": "sh_reya",
+   "kind": "x",
+   "url": "https://x.com/sh_reya",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-rasbt",
+   "name": "rasbt",
+   "kind": "x",
+   "url": "https://x.com/rasbt",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-mitchellh",
+   "name": "mitchellh",
+   "kind": "x",
+   "url": "https://x.com/mitchellh",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-levelsio",
+   "name": "levelsio",
+   "kind": "x",
+   "url": "https://x.com/levelsio",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-addyosmani",
+   "name": "addyosmani",
+   "kind": "x",
+   "url": "https://x.com/addyosmani",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-mitsuhiko",
+   "name": "mitsuhiko",
+   "kind": "x",
+   "url": "https://x.com/mitsuhiko",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-jeremyphoward",
+   "name": "jeremyphoward",
+   "kind": "x",
+   "url": "https://x.com/jeremyphoward",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-omarsar0",
+   "name": "omarsar0",
+   "kind": "x",
+   "url": "https://x.com/omarsar0",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-dotey",
+   "name": "dotey",
+   "kind": "x",
+   "url": "https://x.com/dotey",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-op7418",
+   "name": "op7418",
+   "kind": "x",
+   "url": "https://x.com/op7418",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-_akhaliq",
+   "name": "_akhaliq",
+   "kind": "x",
+   "url": "https://x.com/_akhaliq",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "x-dair_ai",
+   "name": "dair_ai",
+   "kind": "x",
+   "url": "https://x.com/dair_ai",
+   "daily": false,
+   "note": "needs a logged-in browser; covered in part by central-x"
+  },
+  {
+   "id": "central-x",
+   "name": "follow-builders x",
+   "kind": "follow_builders",
+   "url": "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json"
+  },
+  {
+   "id": "central-blogs",
+   "name": "follow-builders blogs",
+   "kind": "follow_builders",
+   "url": "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-blogs.json"
+  },
+  {
+   "id": "central-podcasts",
+   "name": "follow-builders podcasts",
+   "kind": "follow_builders",
+   "url": "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-podcasts.json"
+  },
+  {
+   "id": "blog-anthropic-news",
+   "name": "Anthropic News",
+   "kind": "html_listing",
+   "url": "https://www.anthropic.com/news"
+  },
+  {
+   "id": "blog-anthropic-engineering",
+   "name": "Anthropic Engineering",
+   "kind": "html_listing",
+   "url": "https://www.anthropic.com/engineering"
+  },
+  {
+   "id": "blog-anthropic-research",
+   "name": "Anthropic Research",
+   "kind": "html_listing",
+   "url": "https://www.anthropic.com/research"
+  },
+  {
+   "id": "blog-claude-blog",
+   "name": "Claude Blog",
+   "kind": "html_listing",
+   "url": "https://claude.com/blog"
+  },
+  {
+   "id": "blog-openai-news",
+   "name": "OpenAI News",
+   "kind": "feed",
+   "url": "https://openai.com/news/rss.xml"
+  },
+  {
+   "id": "blog-deepmind",
+   "name": "Google DeepMind",
+   "kind": "feed",
+   "url": "https://deepmind.google/blog/rss.xml"
+  },
+  {
+   "id": "blog-google-research",
+   "name": "Google Research",
+   "kind": "feed",
+   "url": "https://research.google/blog/rss/"
+  },
+  {
+   "id": "blog-microsoft-research",
+   "name": "Microsoft Research",
+   "kind": "feed",
+   "url": "https://www.microsoft.com/en-us/research/feed/"
+  },
+  {
+   "id": "blog-cursor",
+   "name": "Cursor",
+   "kind": "html_listing",
+   "url": "https://cursor.com/blog"
+  },
+  {
+   "id": "blog-cloudflare",
+   "name": "Cloudflare",
+   "kind": "feed",
+   "url": "https://blog.cloudflare.com/rss/"
+  },
+  {
+   "id": "blog-huggingface",
+   "name": "Hugging Face",
+   "kind": "feed",
+   "url": "https://huggingface.co/blog/feed.xml"
+  },
+  {
+   "id": "blog-simon",
+   "name": "Simon Willison",
+   "kind": "feed",
+   "url": "https://simonwillison.net/atom/everything/"
+  },
+  {
+   "id": "blog-hamel",
+   "name": "Hamel Husain",
+   "kind": "feed",
+   "url": "https://hamel.dev/index.xml"
+  },
+  {
+   "id": "blog-shreya",
+   "name": "Shreya Shankar",
+   "kind": "feed",
+   "url": "https://www.sh-reya.com/rss.xml"
+  },
+  {
+   "id": "blog-eugene",
+   "name": "Eugene Yan",
+   "kind": "feed",
+   "url": "https://eugeneyan.com/rss/"
+  },
+  {
+   "id": "blog-chip",
+   "name": "Chip Huyen",
+   "kind": "feed",
+   "url": "https://huyenchip.com/feed.xml"
+  },
+  {
+   "id": "blog-lilian",
+   "name": "Lilian Weng",
+   "kind": "feed",
+   "url": "https://lilianweng.github.io/index.xml"
+  },
+  {
+   "id": "blog-jason",
+   "name": "Jason Liu",
+   "kind": "feed",
+   "url": "https://jxnl.co/feed_rss_created.xml"
+  },
+  {
+   "id": "blog-nathan",
+   "name": "Nathan Lambert Interconnects",
+   "kind": "feed",
+   "url": "https://www.interconnects.ai/feed"
+  },
+  {
+   "id": "blog-raschka",
+   "name": "Sebastian Raschka",
+   "kind": "feed",
+   "url": "https://magazine.sebastianraschka.com/feed"
+  },
+  {
+   "id": "blog-karpathy",
+   "name": "Karpathy Blog",
+   "kind": "feed",
+   "url": "https://karpathy.bearblog.dev/feed/"
+  },
+  {
+   "id": "blog-latentspace",
+   "name": "Latent Space",
+   "kind": "feed",
+   "url": "https://www.latent.space/feed"
+  },
+  {
+   "id": "pod-lenny",
+   "name": "Lenny's Podcast",
+   "kind": "feed",
+   "url": "https://api.substack.com/feed/podcast/10845.rss",
+   "require_audio": true
+  },
+  {
+   "id": "pod-latent",
+   "name": "Latent Space",
+   "kind": "feed",
+   "url": "https://api.substack.com/feed/podcast/1084089.rss",
+   "require_audio": true
+  },
+  {
+   "id": "pod-nopriors",
+   "name": "No Priors",
+   "kind": "feed",
+   "url": "https://feeds.megaphone.fm/nopriors",
+   "require_audio": true
+  },
+  {
+   "id": "pod-dwarkesh",
+   "name": "Dwarkesh Podcast",
+   "kind": "feed",
+   "url": "https://www.dwarkesh.com/feed",
+   "require_audio": true
+  },
+  {
+   "id": "pod-training",
+   "name": "Training Data",
+   "kind": "feed",
+   "url": "https://feeds.megaphone.fm/trainingdata",
+   "require_audio": true
+  },
+  {
+   "id": "pod-a16z",
+   "name": "a16z Podcast",
+   "kind": "feed",
+   "url": "https://feeds.simplecast.com/JGE3yC0V",
+   "require_audio": true
+  },
+  {
+   "id": "pod-howiai",
+   "name": "How I AI",
+   "kind": "feed",
+   "url": "https://www.lennysnewsletter.com/feed?sectionId=198869",
+   "require_audio": true
+  },
+  {
+   "id": "pod-cheeky",
+   "name": "Cheeky Pint",
+   "kind": "feed",
+   "url": "https://feeds.transistor.fm/cheeky-pint-with-john-collison",
+   "require_audio": true
+  },
+  {
+   "id": "pod-every",
+   "name": "AI & I by Every",
+   "kind": "feed",
+   "url": "https://rss2.flightcast.com/vh1lt5f2oeh4a5hn5jglgpzg.xml",
+   "require_audio": true
+  },
+  {
+   "id": "pod-cognitive",
+   "name": "The Cognitive Revolution",
+   "kind": "feed",
+   "url": "https://www.cognitiverevolution.ai/latest/rss/",
+   "require_audio": true
+  },
+  {
+   "id": "pod-hardfork",
+   "name": "Hard Fork",
+   "kind": "feed",
+   "url": "https://feeds.simplecast.com/6HKOhNgS",
+   "require_audio": true
+  },
+  {
+   "id": "pod-lightcone",
+   "name": "YC Lightcone",
+   "kind": "html_listing",
+   "url": "https://www.ycombinator.com/library"
+  },
+  {
+   "id": "pod-unsupervised",
+   "name": "Unsupervised Learning",
+   "kind": "feed",
+   "url": "https://feeds.simplecast.com/dOSE_bdP",
+   "require_audio": true
+  },
+  {
+   "id": "pod-mad",
+   "name": "MAD Podcast",
+   "kind": "feed",
+   "url": "https://anchor.fm/s/f2ee4948/podcast/rss",
+   "require_audio": true
+  },
+  {
+   "id": "tc-ai",
+   "name": "TechCrunch AI",
+   "kind": "feed",
+   "url": "https://techcrunch.com/category/artificial-intelligence/feed/"
+  },
+  {
+   "id": "tc-venture",
+   "name": "TechCrunch Venture",
+   "kind": "feed",
+   "url": "https://techcrunch.com/category/venture/feed/"
+  },
+  {
+   "id": "crunchbase",
+   "name": "Crunchbase News",
+   "kind": "feed",
+   "url": "https://news.crunchbase.com/feed/"
+  },
+  {
+   "id": "qbit",
+   "name": "量子位",
+   "kind": "feed",
+   "url": "https://www.qbitai.com/feed"
+  },
+  {
+   "id": "hn-agent",
+   "name": "HN agent",
+   "kind": "hn",
+   "query": "agent"
+  },
+  {
+   "id": "hn-claude",
+   "name": "HN claude",
+   "kind": "hn",
+   "query": "claude"
+  },
+  {
+   "id": "hn-openai",
+   "name": "HN openai",
+   "kind": "hn",
+   "query": "openai"
+  },
+  {
+   "id": "hn-llm",
+   "name": "HN llm",
+   "kind": "hn",
+   "query": "llm"
+  },
+  {
+   "id": "hn-mcp",
+   "name": "HN mcp",
+   "kind": "hn",
+   "query": "mcp"
+  },
+  {
+   "id": "hn-show-hn",
+   "name": "HN Show HN",
+   "kind": "hn",
+   "query": "Show HN"
+  },
+  {
+   "id": "hn-launch-hn",
+   "name": "HN Launch HN",
+   "kind": "hn",
+   "query": "Launch HN"
+  },
+  {
+   "id": "release-anthropics-claude-code",
+   "name": "anthropics/claude-code releases",
+   "kind": "github_releases",
+   "url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=5"
+  },
+  {
+   "id": "release-openai-codex",
+   "name": "openai/codex releases",
+   "kind": "github_releases",
+   "url": "https://api.github.com/repos/openai/codex/releases?per_page=5"
+  }
+ ]
+}

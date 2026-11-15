@@ -1,0 +1,8 @@
+{
+  "model": "models/Qwen3-TTS-12Hz-1.7B-CustomVoice-8bit",
+  "speaker": "ryan",
+  "language": "English",
+  "instruct": "Warm, clear and unhurried, like a friendly morning news host.",
+  "temperature": 0.7,
+  "_about": "Local Qwen3-TTS CustomVoice (Apache-2.0, mlx-community). A built-in speaker keeps the voice the same every day. Audition others with: venv-tts/bin/python -I tts.py x <out> --voice memory/voice.json --sample \"...\""
+}

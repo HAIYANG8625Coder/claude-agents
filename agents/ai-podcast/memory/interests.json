@@ -1,0 +1,12 @@
+{
+  "_about": "Interest areas. The ledger flags every lead whose title or summary matches, and the editor must decide on each flagged lead. They widen what the editor looks at; they never pick stories on their own. Values are Python regexes. Edit freely.",
+  "areas": {
+    "claude-and-anthropic": "(?i)\\b(claude|anthropic|opus|sonnet|haiku)\\b",
+    "agent-engineering": "(?i)\\b(agents?|agentic|harness\\w*|subagents?|skills?|mcp|sandbox\\w*|orchestrat\\w+|always[- ]on|evals?)\\b",
+    "coding-tools": "(?i)\\b(claude code|codex|cursor|copilot|coding agents?)\\b",
+    "memory-and-context": "(?i)\\b(memory|long[- ]term context|context window|retrieval|rag)\\b",
+    "ai-video-and-voice": "(?i)\\b(video|avatar|tts|voice|text[- ]to[- ]speech|heygen|veo|sora|lip[- ]?sync)\\b",
+    "creator-and-content": "(?i)\\b(creator|content|newsletter|podcast|social media|xiaohongshu|rednote)\\b",
+    "model-releases": "(?i)\\b(release[sd]?|launch\\w*|introduc\\w+|announc\\w+)\\b.*\\b(model|gpt|gemini|qwen|deepseek|kimi|llama|claude)\\b"
+  }
+}

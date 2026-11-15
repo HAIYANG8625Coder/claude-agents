@@ -16,3 +16,4 @@ Runtime state (databases, logs, learned memory, anything personal) lives outside
 | Agent | What it does |
 |---|---|
 | [stats-agent](stats-agent/PLAN.md) (architecture + workflow diagrams inside) | Reads my Xiaohongshu note stats 24 h after each note goes live and messages me on Telegram only when it's worth it |
+| [ai-podcast](ai-podcast/PLAN.md) | Every morning: captures 113 AI sources, a collector and a separate editor agent read originals and pick ~6 stories, local Qwen3-TTS voices a 10–12 min English episode, sent to Telegram with Chinese–English notes |
