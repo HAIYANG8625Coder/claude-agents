@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs><marker id="aink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f1f1f"/></marker><marker id="aaccent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d4600b"/></marker><marker id="agrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a8a49c"/></marker></defs>
+  <rect width="1200" height="560" fill="#ffffff"/>
+  <text x="40" y="50" font-size="21" font-weight="700" fill="#1f1f1f">States · one event in the inbox</text>
+  <rect x="30" y="80" width="1140" height="440" rx="14" fill="#f0ede6"/>
+  <circle cx="110" cy="290" r="10" fill="#1f1f1f"/>
+  <text x="110" y="326" font-size="15" font-weight="700" fill="#1f1f1f" text-anchor="middle">new event</text>
+  <path d="M124,290 L366,290" fill="none" stroke="#d4600b" stroke-width="2.5" marker-end="url(#aaccent)"/>
+  <text x="245" y="278" font-size="14" font-weight="400" fill="#6b6b6b" text-anchor="middle">handler writes it</text>
+  <rect x="364" y="234" width="232" height="112" rx="12" fill="#e9c9ae"/>
+  <rect x="370" y="240" width="220" height="100" rx="9" fill="#fcefe5" stroke="#d4600b" stroke-width="2.5"/>
+  <text x="480" y="286.1" font-size="24" font-weight="700" fill="#d4600b" text-anchor="middle">pending</text>
+  <text x="480" y="321.3" font-size="14" font-weight="400" fill="#6b6b6b" text-anchor="middle">waiting for a run</text>
+  <path d="M110,278 L110,200 Q110,188 122,188 L176,188" fill="none" stroke="#a8a49c" stroke-width="2" stroke-dasharray="10 7" marker-end="url(#agrey)"/>
+  <text x="100" y="228" font-size="14" font-weight="400" fill="#8a8a8a" text-anchor="end">same id</text>
+  <text x="100" y="246.2" font-size="14" font-weight="400" fill="#8a8a8a" text-anchor="end">again</text>
+  <rect x="180" y="150" width="160" height="76" rx="9" fill="#ffffff" stroke="#e3dfd7" stroke-width="1.5"/>
+  <text x="260" y="182.3" font-size="18" font-weight="700" fill="#9a968e" text-anchor="middle">dropped</text>
+  <text x="260" y="209.7" font-size="14" font-weight="400" fill="#9a968e" text-anchor="middle">never stored</text>
+  <path d="M440,236 L440,182 Q440,170 452,170 L508,170 Q520,170 520,182 L520,232" fill="none" stroke="#1f1f1f" stroke-width="2" marker-end="url(#aink)"/>
+  <text x="532" y="180" font-size="14" font-weight="400" fill="#6b6b6b">run failed, attempts &lt; 3:</text>
+  <text x="532" y="198.2" font-size="14" font-weight="400" fill="#6b6b6b">retry on the next tick</text>
+  <path d="M594,290 L846,290" fill="none" stroke="#d4600b" stroke-width="2.5" marker-end="url(#aaccent)"/>
+  <text x="720" y="278" font-size="14" font-weight="400" fill="#6b6b6b" text-anchor="middle">run returned JSON</text>
+  <rect x="850" y="240" width="220" height="100" rx="10" fill="#ffffff" stroke="#1f1f1f" stroke-width="2.5"/>
+  <text x="960" y="278.3" font-size="24" font-weight="700" fill="#1f1f1f" text-anchor="middle">done</text>
+  <text x="960" y="313.5" font-size="13" font-weight="400" fill="#6b6b6b" text-anchor="middle">follow-ups → timers</text>
+  <text x="960" y="330.4" font-size="13" font-weight="400" fill="#6b6b6b" text-anchor="middle">message → outbox</text>
+  <path d="M480,344 L480,424" fill="none" stroke="#1f1f1f" stroke-width="2" marker-end="url(#aink)"/>
+  <text x="492" y="389" font-size="14" font-weight="400" fill="#6b6b6b">3rd failure</text>
+  <rect x="370" y="428" width="220" height="76" rx="9" fill="#ffffff" stroke="#d8d4cc" stroke-width="1.5"/>
+  <text x="480" y="460.9" font-size="20" font-weight="700" fill="#d4600b" text-anchor="middle">failed</text>
+  <text x="480" y="490.9" font-size="14" font-weight="400" fill="#6b6b6b" text-anchor="middle">kept for status</text>
+  <path d="M594,466 L846,466" fill="none" stroke="#1f1f1f" stroke-width="2" marker-end="url(#aink)"/>
+  <text x="720" y="454" font-size="14" font-weight="400" fill="#6b6b6b" text-anchor="middle">adds a warning</text>
+  <rect x="850" y="428" width="220" height="76" rx="9" fill="#ffffff" stroke="#d8d4cc" stroke-width="1.5"/>
+  <text x="960" y="461.55" font-size="20" font-weight="700" fill="#d4600b" text-anchor="middle">outbox</text>
+  <text x="960" y="491.55" font-size="13" font-weight="400" fill="#6b6b6b" text-anchor="middle">Telegram: Chrome open?</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs><marker id="aink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ece8e1"/></marker><marker id="aaccent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f0883e"/></marker><marker id="agrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6f6a63"/></marker></defs>
+  <rect width="1200" height="600" fill="#0d1117"/>
+  <text x="40" y="50" font-size="21" font-weight="700" fill="#ece8e1">Layers · this repo, the way Claude Code sees it</text>
+  <rect x="40" y="84" width="860" height="104" rx="14" fill="#1c1a17"/>
+  <text x="64" y="126" font-size="20" font-weight="700" fill="#ece8e1">Marketplace</text>
+  <text x="64" y="154" font-size="13.5" font-weight="400" fill="#aca69d">.claude-plugin/marketplace.json</text>
+  <rect x="400" y="118" width="169.08" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="484.54" y="134" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">lists every plugin</text>
+  <rect x="577.08" y="118" width="177.14" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="665.65" y="134" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">install from GitHub</text>
+  <rect x="40" y="202" width="860" height="104" rx="14" fill="#1c1a17"/>
+  <rect x="40" y="202" width="860" height="104" rx="14" fill="none" stroke="#f0883e" stroke-width="2.5"/>
+  <text x="64" y="244" font-size="20" font-weight="700" fill="#f0883e">Plugins</text>
+  <text x="64" y="272" font-size="13.5" font-weight="400" fill="#aca69d">plugins/&lt;name&gt;/.claude-plugin/plugin.json</text>
+  <rect x="400" y="236" width="112.66" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="456.33" y="252" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">x-assistant</text>
+  <rect x="520.66" y="236" width="120.72" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="581.02" y="252" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">avatar-video</text>
+  <rect x="649.38" y="236" width="128.78" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="713.77" y="252" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">outlook-email</text>
+  <rect x="786.16" y="236" width="88.48" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="830.4" y="252" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">diagrams</text>
+  <rect x="40" y="320" width="860" height="104" rx="14" fill="#1c1a17"/>
+  <text x="64" y="362" font-size="20" font-weight="700" fill="#ece8e1">Skills · subagents</text>
+  <text x="64" y="390" font-size="13.5" font-weight="400" fill="#aca69d">skills/&lt;name&gt;/SKILL.md · agents/&lt;name&gt;.md</text>
+  <rect x="400" y="354" width="80.42" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="440.21" y="370" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">/x-post</text>
+  <rect x="488.42" y="354" width="96.54" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="536.69" y="370" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">/xhs-post</text>
+  <rect x="592.96" y="354" width="128.78" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="657.35" y="370" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">/avatar-video</text>
+  <rect x="729.74" y="354" width="112.66" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="786.07" y="370" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">/chart-draw</text>
+  <rect x="40" y="438" width="860" height="104" rx="14" fill="#1c1a17"/>
+  <text x="64" y="480" font-size="20" font-weight="700" fill="#ece8e1">Data · runtime</text>
+  <text x="64" y="508" font-size="13.5" font-weight="400" fill="#aca69d">outside the plugins</text>
+  <rect x="400" y="472" width="120.72" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="460.36" y="488" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">x-assistant/</text>
+  <rect x="528.72" y="472" width="128.78" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="593.11" y="488" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">avatar-video/</text>
+  <rect x="665.5" y="472" width="185.2" height="27" rx="13.5" fill="#2a2723" stroke="#aca69d" stroke-width="1.2"/>
+  <text x="758.1" y="488" font-size="13" font-weight="700" fill="#aca69d" text-anchor="middle">Application Support/</text>
+  <rect x="950" y="280" width="210" height="110" rx="10" fill="#2a2723" stroke="#ece8e1" stroke-width="2.5"/>
+  <text x="1055" y="321.5" font-size="18" font-weight="700" fill="#ece8e1" text-anchor="middle">.claude/ links</text>
+  <text x="1055" y="348.9" font-size="13" font-weight="400" fill="#aca69d" text-anchor="middle">this folder loads skills</text>
+  <text x="1055" y="365.8" font-size="13" font-weight="400" fill="#aca69d" text-anchor="middle">with plain names</text>
+  <path d="M946,335 L904,335" fill="none" stroke="#ece8e1" stroke-width="2" marker-end="url(#aink)"/>
+  <text x="1055" y="420" font-size="13.5" font-weight="400" fill="#8f8a82" text-anchor="middle">Installed elsewhere:</text>
+  <text x="1055" y="438" font-size="13.5" font-weight="400" fill="#8f8a82" text-anchor="middle">/x-assistant:x-post</text>
+  <text x="40" y="572" font-size="13.5" font-weight="400" fill="#8f8a82">Each layer only points down: a plugin lists its skills; a skill reads its data folder.</text>
+</svg>

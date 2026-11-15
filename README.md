@@ -12,7 +12,8 @@ claude-agents/
 ├─ plugins/                          one folder per plugin (skills + subagents that work together)
 │  ├─ x-assistant/                   .claude-plugin/plugin.json, skills/, agents/
 │  ├─ avatar-video/
-│  └─ outlook-email/
+│  ├─ outlook-email/
+│  └─ diagrams/                    chart-draw: clean SVG diagrams for docs
 ├─ agents/                           always-on agents: programs that run on their own schedule
 │  └─ stats-agent/                   PLAN.md, agent.py, memory/instructions.md
 ├─ .claude/skills/, .claude/agents/  links into plugins/ (so this folder loads them with plain names),
@@ -116,6 +117,22 @@ Short vertical videos (also the `voice-video` skill: my cloned voice over graphi
 | `.claude/skills/hyperframes*`, `media-use`, `heygen-*` | Third-party skills from HeyGen, pinned in `skills-lock.json` |
 
 Setup: Node.js 22+ (`npm install` in `avatar-video/` adds FFmpeg), a HeyGen plan, `npx hyperframes auth login`, and `/mcp` → heygen. Your `AVATAR-*.md`, recordings and renders are git-ignored.
+
+## Diagrams (plugin `diagrams`)
+
+`/chart-draw` draws architecture, workflow and timeline diagrams as hand-written SVG, in the style of the figures in Anthropic's [Building always-on agents](https://claude.com/resources/articles/building-always-on-agents): beige panels, white boxes, one orange path with numbered steps, and real example rows. Light mode is the default, and each diagram also gets a dark twin that GitHub shows to dark-mode readers. A checker renders each SVG with headless Chrome. It flags overlapping labels, lines crossing text and anything outside the frame, and it saves a preview at GitHub's README width with Arial.
+
+| Path | What it is |
+|---|---|
+| `plugins/diagrams/skills/chart-draw/SKILL.md` | The flow: facts → pick a template → draw → check → embed |
+| `plugins/diagrams/skills/chart-draw/assets/` | 10 worked examples: overview, steps + table, timeline, sequence, state machine, decision tree, swimlane, folder tree, compare, layers |
+| `plugins/diagrams/skills/chart-draw/references/catalog.md` | Which type answers which question, with a recipe for each |
+| `plugins/diagrams/skills/chart-draw/scripts/svgkit.py` + `examples/` | A small Python kit that draws boxes, arrows, pills and tables in the house style; 7 of the examples are built with it |
+| `plugins/diagrams/skills/chart-draw/references/style.md` | Colours, type sizes, arrow and label rules |
+| `plugins/diagrams/skills/chart-draw/scripts/theme.py` | Makes the dark-mode twin (`<name>-dark.svg`) of a light diagram; embed both with `<picture>`, with light as the default |
+| `plugins/diagrams/skills/chart-draw/scripts/check.py` | `python3 -I check.py *.svg --github`: PNG previews + layout check: overlaps, labels on lines, text or boxes spilling over edges (exit 1 on a problem) |
+
+Worked example: the diagrams in [agents/stats-agent/PLAN.md](agents/stats-agent/PLAN.md).
 
 ## Outlook email (plugin `outlook-email`)
 

@@ -23,7 +23,10 @@ Track how each Xiaohongshu note does in its first 24 hours without me opening th
 
 Diagrams in the style of the article's own figures.
 
-![How the stats agent fits together: timers and the event inbox start a run; the run reads the creator center, writes stats.md and its memory under an allow-list; the outbox and dispatcher send to Telegram](docs/overview.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/overview-dark.svg">
+  <img alt="How the stats agent fits together: timers and the event inbox start a run; the run reads the creator center, writes stats.md and its memory under an allow-list; the outbox and dispatcher send to Telegram" src="docs/overview.svg">
+</picture>
 
 Everything here lives in `~/Library/Application Support/stats-agent/` except Chrome, Telegram and `posts.md`. `agent.py tick` runs three plain Python steps: the scheduler, the worker and the dispatcher. Only the worker ever starts a model, and only when the inbox has work. The run can't see the Telegram token, the repo or the rest of the Mac.
 
@@ -43,10 +46,16 @@ What lives where:
 ## Workflow
 
 ### One tick
-![One tick: the scheduler or handler writes the event, the worker reads every pending event, starts one run, waits for its JSON, marks the events done, and saves follow-ups to timers and the message to the outbox](docs/tick.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/tick-dark.svg">
+  <img alt="One tick: the scheduler or handler writes the event, the worker reads every pending event, starts one run, waits for its JSON, marks the events done, and saves follow-ups to timers and the message to the outbox" src="docs/tick.svg">
+</picture>
 
 ### One note's first 24 hours
-![Timeline of one note: published 09:58, a check at 10:12 sets a follow-up, the 21:15 digest stays quiet, the follow-up at Mon 10:08 writes stats.md, and the Mon 21:15 digest sends it to Telegram](docs/timeline.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/timeline-dark.svg">
+  <img alt="Timeline of one note: published 09:58, a check at 10:12 sets a follow-up, the 21:15 digest stays quiet, the follow-up at Mon 10:08 writes stats.md, and the Mon 21:15 digest sends it to Telegram" src="docs/timeline.svg">
+</picture>
 
 ## Failure handling
 - If a run fails, its events stay pending and are retried on the next tick. After 3 failures they are marked failed and I get a Telegram warning (usually Chrome is closed or the extension is disconnected).

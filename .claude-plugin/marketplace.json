@@ -19,6 +19,11 @@
       "name": "outlook-email",
       "source": "./plugins/outlook-email",
       "description": "Read, search and summarize Outlook email through Claude in Chrome. Read-only by default."
+    },
+    {
+      "name": "diagrams",
+      "source": "./plugins/diagrams",
+      "description": "Clean architecture, workflow and timeline diagrams as hand-written SVG, in the style of Anthropic's always-on agents article, with an automatic overlap check."
     }
   ]
 }

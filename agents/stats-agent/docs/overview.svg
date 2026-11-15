@@ -33,8 +33,8 @@
 
   <!-- run -->
   <line x1="254" y1="346" x2="396" y2="346" stroke="#d4600b" stroke-width="2.5" marker-end="url(#ao)"/>
-  <text x="264" y="320" font-size="14" fill="#6b6b6b">Worker starts</text>
-  <text x="264" y="338" font-size="14" fill="#6b6b6b">one run</text>
+  <text x="306" y="320" font-size="14" fill="#6b6b6b">Worker starts</text>
+  <text x="306" y="338" font-size="14" fill="#6b6b6b">one run</text>
   <rect x="400" y="296" width="360" height="100" rx="10" fill="#ffffff" stroke="#1f1f1f" stroke-width="2.5"/>
   <text x="580" y="338" text-anchor="middle" font-size="24" font-weight="700" fill="#1f1f1f">A run</text>
   <text x="580" y="364" text-anchor="middle" font-size="14" fill="#6b6b6b">claude -p · Sonnet</text>
@@ -88,12 +88,13 @@
 
   <!-- user -->
   <line x1="1052" y1="346" x2="1112" y2="346" stroke="#d4600b" stroke-width="2.5" marker-end="url(#ao)"/>
-  <text x="1082" y="334" text-anchor="middle" font-size="12.5" fill="#6b6b6b">Telegram</text>
+  
   <circle cx="1140" cy="322" r="15" fill="#1f1f1f"/>
   <path d="M1112,370 Q1112,342 1140,342 Q1168,342 1168,370 Z" fill="#1f1f1f"/>
   <text x="1140" y="396" text-anchor="middle" font-size="16" font-weight="700" fill="#1f1f1f">You</text>
+  <text x="1140" y="416" text-anchor="middle" font-size="12.5" fill="#6b6b6b">on Telegram</text>
 
   <!-- you can ask -->
-  <path d="M1140,404 V640 Q1140,650 1130,650 H102 Q92,650 92,640 V396" fill="none" stroke="#1f1f1f" stroke-width="2" marker-end="url(#ak)"/>
+  <path d="M1140,428 V640 Q1140,650 1130,650 H102 Q92,650 92,640 V396" fill="none" stroke="#1f1f1f" stroke-width="2" marker-end="url(#ak)"/>
   <text x="650" y="636" text-anchor="middle" font-size="14" fill="#6b6b6b">Or ask any time: agent.py event check</text>
 </svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs><marker id="aink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ece8e1"/></marker><marker id="aaccent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f0883e"/></marker><marker id="agrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6f6a63"/></marker></defs>
+  <rect width="1200" height="560" fill="#0d1117"/>
+  <text x="40" y="50" font-size="21" font-weight="700" fill="#ece8e1">Folder · what the stats agent keeps, and who reads it</text>
+  <rect x="30" y="80" width="560" height="450" rx="14" fill="#1c1a17"/>
+  <text x="60" y="132" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#6f6a63"></text>
+  <text x="60" y="132" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#ece8e1">stats-agent/</text>
+  <text x="60" y="172" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#6f6a63">├─&#160;</text>
+  <text x="93" y="172" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="400" fill="#ece8e1">agent.py</text>
+  <text x="330" y="172" font-size="14" font-weight="400" fill="#aca69d">copied here by install</text>
+  <text x="60" y="212" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#6f6a63">├─&#160;</text>
+  <text x="93" y="212" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="400" fill="#ece8e1">stats.md</text>
+  <text x="330" y="212" font-size="14" font-weight="400" fill="#aca69d">the record · /xhs-post copies it</text>
+  <text x="60" y="252" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#6f6a63">├─&#160;</text>
+  <text x="93" y="252" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#ece8e1">memory/</text>
+  <text x="60" y="292" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#6f6a63">│&#160;&#160;├─&#160;</text>
+  <text x="126" y="292" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#f0883e">instructions.md</text>
+  <text x="60" y="332" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#6f6a63">│&#160;&#160;├─&#160;</text>
+  <text x="126" y="332" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#f0883e">notes.md</text>
+  <text x="60" y="372" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#6f6a63">│&#160;&#160;└─&#160;</text>
+  <text x="126" y="372" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#f0883e">reported.md</text>
+  <text x="60" y="412" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#6f6a63">└─&#160;</text>
+  <text x="93" y="412" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="700" fill="#ece8e1">state/</text>
+  <text x="60" y="452" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#6f6a63">&#160;&#160;&#160;├─&#160;</text>
+  <text x="126" y="452" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="400" fill="#ece8e1">agent.db</text>
+  <text x="60" y="492" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" fill="#6f6a63">&#160;&#160;&#160;└─&#160;</text>
+  <text x="126" y="492" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="18" font-weight="400" fill="#ece8e1">launchd.log</text>
+  <path d="M600,272 H614 V380 H600" fill="none" stroke="#f0883e" stroke-width="2.5"/>
+  <path d="M616,326 L696,326" fill="none" stroke="#f0883e" stroke-width="2.5" marker-end="url(#aaccent)"/>
+  <rect x="694" y="276" width="312" height="100" rx="12" fill="#6b4024"/>
+  <rect x="700" y="282" width="300" height="88" rx="9" fill="#3d2616" stroke="#f0883e" stroke-width="2.5"/>
+  <text x="850" y="312.5" font-size="18" font-weight="700" fill="#f0883e" text-anchor="middle">Loaded into every run</text>
+  <text x="850" y="339.9" font-size="13" font-weight="400" fill="#aca69d" text-anchor="middle">rules, what it learned, what it</text>
+  <text x="850" y="356.8" font-size="13" font-weight="400" fill="#aca69d" text-anchor="middle">already told you (last 3,000 chars)</text>
+  <path d="M600,432 H614 V500 H600" fill="none" stroke="#ece8e1" stroke-width="2.5"/>
+  <path d="M616,466 L696,466" fill="none" stroke="#ece8e1" stroke-width="2" marker-end="url(#aink)"/>
+  <rect x="700" y="422" width="300" height="88" rx="10" fill="#2a2723" stroke="#ece8e1" stroke-width="2.5"/>
+  <text x="850" y="452.5" font-size="18" font-weight="700" fill="#ece8e1" text-anchor="middle">Never seen by the model</text>
+  <text x="850" y="479.9" font-size="13" font-weight="400" fill="#aca69d" text-anchor="middle">inbox · timers · outbox · runs,</text>
+  <text x="850" y="496.8" font-size="13" font-weight="400" fill="#aca69d" text-anchor="middle">read by the worker and dispatcher</text>
+  <text x="40" y="548" font-size="13.5" font-weight="400" fill="#8f8a82">Lives in ~/Library/Application Support/, outside the repo, so nothing here is ever committed.</text>
+</svg>

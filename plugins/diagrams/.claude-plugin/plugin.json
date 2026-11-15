@@ -1,0 +1,10 @@
+{
+  "name": "diagrams",
+  "version": "0.1.0",
+  "description": "Clean architecture, workflow and timeline diagrams as hand-written SVG, in the style of Anthropic's always-on agents article, with an automatic overlap check.",
+  "author": {
+    "name": "Michael Yang"
+  },
+  "repository": "https://github.com/HAIYANG8625Coder/claude-agents",
+  "keywords": ["diagram", "svg", "architecture", "docs"]
+}
