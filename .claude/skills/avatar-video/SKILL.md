@@ -49,7 +49,7 @@ Show the surviving scripts numbered, with seconds, the ⭐ pick and what the rev
 
 ## 5. Storyboard (the cost gate)
 Make the video folder: `avatar-video/videos/<YYYY-MM-DD>-<slug>/` by copying `avatar-video/template/` (not `node_modules`). Write `STORYBOARD.md` there: one row per sentence → seconds, what's on screen (face only / punch-in / pop-in card text / B-roll + circle inset), and where each B-roll comes from (Michael's screenshot, drawn in HyperFrames, HeyGen asset search). Follow `avatar-video/brand/DESIGN.md`.
-- **Pick a style preset first** (`DESIGN.md` → Style presets: A market news, B screen tutorial, C bold type, D talking head) to fit the topic, and put `Style: <letter> · <name>` on the storyboard's first line. Check `videos.md` for the last video on the same platform and don't repeat its preset unless Michael asks. Build `index.html` from that preset's worked example, not from whatever the last video was.
+- **Pick a style preset first** (`DESIGN.md` → Style presets: A market news, B screen tutorial, C bold type, D talking head, E sticky-note whiteboard, F anime story) to fit the topic, and put `Style: <letter> · <name>` on the storyboard's first line. Check `videos.md` for the last video on the same platform and don't repeat its preset unless Michael asks. Build `index.html` from that preset's worked example, not from whatever the last video was.
 - List any screenshot or recording **Michael must provide**, and ask for it now.
 - Show the storyboard and ask: "Approve? This next step spends HeyGen credits (voice + avatar ≈ <seconds> s)." Use `--plan` on the generate commands for your own estimate, but don't quote prices unless Michael asks. **Stop and wait.**
 
@@ -84,7 +84,7 @@ Follow the `/hyperframes` skill (read `references/types/vertical.md`, `captions.
 Start `npx hyperframes preview` and tell Michael he can watch it (and edit in the HyperFrames desktop app if he likes). **Wait** for approval or changes. Then render: `npx hyperframes render` → MP4 in the video folder. Send the MP4 with SendUserFile.
 
 ## 10. Hand off to publish
-Ask where to post, then run that platform's skill with the MP4 as its video: `x-post` (media = video, English under 280) or `xhs-post` (video note, Chinese). Both now upload video. Each still waits for Michael's yes on the exact text before publishing. Give them the video folder, so they can check the post's numbers against `script.json` and `RESEARCH.md`.
+Ask where to post, then run that platform's skill with the MP4 as its video: `x-post` (media = video, English under 280) or `xhs-post` (video note, Chinese). Both now upload video. Each still waits for Michael's yes on the exact text before publishing. A render that finishes late at night is not posted that night: `xhs-post` schedules the note for the next slot in `x-assistant/xhs-schedule.md` and sets the AI-content declaration, so tell it the video is AI-generated. Give them the video folder, so they can check the post's numbers against `script.json` and `RESEARCH.md`.
 
 ## 11. Log
 Append to `avatar-video/videos.md`:

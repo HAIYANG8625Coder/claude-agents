@@ -74,3 +74,37 @@ Topics: #微软宕机 #微软 #Outlook #Office365 #科技新闻
 Video: avatar-video/videos/2026-11-13-msft-outage/renders/msft-outage-xhs.mp4 (7.5 MB copy of the 23-42-00 render, 59.8 s); cover = first frame (headline collage + "20+ 小时 到底怎么回事儿？").
 Status re-checked right before publishing: still recovering, no all-clear, so "正在恢复" stayed. Editor counted 519/1000. Creator center showed 发布成功.
 Style: video
+
+## 2026-11-14 (Xiaohongshu) — AI Agent：产品为什么不是模型？
+Video note teaching the WeChat article 《Harness才是产品：生产级AI Agent设计的12个要点》 (忽南忽北Wq), credited in the body. Post file: x-assistant/xhs-harness-post.md
+Topics: #AIAgent #智能体 #ClaudeCode #AI编程 #Harness
+Video: avatar-video/videos/2026-11-14-harness-sticky/renders/harness-sticky-xhs.mp4 (3.9 MB copy of the 00-19-16 render, 48.4 s); cover = first frame (sticky-note "产品≠模型").
+Published ~02:05 per Michael's Telegram OK ("post the video to xhs after 2am"). Editor counted 565/1000; all 5 tags became topics. Creator center showed 发布成功.
+Style: video
+
+## 2026-11-14 (Xiaohongshu) — 开源Agent四大流派｜你敢让它跑命令吗
+Video note teaching the WeChat article 《开源 Agent Harness 四大流派：OpenHands / DSH / Pi / Hermes》 (公众号 AI汇览), credited in the body. Post file: x-assistant/xhs-harness-anime-post.md
+Topics: #AIAgent #智能体 #开源 #ClaudeCode #Harness
+Video: avatar-video/videos/2026-11-14-harness-anime/renders/harness-anime-xhs.mp4 (9.9 MB copy of the 12-06-07 render, 53.4 s); cover = first frame (anime coder + "你敢吗？").
+Published ~13:25 after Michael's Telegram "yes, publish it" on the exact text. Editor counted 498/1000; all 5 tags became topics. Creator center showed 发布成功. The 内容类型声明 (AI-generated) setting was left unset; the video footer says 画面为 AI 生成.
+Style: video
+
+## 2026-11-14 (Xiaohongshu) — 新加坡收入最高的10个行业｜2025
+Video note: ranked bar chart of MOM's 2025 median income by industry (Labour Force in Singapore 2025, Table C5), named in the body. Post file: x-assistant/xhs-sg-top-income-post.md
+Topics: #新加坡 #新加坡工作 #新加坡收入 #新加坡生活 #新加坡薪资
+Video: avatar-video/videos/2026-11-14-sg-top-income/renders/sg-top-income-xhs.mp4 (5.0 MB copy of the 23-04-09 render, 43.1 s); cover = first frame ("新加坡 哪个行业 收入最高？").
+Published ~23:15 after Michael's "Publish" on the exact text. All 5 tags became topics. Creator center showed 发布成功.
+Style: video
+
+## 2026-11-15 (Xiaohongshu) — 微软宕机初步原因出了：不是被黑
+Video note, follow-up to the 2026-11-13 outage note; tracks Microsoft's preliminary root cause. Post file: x-assistant/xhs-msft-root-cause-post.md
+Topics: #微软宕机 #微软 #Outlook #Office365 #科技新闻
+Video: avatar-video/videos/2026-11-14-msft-root-cause/renders/msft-root-cause-xhs.mp4 (4.4 MB copy of the 2026-11-15 00-22-30 render, 58.4 s); cover = first frame (yellow note "被黑了吗？").
+Status re-checked right before publishing: no post-incident report published yet, so "初步原因" and "大约下周" stayed. Editor counter 451/1000; all 5 tags became topics. Creator center showed 发布成功.
+Style: video
+
+## 2026-11-15 (Xiaohongshu) — 英伟达vs AMD｜27年数据谁更能涨
+Post file: x-assistant/xhs-nvda-vs-amd-post.md · published about 00:50 SGT · body 577/1000 with topics
+Topics (all linked): #英伟达 #AMD #美股 #芯片 #数据分析
+Video: avatar-video/videos/2026-11-15-nvda-vs-amd/renders/nvda-vs-amd-xhs.mp4 (56.9 s, cover = first frame). 内容类型声明 left unset.
+Style: video

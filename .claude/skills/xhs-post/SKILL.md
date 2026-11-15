@@ -5,7 +5,9 @@ description: Write, design and (after the user approves) publish a Chinese image
 
 # Xiaohongshu post
 
-Flow: **gather facts → write Chinese note → make cards → review and improve → user approves → publish in Chrome → log.** Never publish without a clear yes.
+Flow: **gather facts → write Chinese note → make cards → review and improve → pick the slot → user approves → schedule in Chrome → log.** Never publish or schedule without a clear yes.
+
+Notes go out at a planned time, not when they happen to be finished: `x-assistant/xhs-schedule.md` holds the slots and rules (read it in step 5).
 
 This was first done by hand on 2026-11-11 for the note "Telegram遥控Claude踩坑记". If `x-assistant/xhs-telegram-post.md` and the `x-assistant/images/xhs-tg-*` cards exist, they are the worked example, so look at them before you write.
 
@@ -113,7 +115,14 @@ Never show a first draft. Check the note and the cards against `writing-guide.md
 3. Write 2–3 short review notes for the user: what you changed and why, plus any item that still needs their input (e.g. a missing real number only they know).
 
 ## 5. Ask the user
-Send the cards to them (SendUserFile, or as `files` in the Telegram reply if they're on Telegram; if neither is available, list the full PNG paths in order) and show the title, the body, the character counts and the review notes from step 4. Ask "Publish?" and **stop and wait**. If they ask for changes, apply them and show the result again.
+Send the cards to them (SendUserFile, or as `files` in the Telegram reply if they're on Telegram; if neither is available, list the full PNG paths in order) and show the title, the body, the character counts and the review notes from step 4. If they ask for changes, apply them and show the result again.
+
+**Pick the slot before you ask.** Read `x-assistant/xhs-schedule.md` and the Xiaohongshu entries in `x-assistant/posts.md` (their `Slot:` lines), then:
+- Check the real date and time (`date`), and take the next slot from the schedule that is still in the future and falls on a day with no published or scheduled Xiaohongshu note.
+- Say which topic group the note is in (main / second / other). If it would break the week's topic mix in the schedule file, say so in one line; the user decides.
+- Ask with the time in the question, e.g. "Schedule for Mon 16 Nov, 20:30?", and **stop and wait**.
+- If the user says "publish now" or names another time, do that and log `Slot: off-plan`. Their word wins over the schedule.
+- A note on a story still unfolding may be stale by its slot: say so, and offer the earliest slot.
 
 ## 6. Publish in Chrome (Claude in Chrome)
 The user must already be logged in (see "Before first use"). This flow uses the website, not the phone app.
@@ -129,14 +138,22 @@ The user must already be logged in (see "Before first use"). This flow uses the 
    ```
    Put the body in a JS template literal, and escape any backtick or `${` in it. Then read `ed.innerText.length` and the first and last lines back to confirm it landed.
 5. Topics: move the cursor to the end (`ed.focus(); getSelection().selectAllChildren(ed); getSelection().collapseToEnd()`), `type` `#ClaudeCode`, wait 2 seconds, then press **Return** (or click the first suggestion) to turn it into a real topic. Repeat for each tag. Verify that each tag shows up as `#name[话题]#` in the editor text. A tag that is still plain text gets no reach.
-6. Scroll down and take a screenshot: check the images, the title, the body counter (≤1000) and the topics. Then click **发布** and take a screenshot. Success shows **发布成功**.
+6. Scroll down and take a screenshot: check the images, the title, the body counter (≤1000) and the topics. Then, before the final click:
+   - **AI declaration:** if the video, images or voice are AI-generated (every `/avatar-video` and `/voice-video` note is), find **内容类型声明** on the form (it may sit under a 更多设置 / 内容设置 section) and choose the AI-generated option. Screenshot to confirm it is set.
+   - **Scheduled time:** unless the user said "publish now", turn on **定时发布** and set the date and time of the slot agreed in step 5. Read the chosen time back from the form; it must match the slot exactly.
+   - Neither control had been used through this skill when this was written (2026-11-15), so their labels and place on the form are unconfirmed. If you can't find one, stop and tell the user rather than guessing or publishing at once. After the first successful run, replace this line with what the form really shows.
+
+   Then click the publish button (**发布**, or **定时发布** when a time is set) and take a screenshot. Success shows **发布成功** for an immediate note; for a scheduled one, confirm the note appears as scheduled with the right time.
 
 ## 7. Log and save
 - Append to `x-assistant/posts.md`: date, "(Xiaohongshu)", the title, the post file, the topics, the image list and a `Style:` line (terminal / notebook / bigtype; "video" for a video note).
-- Remind the user to reply to comments in the first 1–2 hours after publishing (see `writing-guide.md` §7).
+- Add a `Slot:` line to the same entry in the format from `x-assistant/xhs-schedule.md` (slot, weekday, date, topic group; "off-plan" if the user chose another time), and say "scheduled" instead of "published" until the slot has passed.
+- **Fill in old stats while you are in the creator center:** for every Xiaohongshu entry in `posts.md` that has a `Slot:` line, no `24h:` line, and went live more than 24 hours ago, read its views, likes, saves and comments from the note list (笔记管理, or 数据中心 → 笔记数据) and add the `24h:` line with the time you read it. Copy the numbers exactly; if a number isn't shown, write "n/a", never a guess.
+- Remind the user to reply to comments in the first 1–2 hours after the note goes live, which for a scheduled note means after its slot (see `writing-guide.md` §7).
 - If the folder is a git repo, offer to commit the post file and the cards. Don't commit until they say yes, and check for secrets before you push.
 
 ## Pitfalls seen
+- Notes published between 23:15 and 02:05 on 2026-11-13 to 11-15, straight after their renders, got few views. That is why step 5 picks a slot and step 6 schedules.
 - The draft went to 1,187 characters and had to be cut to under 1,000, and the topic tags take up some of the budget.
 - The first cards had text that didn't fit and empty space at the bottom. Always check the renders before showing them.
 - The creator center opens in a new tab, so actions on the old tab ID do nothing.
