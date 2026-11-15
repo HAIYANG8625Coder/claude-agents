@@ -36,6 +36,20 @@ A small multi-agent setup that drafts, reviews, illustrates and publishes posts 
 
 **Xiaohongshu (`/xhs-post`):** connect Claude in Chrome to Claude Code (`claude --chrome` or `/chrome`), log in at xiaohongshu.com in that Chrome profile, and open creator.xiaohongshu.com once to finish its first-time prompts. Then change the card footer in `.claude/skills/xhs-post/templates/` to your own name. The full checklist is in the skill's "Before first use" section.
 
+## Always-on stats agent
+
+A small always-on agent built on the five parts from Anthropic's [Building always-on agents](https://claude.com/resources/articles/building-always-on-agents). It mostly sleeps. It wakes up to read Xiaohongshu note stats, writes each note's 24-hour numbers to its own `stats.md` (which `/xhs-post` copies into `x-assistant/posts.md`), and messages me on Telegram only when there is something worth knowing.
+
+| Part | Here |
+|---|---|
+| Inbox | SQLite `inbox` table. `agent.py event check` only adds a row; one worker (file lock) batches every pending event into one run, and events are deduped by id |
+| Timers | Separate `timers` table: a daily digest at 21:15, plus a follow-up for each new note at publish time + 24 h. A scheduler turns due timers into inbox events |
+| Memory | `memory/`: `instructions.md` (loaded every run), `notes.md` (what it learned), `reported.md` (what it already told me) |
+| Permissions | `claude -p` with an allow-list: it can read the note list in Chrome and read or edit only its own folder. No Bash, no clicks, no publishing. The Telegram token never enters the run |
+| Outbox | SQLite `outbox` table. The run returns a message or `null`, and a dispatcher sends it |
+
+`python3 -I stats-agent/agent.py install` copies the agent to `~/Library/Application Support/stats-agent/` and adds a launchd job that ticks every 10 minutes while the Mac is awake. A tick with nothing due starts no model and costs nothing. `status` shows its tables, and `event check` asks for the numbers now. It runs entirely outside `~/Documents`, so it needs no Full Disk Access and can't see your private folders. It needs Chrome open with Claude in Chrome connected.
+
 ## Avatar video (digital twin)
 
 Short vertical videos where my AI twin (HeyGen avatar + my cloned voice) explains a topic, edited in code with [HyperFrames](https://github.com/heygen-com/hyperframes) (HTML → MP4).
