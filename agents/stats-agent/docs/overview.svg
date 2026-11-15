@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ak" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f1f1f"/></marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d4600b"/></marker>
+  </defs>
+  <rect width="1200" height="700" fill="#ffffff"/>
+
+  <!-- three columns -->
+  <rect x="50" y="40" width="230" height="560" rx="14" fill="#f0ede6"/>
+  <rect x="300" y="40" width="550" height="560" rx="14" fill="#f0ede6"/>
+  <rect x="870" y="40" width="200" height="560" rx="14" fill="#f0ede6"/>
+  <text x="165" y="78" text-anchor="middle" font-size="17" font-weight="700" fill="#1f1f1f">What starts a run</text>
+  <text x="575" y="78" text-anchor="middle" font-size="17" font-weight="700" fill="#1f1f1f">What a run works with</text>
+  <text x="970" y="78" text-anchor="middle" font-size="17" font-weight="700" fill="#1f1f1f">What leaves a run</text>
+
+  <!-- timers -->
+  <rect x="72" y="112" width="186" height="104" rx="12" fill="#e9c9ae"/>
+  <rect x="78" y="118" width="174" height="92" rx="9" fill="#fcefe5" stroke="#d4600b" stroke-width="2.5"/>
+  <text x="165" y="152" text-anchor="middle" font-size="21" font-weight="700" fill="#d4600b">Timers</text>
+  <text x="165" y="176" text-anchor="middle" font-size="14" fill="#6b6b6b">21:15 daily digest</text>
+  <text x="165" y="195" text-anchor="middle" font-size="14" fill="#6b6b6b">+ a follow-up at 24 h</text>
+  <line x1="165" y1="218" x2="165" y2="296" stroke="#1f1f1f" stroke-width="2" marker-end="url(#ak)"/>
+  <text x="178" y="252" font-size="14" fill="#6b6b6b">Fires</text>
+  <text x="178" y="270" font-size="14" fill="#6b6b6b">when due</text>
+
+  <!-- inbox -->
+  <rect x="78" y="300" width="174" height="92" rx="9" fill="#ffffff" stroke="#d8d4cc" stroke-width="1.5"/>
+  <text x="165" y="340" text-anchor="middle" font-size="21" font-weight="700" fill="#d4600b">Event inbox</text>
+  <text x="165" y="364" text-anchor="middle" font-size="14" fill="#6b6b6b">SQLite table</text>
+  <text x="110" y="448" font-size="13" fill="#8a8a8a">launchd ticks every</text>
+  <text x="110" y="467" font-size="13" fill="#8a8a8a">10 min. Nothing pending:</text>
+  <text x="110" y="486" font-size="13" fill="#8a8a8a">no model, no tokens.</text>
+
+  <!-- run -->
+  <line x1="254" y1="346" x2="396" y2="346" stroke="#d4600b" stroke-width="2.5" marker-end="url(#ao)"/>
+  <text x="264" y="320" font-size="14" fill="#6b6b6b">Worker starts</text>
+  <text x="264" y="338" font-size="14" fill="#6b6b6b">one run</text>
+  <rect x="400" y="296" width="360" height="100" rx="10" fill="#ffffff" stroke="#1f1f1f" stroke-width="2.5"/>
+  <text x="580" y="338" text-anchor="middle" font-size="24" font-weight="700" fill="#1f1f1f">A run</text>
+  <text x="580" y="364" text-anchor="middle" font-size="14" fill="#6b6b6b">claude -p · Sonnet</text>
+
+  <!-- follow-up back to timers -->
+  <path d="M470,294 V172 Q470,160 458,160 H264" fill="none" stroke="#1f1f1f" stroke-width="2" marker-end="url(#ak)"/>
+  <text x="318" y="150" font-size="14" fill="#6b6b6b">Asks for a follow-up</text>
+
+  <!-- creator center -->
+  <rect x="610" y="118" width="210" height="92" rx="9" fill="#ffffff" stroke="#d8d4cc" stroke-width="1.5"/>
+  <text x="715" y="158" text-anchor="middle" font-size="19" font-weight="700" fill="#d4600b">Creator center</text>
+  <text x="715" y="182" text-anchor="middle" font-size="14" fill="#6b6b6b">note list, in your Chrome</text>
+  <line x1="715" y1="294" x2="715" y2="214" stroke="#1f1f1f" stroke-width="2" marker-end="url(#ak)"/>
+  <text x="725" y="258" font-size="14" fill="#6b6b6b">Reads</text><text x="725" y="276" font-size="14" fill="#6b6b6b">the stats</text>
+
+  <!-- memory / stats / permissions -->
+  <line x1="430" y1="402" x2="430" y2="474" stroke="#1f1f1f" stroke-width="2" marker-start="url(#ak)" marker-end="url(#ak)"/>
+  <line x1="585" y1="400" x2="585" y2="476" stroke="#1f1f1f" stroke-width="2" marker-end="url(#ak)"/>
+  <line x1="740" y1="400" x2="740" y2="476" stroke="#1f1f1f" stroke-width="2" marker-end="url(#ak)"/>
+  <text x="440" y="436" font-size="13" fill="#6b6b6b">Reads, writes</text>
+  <text x="440" y="452" font-size="13" fill="#6b6b6b">what it learned</text>
+  <text x="595" y="436" font-size="13" fill="#6b6b6b">Writes</text>
+  <text x="595" y="452" font-size="13" fill="#6b6b6b">24 h numbers</text>
+  <text x="750" y="436" font-size="13" fill="#6b6b6b">Every tool</text>
+  <text x="750" y="452" font-size="13" fill="#6b6b6b">call checked</text>
+
+  <rect x="320" y="480" width="160" height="92" rx="9" fill="#ffffff" stroke="#d8d4cc" stroke-width="1.5"/>
+  <text x="400" y="518" text-anchor="middle" font-size="19" font-weight="700" fill="#d4600b">Memory</text>
+  <text x="400" y="541" text-anchor="middle" font-size="12.5" fill="#6b6b6b">instructions · notes</text>
+  <text x="400" y="558" text-anchor="middle" font-size="12.5" fill="#6b6b6b">· what it already said</text>
+
+  <rect x="505" y="480" width="160" height="92" rx="9" fill="#ffffff" stroke="#d8d4cc" stroke-width="1.5"/>
+  <text x="585" y="518" text-anchor="middle" font-size="19" font-weight="700" fill="#d4600b">stats.md</text>
+  <text x="585" y="541" text-anchor="middle" font-size="12.5" fill="#6b6b6b">one line per note,</text>
+  <text x="585" y="558" text-anchor="middle" font-size="12.5" fill="#6b6b6b">copied into posts.md</text>
+
+  <rect x="680" y="480" width="160" height="92" rx="9" fill="#ffffff" stroke="#d8d4cc" stroke-width="1.5"/>
+  <text x="760" y="518" text-anchor="middle" font-size="19" font-weight="700" fill="#d4600b">Permissions</text>
+  <text x="760" y="541" text-anchor="middle" font-size="12.5" fill="#6b6b6b">read-only Chrome,</text>
+  <text x="760" y="558" text-anchor="middle" font-size="12.5" fill="#6b6b6b">its own folder only</text>
+
+  <!-- outbox -->
+  <line x1="764" y1="346" x2="888" y2="346" stroke="#d4600b" stroke-width="2.5" marker-end="url(#ao)"/>
+  <text x="772" y="318" font-size="14" fill="#6b6b6b">Sends, or</text><text x="772" y="336" font-size="14" fill="#6b6b6b">stays quiet</text>
+  <rect x="886" y="294" width="168" height="104" rx="12" fill="#e9c9ae"/>
+  <rect x="892" y="300" width="156" height="92" rx="9" fill="#fcefe5" stroke="#d4600b" stroke-width="2.5"/>
+  <text x="970" y="340" text-anchor="middle" font-size="21" font-weight="700" fill="#d4600b">Outbox</text>
+  <text x="970" y="364" text-anchor="middle" font-size="14" fill="#6b6b6b">+ dispatcher</text>
+  <text x="970" y="452" text-anchor="middle" font-size="13" fill="#8a8a8a">Only the dispatcher</text>
+  <text x="970" y="471" text-anchor="middle" font-size="13" fill="#8a8a8a">holds the Telegram token.</text>
+
+  <!-- user -->
+  <line x1="1052" y1="346" x2="1112" y2="346" stroke="#d4600b" stroke-width="2.5" marker-end="url(#ao)"/>
+  <text x="1082" y="334" text-anchor="middle" font-size="12.5" fill="#6b6b6b">Telegram</text>
+  <circle cx="1140" cy="322" r="15" fill="#1f1f1f"/>
+  <path d="M1112,370 Q1112,342 1140,342 Q1168,342 1168,370 Z" fill="#1f1f1f"/>
+  <text x="1140" y="396" text-anchor="middle" font-size="16" font-weight="700" fill="#1f1f1f">You</text>
+
+  <!-- you can ask -->
+  <path d="M1140,404 V640 Q1140,650 1130,650 H102 Q92,650 92,640 V396" fill="none" stroke="#1f1f1f" stroke-width="2" marker-end="url(#ak)"/>
+  <text x="650" y="636" text-anchor="middle" font-size="14" fill="#6b6b6b">Or ask any time: agent.py event check</text>
+</svg>

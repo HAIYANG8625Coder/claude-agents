@@ -6,7 +6,7 @@ Each agent gets its own folder:
 
 ```
 agents/<name>/
-├─ PLAN.md                  goal, how it maps to the five parts, decisions, how to use it
+├─ PLAN.md                  goal, the five parts, architecture + workflow diagrams, decisions, use
 ├─ agent.py (or similar)    scheduler, worker, dispatcher, install / uninstall
 └─ memory/instructions.md   the rules loaded at the start of every run
 ```
@@ -15,4 +15,4 @@ Runtime state (databases, logs, learned memory, anything personal) lives outside
 
 | Agent | What it does |
 |---|---|
-| [stats-agent](stats-agent/PLAN.md) | Reads my Xiaohongshu note stats 24 h after each note goes live and messages me on Telegram only when it's worth it |
+| [stats-agent](stats-agent/PLAN.md) (architecture + workflow diagrams inside) | Reads my Xiaohongshu note stats 24 h after each note goes live and messages me on Telegram only when it's worth it |

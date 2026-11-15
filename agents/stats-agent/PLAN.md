@@ -19,6 +19,35 @@ Track how each Xiaohongshu note does in its first 24 hours without me opening th
 | Permissions | The riskiest part: a run holds your access and nobody watches. Credentials stay outside, through a proxy | `claude -p` with an allow-list: 5 read-only Chrome tools and read/edit inside its own folder. Bash, clicks, JavaScript, uploads and web fetches are denied. The Telegram token is read only by the dispatcher and never enters the prompt |
 | Outbox | A run ends by sending, staying quiet, or asking. Start quiet and earn attention | The run returns JSON `{message, follow_ups, summary}`. A message goes into the SQLite `outbox`, and the dispatcher sends it. The daily digest is sent only when something is new, and a follow-up only when a note is unusual (≥2× or ≤0.5× the median) |
 
+## Architecture
+
+Diagrams in the style of the article's own figures.
+
+![How the stats agent fits together: timers and the event inbox start a run; the run reads the creator center, writes stats.md and its memory under an allow-list; the outbox and dispatcher send to Telegram](docs/overview.svg)
+
+Everything here lives in `~/Library/Application Support/stats-agent/` except Chrome, Telegram and `posts.md`. `agent.py tick` runs three plain Python steps: the scheduler, the worker and the dispatcher. Only the worker ever starts a model, and only when the inbox has work. The run can't see the Telegram token, the repo or the rest of the Mac.
+
+What lives where:
+
+| Place | Holds | Written by |
+|---|---|---|
+| `state/agent.db` → `inbox` | events waiting for a run (`check`, `schedule`, `follow_up`) | the handler and the scheduler; the worker marks them done |
+| `state/agent.db` → `timers` | the 21:15 schedule and each note's follow-up time | `db()` creates the schedule; the worker adds the follow-ups a run asks for |
+| `state/agent.db` → `outbox` | messages and whether they were sent | the worker (or a failure warning); the dispatcher marks them sent |
+| `state/agent.db` → `runs` | each run's time, events, status, cost and one-line summary | the worker |
+| `memory/instructions.md` | the rules, loaded into every run | `install` copies it from the repo |
+| `memory/notes.md` | patterns the agent noticed | the run |
+| `memory/reported.md` | every message already sent, so it doesn't repeat itself | the dispatcher |
+| `stats.md` | one line per note with its 24 h numbers | the run |
+
+## Workflow
+
+### One tick
+![One tick: the scheduler or handler writes the event, the worker reads every pending event, starts one run, waits for its JSON, marks the events done, and saves follow-ups to timers and the message to the outbox](docs/tick.svg)
+
+### One note's first 24 hours
+![Timeline of one note: published 09:58, a check at 10:12 sets a follow-up, the 21:15 digest stays quiet, the follow-up at Mon 10:08 writes stats.md, and the Mon 21:15 digest sends it to Telegram](docs/timeline.svg)
+
 ## Failure handling
 - If a run fails, its events stay pending and are retried on the next tick. After 3 failures they are marked failed and I get a Telegram warning (usually Chrome is closed or the extension is disconnected).
 - If the creator center shows a login page, the agent changes nothing and says so.
