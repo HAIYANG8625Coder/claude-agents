@@ -8,7 +8,7 @@ import json, os, re, shutil, subprocess, sys
 proj = sys.argv[1]
 take = sys.argv[sys.argv.index("--dir") + 1] if "--dir" in sys.argv else ".voice-heygen-full"
 tail = float(sys.argv[sys.argv.index("--tail") + 1]) if "--tail" in sys.argv else 0.9
-ff = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../../avatar-video/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg")
+ff = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../../../avatar-video/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg")
 d = os.path.join(proj, take)
 lines = json.load(open(os.path.join(proj, "script.json")))
 words = [w for w in json.load(open(os.path.join(d, "words.json"))) if re.search(r"\w", w["text"])]

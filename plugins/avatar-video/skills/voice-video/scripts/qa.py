@@ -7,7 +7,7 @@ import glob, json, os, re, subprocess, sys
 
 proj = sys.argv[1]
 mp4 = sys.argv[2] if len(sys.argv) > 2 else max(glob.glob(os.path.join(proj, "renders/*.mp4")), key=os.path.getmtime)
-nm = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../../avatar-video/node_modules")
+nm = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../../../avatar-video/node_modules")
 ff, fp = nm + "/@ffmpeg-installer/darwin-arm64/ffmpeg", nm + "/@ffprobe-installer/darwin-arm64/ffprobe"
 tm = json.load(open(os.path.join(proj, "timing.json")))
 run = lambda *a: subprocess.run(a, capture_output=True, text=True)

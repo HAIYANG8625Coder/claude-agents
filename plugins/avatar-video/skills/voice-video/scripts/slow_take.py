@@ -9,7 +9,7 @@ import json, os, subprocess, sys
 proj, tempo = sys.argv[1], float(sys.argv[2])
 src = os.path.join(proj, sys.argv[sys.argv.index("--src") + 1] if "--src" in sys.argv else ".voice-heygen-full")
 dst = os.path.join(proj, ".voice-heygen-full-%s" % sys.argv[2]); os.makedirs(dst, exist_ok=True)
-ff = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../../avatar-video/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg")
+ff = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../../../avatar-video/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg")
 subprocess.run([ff, "-v", "error", "-y", "-i", os.path.join(src, "full.raw"), "-af", "atempo=%s" % tempo,
                 "-c:a", "pcm_s16le", "-f", "wav", os.path.join(dst, "full.raw")], check=True)
 words = json.load(open(os.path.join(src, "words.json")))

@@ -108,3 +108,17 @@ Post file: x-assistant/xhs-nvda-vs-amd-post.md · published about 00:50 SGT · b
 Topics (all linked): #英伟达 #AMD #美股 #芯片 #数据分析
 Video: avatar-video/videos/2026-11-15-nvda-vs-amd/renders/nvda-vs-amd-xhs.mp4 (56.9 s, cover = first frame). 内容类型声明 left unset.
 Style: video
+
+## 2026-11-15 (Xiaohongshu) — AI Agent一直在线？5个部件看懂
+Video note teaching Anthropic's "Building always-on agents" (2026-11-13) in plain words. Post file: x-assistant/xhs-always-on-agents-post.md · published 09:58 SGT ("publish now" from Michael) · editor counter 591/1000
+Topics (all linked): #AIAgent #ClaudeCode #Anthropic #AI编程 #智能体
+Video: avatar-video/videos/2026-11-15-always-on-agents/renders/always-on-agents-xhs.mp4 (4.2 MB copy of the 09-49-54 render, 58.2 s); cover = first frame ("一直在线？"). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
+Style: video (avatar-video preset G · app-UI tutorial)
+Slot: off-plan (09:58 Sun 2026-11-15) · Topic: main
+
+## 2026-11-15 (Xiaohongshu) — AI Agent一直在线｜我真做了一个
+Video note, follow-up to "AI Agent一直在线？5个部件看懂": the always-on stats agent from agents/stats-agent built for real (five parts, the Full Disk Access pitfall, the real Telegram message, cost). Post file: x-assistant/xhs-stats-agent-post.md · published 12:13 SGT ("publish now" from Michael) · editor counter 625/1000
+Topics (all linked): #AIAgent #ClaudeCode #Anthropic #AI编程 #智能体
+Video: avatar-video/videos/2026-11-15-stats-agent/renders/stats-agent-xhs.mp4 (5.2 MB copy of the 12-09-10 render, 58.1 s); cover = first frame ("替我盯小红书数据"). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
+Style: video (avatar-video preset G · app-UI tutorial)
+Slot: off-plan (12:13 Sun 2026-11-15) · Topic: main
