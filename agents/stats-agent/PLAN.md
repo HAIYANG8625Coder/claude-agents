@@ -37,10 +37,10 @@ Track how each Xiaohongshu note does in its first 24 hours without me opening th
 
 ## Use
 ```
-python3 -I stats-agent/agent.py install     # copy to ~/Library/Application Support/stats-agent and start the 10-min job
-python3 -I stats-agent/agent.py event check # ask for the numbers now
-python3 -I stats-agent/agent.py status      # inbox, timers, outbox, recent runs
-python3 -I stats-agent/agent.py uninstall   # stop and remove the job
+python3 -I agents/stats-agent/agent.py install     # copy to ~/Library/Application Support/stats-agent and start the 10-min job
+python3 -I agents/stats-agent/agent.py event check # ask for the numbers now
+python3 -I agents/stats-agent/agent.py status      # inbox, timers, outbox, recent runs
+python3 -I agents/stats-agent/agent.py uninstall   # stop and remove the job
 ```
 Needs: macOS, Python 3, the Claude Code CLI signed in, Chrome open with Claude in Chrome connected and signed in to the creator center, and the Telegram plugin configured once (`~/.claude/channels/telegram/`). After editing `agent.py` or `instructions.md`, run `install` again.
 

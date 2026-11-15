@@ -2,7 +2,52 @@
 
 My agents and skills for [Claude Code](https://claude.com/claude-code), built while learning to design and control AI agents in public.
 
-## X assistant
+## Repository layout
+
+The repo follows Claude Code's own plugin layout, so each group of skills and subagents is a plugin, and the repo is a plugin marketplace.
+
+```
+claude-agents/
+├─ .claude-plugin/marketplace.json   the marketplace: lists every plugin below
+├─ plugins/                          one folder per plugin (skills + subagents that work together)
+│  ├─ x-assistant/                   .claude-plugin/plugin.json, skills/, agents/
+│  ├─ avatar-video/
+│  └─ outlook-email/
+├─ agents/                           always-on agents: programs that run on their own schedule
+│  └─ stats-agent/                   PLAN.md, agent.py, memory/instructions.md
+├─ .claude/skills/, .claude/agents/  links into plugins/ (so this folder loads them with plain names),
+│                                    plus HeyGen's third-party skills pinned in skills-lock.json
+├─ x-assistant/                      data for x-assistant: playbook, posts log, cards
+└─ avatar-video/                     data for avatar-video: brand, video template, tools
+```
+
+**Adding something new**
+- A new skill or subagent: put it in `plugins/<plugin>/skills/<name>/SKILL.md` or `plugins/<plugin>/agents/<name>.md`, then link it into `.claude/skills/` or `.claude/agents/` (`ln -s ../../plugins/<plugin>/skills/<name> .claude/skills/<name>`).
+- A new plugin: `plugins/<name>/.claude-plugin/plugin.json` (at least `name`), add it to `.claude-plugin/marketplace.json`, and check it with `claude plugin validate .`.
+- A new always-on agent: `agents/<name>/` with a `PLAN.md`, its program, and its `memory/`. Its state lives outside the repo.
+
+**Install the plugins somewhere else** (another project, another machine):
+```
+claude plugin marketplace add HAIYANG8625Coder/claude-agents
+claude plugin install x-assistant@claude-agents
+```
+Installed this way the commands are namespaced (`/x-assistant:x-post`). Some skills still expect this repo's data folders (`x-assistant/`, `avatar-video/`) in the working directory.
+
+## Rules for this repo
+
+Every new feature follows how Claude Code itself organizes skills, subagents and plugins ([plugins](https://code.claude.com/docs/en/plugins), [marketplaces](https://code.claude.com/docs/en/plugin-marketplaces)). When Claude Code changes its conventions, update the layout and this section first, then the features.
+
+1. **Every skill and subagent belongs to a plugin.** Its source lives in `plugins/<plugin>/skills/<name>/SKILL.md` or `plugins/<plugin>/agents/<name>.md`, never directly in `.claude/`.
+2. **`.claude/skills/` and `.claude/agents/` only hold links** into `plugins/` (so this folder loads them with plain names), plus third-party skills installed by a tool and pinned in `skills-lock.json`. Don't edit third-party skills; update them with their installer.
+3. **Group by job.** Skills and subagents that work together go in the same plugin. Start a new plugin only for a new area of work, not for each skill.
+4. **Every plugin has a manifest** at `plugins/<name>/.claude-plugin/plugin.json` (`name` matches the folder, plus `version` and `description`) and an entry in `.claude-plugin/marketplace.json`. Bump `version` when a plugin's behaviour changes.
+5. **Plugin files stay inside the plugin.** Use the default folders (`skills/`, `agents/`, `hooks/hooks.json`, `.mcp.json`, `bin/`, `scripts/`). Scripts refer to their own files relative to the skill (or `${CLAUDE_PLUGIN_ROOT}` in hooks and MCP config), never with `..` out of the plugin.
+6. **Data is not code.** Logs, playbooks, brand files and templates a skill reads or writes live in a top-level data folder named after the plugin (`x-assistant/`, `avatar-video/`). Personal data (voice, ids, recordings, renders) is git-ignored.
+7. **Always-on agents go in `agents/<name>/`** with a `PLAN.md` (goal, the five parts, decisions), the program, and `memory/instructions.md`. Their runtime state lives outside the repo (see [agents/README.md](agents/README.md)).
+8. **Check before every commit:** `claude plugin validate .` passes, a fresh session lists the new skill or subagent, and no secret or personal file is staged.
+9. **Document it here.** A new plugin or agent gets a section in this README (what it does, its commands, its paths), and the layout tree above stays current.
+
+## X assistant (plugin `x-assistant`)
 
 A small multi-agent setup that drafts, reviews, illustrates and publishes posts on X — with a human approval step before anything goes public.
 
@@ -15,12 +60,12 @@ A small multi-agent setup that drafts, reviews, illustrates and publishes posts 
 
 | Path | What it is |
 |---|---|
-| `.claude/agents/x-drafter.md` | Writes 3 different drafts using my voice + the playbook |
-| `.claude/agents/x-reviewer.md` | Independent review: typos, tone, invented facts, risk, hook strength |
-| `.claude/skills/x-post/` | The full flow: draft → review → approve → post → log |
-| `.claude/skills/x-research/` | Read-only research of popular posts → `playbook.md` |
-| `.claude/skills/x-image/` | 5 templates (hook, list, code, compare, stat), shared `brand.css`, `render.sh` |
-| `.claude/skills/xhs-post/` | Xiaohongshu flow + 4 card templates (cover, overview, step, pitfalls) |
+| `plugins/x-assistant/agents/x-drafter.md` | Writes 3 different drafts using my voice + the playbook |
+| `plugins/x-assistant/agents/x-reviewer.md` | Independent review: typos, tone, invented facts, risk, hook strength |
+| `plugins/x-assistant/skills/x-post/` | The full flow: draft → review → approve → post → log |
+| `plugins/x-assistant/skills/x-research/` | Read-only research of popular posts → `playbook.md` |
+| `plugins/x-assistant/skills/x-image/` | 5 templates (hook, list, code, compare, stat), shared `brand.css`, `render.sh` |
+| `plugins/x-assistant/skills/xhs-post/` | Xiaohongshu flow + 4 card templates (cover, overview, step, pitfalls) |
 | `x-assistant/playbook.md` | What works on X, learned from real posts |
 | `x-assistant/posts.md` | Everything posted so far (agents use it to avoid repeats) |
 | `x-assistant/voice.example.md` | Template for your own `voice.md` (mine is kept private) |
@@ -34,9 +79,9 @@ A small multi-agent setup that drafts, reviews, illustrates and publishes posts 
 
 `/x-image` needs Google Chrome on macOS (it renders with headless Chrome).
 
-**Xiaohongshu (`/xhs-post`):** connect Claude in Chrome to Claude Code (`claude --chrome` or `/chrome`), log in at xiaohongshu.com in that Chrome profile, and open creator.xiaohongshu.com once to finish its first-time prompts. Then change the card footer in `.claude/skills/xhs-post/templates/` to your own name. The full checklist is in the skill's "Before first use" section.
+**Xiaohongshu (`/xhs-post`):** connect Claude in Chrome to Claude Code (`claude --chrome` or `/chrome`), log in at xiaohongshu.com in that Chrome profile, and open creator.xiaohongshu.com once to finish its first-time prompts. Then change the card footer in `plugins/x-assistant/skills/xhs-post/templates/` to your own name. The full checklist is in the skill's "Before first use" section.
 
-## Always-on stats agent
+## Always-on stats agent (`agents/stats-agent`)
 
 A small always-on agent built on the five parts from Anthropic's [Building always-on agents](https://claude.com/resources/articles/building-always-on-agents). It mostly sleeps. It wakes up to read Xiaohongshu note stats, writes each note's 24-hour numbers to its own `stats.md` (which `/xhs-post` copies into `x-assistant/posts.md`), and messages me on Telegram only when there is something worth knowing.
 
@@ -48,11 +93,11 @@ A small always-on agent built on the five parts from Anthropic's [Building alway
 | Permissions | `claude -p` with an allow-list: it can read the note list in Chrome and read or edit only its own folder. No Bash, no clicks, no publishing. The Telegram token never enters the run |
 | Outbox | SQLite `outbox` table. The run returns a message or `null`, and a dispatcher sends it |
 
-`python3 -I stats-agent/agent.py install` copies the agent to `~/Library/Application Support/stats-agent/` and adds a launchd job that ticks every 10 minutes while the Mac is awake. A tick with nothing due starts no model and costs nothing. `status` shows its tables, and `event check` asks for the numbers now. It runs entirely outside `~/Documents`, so it needs no Full Disk Access and can't see your private folders. It needs Chrome open with Claude in Chrome connected.
+`python3 -I agents/stats-agent/agent.py install` copies the agent to `~/Library/Application Support/stats-agent/` and adds a launchd job that ticks every 10 minutes while the Mac is awake. A tick with nothing due starts no model and costs nothing. `status` shows its tables, and `event check` asks for the numbers now. It runs entirely outside `~/Documents`, so it needs no Full Disk Access and can't see your private folders. It needs Chrome open with Claude in Chrome connected.
 
-## Avatar video (digital twin)
+## Avatar video (plugin `avatar-video`)
 
-Short vertical videos where my AI twin (HeyGen avatar + my cloned voice) explains a topic, edited in code with [HyperFrames](https://github.com/heygen-com/hyperframes) (HTML → MP4).
+Short vertical videos (also the `voice-video` skill: my cloned voice over graphics, no face) where my AI twin (HeyGen avatar + my cloned voice) explains a topic, edited in code with [HyperFrames](https://github.com/heygen-com/hyperframes) (HTML → MP4).
 
 ```
 /avatar-video <topic> [xhs|x] [NN s]
@@ -64,13 +109,17 @@ Short vertical videos where my AI twin (HeyGen avatar + my cloned voice) explain
 
 | Path | What it is |
 |---|---|
-| `.claude/skills/avatar-video/` | The full flow, with approval gates before every paid step |
-| `.claude/agents/video-scripter.md`, `video-reviewer.md` | Script writer and independent script check |
+| `plugins/avatar-video/skills/avatar-video/` | The full flow, with approval gates before every paid step |
+| `plugins/avatar-video/agents/video-scripter.md`, `video-reviewer.md` | Script writer and independent script check |
 | `avatar-video/brand/DESIGN.md` | Video look: colors, safe zones, captions, the 3 effects |
 | `avatar-video/videos.md` | Every video made (avoids repeats, notes what to improve) |
 | `.claude/skills/hyperframes*`, `media-use`, `heygen-*` | Third-party skills from HeyGen, pinned in `skills-lock.json` |
 
 Setup: Node.js 22+ (`npm install` in `avatar-video/` adds FFmpeg), a HeyGen plan, `npx hyperframes auth login`, and `/mcp` → heygen. Your `AVATAR-*.md`, recordings and renders are git-ignored.
+
+## Outlook email (plugin `outlook-email`)
+
+Reads, searches and summarizes Outlook email through Claude in Chrome. Read-only unless I say otherwise.
 
 ## Design principles
 

@@ -1,0 +1,14 @@
+{
+  "name": "outlook-email",
+  "version": "0.1.0",
+  "description": "Read, search and summarize Outlook email through Claude in Chrome. Read-only by default.",
+  "author": {
+    "name": "Michael Yang"
+  },
+  "repository": "https://github.com/HAIYANG8625Coder/claude-agents",
+  "keywords": [
+    "email",
+    "outlook",
+    "chrome"
+  ]
+}

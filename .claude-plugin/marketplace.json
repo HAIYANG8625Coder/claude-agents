@@ -1,0 +1,24 @@
+{
+  "name": "claude-agents",
+  "description": "Michael's agents, skills and subagents for Claude Code, built while learning AI agents in public.",
+  "owner": {
+    "name": "Michael Yang"
+  },
+  "plugins": [
+    {
+      "name": "x-assistant",
+      "source": "./plugins/x-assistant",
+      "description": "Draft, review, illustrate and publish posts on X and Xiaohongshu, with a human approval step before anything goes public."
+    },
+    {
+      "name": "avatar-video",
+      "source": "./plugins/avatar-video",
+      "description": "Short vertical videos in my cloned voice (or HeyGen digital twin), scripted, reviewed and edited with HyperFrames."
+    },
+    {
+      "name": "outlook-email",
+      "source": "./plugins/outlook-email",
+      "description": "Read, search and summarize Outlook email through Claude in Chrome. Read-only by default."
+    }
+  ]
+}

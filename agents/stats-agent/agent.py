@@ -18,10 +18,10 @@ doesn't guard, so the launchd job needs no Full Disk Access and can't see ~/Docu
               dispatcher sends it to Telegram.
 
 Usage (from anywhere):
-  python3 -I stats-agent/agent.py install | uninstall  copy into RUNTIME and add / remove the launchd job
-  python3 -I stats-agent/agent.py tick                 scheduler + worker + dispatcher (launchd runs this every 10 min)
-  python3 -I stats-agent/agent.py event <kind> [json]  handler: add an event to the inbox (e.g. `event check`)
-  python3 -I stats-agent/agent.py status               show inbox, timers, outbox and recent runs
+  python3 -I agents/stats-agent/agent.py install | uninstall  copy into RUNTIME and add / remove the launchd job
+  python3 -I agents/stats-agent/agent.py tick                 scheduler + worker + dispatcher (launchd runs this every 10 min)
+  python3 -I agents/stats-agent/agent.py event <kind> [json]  handler: add an event to the inbox (e.g. `event check`)
+  python3 -I agents/stats-agent/agent.py status               show inbox, timers, outbox and recent runs
 """
 import datetime as dt
 import fcntl
