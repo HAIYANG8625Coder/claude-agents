@@ -8,7 +8,7 @@
     {
       "name": "x-assistant",
       "source": "./plugins/x-assistant",
-      "description": "Draft, review, illustrate and publish posts on X and Xiaohongshu, with a human approval step before anything goes public."
+      "description": "Draft, review, illustrate and publish posts on X, Xiaohongshu and YouTube, with a human approval step before anything goes public."
     },
     {
       "name": "avatar-video",

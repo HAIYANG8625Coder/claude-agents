@@ -84,7 +84,7 @@ Follow the `/hyperframes` skill (read `references/types/vertical.md`, `captions.
 Start `npx hyperframes preview` and tell Michael he can watch it (and edit in the HyperFrames desktop app if he likes). **Wait** for approval or changes. Then render: `npx hyperframes render` → MP4 in the video folder. Send the MP4 with SendUserFile.
 
 ## 10. Hand off to publish
-Ask where to post, then run that platform's skill with the MP4 as its video: `x-post` (media = video, English under 280) or `xhs-post` (video note, Chinese). Both now upload video. Each still waits for Michael's yes on the exact text before publishing. A render that finishes late at night is not posted that night: `xhs-post` schedules the note for the next slot in `x-assistant/xhs-schedule.md` and sets the AI-content declaration, so tell it the video is AI-generated. Give them the video folder, so they can check the post's numbers against `script.json` and `RESEARCH.md`.
+Ask where to post, then run that platform's skill with the MP4 as its video: `x-post` (media = video, English under 280), `xhs-post` (video note, Chinese) or `youtube-post` (long video or Short). All three upload video. Each still waits for Michael's yes on the exact text before publishing. A render that finishes late at night is not posted that night: `xhs-post` schedules the note for the next slot in `x-assistant/xhs-schedule.md` and sets the AI-content declaration, so tell it the video is AI-generated. Give them the video folder, so they can check the post's numbers against `script.json` and `RESEARCH.md`.
 
 ## 11. Log
 Append to `avatar-video/videos.md`:

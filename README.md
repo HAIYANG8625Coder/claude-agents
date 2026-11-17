@@ -52,13 +52,14 @@ Every new feature follows how Claude Code itself organizes skills, subagents and
 
 ## X assistant (plugin `x-assistant`)
 
-A small multi-agent setup that drafts, reviews, illustrates and publishes posts on X — with a human approval step before anything goes public.
+A small multi-agent setup that drafts, reviews, illustrates and publishes posts on X, Xiaohongshu and YouTube — with a human approval step before anything goes public.
 
 ```
 /x-research  →  studies popular posts in my niches, updates the playbook
 /x-post      →  x-drafter writes 3 drafts → x-reviewer checks them → I pick → posts via Chrome
 /x-image     →  on-brand post image from HTML templates, rendered with headless Chrome
 /xhs-post    →  Chinese image-and-text note on Xiaohongshu (rednote) with 3:4 swipe cards
+/youtube-post →  title, description, tags for a finished video → I approve → uploads in YouTube Studio
 ```
 
 | Path | What it is |
@@ -69,6 +70,7 @@ A small multi-agent setup that drafts, reviews, illustrates and publishes posts 
 | `plugins/x-assistant/skills/x-research/` | Read-only research of popular posts → `playbook.md` |
 | `plugins/x-assistant/skills/x-image/` | 5 templates (hook, list, code, compare, stat), shared `brand.css`, `render.sh` |
 | `plugins/x-assistant/skills/xhs-post/` | Xiaohongshu flow + 4 card templates (cover, overview, step, pitfalls) |
+| `plugins/x-assistant/skills/youtube-post/` | YouTube upload flow (long videos and Shorts) + `scripts/check.py` for title, description, tag and chapter limits |
 | `x-assistant/playbook.md` | What works on X, learned from real posts |
 | `x-assistant/posts.md` | Everything posted so far (agents use it to avoid repeats) |
 | `x-assistant/voice.example.md` | Template for your own `voice.md` (mine is kept private) |
@@ -83,6 +85,8 @@ A small multi-agent setup that drafts, reviews, illustrates and publishes posts 
 `/x-image` needs Google Chrome on macOS (it renders with headless Chrome).
 
 **Xiaohongshu (`/xhs-post`):** connect Claude in Chrome to Claude Code (`claude --chrome` or `/chrome`), log in at xiaohongshu.com in that Chrome profile, and open creator.xiaohongshu.com once to finish its first-time prompts. Then change the card footer in `plugins/x-assistant/skills/xhs-post/templates/` to your own name. The full checklist is in the skill's "Before first use" section.
+
+**YouTube (`/youtube-post <video>`):** the same Chrome profile, signed in to YouTube, with studio.youtube.com opening your channel dashboard. It is a separate skill from the video makers and the other post skills, so one video can go to each platform with its own approval.
 
 ## Always-on stats agent (`agents/stats-agent`)
 
