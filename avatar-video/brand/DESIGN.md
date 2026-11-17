@@ -45,6 +45,27 @@ The video version of `.claude/skills/x-image/templates/brand.css`, so videos, X 
 - Hook in the first 3 s; takeaway or question at the end.
 - No invented facts. Nothing private.
 
+## Vertical or landscape (decide before the script)
+Decide the frame first, because it decides the skill, the length and which presets fit. Write it in the storyboard or outline next to the style (`9:16` or `16:9`).
+
+1. **Michael said it** ("横屏", "landscape", "vertical", "竖屏", "Short") → do that. Nothing below overrides him.
+2. **Landscape 16:9** (`article-explainer`, preset H) when **any** of these is true:
+   - the video walks through one source: an article, 1–3 papers, docs, or an episode of a series built on one source;
+   - it runs over ~3 min (4–8 min is the target);
+   - viewers need to read things on screen: the source's figures, tables, code, or diagrams with many boxes (chart-draw diagrams are 16:9 too).
+3. **Vertical 9:16** (`avatar-video` / `voice-video`, presets A–G) when the video is:
+   - one idea, a hook in 3 s, made for scrolling on a phone (Xiaohongshu feed, X, YouTube Shorts);
+   - 3 min or less (X: 30–35 s; news: 45–60 s; default 30–45 s);
+   - a talking head (preset D) or a reaction to news.
+   A tutorial made of cards (preset G) can stay vertical up to ~6 min if every frame still reads on a phone (e.g. `videos/2026-11-17-sg-work-passes/`, 5:19).
+4. **Platform:**
+   - X → vertical, unless Michael asks;
+   - YouTube → a vertical video of 3 min or less becomes a Short; a long video should be landscape;
+   - Xiaohongshu takes both.
+5. **Still unclear** (e.g. a 3–5 min tutorial that isn't a read of one source) → ask once and give a pick: "Vertical (phone-first, preset G) or landscape (deep-dive, preset H)? I'd pick X because …". Don't make both versions unless he asks: the Agent ep 1 vertical version was made and never posted (2026-11-17).
+
+Log the frame in `videos.md` (`· 9:16 ·` or `· 16:9 ·`).
+
 ## Style presets (pick one per video, in the storyboard)
 Pick the preset that fits the topic and write it at the top of `STORYBOARD.md` (`Style: A · market news`). Don't use the same preset twice in a row on one platform unless Michael asks. The colors and layout below replace the dark tokens above. Only the signature stays.
 

@@ -15,6 +15,7 @@ Flow: **source → research → outline → Michael approves the outline → scr
 Same as `voice-video` step 0: `AVATAR-MICHAEL.md` with `voice_id` and `pace`, `avatar-video/node_modules` present, the HeyGen MCP signed in in the Claude Code CLI. Say before the takes that you're about to call HeyGen (free turbo model).
 
 ## 1. The source
+- Check the frame against `avatar-video/brand/DESIGN.md` → "Vertical or landscape". If Michael wants a short (3 min or less, one idea, made for phones), this is the wrong skill: use `/avatar-video`.
 - Input is a URL (an engineering blog post, an arXiv page) or a file. Ask for one if there's none. One video = one source, or 2–3 papers that answer the same question. Nothing else gets in.
 - Read all of it, not the abstract. Make `avatar-video/videos/<YYYY-MM-DD>-<slug>/` by copying `avatar-video/template-explainer/` and write `RESEARCH.md`: title, authors, date, URL, then per section its claims and every number **with its location** (section, figure, table, page). This is where the source lines on the slides come from.
 - Capture the originals you'll show into `assets/`: the first page (`src-page1.png`), the 3–6 figures that carry the argument (`src-fig2.png`), and short quotes (keep the exact English in `RESEARCH.md`). For a web page, screenshot it with Claude in Chrome (`computer` zoom with `save_to_disk`) or headless Chrome; for a PDF, render the page with the `pdf` skill and crop. Show only figures and short quotes, never whole pages of text you'd be republishing.

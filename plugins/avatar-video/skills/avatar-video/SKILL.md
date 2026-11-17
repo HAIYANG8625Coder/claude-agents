@@ -27,6 +27,7 @@ Run every `npx` command with Node 24 on the PATH: `export PATH="$HOME/.local/nod
 ## 1. Get the request
 - Topic = the text after `/avatar-video`. No topic → ask and stop.
 - Platform: `xhs` → **Chinese**, `x` → **English** (global rule). Michael's explicit language request wins. Default when not said: ask once.
+- Frame: check `avatar-video/brand/DESIGN.md` → "Vertical or landscape" first. If the topic should be landscape (a walk through one source, over ~3 min, dense figures), tell Michael and switch to the `article-explainer` skill. If it isn't clear, ask once and give your pick.
 - Length: `NN s` if given, else 30–45 s. With an avatar, make a **10 s test** before the first full avatar render (test small before paying for the whole thing).
 - Facts: from Michael, files he points at, or a session transcript (same rules as `xhs-post` step 1). No invented numbers or experiences.
 - **News, market or other current-event topics:** research first and write the facts to `videos/<folder>/RESEARCH.md` (timeline, numbers, sources) before any script. Worked example: `videos/2026-11-13-nvda-huang/RESEARCH.md`. Rules learned on that video:
