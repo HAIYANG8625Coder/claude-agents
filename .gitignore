@@ -39,3 +39,6 @@ avatar-video/.bin/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# local link to the private agent-from-scratch code (not public yet)
+avatar-video/series/agent-from-scratch

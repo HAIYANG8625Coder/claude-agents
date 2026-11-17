@@ -122,3 +122,62 @@ Topics (all linked): #AIAgent #ClaudeCode #Anthropic #AI编程 #智能体
 Video: avatar-video/videos/2026-11-15-stats-agent/renders/stats-agent-xhs.mp4 (5.2 MB copy of the 12-09-10 render, 58.1 s); cover = first frame ("替我盯小红书数据"). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
 Style: video (avatar-video preset G · app-UI tutorial)
 Slot: off-plan (12:13 Sun 2026-11-15) · Topic: main
+
+## 2026-11-15 (Xiaohongshu) — 英文版｜Always-on Agent逐节拆解（中字）
+Video note, the English version (English voice and slides, Chinese subtitles) of the 工程解读 01 deep-dive of Anthropic's "Building always-on agents"; pitched as English listening practice plus the five parts. Post file: x-assistant/xhs-always-on-deep-dive-en-post.md · published ~18:48 SGT ("publish now" from Michael) · editor counter 630/1000 · title 20/20
+Topics (all linked): #Agent #Anthropic #Claude #AI工程 #英语听力 #人工智能
+Video: avatar-video/videos/2026-11-15-always-on-deep-dive-en/renders/always-on-deep-dive-en-upload.mp4 (4.7 MB 720p copy, 218.4 s); cover = first frame (green 工程解读 cover). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功. The GitHub link still has to be added as a comment.
+Style: video (avatar-video preset H · article deep-dive, 16:9)
+Slot: off-plan (~18:48 Sun 2026-11-15) · Topic: main
+
+## 2026-11-15 (X)
+An always-on agent is mostly asleep.
+
+It spends no tokens until an event wakes it. Then it runs briefly, writes back what happened, and goes back to sleep.
+
+Anthropic's guide splits it into 5 parts: inbox, timers, memory, permissions, outbox.
+
+How many does your agent have?
+(with video: avatar-video/videos/2026-11-15-always-on-deep-dive-en/renders/always-on-deep-dive-en-upload.mp4, 3:38, English with Chinese subtitles)
+Draft 1 of 3 (reviewer's pick), 274 characters. X accepted the 3:38 video on this account. Posted ~18:48 SGT; "Your post was sent" shown.
+
+## 2026-11-16 (Xiaohongshu) — AI会抢工作吗｜Anthropic数据
+Post file: x-assistant/xhs-ai-jobs-post.md · published about 00:35 SGT · body 781/1000 with topics
+Topics (all linked): #ai #就业 #人工智能 #Anthropic #职场 (the first try linked #职场经验howto and left #就业 as plain text; fixed by clicking the exact suggestion)
+Video: avatar-video/videos/2026-11-15-ai-jobs/renders/ai-jobs-v2-xhs.mp4 (62.3 s, cover = first frame). 内容类型声明 left unset.
+Style: video
+
+## 2026-11-17 (Xiaohongshu) — Anthropic：Agent记忆怎么做
+Video note, 工程解读 02: Anthropic's "The components of agent memory" (2026-11-06). Post file: x-assistant/xhs-agent-memory-post.md · published 10:3x SGT ("post" from Michael) · editor counter 862/1000 · title 20/20
+Topics (all linked): #Agent #Anthropic #Claude #AI工程 #大模型 #人工智能
+Video: avatar-video/videos/2026-11-16-agent-memory/renders/agent-memory-xhs.mp4 (6.6 MB 720p copy, 384.4 s). Cover = the first of Xiaohongshu's 智能推荐封面 (Michael asked for the recommended one; the Pokémon treemap frame). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
+Style: video (avatar-video preset H · article deep-dive, 16:9)
+Slot: off-plan (Tue 2026-11-17, Michael said "post") · Topic: main
+
+## 2026-11-17 (Xiaohongshu) — 新加坡工作准证全解析2027
+Vertical video note: all Singapore work passes (EP, S Pass, Work Permit, ONE Pass, PEP, EntrePass, short passes, family passes, renewals; 2027 salary changes). Post file: x-assistant/xhs-sg-work-passes-post.md · published about 12:30 SGT ("post" from Michael) · editor counter 893/1000 · title 14/20
+Topics (all linked): #新加坡 #工作准证 #新加坡工作 #EP #MOM #出国工作
+Video: avatar-video/videos/2026-11-17-sg-work-passes/renders/sg-work-passes-xhs.mp4 (8.4 MB 720p copy, 319.9 s); cover = first Xiaohongshu 智能推荐封面 (COMPASS frame). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
+Style: video (avatar-video preset G · app-UI tutorial, vertical)
+Slot: off-plan (Tue 2026-11-17, second note of the day) · Topic: second (Singapore life)
+
+## 2026-11-17 (Xiaohongshu) — 从零做Agent第1集：循环
+Video note, series "从零做一个 Claude Code 式 Agent" episode 1 (landscape deep-dive, 7:34, DeepSeek model for the demo). Post file: x-assistant/xhs-agent-series-ep1-post.md · published about 15:55 SGT ("Ok" from Michael after seeing the text) · editor counter 751/1000 · title 14/20
+Topics (all linked): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
+Video: avatar-video/videos/2026-11-17-agent-ep1-landscape/renders/agent-ep1-landscape-upload.mp4 (9.3 MB 1280x720 copy); cover = first Xiaohongshu 智能推荐封面 (the provider-architecture frame). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
+Style: video (preset H · article deep-dive, 16:9, with chart-draw architecture diagrams)
+Slot: off-plan (Tue 2026-11-17, third note of the day) · Topic: main
+
+## 2026-11-17 (Xiaohongshu) — 从零做Agent第2集：工具
+Video note, series "从零做一个 Claude Code 式 Agent" episode 2 (landscape deep-dive, 7:11, DeepSeek model for the demo). Post file: x-assistant/xhs-agent-series-ep2-post.md · published about 21:30 SGT ("confirm and post it to xhs" from Michael after seeing the text) · editor counter 807/1000 · title 14/20
+Topics (all linked): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
+Video: avatar-video/videos/2026-11-17-agent-ep2/renders/agent-ep2-upload.mp4 (8.8 MB 720p copy); cover = first Xiaohongshu 智能推荐封面. 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
+Style: video (preset H · article deep-dive, 16:9, with chart-draw architecture diagrams)
+Slot: off-plan (Tue 2026-11-17, fourth note of the day) · Topic: main
+
+## 2026-11-17 (YouTube) — 从零到1做Agent第2集：工具｜读文件、搜索、改代码、跑命令
+Link: https://youtu.be/aDAciX3ZtKM · Public, published about 22:30 SGT ("Yes, publish" from Michael) · video, 7:11
+Post file: x-assistant/yt-agent-series-ep2-post.md (title 31/100, description 951/5000, 13 chapters, 13 tags 121/500)
+Video: avatar-video/videos/2026-11-17-agent-ep2/renders/agent-ep2-upload.mp4 (9.0 MB 720p copy)
+Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+First run of the youtube-post skill.
