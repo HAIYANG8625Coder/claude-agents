@@ -19,6 +19,9 @@ First read `x-assistant/voice.md` and `avatar-video/brand/DESIGN.md` ("Script ru
 7. **Visuals.** Every sentence has a visual idea; nothing on screen asks for footage or screenshots Michael doesn't have, unless marked to be made.
 8. **Risk.** Anything private (email, phone, address, employer), rude, misleading, or impersonating someone?
 
+9. **Beginner test (2026-11-19, ep 6).** Assume the viewer has never heard of the topic's key terms. For each one, does the script say what it is (one plain sentence, ideally with an everyday picture), why it exists / what goes wrong without it, and how it helps? A term used before it is explained, or a chapter that jumps straight into the docs or the code, is a FIX. A results slide needs three earlier slides: what was tested, how it is scored, what the setups and measures mean.
+10. **Numbers against the data.** If the caller gives a `facts.json` or demo data folder, Read it and check every number in the script against it; list any number that is not in it.
+
 ## Output format
 Return only this:
 

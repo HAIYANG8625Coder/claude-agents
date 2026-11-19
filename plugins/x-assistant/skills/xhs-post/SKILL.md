@@ -145,6 +145,10 @@ The user must already be logged in (see "Before first use"). This flow uses the 
 
    Then click the publish button (**发布**, or **定时发布** when a time is set) and take a screenshot. Success shows **发布成功** for an immediate note; for a scheduled one, confirm the note appears as scheduled with the right time.
 
+## 6b. Replace a published video note (done 2026-11-19, ep 6 v2)
+When Michael says to redo a published note: ask once, in one message, whether to **delete the old note first** (permanent: say its title, views and date) and show the new text for approval. On his yes: open 笔记管理 (`https://creator.rednote.com/new/note-manager`), hover the old note's card, click the trash icon (删除), read the dialog ("删除后将无法恢复，确定要删除《…》这篇笔记吗") to confirm it names the right note, click 确定, and check the count dropped (e.g. 全部 49 → 48). Then publish the new one as in step 6, and log both in `posts.md` (the new entry says which note it replaced).
+**Login host:** if `creator.xiaohongshu.com` shows the SMS/QR login page, don't stop yet: open `https://www.xiaohongshu.com/explore` (it redirects to rednote.com), click **Post** in the sidebar, and use the `creator.rednote.com` tab it opens; Michael's login worked there on 2026-11-19 when the other host was logged out. Only ask Michael to log in if both hosts show the login page (an SMS code or QR scan can't be done for him).
+
 ## 7. Log and save
 - Append to `x-assistant/posts.md`: date, "(Xiaohongshu)", the title, the post file, the topics, the image list and a `Style:` line (terminal / notebook / bigtype; "video" for a video note).
 - Add a `Slot:` line to the same entry in the format from `x-assistant/xhs-schedule.md` (slot, weekday, date, topic group; "off-plan" if the user chose another time), and say "scheduled" instead of "published" until the slot has passed.

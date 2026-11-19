@@ -80,6 +80,10 @@ Load the Chrome tools in one ToolSearch call (tabs_context_mcp, tabs_create_mcp,
 
 If the page looks different from these steps, stop and tell Michael what you see rather than guessing.
 
+## 4b. Replace a published video (done 2026-11-19, ep 6)
+When Michael says to redo a published video: ask once whether to **delete the old one first** (permanent: say its title, views and date), and show the new text. On his yes: open `https://studio.youtube.com/video/<id>/edit`, click the ⋮ menu → **Delete**, read the dialog (it shows the video's title and views), tick "I understand…", click **Delete forever**, and check the video is gone from Channel content. Then upload the new one and log both in `posts.md`. A deleted video's views, comments and playlist slot are lost, and the new video must be added to the playlist again.
+**Day-start check:** before a long job that ends in publishing, open `studio.youtube.com` and the Xiaohongshu creator center once to confirm both are logged in, so a login wall doesn't stop the last step.
+
 ## 5. Log
 Append to `x-assistant/posts.md`:
 

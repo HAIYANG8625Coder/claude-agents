@@ -1,0 +1,85 @@
+{
+ "episode": "ep6 v2",
+ "facts": [
+  {
+   "v": "12",
+   "what": "planted faults in the test repo",
+   "src": "ep06/make_workrepo.py (12 known faults)"
+  },
+  {
+   "v": "4",
+   "what": "plugins in the test repo; also subagents (4)",
+   "src": "make_workrepo.py"
+  },
+  {
+   "v": "9",
+   "what": "skills in the test repo",
+   "src": "make_workrepo.py"
+  },
+  {
+   "v": "5",
+   "what": "runs per setup (main task)",
+   "src": "ep06/demo/work-*-1..5.json"
+  },
+  {
+   "v": "60",
+   "what": "max points per setup: 12 faults x 5 runs",
+   "src": "computed"
+  },
+  {
+   "v": "59",
+   "what": "points, plain setup (one miss)",
+   "src": "sum of score over work-plain-1..5"
+  },
+  {
+   "v": "15",
+   "what": "mean turns, plain (15.2)",
+   "src": "mean of turns over work-plain-1..5"
+  },
+  {
+   "v": "30",
+   "what": "mean turns, task list (29.6)",
+   "src": "mean of turns over work-todo-1..5"
+  },
+  {
+   "v": "27",
+   "what": "mean turns, plan + list (27.2)",
+   "src": "mean of turns over work-plan-1..5"
+  },
+  {
+   "v": "1",
+   "what": "one point per fixed fault; the one miss (1 link)",
+   "src": "work-plain-5: 11 of 12"
+  },
+  {
+   "v": "2",
+   "what": "2 of 5 first-version runs changed no file (truncation bug)",
+   "src": "ep06 pilot runs (first version)"
+  },
+  {
+   "v": "3",
+   "what": "three settings; three states; three setups",
+   "src": "design"
+  },
+  {
+   "v": "10",
+   "what": "10-step example task in the diagram (illustration, not data)",
+   "src": "diagram"
+  },
+  {
+   "v": "8",
+   "what": "step 8 in the illustration",
+   "src": "illustration"
+  },
+  {
+   "v": "7",
+   "what": "steps 1-7 in the illustration",
+   "src": "illustration"
+  },
+  {
+   "v": "6",
+   "what": "episode number",
+   "src": "series"
+  }
+ ]
+}

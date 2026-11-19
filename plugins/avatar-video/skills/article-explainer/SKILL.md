@@ -17,6 +17,7 @@ Same as `voice-video` step 0: `AVATAR-MICHAEL.md` with `voice_id` and `pace`, `a
 ## 1. The source
 - Check the frame against `avatar-video/brand/DESIGN.md` → "Vertical or landscape". If Michael wants a short (3 min or less, one idea, made for phones), this is the wrong skill: use `/avatar-video`.
 - Input is a URL (an engineering blog post, an arXiv page) or a file. Ask for one if there's none. One video = one source, or 2–3 papers that answer the same question. Nothing else gets in.
+- If the episode is about our own code (the agent series), commit and push that code to its repo at each milestone (first working version, each bug fix) and say so in `RESEARCH.md`; a before/after code slide needs the real old version, and ep 6's was lost because nothing was committed.
 - Read all of it, not the abstract. Make `avatar-video/videos/<YYYY-MM-DD>-<slug>/` by copying `avatar-video/template-explainer/` and write `RESEARCH.md`: title, authors, date, URL, then per section its claims and every number **with its location** (section, figure, table, page). This is where the source lines on the slides come from.
 - Capture the originals you'll show into `assets/`: the first page (`src-page1.png`), the 3–6 figures that carry the argument (`src-fig2.png`), and short quotes (keep the exact English in `RESEARCH.md`). For a web page, screenshot it with Claude in Chrome (`computer` zoom with `save_to_disk`) or headless Chrome; for a PDF, render the page with the `pdf` skill and crop. Show only figures and short quotes, never whole pages of text you'd be republishing.
 - Check every number twice against the source. Compute any derived number (a drop from 48% to 28%, a ratio) with code. If the source has few numbers, say so in the video rather than borrowing numbers from elsewhere.
@@ -28,6 +29,7 @@ Write `OUTLINE.md` and show it:
 - **Chapters (ch 1…n, 3–6 of them):** one per part of the source, in the source's own order. For each: the original you'll show, the rebuilt picture (boxes and arrows, a mock table, two bars, a code diff with one value boxed), and the one sentence to remember.
 - **Teach the basics first (2026-11-19 lesson, ep 6 of the agent series):** assume the viewer has never heard the term. Before any chapter that walks through the source's or the docs' version of a feature, add 1–3 short chapters that answer, in plain words and one everyday picture each: **what is it** (one sentence + an analogy: a blueprint, a shopping list), **why does it exist / what goes wrong without it**, and **how does it help** (and what it does not do). Draw one concept diagram per question. Put these before the docs and the code, not after. Ep 6 v1 skipped this and Michael said the audience "doesn't even know what it is".
 - **Introduce a test before its results (same lesson):** a results slide needs three earlier slides: what was tested (the setup, shown as a diagram), the task and how a point is scored, and the setups being compared plus each measure in plain words (what a "turn" is). Only then show the numbers.
+- **Beginner gate (run before you show the outline):** list the 3–6 key terms of the episode. For each, write its one-sentence meaning, why it exists, and where in the outline a chapter explains it. A term with no chapter, or explained only after it is used, means the outline fails: add the chapter first. Then ask: could someone who has never used this follow chapter 1 and 2 without pausing?
 - **合起来 (ch n+1):** the recap table, one row per chapter.
 - **结尾 (ch n+2):** one question for the comments.
 - **Length:** ask if he didn't say; suggest 4–6 min. At pace 0.92 his voice reads about 5.5 Chinese characters a second, so 5 min ≈ 1,600 characters.
@@ -41,6 +43,7 @@ Write `OUTLINE.md` and show it:
 - No invented numbers, results or experiences. Michael's own opinion goes in one clearly marked line (`我觉得…`), near the end.
 - Spoken text: never read a tool or file name aloud (`submit_plan`, `todo_write`, `CLAUDE.md` are misread). Say what it does (提交计划的工具); keep the name on screen. Keep each spoken clause short (about 20 characters).
 - Check the script against the question "could someone who has never used this feature follow it?" before showing it to Michael.
+- **facts.json:** if the video reports numbers from our own runs or data, write `avatar-video/videos/<folder>/facts.json` first (`{"facts": [{"v": "59", "what": "...", "src": "file or computation"}, ...]}`), computed by code from the raw data, then run `python3 -I $S/check_facts.py avatar-video/videos/<folder> <folder>/script.json x-assistant/xhs-<slug>-post.md x-assistant/yt-<slug>-post.md`. It lists every number in those texts that is not in facts.json; fix the text or the file until it is clean. Give the reviewer the facts.json too.
 Show the script with its length estimate. **Wait for his yes.**
 
 ## 4. Voice: one take per chapter
@@ -63,12 +66,16 @@ Edit `index.html` from the template. Its conventions:
 - beats inside a slide go below the sync block and are timed on words: `pop("#n1b", at("开会话"))`, `grow("#b3b", at("七十八"))`, `draw("#r1a", at("跑循环"))`. Remove the template's fallback times once there's a take;
 - the cover card (`#cover`) is frame 0 and lifts away at the first slide change; replace its text, pills and date. `.who` holds Michael's three dots; swap in his photo only if he gives one;
 - add the `<audio id="vo">` line (commented at the bottom of the template) and set every `data-duration` to `timing.json`'s total (`sync.py` does this for values equal to the old root);
+- start from `avatar-video/template-explainer/components.py` (`Deck`: scene, cards, diagram, chip, codecmp, recap) and keep to its SAFE AREA: content ends at about y=680 and nothing goes below 740, because the source line and the caption band sit under it (ep 6 chips collided with both);
 - keep slides full: the main picture fills most of the stage. Something should change every 3–6 s (a box, an arrow, a bar, a highlight); a 7-minute deck of still cards loses people.
 
 Then sync (soft fades, no karaoke, no zoom: that's the calm look of this format):
 ```bash
 python3 -I $V/sync.py avatar-video/videos/<folder>
 ```
+
+## 5b. Rough cut (Michael approves before the final render and before any post text)
+After the sync and `npx hyperframes check` pass, take snapshots at the end of every slide (`--at` the `end - 0.4` of each `timing.json` line), send Michael the contact sheets plus `assets/vo.wav` on Telegram, and say what to check: does a newcomer understand it, are the numbers right, is the length OK. **Wait for his verdict**, then render. This costs about 10 minutes and replaces the old order (render, post text, then he sees it); on 2026-11-19 ep 6 v1 skipped the check, went live, and was rebuilt the same day.
 
 ## 6. Check and render
 ```bash

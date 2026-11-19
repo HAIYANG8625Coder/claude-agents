@@ -1,6 +1,6 @@
 {
   "name": "x-assistant",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Draft, review, illustrate and publish posts on X, Xiaohongshu and YouTube, with a human approval step before anything goes public.",
   "author": {
     "name": "Michael Yang"
