@@ -265,3 +265,16 @@ Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT 
 
 ## 2026-11-19 (EP7 text fix, both platforms)
 Michael: keep the English word "token", not 词元. Edited the live XHS note (更新成功) and the YouTube description (Changes saved): 词元 → token in both. Post files updated to match. The video itself (voice 3 sentences, 3 diagram labels) still says 词元; left as is (Michael chose option A).
+
+## 2026-11-19 (Xiaohongshu) — 从零做Agent第8集：Hook
+Video note, series "从零做一个 Claude Code 式 Agent" episode 8 (landscape deep-dive, 6:35, DeepSeek runs; hooks: before and after a tool call, what Claude Code uses hooks for, real test shorten a post while a rule says never edit the log, 5 runs per setup, test-method pit, EP1-8 review). Post file: x-assistant/xhs-agent-series-ep8-post.md · published now (Michael: "ok" to render and post to XHS and YouTube) · title 16/20 · body+topics 792/1000
+Topics (all linked; #AI编程 again needed a delete and retype plus a few seconds): #Agent #ClaudeCode #AI编程 #大模型 #AI工程
+Video: avatar-video/videos/2026-11-19-agent-ep8/renders/agent-ep8-upload.mp4 (8.5 MB 720p copy); first-frame cover (our designed cover card) stayed; 内容类型声明 set to 笔记含AI合成内容; page showed 发布成功; auto-linked to the campaign 独立开发者·报上Demo来.
+Style: video (preset H · article deep-dive) · Slot: off-plan (published now) · Topic: main
+Humanizer pass: run on the text (embedded mode).
+
+## 2026-11-19 (YouTube) — 从零到1做Agent第8集：Hook｜是什么、为什么、有没有用
+Link: https://youtu.be/3zCWoypDeVI · Public, published now ("ok" from Michael; text approved) · video, 6:35
+Post file: x-assistant/yt-agent-series-ep8-post.md (title 31/100, description 1181/5000, 11 chapters, 12 tags 107/500)
+Video: avatar-video/videos/2026-11-19-agent-ep8/renders/agent-ep8-upload.mp4 (8.5 MB 720p copy)
+Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
