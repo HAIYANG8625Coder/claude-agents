@@ -262,3 +262,6 @@ Link: https://youtu.be/VVIwM-xaIEQ · Public, published now ("Ok, post it to xhs
 Post file: x-assistant/yt-agent-series-ep7-post.md (title 33/100, description 1082/5000, 12 chapters, 13 tags 106/500)
 Video: avatar-video/videos/2026-11-19-agent-ep7/renders/agent-ep7-upload.mp4 (7.3 MB 720p copy)
 Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-19 (EP7 text fix, both platforms)
+Michael: keep the English word "token", not 词元. Edited the live XHS note (更新成功) and the YouTube description (Changes saved): 词元 → token in both. Post files updated to match. The video itself (voice 3 sentences, 3 diagram labels) still says 词元; left as is (Michael chose option A).

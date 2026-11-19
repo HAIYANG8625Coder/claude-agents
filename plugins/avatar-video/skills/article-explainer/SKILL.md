@@ -46,6 +46,7 @@ Write `OUTLINE.md` and show it:
 - Keep the source's terms and say what they mean the first time (`事件收件箱，原文叫 event inbox`).
 - Say where a claim comes from at least once per chapter (`论文的表五里`, `文章原话是`), and say when something is your own inference (`这一步是我按文章的规则推演的`).
 - No invented numbers, results or experiences. Michael's own opinion goes in one clearly marked line (`我觉得…`), near the end.
+- Keep "token" as the English word (spoken and written); never translate it to 词元 (Michael, 2026-11-19: sounds unnatural). Grep the script, diagrams and post texts for 词元 before the take.
 - Spoken text: never read a tool or file name aloud (`submit_plan`, `todo_write`, `CLAUDE.md` are misread). Say what it does (提交计划的工具); keep the name on screen. Keep each spoken clause short (about 20 characters).
 - Check the script against the question "could someone who has never used this feature follow it?" before showing it to Michael.
 - **facts.json:** if the video reports numbers from our own runs or data, write `avatar-video/videos/<folder>/facts.json` first (`{"facts": [{"v": "59", "what": "...", "src": "file or computation"}, ...]}`), computed by code from the raw data, then run `python3 -I $S/check_facts.py avatar-video/videos/<folder> <folder>/script.json x-assistant/xhs-<slug>-post.md x-assistant/yt-<slug>-post.md`. It lists every number in those texts that is not in facts.json; fix the text or the file until it is clean. Give the reviewer the facts.json too.
