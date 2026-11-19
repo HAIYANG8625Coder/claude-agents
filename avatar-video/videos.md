@@ -180,8 +180,35 @@ Source: Claude Code docs (tools reference, Edit/Bash behaviour), Anthropic tool-
 Render: renders/…18-02-15.mp4 (upload copy renders/agent-ep2-upload.mp4, 8.8 MB, volume -1.5 dB). Note: x-assistant/xhs-agent-series-ep2-post.md.
 What to improve next time: the ep2 voice was not explicitly confirmed before posting (Michael approved the note text and said post); the note says the repo is not public yet, so edit it once the repo is public.
 
-## 2026-11-17 — 从零做一个 Agent · 第 3 集：笔记 (rendered, waiting for Michael's ok to post)
+## 2026-11-17 — 从零做一个 Agent · 第 3 集：笔记 (scheduled on Xiaohongshu for 2026-11-18 09:00)
 Platform: xhs · Length: 423.3 s (7:03) · 16:9 · Folder: videos/2026-11-17-agent-ep3 · Style: H · article deep-dive + 5 staged chart-draw diagrams (diagrams.py)
 Source: Claude Code docs (Memory, Best practices), Anthropic prompting guide (system prompt role); code in series/agent-from-scratch/ep03 (agent.py, test_prompt.py, evals.py, demo runs with deepseek-flash). Script: series/EP3-SCRIPT.md (v2, reviewed, 15 fixes), research notes series/EP3-RESEARCH.md. Voice: six chapter takes merged, pace 0.92.
 Render: renders/2026-11-17-agent-ep3_2026-11-17_22-05-45.mp4 (upload copy renders/agent-ep3-upload.mp4, 9.0 MB, volume -1.5 dB). Note: x-assistant/xhs-agent-series-ep3-post.md. Article and diagrams are in the repo (articles/ep03-system-prompt-and-notes.md).
 What to improve next time: the chapter 2 take failed on the first try and worked on the second; the terminal slides for the two demo runs are small (15 lines at 26 px); the repo's articles were edited on GitHub by Michael (byline), so pull before pushing.
+
+## 2026-11-17 — 从零做一个 Agent · 第 4 集：权限 (scheduled on Xiaohongshu and YouTube for 2026-11-18 12:00)
+Platform: xhs · Length: 445.5 s (7:25) · 16:9 · Folder: videos/2026-11-17-agent-ep4 · Style: H · article deep-dive + 7 staged chart-draw diagrams (diagrams.py)
+Source: Claude Code docs (Permissions, Permission modes, Security, Best practices, Settings); code in series/agent-from-scratch/ep04 (agent.py gate, test_permissions.py, demos.py, demo runs: injection 12 real runs, fooled scripted model, fatigue 6 runs). Script: series/EP4-SCRIPT.md (v2, reviewed, 19 items), research notes series/EP4-RESEARCH.md. Voice: five chapter takes merged, pace 0.92.
+Render: renders/2026-11-17-agent-ep4_2026-11-17_23-35-51.mp4 (upload copy renders/agent-ep4-upload.mp4, 9.1 MB). Note: x-assistant/xhs-agent-series-ep4-post.md. Article and diagrams pushed to the repo (articles/ep04-permissions.md).
+What to improve next time: the video does not mention that our project rule file is loaded without a trust step (the article does); the Y/A/N cards appear late in the scene; the "fooled model" is scripted, so the slides say so on screen.
+
+## 2026-11-18 — 从零做一个 Agent · 第 5 集：上下文 (scheduled 2026-11-18 19:00 on Xiaohongshu and YouTube)
+Platform: xhs (+ YouTube if he wants) · Length: 358.1 s (5:58) · 16:9 · Folder: videos/2026-11-18-agent-ep5 · Style: H · article deep-dive + 5 staged diagrams (diagrams.py, incl. the real tokens-per-turn chart)
+Source: Claude Code docs (Context window, How Claude Code works, Costs, Commands), Anthropic engineering post "Effective context engineering for AI agents", Claude API docs (context windows, token counting, context editing); code in series/agent-from-scratch/ep05 (agent.py context manager, test_context.py, demos.py; 12 real DeepSeek runs in demo/repeat). Script: series/EP5-SCRIPT.md (v2, reviewed, 24 items), research notes series/EP5-RESEARCH.md, outline series/EP5-OUTLINE.md. Voice: nine chapter takes merged, pace 0.92.
+Render: renders/2026-11-18-agent-ep5_2026-11-18_13-46-12.mp4 (upload copy renders/agent-ep5-upload.mp4, 7.9 MB). Note: x-assistant/xhs-agent-series-ep5-post.md.
+Notes: HeyGen no longer accepts voice_model heygen-voice-1-turbo-free; heygen_take.sh now leaves the model out (plugin avatar-video 0.3.1). Only 3 real runs per setup; the "both" setup failed once (60-turn limit), clearing alone failed in the first version until the system prompt told the model to write findings in its replies.
+What to improve next time: many slides are cards on a mostly empty stage; the chart shows only the first run of each setup; the humanizer pass was not run on the note.
+
+## 2026-11-19 — 从零做一个 Agent · 第 6 集：计划模式和任务清单 (published 2026-11-19 on Xiaohongshu and YouTube)
+Platform: xhs + YouTube · Length: 313.4 s (5:13) · 16:9 · Folder: videos/2026-11-19-agent-ep6 · Style: H · article deep-dive + 3 staged diagrams (diagrams.py)
+Source: Claude Code docs (Permission modes, Interactive mode, Tools reference, Best practices), Anthropic engineering post "Effective harnesses for long-running agents"; code in agent-from-scratch/ep06 (agent.py plan mode + todo_write, test_plan.py, demos.py; real DeepSeek runs in demo/: work 5 per setup, hard 5, easy 3). Script: series/EP6-SCRIPT.md, research series/EP6-RESEARCH.md, outline series/EP6-OUTLINE.md. Voice: ten chapter takes merged, pace 0.92.
+Render: renders/2026-11-19-agent-ep6_2026-11-19_00-25-15.mp4 (upload copy renders/agent-ep6-upload.mp4, 6.4 MB). Notes: x-assistant/xhs-agent-series-ep6-post.md, x-assistant/yt-agent-series-ep6-post.md.
+Result: plain 59/60 (mean 15.2 turns), todo 60/60 (29.6), plan+todo 60/60 (27.2); only 5 runs per setup, so no claim that the list is more accurate; the list roughly doubles the turns.
+What to improve next time: ep06 code and article are not on GitHub yet; the humanizer pass was not run on the texts; no real "plan never checked off" case could be shown.
+
+## 2026-11-19 — 从零做一个 Agent · 第 6 集 v2：计划模式和任务清单（重做，本地版，未发布）
+Platform: xhs + YouTube (not posted yet) · Length: 260.3 s (4:20) · 16:9 · Folder: videos/2026-11-19-agent-ep6-v2 · Style: H · article deep-dive + 7 staged diagrams (4 new concept diagrams D1-D4: no-plan agent, plan mode vs diving in, task list states, before/during/after)
+Why: Michael (2026-11-19): v1 never explained what plan mode and the task list are, why an agent needs them, or how they help; viewers don't know them. v1 (ep6) was deleted from YouTube the same morning; the XHS note is still up (Michael: don't delete yet, update locally first).
+Script: series/EP6-SCRIPT.md (v2, reviewed by video-reviewer, Michael OK'd 2026-11-19); v1 kept as series/EP6-SCRIPT-v1.md. Numbers re-checked against ep06/demo/*.json. Voice: eleven chapter takes merged, pace 0.92.
+Render: renders/2026-11-19-agent-ep6-v2_2026-11-19_09-02-17.mp4 (14.8 MB). Status: waiting for Michael's verdict.
+What to improve next time: shorter than v1 (4:20 vs 5:13) because the explainer chapters are tight; the humanizer pass was not run; chips under diagrams are small.

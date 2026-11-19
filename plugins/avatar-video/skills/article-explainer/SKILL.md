@@ -26,6 +26,8 @@ Write `OUTLINE.md` and show it:
 - **Title + cover:** series tag (`论文精读` for papers, `工程解读` for engineering articles) with the running episode number (count earlier ones in `avatar-video/videos.md`), the source date for the date badge, a two-line title, a one-line subtitle that states the surprising point, and one pill per chapter.
 - **Opening (ch 0):** the single most surprising number or line, and why the viewer should care. Open on what it means for them, not on a detail they can only understand later (2026-11-15 lesson).
 - **Chapters (ch 1…n, 3–6 of them):** one per part of the source, in the source's own order. For each: the original you'll show, the rebuilt picture (boxes and arrows, a mock table, two bars, a code diff with one value boxed), and the one sentence to remember.
+- **Teach the basics first (2026-11-19 lesson, ep 6 of the agent series):** assume the viewer has never heard the term. Before any chapter that walks through the source's or the docs' version of a feature, add 1–3 short chapters that answer, in plain words and one everyday picture each: **what is it** (one sentence + an analogy: a blueprint, a shopping list), **why does it exist / what goes wrong without it**, and **how does it help** (and what it does not do). Draw one concept diagram per question. Put these before the docs and the code, not after. Ep 6 v1 skipped this and Michael said the audience "doesn't even know what it is".
+- **Introduce a test before its results (same lesson):** a results slide needs three earlier slides: what was tested (the setup, shown as a diagram), the task and how a point is scored, and the setups being compared plus each measure in plain words (what a "turn" is). Only then show the numbers.
 - **合起来 (ch n+1):** the recap table, one row per chapter.
 - **结尾 (ch n+2):** one question for the comments.
 - **Length:** ask if he didn't say; suggest 4–6 min. At pace 0.92 his voice reads about 5.5 Chinese characters a second, so 5 min ≈ 1,600 characters.
@@ -37,6 +39,8 @@ Write `OUTLINE.md` and show it:
 - Keep the source's terms and say what they mean the first time (`事件收件箱，原文叫 event inbox`).
 - Say where a claim comes from at least once per chapter (`论文的表五里`, `文章原话是`), and say when something is your own inference (`这一步是我按文章的规则推演的`).
 - No invented numbers, results or experiences. Michael's own opinion goes in one clearly marked line (`我觉得…`), near the end.
+- Spoken text: never read a tool or file name aloud (`submit_plan`, `todo_write`, `CLAUDE.md` are misread). Say what it does (提交计划的工具); keep the name on screen. Keep each spoken clause short (about 20 characters).
+- Check the script against the question "could someone who has never used this feature follow it?" before showing it to Michael.
 Show the script with its length estimate. **Wait for his yes.**
 
 ## 4. Voice: one take per chapter
