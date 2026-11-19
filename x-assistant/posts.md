@@ -181,3 +181,71 @@ Post file: x-assistant/yt-agent-series-ep2-post.md (title 31/100, description 95
 Video: avatar-video/videos/2026-11-17-agent-ep2/renders/agent-ep2-upload.mp4 (9.0 MB 720p copy)
 Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
 First run of the youtube-post skill.
+
+## 2026-11-18 (Xiaohongshu, scheduled) — 从零做Agent第3集：笔记
+Video note, series "从零做一个 Claude Code 式 Agent" episode 3 (landscape deep-dive, 7:03, DeepSeek model for the demo). Post file: x-assistant/xhs-agent-series-ep3-post.md · scheduled for Wed 2026-11-18 09:00 SGT on 2026-11-17 ~22:50 SGT (Michael: "post it tomorrow morning, not now"; he picked no exact time, 09:00 chosen) · editor counter 791/1000 · title 14/20
+Topics (all linked): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
+Video: avatar-video/videos/2026-11-17-agent-ep3/renders/agent-ep3-upload.mp4 (8.8 MB 720p copy); cover = 2nd-applied Xiaohongshu 智能推荐封面. 内容类型声明 set to 笔记含AI合成内容. Note manager shows 定时发布 2026-11-18 09:00 (审核中).
+Style: video (preset H · article deep-dive, 16:9, with chart-draw architecture diagrams)
+Slot: off-plan (Michael's word; the table slot for Wed 18 Nov is 20:30) · Topic: main
+
+## 2026-11-18 (Xiaohongshu, scheduled) — 从零做Agent第4集：权限
+Video note, series "从零做一个 Claude Code 式 Agent" episode 4 (landscape deep-dive, 7:25, DeepSeek model for the demo). Post file: x-assistant/xhs-agent-series-ep4-post.md · scheduled for Wed 2026-11-18 12:00 SGT on 2026-11-18 ~07:50 SGT (Michael: "post it to xhs at 11.18 12 pm") · editor counter 846 body (855 with topics by count.py) · title 14/20
+Topics (all linked): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
+Video: avatar-video/videos/2026-11-17-agent-ep4/renders/agent-ep4-upload.mp4 (8.9 MB 720p copy); cover = first Xiaohongshu 智能推荐封面. 内容类型声明 set to 笔记含AI合成内容. Note manager shows 定时发布 2026-11-18 12:00 (审核中).
+Style: video (preset H · article deep-dive, 16:9, with chart-draw architecture diagrams)
+Slot: off-plan (Michael's word; second note of the day after ep3 at 09:00) · Topic: main
+
+
+## 2026-11-18 (YouTube, scheduled) — 从零到1做Agent第3集：笔记｜系统提示和 NOTES.md
+Link: https://youtu.be/0eRpVlHqPrU · scheduled public for Wed 2026-11-18 12:00 SGT (GMT+08:00), set ~08:30 SGT ("Yes" from Michael after seeing the text) · video, 7:04
+Post file: x-assistant/yt-agent-series-ep3-post.md (title 31/100, description 845/5000, 13 chapters, 13 tags 117/500)
+Video: avatar-video/videos/2026-11-17-agent-ep3/renders/agent-ep3-upload.mp4 (8.8 MB 720p copy)
+Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-18 (YouTube, scheduled) — 从零到1做Agent第4集：权限｜放行、询问、拒绝
+Link: https://youtu.be/IxGgwi45C4I · scheduled public for Wed 2026-11-18 12:00 SGT (GMT+08:00), set ~08:40 SGT ("Yes" from Michael after seeing the text) · video, 7:26
+Post file: x-assistant/yt-agent-series-ep4-post.md (title 25/100, description 992/5000, 16 chapters, 14 tags 125/500)
+Video: avatar-video/videos/2026-11-17-agent-ep4/renders/agent-ep4-upload.mp4 (8.7 MB 720p copy)
+Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-18 (Xiaohongshu, scheduled) — 从零做Agent第5集：上下文
+Video note, series "从零做一个 Claude Code 式 Agent" episode 5 (landscape deep-dive, 5:58, DeepSeek model for the demo runs). Post file: x-assistant/xhs-agent-series-ep5-post.md · scheduled for Wed 2026-11-18 19:00 SGT on 2026-11-18 ~14:30 SGT (Michael: "post it on xhs and YouTube at 7pm today") · editor counter 932/1000 · title 15/20
+Topics (all linked, #AI编程 picked from the suggestion list; it links the note to the campaign 独立开发者·报上Demo来): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
+Video: avatar-video/videos/2026-11-18-agent-ep5/renders/agent-ep5-upload.mp4 (7.9 MB 720p copy); no 智能推荐封面 appeared, so the first-frame cover (our designed cover card) stayed. 内容类型声明 set to 笔记含AI合成内容. Note manager shows 定时发布 2026/11/18 19:00 (审核中).
+Style: video (preset H · article deep-dive, 16:9, with chart-draw diagrams and a real tokens-per-turn chart)
+Slot: off-plan (Michael's word; third note of the day after ep3 at 09:00 and ep4 at 12:00) · Topic: main
+
+## 2026-11-18 (YouTube, scheduled) — 从零到1做Agent第5集：上下文｜数 token、清旧结果、压缩
+Link: https://youtu.be/pPG8-q1phnY · scheduled public for Wed 2026-11-18 19:00 SGT (GMT+08:00), set ~15:05 SGT ("Yes" from Michael after seeing the text) · video, 5:59
+Post file: x-assistant/yt-agent-series-ep5-post.md (title 33/100, description 1127/5000, 8 chapters, 14 tags 124/500)
+Video: avatar-video/videos/2026-11-18-agent-ep5/renders/agent-ep5-upload.mp4 (7.9 MB 720p copy)
+Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-19 (Xiaohongshu) — 从零做Agent第6集：计划和清单
+Video note, series "从零做一个 Claude Code 式 Agent" episode 6 (landscape deep-dive, 5:13, DeepSeek model for the real runs). Post file: x-assistant/xhs-agent-series-ep6-post.md · published now at ~08:35 SGT (Michael: "Yes, post it to xhs and YouTube") · editor counter 803/1000 · title 14/20 (editor count)
+Topics (all linked; #AI编程 needed one retype to link): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
+Video: avatar-video/videos/2026-11-19-agent-ep6/renders/agent-ep6-upload.mp4 (6.2 MB 720p copy); no 智能推荐封面 appeared, so the first-frame cover (our designed cover card) stayed. 内容类型声明 set to 笔记含AI合成内容. Page showed 发布成功. The note auto-linked to the campaign 独立开发者·报上Demo来.
+Style: video (preset H · article deep-dive, 16:9, with chart-draw diagrams)
+Slot: off-plan (Michael's word; published now) · Topic: main
+Humanizer pass: not run on this text.
+
+## 2026-11-19 (YouTube) — 从零到1做Agent第6集：计划模式和任务清单｜真实测试
+Link: https://youtu.be/OwczdWzZOhw · Public, published now at ~08:45 SGT ("Yes" from Michael) · video, 5:14
+Post file: x-assistant/yt-agent-series-ep6-post.md (title 28/100, description 1041/5000, 9 chapters, 14 tags 120/500)
+Video: avatar-video/videos/2026-11-19-agent-ep6/renders/agent-ep6-upload.mp4 (6.2 MB 720p copy)
+Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-19 (Xiaohongshu) — 从零做Agent第6集：计划模式和清单（重做版）
+Video note, series "从零做一个 Claude Code 式 Agent" episode 6 v2 (landscape deep-dive, 5:27, DeepSeek runs; explains plan mode and the task list from zero, test intro before results, before/after code for the two pitfalls). Post file: x-assistant/xhs-agent-series-ep6-post.md (v1 text kept as -v1) · published now at ~09:55 SGT (Michael: "post it to xhs and YouTube", text approved with "Ok") · title 19/20 · body+topics 888/1000
+Topics (all linked): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
+Video: avatar-video/videos/2026-11-19-agent-ep6-v2/renders/agent-ep6-upload.mp4 (6.8 MB 720p copy); first-frame cover (our designed card) stayed; 内容类型声明 set to 笔记含AI合成内容; page showed 发布成功; auto-linked to the campaign 独立开发者·报上Demo来.
+The old EP6 note (08:23, 167 views) was deleted first at Michael's request ("Ok, delete old"); the old YouTube EP6 was deleted earlier the same morning.
+Style: video (preset H · article deep-dive) · Slot: off-plan (published now) · Topic: main
+Humanizer pass: not run on this text.
+
+## 2026-11-19 (YouTube) — 从零到1做Agent第6集：计划模式和任务清单｜是什么、为什么、有没有用
+Link: https://youtu.be/Nktb_ouBbZA · Public, published now at ~09:58 SGT ("post it" from Michael; text approved) · video, 5:27
+Post file: x-assistant/yt-agent-series-ep6-post.md (title 36/100, description 1166/5000, 10 chapters, 14 tags 110/500)
+Video: avatar-video/videos/2026-11-19-agent-ep6-v2/renders/agent-ep6-upload.mp4 (6.8 MB 720p copy)
+Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
