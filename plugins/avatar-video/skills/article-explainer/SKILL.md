@@ -9,7 +9,7 @@ What this makes: a 1920×1080 video, 4–8 min, that reads one source the way a 
 
 This skill uses the `voice-video` skill's scripts for the voice and the sync (call that folder `$V`: `.claude/skills/voice-video/scripts`) plus its own `takes.py` (`$S`: `.claude/skills/article-explainer/scripts`). Run everything from the repo root with Node on the PATH: `export PATH="$HOME/.local/node/bin:$PATH"`.
 
-Flow: **source → research → (real test, if any) → outline → Michael approves the outline → script → Michael approves the script → voice (one take per chapter) → slides → sync → check → ROUGH CUT + post texts together → Michael approves → render → hand to xhs-post / youtube-post → log.** Never post without his yes on the exact video and text.
+Flow: **source → research → (real test, if any) → outline → Michael approves the outline → script → reviewer → SLIDES FROM THE SCRIPT with estimated timing → Michael approves SCRIPT + CARDS together → voice (one take per chapter) → re-sync to the real voice → check → ROUGH CUT (voice + post texts) → Michael approves → render → hand to xhs-post / youtube-post → log.** The voice is never generated before Michael has approved both the script and the cards (his rule, 2026-11-19, after ep 8: a late slide cost a HeyGen re-take). Never post without his yes on the exact video and text.
 
 **Status messages (2026-11-19, ep 7: Michael had to ask for them):** Michael only sees Telegram. Send one short message at the start of every step above and after every long wait (a HeyGen take, a render, a copyright check), saying what you're doing and what comes next. Say before every HeyGen call. Never go more than a few minutes silent.
 
@@ -40,7 +40,7 @@ Write `OUTLINE.md` and show it:
 - **Length:** ask if he didn't say; suggest 4–6 min. At pace 0.92 his voice reads about 5.5 Chinese characters a second, so 5 min ≈ 1,600 characters.
 **Wait for his yes.**
 
-## 3. Script (Michael approves)
+## 3. Script (reviewer first; Michael approves it together with the cards in 3b)
 `script.json` is one item per **slide**, each with its chapter: `[{"ch": 0, "say": "…"}, {"ch": 1, "say": "…"}, …]`. A slide's `say` can be several sentences (15–40 s of speech); change the slide when the picture should change, not on every sentence.
 - Write for the ear, as in `voice-video` step 1: numbers as Chinese words (百分之四十八), acronyms spaced (`M I T`), English terms kept as English when that's how engineers say them (Agent, worker, token, run).
 - Keep the source's terms and say what they mean the first time (`事件收件箱，原文叫 event inbox`).
@@ -50,9 +50,16 @@ Write `OUTLINE.md` and show it:
 - Spoken text: never read a tool or file name aloud (`submit_plan`, `todo_write`, `CLAUDE.md` are misread). Say what it does (提交计划的工具); keep the name on screen. Keep each spoken clause short (about 20 characters).
 - Check the script against the question "could someone who has never used this feature follow it?" before showing it to Michael.
 - **facts.json:** if the video reports numbers from our own runs or data, write `avatar-video/videos/<folder>/facts.json` first (`{"facts": [{"v": "59", "what": "...", "src": "file or computation"}, ...]}`), computed by code from the raw data, then run `python3 -I $S/check_facts.py avatar-video/videos/<folder> <folder>/script.json x-assistant/xhs-<slug>-post.md x-assistant/yt-<slug>-post.md`. It lists every number in those texts that is not in facts.json; fix the text or the file until it is clean. Give the reviewer the facts.json too.
-Show the script with its length estimate. **Wait for his yes.**
+Run the `video-reviewer` agent on `script.json` + `facts.json` + the outline, apply every must-fix, then go to 3b. Do not ask for the script alone: he approves the script and the cards in one message.
 
-## 4. Voice: one take per chapter
+## 3b. Cards from the script, before any voice (Michael approves script + cards)
+The slides do not need the voice, only times. Make estimated times so they can be built, synced and photographed first:
+```bash
+python3 -I $S/preview_timing.py avatar-video/videos/<folder>     # fake words + timing.json ("preview": true), about 7% longer than the real voice
+```
+Then do what step 5 says (diagrams, `build.py`, `sync.py`, `npm run check`, snapshots at `end - 0.4` of every scene). Send Michael on Telegram, in this order and in as few messages as possible: the full script text (by chapter, numbered like the slides), the contact sheets of ALL slides with the slide number on each, and the list of numbers with their source (`facts.json`). Say plainly: "nothing is recorded yet; say ok or give slide or sentence numbers to change". Changes to the script or a slide cost nothing now: edit `script.json` / `build.py`, run `preview_timing.py` again, rebuild, resync, send only the changed slides. **Wait for his yes on both.** Only then HeyGen (say before the call).
+
+## 4. Voice: one take per chapter (only after the 3b approval)
 A whole 5-minute script is too long for one HeyGen call, and chapter breaks are natural pauses, so record per chapter and join:
 ```bash
 python3 -I $S/takes.py split avatar-video/videos/<folder>
@@ -61,9 +68,9 @@ python3 -I $S/takes.py merge avatar-video/videos/<folder>          # 0.7 s betwe
 python3 -I $V/slow_take.py avatar-video/videos/<folder> 0.92
 python3 -I $V/build_vo.py avatar-video/videos/<folder> --dir .voice-heygen-full-0.92
 ```
-If one chapter's take fails or sounds wrong, redo only that chapter and merge again. Send `assets/vo.wav` and ask Michael to listen to the opening and one chapter before you build all the slides. A video under ~90 s can use one take (`heygen_take.sh` on the folder itself) and skip `takes.py`.
+If one chapter's take fails or sounds wrong, redo only that chapter and merge again. `build_vo.py` overwrites the preview `timing.json` with real times (and drops the `preview` flag): re-run `build.py` and `sync.py`, then `npm run check`; the slides are already approved, so only look at any slide whose beats moved. If one chapter's script changes later, re-record only that chapter. A video under ~90 s can use one take (`heygen_take.sh` on the folder itself) and skip `takes.py`.
 
-## 5. Slides
+## 5. Slides (built in step 3b from the preview timing, rebuilt after the real voice)
 Edit `index.html` from the template. Its conventions:
 - one `<div class="scene" id="scN" data-ch="K">` per `script.json` item, in order; `data-ch` lights the chapter bar (grey = not yet, crimson = now, ink = done). Rename the `#chap` tabs to the outline's chapters (`data-ch` 1…n+2; the opening has no tab);
 - every content slide has a `.sec` section tag when a chapter starts, and a `.src` source line: `原文：<source> · <section / 图 N / 表 N · 第 N 页>`, `同上 图 2`, plus `<span class="note">示意</span>` on anything you inferred or simplified;
@@ -81,8 +88,8 @@ Then sync (soft fades, no karaoke, no zoom: that's the calm look of this format)
 python3 -I $V/sync.py avatar-video/videos/<folder>
 ```
 
-## 5b. Rough cut + post texts (Michael approves before the final render)
-After the sync and `npx hyperframes check` pass, take snapshots at the end of every slide (`--at` the `end - 0.4` of each `timing.json` line) and, in the same step, write the XHS and YouTube post texts (`xhs-<slug>-post.md`, `yt-<slug>-post.md`), run the humanizer skill over them, then `count.py`, `check.py` and `check_facts.py`. Send Michael the contact sheets, `assets/vo.wav` and both texts with their check output on Telegram, and say what to check: does a newcomer understand it, are the numbers right, is the length OK, do the texts read right. **Wait for his verdict.** One "ok" then covers video and texts: render, upload copy, and post only to the platforms he names. This costs about 10 minutes and replaces the old order (render, post text, then he sees it); on 2026-11-19 ep 6 v1 skipped the check, went live, and was rebuilt the same day.
+## 5b. Rough cut: real voice + post texts (Michael approves before the final render)
+The script and the cards were approved in 3b. After the real voice is synced and `npx hyperframes check` passes: write the XHS and YouTube post texts (`xhs-<slug>-post.md`, `yt-<slug>-post.md`), run the humanizer skill over them, then `count.py`, `check.py` and `check_facts.py`. Send Michael `assets/vo.wav` (say what to listen for), both texts with their check output, any slide that changed since 3b, and the planned platforms and visibility. **Wait for his verdict.** One "ok" then covers voice and texts: render, upload copy, and post only to the platforms he names. (Chapter times for the YouTube text come from the real `timing.json`, never the preview.)
 
 ## 6. Check and render
 ```bash
@@ -98,7 +105,7 @@ Music is optional for this format (the creator used none); if Michael wants it, 
 - **Upload copy:** Xiaohongshu's uploader in Chrome takes up to 10 MB per call. Make a 720p copy: `ffmpeg -i <render> -vf scale=1280:-2 -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 96k -movflags +faststart renders/<slug>-xhs.mp4`, and raise `-crf` until it fits.
 - **Note text** (`x-assistant/xhs-<slug>-post.md`), Chinese, in the playbook's shape: date + source + one plain sentence; the surprising point; one bullet per chapter with its rule or number; **几点说明** (what the source does and doesn't show, what is your inference); the question; 6–7 topics. Every number must match `script.json` and `RESEARCH.md`.
 - Send the MP4 with the texts (already approved in 5b) and ask once: post to XHS, YouTube, or both, public now or a slot? **Wait for his yes.** Then post, one status message per platform. Known quirks (ep 7, 2026-11-19), so you don't rediscover them:
-  - XHS: use the creator URL `creator.rednote.com/publish/publish?from=menu&target=video` after the Post click opens the creator tab; paste the body with JS; type each topic then press Return, and read the editor text back: a topic missing `[话题]` is plain text (#AI编程 needed a delete and retype); 内容类型声明 → 笔记含AI合成内容 is at the bottom under 内容设置; the first-frame cover stays (no recommended cover appears); the campaign auto-link toast is harmless; 发布成功 page = done.
+  - XHS: #AI编程 has failed to link every time it was the third topic: after the five tags read the editor text back, and for a plain `#AI编程` delete its 5 characters, retype it, wait 3 s, press Return, wait 3 s more and read again. XHS: use the creator URL `creator.rednote.com/publish/publish?from=menu&target=video` after the Post click opens the creator tab; paste the body with JS; type each topic then press Return, and read the editor text back: a topic missing `[话题]` is plain text (#AI编程 needed a delete and retype); 内容类型声明 → 笔记含AI合成内容 is at the bottom under 内容设置; the first-frame cover stays (no recommended cover appears); the campaign auto-link toast is harmless; 发布成功 page = done.
   - YouTube: dashboard upload arrow → `file_upload` on the hidden input; title box prefilled with the file name (select all first); description by JS paste; playlist 从0到1构建一个AGENT; "No, not made for kids" is a click by coordinate; AI use Yes sits under Show more; tags typed with a trailing comma; language list does not filter by typing (find the item with JS, click by coordinate); category usually stays Science & Technology; the copyright check takes about 2 minutes ("No issues found") before Publish is safe.
   - Hand to `xhs-post` (video note, AI-content declaration on) / `youtube-post` for anything else. For X, ask: a 6-minute horizontal video fits X, but the text must be English and under 280 characters (`x-post`).
 
