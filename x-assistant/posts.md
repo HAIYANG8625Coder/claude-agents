@@ -249,3 +249,16 @@ Link: https://youtu.be/Nktb_ouBbZA · Public, published now at ~09:58 SGT ("post
 Post file: x-assistant/yt-agent-series-ep6-post.md (title 36/100, description 1166/5000, 10 chapters, 14 tags 110/500)
 Video: avatar-video/videos/2026-11-19-agent-ep6-v2/renders/agent-ep6-upload.mp4 (6.8 MB 720p copy)
 Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-19 (Xiaohongshu) — 从零做Agent第7集：子Agent
+Video note, series "从零做一个 Claude Code 式 Agent" episode 7 (landscape deep-dive, 5:49, DeepSeek runs; subagents, real weekly-posting test 3 runs per setup, the compaction pitfall, EP1–EP7 review). Post file: x-assistant/xhs-agent-series-ep7-post.md · published now (Michael: "Ok, post it to xhs and YouTube") · title 18/20 · body+topics 722/1000
+Topics (all linked; #AI编程 needed one retype to link): #Agent #ClaudeCode #AI编程 #大模型 #AI工程
+Video: avatar-video/videos/2026-11-19-agent-ep7/renders/agent-ep7-upload.mp4 (7.3 MB 720p copy); first-frame cover (our designed cover card) stayed; 内容类型声明 set to 笔记含AI合成内容; page showed 发布成功; auto-linked to the campaign 独立开发者·报上Demo来.
+Style: video (preset H · article deep-dive) · Slot: off-plan (published now) · Topic: main
+Humanizer pass: not run on this text.
+
+## 2026-11-19 (YouTube) — 从零到1做Agent第7集：子Agent｜是什么、为什么、有没有用
+Link: https://youtu.be/VVIwM-xaIEQ · Public, published now ("Ok, post it to xhs and YouTube" from Michael; text approved) · video, 5:49
+Post file: x-assistant/yt-agent-series-ep7-post.md (title 33/100, description 1082/5000, 12 chapters, 13 tags 106/500)
+Video: avatar-video/videos/2026-11-19-agent-ep7/renders/agent-ep7-upload.mp4 (7.3 MB 720p copy)
+Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues

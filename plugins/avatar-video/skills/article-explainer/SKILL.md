@@ -9,7 +9,11 @@ What this makes: a 1920×1080 video, 4–8 min, that reads one source the way a 
 
 This skill uses the `voice-video` skill's scripts for the voice and the sync (call that folder `$V`: `.claude/skills/voice-video/scripts`) plus its own `takes.py` (`$S`: `.claude/skills/article-explainer/scripts`). Run everything from the repo root with Node on the PATH: `export PATH="$HOME/.local/node/bin:$PATH"`.
 
-Flow: **source → research → outline → Michael approves the outline → script → Michael approves the script → voice (one take per chapter) → slides → sync → check → render → cover + note text → Michael approves → hand to xhs-post → log.** Never post without his yes on the exact video and text.
+Flow: **source → research → (real test, if any) → outline → Michael approves the outline → script → Michael approves the script → voice (one take per chapter) → slides → sync → check → ROUGH CUT + post texts together → Michael approves → render → hand to xhs-post / youtube-post → log.** Never post without his yes on the exact video and text.
+
+**Status messages (2026-11-19, ep 7: Michael had to ask for them):** Michael only sees Telegram. Send one short message at the start of every step above and after every long wait (a HeyGen take, a render, a copyright check), saying what you're doing and what comes next. Say before every HeyGen call. Never go more than a few minutes silent.
+
+**Commit as you go:** after each approval (outline, script, voice, rough cut, post) commit the new files (`series/EP*-*.md`, the post texts, the code for the episode) and push to main. Video folders are git-ignored on purpose; never stage keys, `AVATAR-*.md` or personal files.
 
 ## 0. Setup
 Same as `voice-video` step 0: `AVATAR-MICHAEL.md` with `voice_id` and `pace`, `avatar-video/node_modules` present, the HeyGen MCP signed in in the Claude Code CLI. Say before the takes that you're about to call HeyGen (free turbo model).
@@ -20,6 +24,7 @@ Same as `voice-video` step 0: `AVATAR-MICHAEL.md` with `voice_id` and `pace`, `a
 - If the episode is about our own code (the agent series), commit and push that code to its repo at each milestone (first working version, each bug fix) and say so in `RESEARCH.md`; a before/after code slide needs the real old version, and ep 6's was lost because nothing was committed.
 - Read all of it, not the abstract. Make `avatar-video/videos/<YYYY-MM-DD>-<slug>/` by copying `avatar-video/template-explainer/` and write `RESEARCH.md`: title, authors, date, URL, then per section its claims and every number **with its location** (section, figure, table, page). This is where the source lines on the slides come from.
 - Capture the originals you'll show into `assets/`: the first page (`src-page1.png`), the 3–6 figures that carry the argument (`src-fig2.png`), and short quotes (keep the exact English in `RESEARCH.md`). For a web page, screenshot it with Claude in Chrome (`computer` zoom with `save_to_disk`) or headless Chrome; for a PDF, render the page with the `pdf` skill and crop. Show only figures and short quotes, never whole pages of text you'd be republishing.
+- **Our own real test (agent series):** run it BEFORE the outline, from code, and write every number to `facts.json` with one command that regenerates it from the raw run files (`demo/*.json`). If the episode's code changes afterwards (a bug fix, a changed limit), re-run the test and regenerate `facts.json` before the script is final; a fix that was not re-tested must be said so in the video (ep 7: the compaction fix and the 60→100 turn cap were never tested apart).
 - Check every number twice against the source. Compute any derived number (a drop from 48% to 28%, a ratio) with code. If the source has few numbers, say so in the video rather than borrowing numbers from elsewhere.
 
 ## 2. Outline (Michael approves)
@@ -66,7 +71,8 @@ Edit `index.html` from the template. Its conventions:
 - beats inside a slide go below the sync block and are timed on words: `pop("#n1b", at("开会话"))`, `grow("#b3b", at("七十八"))`, `draw("#r1a", at("跑循环"))`. Remove the template's fallback times once there's a take;
 - the cover card (`#cover`) is frame 0 and lifts away at the first slide change; replace its text, pills and date. `.who` holds Michael's three dots; swap in his photo only if he gives one;
 - add the `<audio id="vo">` line (commented at the bottom of the template) and set every `data-duration` to `timing.json`'s total (`sync.py` does this for values equal to the old root);
-- start from `avatar-video/template-explainer/components.py` (`Deck`: scene, cards, diagram, chip, codecmp, recap) and keep to its SAFE AREA: content ends at about y=680 and nothing goes below 740, because the source line and the caption band sit under it (ep 6 chips collided with both);
+- draw the diagrams with `diagrams.py` and finish it with `save_all(STAGES, OUT)` from `avatar-video/template-explainer/stages.py`: it saves every stage and fails on any box or text outside the frame, before you render a single frame;
+- start from `avatar-video/template-explainer/components.py` (`Deck`: scene, cards, diagram, chip, codecmp, recap, and since ep 7 `codeex` for real code lines, `rcards`, `msgcard`, `seqscene` for a chart that grows row by row). Import it; do not copy helper functions into `build.py` (ep 7 did, and re-fixed ep 6's layout bugs) and keep to its SAFE AREA: content ends at about y=680 and nothing goes below 740, because the source line and the caption band sit under it (ep 6 chips collided with both);
 - keep slides full: the main picture fills most of the stage. Something should change every 3–6 s (a box, an arrow, a bar, a highlight); a 7-minute deck of still cards loses people.
 
 Then sync (soft fades, no karaoke, no zoom: that's the calm look of this format):
@@ -74,8 +80,8 @@ Then sync (soft fades, no karaoke, no zoom: that's the calm look of this format)
 python3 -I $V/sync.py avatar-video/videos/<folder>
 ```
 
-## 5b. Rough cut (Michael approves before the final render and before any post text)
-After the sync and `npx hyperframes check` pass, take snapshots at the end of every slide (`--at` the `end - 0.4` of each `timing.json` line), send Michael the contact sheets plus `assets/vo.wav` on Telegram, and say what to check: does a newcomer understand it, are the numbers right, is the length OK. **Wait for his verdict**, then render. This costs about 10 minutes and replaces the old order (render, post text, then he sees it); on 2026-11-19 ep 6 v1 skipped the check, went live, and was rebuilt the same day.
+## 5b. Rough cut + post texts (Michael approves before the final render)
+After the sync and `npx hyperframes check` pass, take snapshots at the end of every slide (`--at` the `end - 0.4` of each `timing.json` line) and, in the same step, write the XHS and YouTube post texts (`xhs-<slug>-post.md`, `yt-<slug>-post.md`), run the humanizer skill over them, then `count.py`, `check.py` and `check_facts.py`. Send Michael the contact sheets, `assets/vo.wav` and both texts with their check output on Telegram, and say what to check: does a newcomer understand it, are the numbers right, is the length OK, do the texts read right. **Wait for his verdict.** One "ok" then covers video and texts: render, upload copy, and post only to the platforms he names. This costs about 10 minutes and replaces the old order (render, post text, then he sees it); on 2026-11-19 ep 6 v1 skipped the check, went live, and was rebuilt the same day.
 
 ## 6. Check and render
 ```bash
@@ -90,7 +96,10 @@ Music is optional for this format (the creator used none); if Michael wants it, 
 - **Cover PNG:** `npx hyperframes snapshot --at 0` and copy the frame to `renders/cover.png` (Xiaohongshu uses the first frame anyway; the PNG is for X or a manual cover).
 - **Upload copy:** Xiaohongshu's uploader in Chrome takes up to 10 MB per call. Make a 720p copy: `ffmpeg -i <render> -vf scale=1280:-2 -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 96k -movflags +faststart renders/<slug>-xhs.mp4`, and raise `-crf` until it fits.
 - **Note text** (`x-assistant/xhs-<slug>-post.md`), Chinese, in the playbook's shape: date + source + one plain sentence; the surprising point; one bullet per chapter with its rule or number; **几点说明** (what the source does and doesn't show, what is your inference); the question; 6–7 topics. Every number must match `script.json` and `RESEARCH.md`.
-- Send the MP4 and the note with SendUserFile and say what to check (the numbers, the terms, the ending). **Wait for his verdict.** On a yes, hand the upload copy and note to `xhs-post` (video note, AI-content declaration on). For X, ask: a 6-minute horizontal video fits X, but the text must be English and under 280 characters (`x-post`).
+- Send the MP4 with the texts (already approved in 5b) and ask once: post to XHS, YouTube, or both, public now or a slot? **Wait for his yes.** Then post, one status message per platform. Known quirks (ep 7, 2026-11-19), so you don't rediscover them:
+  - XHS: use the creator URL `creator.rednote.com/publish/publish?from=menu&target=video` after the Post click opens the creator tab; paste the body with JS; type each topic then press Return, and read the editor text back: a topic missing `[话题]` is plain text (#AI编程 needed a delete and retype); 内容类型声明 → 笔记含AI合成内容 is at the bottom under 内容设置; the first-frame cover stays (no recommended cover appears); the campaign auto-link toast is harmless; 发布成功 page = done.
+  - YouTube: dashboard upload arrow → `file_upload` on the hidden input; title box prefilled with the file name (select all first); description by JS paste; playlist 从0到1构建一个AGENT; "No, not made for kids" is a click by coordinate; AI use Yes sits under Show more; tags typed with a trailing comma; language list does not filter by typing (find the item with JS, click by coordinate); category usually stays Science & Technology; the copyright check takes about 2 minutes ("No issues found") before Publish is safe.
+  - Hand to `xhs-post` (video note, AI-content declaration on) / `youtube-post` for anything else. For X, ask: a 6-minute horizontal video fits X, but the text must be English and under 280 characters (`x-post`).
 
 ## 8. Log
 Append to `avatar-video/videos.md`: date, title, `Style: H · article deep-dive`, platform, length, folder, source (title + URL), chapters, render path, what to improve next time. When Michael corrects something, fix this file or the playbook, not just the chat.
