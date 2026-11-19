@@ -87,10 +87,10 @@ class Deck:
         return out + "</div>"
 
     # ---- a chip under a diagram (see SAFE)
-    def chip(self, i, key, text, phrase, left=410, top=595, red=False):
+    def chip(self, i, key, text, phrase, left=410, top=595, red=False, fs=34):
         self.beat(i, key, phrase)
         return self.hid(i, key, "chipr" + (" red" if red else ""), text,
-                        "position:absolute;left:%dpx;top:%dpx;font-size:34px;padding:10px 30px" % (left, top))
+                        "position:absolute;left:%dpx;top:%dpx;font-size:%dpx;padding:10px 30px" % (left, top, fs))
 
     # ---- staged SVG diagram: stages = [1, 2, ...] files assets/diagrams/<name>-s<k>.svg; phrases = what makes each stage fade in
     def diagram(self, i, name, stages, phrases, left=250, top=90, width=1400, view_h=520):
