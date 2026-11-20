@@ -291,3 +291,16 @@ Link: https://youtu.be/W5dlyVRLg44 · Public, published now (same approval) · v
 Post file: x-assistant/yt-agent-series-ep9-post.md (title 29/100, description 1169/5000, 9 chapters, 12 tags)
 Video: avatar-video/videos/2026-11-20-agent-ep9/renders/agent-ep9-upload.mp4 (9.6 MB 720p copy)
 Settings: not made for kids · AI use Yes · no paid promotion · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-20 (Xiaohongshu) — 从零做Agent第10集：常驻
+Video note, series "从零做一个 Claude Code 式 Agent" episode 10 (landscape deep-dive, 8:39, DeepSeek runs; always-on agent: inbox, timers, outbox, "nobody can approve"; Claude Code's /loop, cloud tasks, claude -p, channels from the docs; real tests T1 orders, T2 no approver, T3 secrets, 5 runs per setup; plan-mode send_message bug and run-ended-is-not-done pit; EP1-10 review). Post file: x-assistant/xhs-agent-series-ep10-post.md · published now (Michael: "ok" to the rough cut, then "post to both platforms") · title 15/20 · body+topics 688/1000
+Topics (all linked; #AI编程 stayed plain text again and needed delete-and-retype, which also removed #ClaudeCode, so it was typed again): #Agent #AI编程 #ClaudeCode #大模型 #AI工程
+Video: avatar-video/videos/2026-11-20-agent-ep10/renders/agent-ep10-upload.mp4 (9.7 MB 720p copy); first-frame cover (our designed cover card); 内容类型声明 set to 笔记含AI合成内容; page showed 发布成功; auto-linked to the campaign 独立开发者·报上Demo来.
+Style: video (preset H · article deep-dive) · Slot: off-plan (published now) · Topic: main
+Humanizer pass: not run on this text.
+
+## 2026-11-20 (YouTube) — 从零到1做Agent第10集：常驻｜是什么、为什么、有没有用
+Link: https://youtu.be/PpgmQ60SvPI · Public, published now (same approval) · video, 8:40
+Post file: x-assistant/yt-agent-series-ep10-post.md (title 30/100, description 1140/5000, 9 chapters, 12 tags 94/500)
+Video: avatar-video/videos/2026-11-20-agent-ep10/renders/agent-ep10-upload.mp4 (9.7 MB 720p copy)
+Settings: not made for kids · AI use Yes · no paid promotion · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues (took about 10 min)
