@@ -278,3 +278,16 @@ Link: https://youtu.be/3zCWoypDeVI · Public, published now ("ok" from Michael; 
 Post file: x-assistant/yt-agent-series-ep8-post.md (title 31/100, description 1181/5000, 11 chapters, 12 tags 107/500)
 Video: avatar-video/videos/2026-11-19-agent-ep8/renders/agent-ep8-upload.mp4 (8.5 MB 720p copy)
 Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-20 (Xiaohongshu) — 从零做Agent第9集：记忆
+Video note, series "从零做一个 Claude Code 式 Agent" episode 9 (landscape deep-dive, 7:38, DeepSeek runs; memory between sessions: what it is, Claude Code's CLAUDE.md vs auto memory from the Memory docs page, our memory_write/memory_forget, real test 2 sessions x 5 runs per setup incl. stale-note setups C and C0, plan-mode bug, EP1-9 review). Post file: x-assistant/xhs-agent-series-ep9-post.md · published now (Michael: "Ok" to the rough cut, then "B then 720p also works") · title 14/20 · body+topics 747/1000
+Topics (all linked; #AI编程 needed the delete-and-retype again): #Agent #ClaudeCode #AI编程 #大模型 #AI工程
+Video: avatar-video/videos/2026-11-20-agent-ep9/renders/agent-ep9-upload.mp4 (9.6 MB 720p copy); first-frame cover (our designed cover card) stayed; 内容类型声明 set to 笔记含AI合成内容; page showed 发布成功; auto-linked to the campaign 独立开发者·报上Demo来.
+Style: video (preset H · article deep-dive) · Slot: off-plan (published now) · Topic: main
+Humanizer pass: not run on this text.
+
+## 2026-11-20 (YouTube) — 从零到1做Agent第9集：记忆｜是什么、为什么、有没有用
+Link: https://youtu.be/W5dlyVRLg44 · Public, published now (same approval) · video, 7:39
+Post file: x-assistant/yt-agent-series-ep9-post.md (title 29/100, description 1169/5000, 9 chapters, 12 tags)
+Video: avatar-video/videos/2026-11-20-agent-ep9/renders/agent-ep9-upload.mp4 (9.6 MB 720p copy)
+Settings: not made for kids · AI use Yes · no paid promotion · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
