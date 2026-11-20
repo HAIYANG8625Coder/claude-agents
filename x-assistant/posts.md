@@ -304,3 +304,16 @@ Link: https://youtu.be/PpgmQ60SvPI · Public, published now (same approval) · v
 Post file: x-assistant/yt-agent-series-ep10-post.md (title 30/100, description 1140/5000, 9 chapters, 12 tags 94/500)
 Video: avatar-video/videos/2026-11-20-agent-ep10/renders/agent-ep10-upload.mp4 (9.7 MB 720p copy)
 Settings: not made for kids · AI use Yes · no paid promotion · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues (took about 10 min)
+
+## 2026-11-20 (Xiaohongshu) — 从零做Agent11：MCP和skill
+Video note, series "从零做一个 Claude Code 式 Agent" episode 11 (landscape deep-dive, 8:57, DeepSeek runs; MCP client + our tickets server + skills loader; Claude Code's MCP and Skills docs pages; real tests T1 release notes with 6 skills (none / all up front / on demand) and T2 a planted instruction in a tool description (4 setups), 5 runs per setup; plan-mode pit (third time) and a shell-write pit; EP1-11 review). Post file: x-assistant/xhs-agent-series-ep11-post.md · published now (Michael: "ok" to the rough cut, then "post it to both platforms") · title 20/20 (so "第11集" is "11") · body+topics 641/1000
+Topics (all linked; #AI编程 stayed plain text again; typing it last, then Backspace one character and retyping it linked it; my first fix, 5 Backspaces, ate part of the body and I redid the body): #Agent #ClaudeCode #大模型 #AI工程 #AI编程
+Video: avatar-video/videos/2026-11-20-agent-ep11/renders/agent-ep11-upload.mp4 (9.6 MB 720p copy); first-frame cover (our designed cover card); 内容类型声明 set to 笔记含AI合成内容; page showed 发布成功.
+Style: video (preset H · article deep-dive) · Slot: off-plan (published now) · Topic: main
+Humanizer pass: not run on this text.
+
+## 2026-11-20 (YouTube) — 从零到1做Agent第11集：MCP 和 skill｜是什么、为什么、有没有用
+Link: https://youtu.be/xLNg_0Xdj60 · Public, published now (same approval) · video, 8:58
+Post file: x-assistant/yt-agent-series-ep11-post.md (title 39/100, description 1230/5000, 9 chapters, 12 tags 102/500)
+Video: avatar-video/videos/2026-11-20-agent-ep11/renders/agent-ep11-upload.mp4 (9.6 MB 720p copy)
+Settings: not made for kids · AI use Yes · no paid promotion · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues (took about 6 min)
