@@ -39,12 +39,14 @@ Someone who watched (or read) series 1, or any developer who can read Python. Sa
 - The exact episode list. It may change after the first real tests (series 1 changed twice).
 
 ## Open questions for Michael (answer any; defaults in brackets)
+
+Superseded: the current list of decisions is section 9 of `SERIES2-IMPLEMENTATION-PLAN.md`. Question 6 is settled, because the public repo `build-an-enterprise-class-agent` was created on 2026-11-21.
 1. Same stack as series 1: Python, no framework, DeepSeek or Claude by environment key? [yes]
 2. Start from the finished ep 13 agent, as a library? [yes: one engine, new layers around it]
 3. 13 episodes, or fewer (say 9: drop 3, 6, 11, 13)? [13 planned, decide after ep 1 to 3]
 4. First episode: Many users (ep 1 above), or Sandbox (ep 4 above) because it is the most visual? [ep 1]
 5. Posting: same channels (Xiaohongshu and YouTube), same weekly pace? [same]
-6. Written articles and the public repo: a new repo for series 2 (build-your-own-enterprise-agent) or a new folder in the same repo? [new folder `series2/` in the same repo]
+6. ~~Written articles and the public repo: a new repo for series 2 or a new folder in the same repo?~~ Settled: a new repo, `build-an-enterprise-class-agent`.
 
 ## Before episode 1 (the same rules as series 1)
 Research first: read the pages not yet read (admin setup, server-managed settings, network config, zero data retention, the Claude apps gateway pages); write SERIES2-SYLLABUS.md in the repo; then per episode: research, real test, outline, approval, script, cards, approval, voice, rough cut, approval, post.
