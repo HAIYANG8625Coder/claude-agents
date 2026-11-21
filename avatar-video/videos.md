@@ -212,3 +212,11 @@ Why: Michael (2026-11-19): v1 never explained what plan mode and the task list a
 Script: series/EP6-SCRIPT.md (v2, reviewed by video-reviewer, Michael OK'd 2026-11-19); v1 kept as series/EP6-SCRIPT-v1.md. Numbers re-checked against ep06/demo/*.json. Voice: eleven chapter takes merged, pace 0.92.
 Render: renders/2026-11-19-agent-ep6-v2_2026-11-19_09-33-45.mp4 (18.5 MB). Added later at Michael's request: 3 test-intro slides before the results (repo and 12 faults, task and scoring, the three setups); before/after code slides for the two pitfalls (the first-version code was never saved, so the left side was rewritten with both bugs put back and verified: test 1 and test 6 of test_plan.py fail on it, all pass on the real agent.py; file in assets/first-version-agent.py). Status: waiting for Michael's verdict.
 What to improve next time: shorter than v1 (4:20 vs 5:13) because the explainer chapters are tight; the humanizer pass was not run; chips under diagrams are small.
+
+## 2026-11-21 — 从零做一个 Agent · 第 12 集：测试和调试
+Platform: xhs + YouTube (PUBLISHED 2026-11-21, public now) · Length: 500.3 s (8:20) · 16:9 · Folder: videos/2026-11-21-agent-ep12 · Style: H · article deep-dive + 8 staged diagram sets (+ 8 card scenes)
+Source: Anthropic Engineering, "Demystifying evals for AI agents" (2026-01-09) + Claude Code docs (CLI reference read in full) + our own eval harness: 4 tasks x 2 setups x 5 trials = 40 real runs (DeepSeek).
+Script: series/EP12-SCRIPT.md (36 slides, reviewed by video-reviewer, 8 fixes applied, Michael OK'd 2026-11-21). Numbers by code: facts.py -> facts.json (check_facts clean for script and both post texts). Voice: nine chapter takes merged, pace 0.92.
+Render: renders/2026-11-21-agent-ep12_2026-11-21_11-01-24.mp4 (26.8 MB). YouTube: https://youtu.be/bruLz7bm0P8.
+Result of the test shown: the one-sentence change did not help (base 20/20, with the sentence 18/20; tasks too easy, baseline saturated). Real pit: a rigid grader failed a correct answer.
+What to improve next time: the humanizer pass was not run on the post texts; the XHS title was 21 characters and needed one comma removed; harder tasks would let a change show a difference; the contact sheets are labelled by time, not slide number.

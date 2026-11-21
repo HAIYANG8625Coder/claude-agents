@@ -317,3 +317,17 @@ Link: https://youtu.be/xLNg_0Xdj60 · Public, published now (same approval) · v
 Post file: x-assistant/yt-agent-series-ep11-post.md (title 39/100, description 1230/5000, 9 chapters, 12 tags 102/500)
 Video: avatar-video/videos/2026-11-20-agent-ep11/renders/agent-ep11-upload.mp4 (9.6 MB 720p copy)
 Settings: not made for kids · AI use Yes · no paid promotion · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues (took about 6 min)
+
+## 2026-11-21 (Xiaohongshu) — 从零做Agent12：改了一行变好了吗？
+Post file: x-assistant/xhs-agent-series-ep12-post.md (title cut to 20 characters by removing one comma; body 840/1000)
+Topics: #Agent #ClaudeCode #AI编程 #大模型 #AI工程 (all five linked)
+Video: avatar-video/videos/2026-11-21-agent-ep12/renders/agent-ep12-xhs.mp4 (9.7 MB 720p copy) · cover: first frame
+Style: video
+Slot: off-plan (Michael: "post it to both platforms"; published now at about 11:08 SGT, 发布成功)
+AI-content declaration: 笔记含AI合成内容
+
+## 2026-11-21 (YouTube) — 从零到1做Agent第12集：测试和调试｜改了一行，Agent 变好了吗？
+Link: https://youtu.be/bruLz7bm0P8 · Public, published now · video, 8:20
+Post file: x-assistant/yt-agent-series-ep12-post.md (title 37/100, description 1412/5000, 9 chapters, 12 tags 83/500)
+Video: avatar-video/videos/2026-11-21-agent-ep12/renders/agent-ep12-xhs.mp4 (9.7 MB 720p copy of the 26.8 MB render)
+Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
