@@ -331,3 +331,17 @@ Link: https://youtu.be/bruLz7bm0P8 · Public, published now · video, 8:20
 Post file: x-assistant/yt-agent-series-ep12-post.md (title 37/100, description 1412/5000, 9 chapters, 12 tags 83/500)
 Video: avatar-video/videos/2026-11-21-agent-ep12/renders/agent-ep12-xhs.mp4 (9.7 MB 720p copy of the 26.8 MB render)
 Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-21 (Xiaohongshu) — 从零做Agent13：终章，能日常用了
+Post file: x-assistant/xhs-agent-series-ep13-post.md (title 19/20, body 695/1000)
+Topics: #Agent #ClaudeCode #AI编程 #大模型 #AI工程 (all five linked; #AI编程 needed one delete and retype)
+Video: avatar-video/videos/2026-11-21-agent-ep13/renders/agent-ep13-xhs.mp4 (8.7 MB 720p copy, mono audio) · cover: first frame
+Style: video
+Slot: off-plan (Michael: "post it to both platforms"; published now at about 14:45 SGT, 发布成功)
+AI-content declaration: 笔记含AI合成内容
+
+## 2026-11-21 (YouTube) — 从零到1做Agent第13集：接在一起｜能聊、能接着聊的命令行 Agent
+Link: https://youtu.be/yhImrMlX79o · Public, published now · video, 11:28
+Post file: x-assistant/yt-agent-series-ep13-post.md (title 37/100, description 1661/5000, 11 chapters, 12 tags 90/500)
+Video: avatar-video/videos/2026-11-21-agent-ep13/renders/agent-ep13-xhs.mp4 (8.7 MB 720p copy of the 38.9 MB render)
+Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
