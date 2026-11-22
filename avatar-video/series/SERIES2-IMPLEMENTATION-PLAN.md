@@ -61,14 +61,14 @@ Principles:
 |---|---|---|
 | Service | stdlib `http.server` vs FastAPI | stdlib: keeps the rule, fewer moving parts. Use `ThreadingHTTPServer`, since the plain server handles one request at a time. The Python docs say `http.server` is not meant for production, so the video says so. No TLS: the service listens on loopback only. |
 | State | JSON files vs SQLite | SQLite: users, budgets, approvals, sessions need queries and transactions. With threads: one connection per thread, WAL mode, a `busy_timeout`. |
-| Sandbox on this Mac | Docker vs macOS `sandbox-exec` | `sandbox-exec` (present at `/usr/bin/sandbox-exec`; Docker is not installed here), around the whole engine process (see section 2). The docs say Claude Code uses Seatbelt on macOS. The Dockerfile variant is tested in CI on Linux (see the CI row). |
+| Sandbox on this Mac | Docker vs macOS `sandbox-exec` | Both, and both are tested on this Mac. `sandbox-exec` (at `/usr/bin/sandbox-exec`) wraps the whole engine process (see section 2); the docs say Claude Code uses Seatbelt on macOS. Docker runs here through Colima (installed 2026-11-22: docker 29.10, Colima 0.10.3, compose 5.8; a 2026-11-22 test container with `--network none --cap-drop ALL --read-only` and a non-root user could not reach the network or write to `/`). CI on Linux runs the Docker variant too. |
 | Network allow-list | OS rules vs a small proxy | A small allow-list proxy we write (HTTP CONNECT), like the docs' proxy design. `run_bash` gets no network at all, the loopback ports of our own proxies included, so a command cannot spend the key with `curl localhost:<port>`. |
 | Secrets | env var in the agent vs credential proxy | Credential proxy on loopback: the engine's base URL points to it. The engine gets a per-session token, never the key; the proxy checks the token (so it knows the tenant) and adds the key. The key file is readable by the proxy only. |
 | Budget | check before each message vs check on every model call | On every model call, in the proxy: it refuses the call that would cross the limit. The overshoot is then at most one call, a clean number to show. A check before each message would let one long turn make many calls past the limit. |
 | Audit integrity | plain log vs hash chain | Hash chain (each line holds the hash of the previous one), written by the service and the proxy, outside the sandbox. Our own addition, labelled as ours. |
 | Admin | file edited by hand vs admin role | Two roles: `user` and `admin`. Only an admin token can change the managed policy (`PUT /policy`), and the change is an audit event. |
 | Approvals channel | terminal vs web vs chat | A small HTTP approve/deny endpoint first; a chat webhook as a second step. |
-| CI | GitHub Actions vs local | GitHub Actions in the public repo: no-key checks on every push, real evals on a schedule with a repository secret (forks never get it). The Linux runners have no `sandbox-exec` but do have Docker, so CI tests the Docker sandbox and the Mac runs the `sandbox-exec` tests. Each sandbox test names the variant it covers. |
+| CI | GitHub Actions vs local | GitHub Actions in the public repo: no-key checks on every push, real evals on a schedule with a repository secret (forks never get it). The Linux runners have no `sandbox-exec` but do have Docker, so CI tests the Docker sandbox, and the Mac runs both the `sandbox-exec` and the Docker tests. Each sandbox test names the variant it covers. |
 
 ## 4. Phases and work breakdown
 
@@ -87,7 +87,7 @@ Each phase ends with something you can run. Effort is in "sessions" (a session =
 - **Exit:** R1 and R2 pass their tests.
 
 ### Phase B · Isolation (3 sessions: ep 4 to 6)
-- **ep 4 sandbox.** Two layers. The whole engine process runs under a `sandbox-exec` profile: writes only inside the tenant's folder, no reads of the service's db, audit log or key file, network only to the proxy port. `run_bash` runs under a stricter profile inside it, with no network at all (loopback included) unless the policy allows a host through the allow-list proxy. A Dockerfile variant, tested in CI. Tests: `touch ../x` fails; `curl blocked.example` fails; reading `~/.ssh` is denied; the engine's `read_file` on the SQLite db fails; `curl localhost:<proxy port>` from a command fails.
+- **ep 4 sandbox.** Two layers. The whole engine process runs under a `sandbox-exec` profile: writes only inside the tenant's folder, no reads of the service's db, audit log or key file, network only to the proxy port. `run_bash` runs under a stricter profile inside it, with no network at all (loopback included) unless the policy allows a host through the allow-list proxy. A Dockerfile variant, tested on the Mac (Colima) and in CI. Tests: `touch ../x` fails; `curl blocked.example` fails; reading `~/.ssh` is denied; the engine's `read_file` on the SQLite db fails; `curl localhost:<proxy port>` from a command fails.
 - **ep 5 secrets.** The credential proxy with a per-session token, and tests that the engine process has no key in its environment or any file it can read, and that a wrong or expired session token is refused. Engine change: `make_client()` takes the proxy URL and the session token. Pitfall to show: a tool that ignores proxy variables.
 - **ep 6 tenancy.** Per-tenant config dir, memory dir, working dir, empty setting sources. A test that tries to cross from tenant A to tenant B by path, by symlink and by memory file.
 - **Exit:** R3 and R4 pass.
@@ -95,7 +95,7 @@ Each phase ends with something you can run. Effort is in "sessions" (a session =
 ### Phase C · See it and pay for it (3 sessions: ep 7 to 9)
 - **ep 7 audit.** Event schema (id, time, user, session, type, tool, decision, source, hash). The service and the proxy write the log; the engine sends its tool and decision events to the service, which marks them `source: engine` (self-reported). Content (prompts, tool output) off by default. `verify_audit.py` detects a removed or edited line. Test: the engine cannot open the log file.
 - **ep 8 cost.** The proxy reads `usage` from each model call, prices it, and keeps the per-user daily total in SQLite. Before each call it estimates the cost and refuses the call that would cross the cap, with a clear message. Measure the overshoot on a run that crosses the cap (the target is at most one call).
-- **ep 9 release gate.** The ep12 harness in CI, pass^k as the gate, a trace saved per failure. CI on Linux runs the Docker sandbox tests; the `sandbox-exec` tests run on the Mac, and the report says which variant ran where.
+- **ep 9 release gate.** The ep12 harness in CI, pass^k as the gate, a trace saved per failure. CI on Linux runs the Docker sandbox tests; the Mac runs both variants, and the report says which variant ran where.
 - **Exit:** R5, R6, R8 pass.
 
 ### Phase D · Reliability (2 sessions: ep 10 to 11)
@@ -104,7 +104,7 @@ Each phase ends with something you can run. Effort is in "sessions" (a session =
 - **Exit:** R7 passes.
 
 ### Phase E · Ship it (2 sessions: ep 12 to 13)
-- **ep 12 deploy.** Dockerfile, a compose file with the service, the proxy and the egress allow-list, a pinned model name, config through environment. Honest note on what we could not run locally.
+- **ep 12 deploy.** Dockerfile, a compose file with the service, the proxy and the egress allow-list, a pinned model name, config through environment. The whole compose setup runs on this Mac through Colima; note anything that differs on a real Linux server (Colima runs Linux in a VM).
 - **ep 13 data and the checklist.** A retention sweep, secret redaction in logs, a data inventory, a one-page checklist, "what Claude Code has that ours does not", the series ending.
 - **Exit:** a fresh clone passes `./check.sh` and a scripted end-to-end demo.
 
@@ -120,7 +120,7 @@ Each phase ends with something you can run. Effort is in "sessions" (a session =
 
 | Risk | What we do |
 |---|---|
-| No Docker on this machine | Use `sandbox-exec` on the Mac; test the Dockerfile variant in CI on Linux, where Docker exists |
+| Docker on this Mac runs inside a Colima VM, not on a Linux host | Run the Docker tests in CI on Linux as well, and say on screen that the Mac runs Linux in a VM |
 | A command spends the key through the local proxy | `run_bash` has no network, loopback included; the proxy also requires a per-session token |
 | The engine reads or edits what it should not (db, log, key) | The whole engine process is sandboxed, and a test tries each file |
 | Self-reported audit events can lie | Mark them `source: engine` and say so on screen; only service and proxy events are observed facts |
@@ -155,7 +155,7 @@ This list replaces the open questions in `SERIES2-PLAN.md`. The repo question th
 1. Stay with plain Python and the standard library only? [yes]
 2. Start from the finished ep13 agent as the engine? [yes]
 3. 13 episodes, or 9 (drop ep 3, 6, 11 and 13 as separate episodes)? [13, decide after Phase A]
-4. Sandbox with `sandbox-exec` on this Mac and a Dockerfile as an untested variant? [yes; or install Docker/Colima first so we can test both]
+4. ~~Sandbox with `sandbox-exec` only, Dockerfile untested?~~ Settled 2026-11-22: Docker is installed through Colima, so both variants are tested on this Mac.
 5. First episode: many users (ep 1), or sandbox (ep 4) because it is the most visual? [ep 1, after the vertical slice]
 6. Same channels and weekly pace? [same]
 7. New public repo `build-an-enterprise-class-agent`: start committing real code there right after Phase 0? [yes]
