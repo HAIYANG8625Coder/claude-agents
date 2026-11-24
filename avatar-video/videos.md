@@ -228,3 +228,9 @@ Script: series/EP13-SCRIPT.md (51 segments, reviewed by video-reviewer, 8 fixes;
 Also made: a series 2 plan (series/SERIES2-PLAN.md, a draft: enterprise-class AI agent, 13 episodes) and research notes (SERIES2-RESEARCH.md).
 Results shown: kept chat vs fresh: "list the files you changed" 5/5 vs 0/5; streaming first text 5.1 s vs 7.04 s, total 7.44 vs 7.04; Ctrl+C repair 4/5 vs 0/5; resume 5/5.
 What to improve next time: the humanizer pass was not run on the post texts; segment 18 ("不用 API key 就能跑") can read as if the whole test needs no key (it means the 38 checks with a fake model); two heygen_take.sh nested sessions could not save big responses (recovered from the saved response); the Ctrl+C was simulated by raising KeyboardInterrupt in the real-run test (the recorded demo used a real Ctrl+C byte); the 720p upload copy is soft (11-minute video under the 10 MB upload limit).
+
+## 2026-11-24 · agent-s2-intro (series 2 intro: 企业级 Agent 导读)
+Platform: xhs + YouTube (PUBLISHED 2026-11-24, public) · Length: 471.2 s (7:51) · 16:9 · Folder: videos/2026-11-24-agent-s2-intro · Style: series 2 dark console look (navy + cyan; series 1 stays cream and crimson)
+Source: PRD v1.1, TRD v1.1, prototype v1.0 (public repo build-an-enterprise-class-agent) + series/SERIES2-VERIFICATION.md. Design only, nothing built; no run results shown.
+Script: series/SERIES2-INTRO-SCRIPT.md (36 segments, reviewed by video-reviewer, all must-fix applied; Michael OK'd 2026-11-24). Voice: nine chapter takes, pace 0.92. YouTube: https://youtu.be/2yRzU4ov3Zs
+What to improve next time: slides had an empty stage for 3 to 8 s at the start of some scenes (first element appeared on a late phrase); fixed by showing the first element at the first words. Chapter-bar colours are hard-coded in the template and had to be patched in build.py for the dark look. A "A P I" phrase did not match after the real voice, because HeyGen joins spaced capitals into "API".

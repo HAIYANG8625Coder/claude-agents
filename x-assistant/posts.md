@@ -345,3 +345,17 @@ Link: https://youtu.be/yhImrMlX79o · Public, published now · video, 11:28
 Post file: x-assistant/yt-agent-series-ep13-post.md (title 37/100, description 1661/5000, 11 chapters, 12 tags 90/500)
 Video: avatar-video/videos/2026-11-21-agent-ep13/renders/agent-ep13-xhs.mp4 (8.7 MB 720p copy of the 38.9 MB render)
 Settings: not made for kids · AI use Yes · playlist 从0到1构建一个AGENT · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-24 (Xiaohongshu) — 企业级Agent要补哪8件事
+Post file: x-assistant/xhs-s2-intro-post.md (title 14/20, body+topics 468/1000)
+Topics: #AIAgent #企业级Agent #AI编程 #从零做Agent (all four linked; #AI编程 needed a delete and a click on the suggestion)
+Video: avatar-video/videos/2026-11-24-agent-s2-intro/renders (720p copy, 9.8 MB) · cover: first frame (the designed cover)
+Style: video (series 2 dark console look)
+Slot: off-plan (Michael: "Ok post them"; published now at about 12:35 SGT, 发布成功)
+AI-content declaration: 笔记含AI合成内容
+
+## 2026-11-24 (YouTube) — 企业级 AI Agent 导读｜从零做 Agent 第二季：8 条要求，13 集计划
+Link: https://youtu.be/2yRzU4ov3Zs · Public (uploaded private first, made public after Michael's OK) · video, 7:51
+Post file: x-assistant/yt-s2-intro-post.md (title 42/100, description 526/5000, 9 chapters, 14 tags)
+Video: avatar-video/videos/2026-11-24-agent-s2-intro/renders (720p copy, 9.8 MB of the 29.6 MB render)
+Settings: not made for kids · no paid promotion · AI use Yes · NEW playlist 从零做企业级 Agent（第二季） (public) · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
