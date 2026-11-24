@@ -390,3 +390,11 @@ Video: avatar-video/videos/2026-11-24-sg-education/renders (720p copy, 9.3 MB, 4
 Style: video (preset G · app-UI cards, no avatar, vertical; same preset as the skills video earlier that day, flagged to Michael)
 Slot: off-plan (Michael: "OK, post it to xhs"; published now at about 19:35 SGT, 发布成功)
 AI-content declaration: 笔记含AI合成内容 · public, not scheduled
+
+## 2026-11-24 (Xiaohongshu) — PSLE是什么？3分钟看懂
+Post file: x-assistant/xhs-psle-post.md (title 13/20, body+topics 714/1000 as approved)
+Topics: #PSLE #新加坡教育 #陪读 #新加坡 (all four linked)
+Video: avatar-video/videos/2026-11-24-psle-explained/renders (720p copy, 5.7 MB, 2:52) · cover: first frame (PSLE hook)
+Style: video (preset G · app-UI cards, no avatar, vertical; third preset-G video that day)
+Slot: off-plan (Michael: "Ok post it"; published about 21:30 SGT, 发布成功)
+AI-content declaration: 笔记含AI合成内容 · public, not scheduled
