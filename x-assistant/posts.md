@@ -398,3 +398,4 @@ Video: avatar-video/videos/2026-11-24-psle-explained/renders (720p copy, 5.7 MB,
 Style: video (preset G · app-UI cards, no avatar, vertical; third preset-G video that day)
 Slot: off-plan (Michael: "Ok post it"; published about 21:30 SGT, 发布成功)
 AI-content declaration: 笔记含AI合成内容 · public, not scheduled
+Comment (Michael: "Yes add the comment"): "MOE 官网（中一分配）：https://www.moe.gov.sg/secondary/s1-posting", posted as the author, verified on the note page
