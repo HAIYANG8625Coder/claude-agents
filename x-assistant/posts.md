@@ -382,3 +382,11 @@ Video: avatar-video/videos/2026-11-24-github-top-skills/renders (720p copy, 3.7 
 Style: video (preset G · app-UI cards, no avatar, vertical)
 Slot: off-plan (Michael: "Ok post it"; published now at about 14:35 SGT, 发布成功; the 24 Nov slot was already used by the series 2 intro at 12:35)
 AI-content declaration: 笔记含AI合成内容
+
+## 2026-11-24 (Xiaohongshu) — 新加坡公立学校：国际生怎么读
+Post file: x-assistant/xhs-sg-education-post.md (title 14/20, body 678, body+topics 707/1000 as approved; the published body has 4 topics)
+Topics: #新加坡教育 #陪读 #AEIS #新加坡 (all four linked). The approved #新加坡留学 was dropped: Xiaohongshu offered only "新建话题" for it and it stayed plain text, so Michael was told before publishing.
+Video: avatar-video/videos/2026-11-24-sg-education/renders (720p copy, 9.3 MB, 4:43) · cover: first frame
+Style: video (preset G · app-UI cards, no avatar, vertical; same preset as the skills video earlier that day, flagged to Michael)
+Slot: off-plan (Michael: "OK, post it to xhs"; published now at about 19:35 SGT, 发布成功)
+AI-content declaration: 笔记含AI合成内容 · public, not scheduled
