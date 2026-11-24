@@ -359,3 +359,26 @@ Link: https://youtu.be/2yRzU4ov3Zs · Public (uploaded private first, made publi
 Post file: x-assistant/yt-s2-intro-post.md (title 42/100, description 526/5000, 9 chapters, 14 tags)
 Video: avatar-video/videos/2026-11-24-agent-s2-intro/renders (720p copy, 9.8 MB of the 29.6 MB render)
 Settings: not made for kids · no paid promotion · AI use Yes · NEW playlist 从零做企业级 Agent（第二季） (public) · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-24 (X)
+10 office-work skills on GitHub by stars:
+10 pm-skills 28k
+9 obsidian-skills 54k
+8 i-have-adhd 62k
+7 marketingskills 62k
+6 diagram-design 71k
+5 humanizer 73k
+4 last30days 74k
+3 ppt-master 80k
+2 archify 99k
+1 anthropics/skills 200k
+My pick; READMEs only, untested. Video: Chinese
+(with video: avatar-video/videos/2026-11-24-github-top-skills/renders (720p copy, 3.7 MB, 1:48); X showed "Your post was sent", about 14:30 SGT)
+
+## 2026-11-24 (Xiaohongshu) — 办公类Skill点赞榜TOP10
+Post file: x-assistant/xhs-github-top-skills-post.md (title 16/20, body+topics 688/1000)
+Topics: #AIAgent #AI办公 #ClaudeCode #AI工具 (all four linked)
+Video: avatar-video/videos/2026-11-24-github-top-skills/renders (720p copy, 3.7 MB) · cover: first frame
+Style: video (preset G · app-UI cards, no avatar, vertical)
+Slot: off-plan (Michael: "Ok post it"; published now at about 14:35 SGT, 发布成功; the 24 Nov slot was already used by the series 2 intro at 12:35)
+AI-content declaration: 笔记含AI合成内容
