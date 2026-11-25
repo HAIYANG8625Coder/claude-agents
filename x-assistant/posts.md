@@ -115,6 +115,7 @@ Topics (all linked): #AIAgent #ClaudeCode #Anthropic #AI编程 #智能体
 Video: avatar-video/videos/2026-11-15-always-on-agents/renders/always-on-agents-xhs.mp4 (4.2 MB copy of the 09-49-54 render, 58.2 s); cover = first frame ("一直在线？"). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
 Style: video (avatar-video preset G · app-UI tutorial)
 Slot: off-plan (09:58 Sun 2026-11-15) · Topic: main
+24h: views 230 · likes 3 · saves 3 · comments 1 (read 2026-11-16 10:11)
 
 ## 2026-11-15 (Xiaohongshu) — AI Agent一直在线｜我真做了一个
 Video note, follow-up to "AI Agent一直在线？5个部件看懂": the always-on stats agent from agents/stats-agent built for real (five parts, the Full Disk Access pitfall, the real Telegram message, cost). Post file: x-assistant/xhs-stats-agent-post.md · published 12:13 SGT ("publish now" from Michael) · editor counter 625/1000
@@ -122,6 +123,7 @@ Topics (all linked): #AIAgent #ClaudeCode #Anthropic #AI编程 #智能体
 Video: avatar-video/videos/2026-11-15-stats-agent/renders/stats-agent-xhs.mp4 (5.2 MB copy of the 12-09-10 render, 58.1 s); cover = first frame ("替我盯小红书数据"). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
 Style: video (avatar-video preset G · app-UI tutorial)
 Slot: off-plan (12:13 Sun 2026-11-15) · Topic: main
+24h: views 125 · likes 2 · saves 1 · comments 2 (read 2026-11-16 12:31)
 
 ## 2026-11-15 (Xiaohongshu) — 英文版｜Always-on Agent逐节拆解（中字）
 Video note, the English version (English voice and slides, Chinese subtitles) of the 工程解读 01 deep-dive of Anthropic's "Building always-on agents"; pitched as English listening practice plus the five parts. Post file: x-assistant/xhs-always-on-deep-dive-en-post.md · published ~18:48 SGT ("publish now" from Michael) · editor counter 630/1000 · title 20/20
@@ -129,6 +131,7 @@ Topics (all linked): #Agent #Anthropic #Claude #AI工程 #英语听力 #人工�
 Video: avatar-video/videos/2026-11-15-always-on-deep-dive-en/renders/always-on-deep-dive-en-upload.mp4 (4.7 MB 720p copy, 218.4 s); cover = first frame (green 工程解读 cover). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功. The GitHub link still has to be added as a comment.
 Style: video (avatar-video preset H · article deep-dive, 16:9)
 Slot: off-plan (~18:48 Sun 2026-11-15) · Topic: main
+24h: views 171 · likes 5 · saves 7 · comments 0 (read 2026-11-17 08:42 · late, read at 38h)
 
 ## 2026-11-15 (X)
 An always-on agent is mostly asleep.
@@ -153,6 +156,7 @@ Topics (all linked): #Agent #Anthropic #Claude #AI工程 #大模型 #人工智�
 Video: avatar-video/videos/2026-11-16-agent-memory/renders/agent-memory-xhs.mp4 (6.6 MB 720p copy, 384.4 s). Cover = the first of Xiaohongshu's 智能推荐封面 (Michael asked for the recommended one; the Pokémon treemap frame). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
 Style: video (avatar-video preset H · article deep-dive, 16:9)
 Slot: off-plan (Tue 2026-11-17, Michael said "post") · Topic: main
+24h: views 355 · likes 11 · saves 17 · comments 0 (read 2026-11-18 10:33)
 
 ## 2026-11-17 (Xiaohongshu) — 新加坡工作准证全解析2027
 Vertical video note: all Singapore work passes (EP, S Pass, Work Permit, ONE Pass, PEP, EntrePass, short passes, family passes, renewals; 2027 salary changes). Post file: x-assistant/xhs-sg-work-passes-post.md · published about 12:30 SGT ("post" from Michael) · editor counter 893/1000 · title 14/20
@@ -160,6 +164,7 @@ Topics (all linked): #新加坡 #工作准证 #新加坡工作 #EP #MOM #出国�
 Video: avatar-video/videos/2026-11-17-sg-work-passes/renders/sg-work-passes-xhs.mp4 (8.4 MB 720p copy, 319.9 s); cover = first Xiaohongshu 智能推荐封面 (COMPASS frame). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
 Style: video (avatar-video preset G · app-UI tutorial, vertical)
 Slot: off-plan (Tue 2026-11-17, second note of the day) · Topic: second (Singapore life)
+24h: views 590 · likes 4 · saves 5 · comments 0 (read 2026-11-18 12:33)
 
 ## 2026-11-17 (Xiaohongshu) — 从零做Agent第1集：循环
 Video note, series "从零做一个 Claude Code 式 Agent" episode 1 (landscape deep-dive, 7:34, DeepSeek model for the demo). Post file: x-assistant/xhs-agent-series-ep1-post.md · published about 15:55 SGT ("Ok" from Michael after seeing the text) · editor counter 751/1000 · title 14/20
@@ -167,6 +172,7 @@ Topics (all linked): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
 Video: avatar-video/videos/2026-11-17-agent-ep1-landscape/renders/agent-ep1-landscape-upload.mp4 (9.3 MB 1280x720 copy); cover = first Xiaohongshu 智能推荐封面 (the provider-architecture frame). 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
 Style: video (preset H · article deep-dive, 16:9, with chart-draw architecture diagrams)
 Slot: off-plan (Tue 2026-11-17, third note of the day) · Topic: main
+24h: views 1278 · likes 30 · saves 42 · comments 1 (read 2026-11-18 16:14)
 
 ## 2026-11-17 (Xiaohongshu) — 从零做Agent第2集：工具
 Video note, series "从零做一个 Claude Code 式 Agent" episode 2 (landscape deep-dive, 7:11, DeepSeek model for the demo). Post file: x-assistant/xhs-agent-series-ep2-post.md · published about 21:30 SGT ("confirm and post it to xhs" from Michael after seeing the text) · editor counter 807/1000 · title 14/20
@@ -174,6 +180,7 @@ Topics (all linked): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
 Video: avatar-video/videos/2026-11-17-agent-ep2/renders/agent-ep2-upload.mp4 (8.8 MB 720p copy); cover = first Xiaohongshu 智能推荐封面. 内容类型声明 set to 笔记含AI合成内容. Creator center showed 发布成功.
 Style: video (preset H · article deep-dive, 16:9, with chart-draw architecture diagrams)
 Slot: off-plan (Tue 2026-11-17, fourth note of the day) · Topic: main
+24h: views 160 · likes 3 · saves 5 · comments 1 (read 2026-11-18 21:24)
 
 ## 2026-11-17 (YouTube) — 从零到1做Agent第2集：工具｜读文件、搜索、改代码、跑命令
 Link: https://youtu.be/aDAciX3ZtKM · Public, published about 22:30 SGT ("Yes, publish" from Michael) · video, 7:11
@@ -188,6 +195,7 @@ Topics (all linked): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
 Video: avatar-video/videos/2026-11-17-agent-ep3/renders/agent-ep3-upload.mp4 (8.8 MB 720p copy); cover = 2nd-applied Xiaohongshu 智能推荐封面. 内容类型声明 set to 笔记含AI合成内容. Note manager shows 定时发布 2026-11-18 09:00 (审核中).
 Style: video (preset H · article deep-dive, 16:9, with chart-draw architecture diagrams)
 Slot: off-plan (Michael's word; the table slot for Wed 18 Nov is 20:30) · Topic: main
+24h: views 204 · likes 2 · saves 5 · comments 2 (read 2026-11-25 09:32 · late, read at 169h)
 
 ## 2026-11-18 (Xiaohongshu, scheduled) — 从零做Agent第4集：权限
 Video note, series "从零做一个 Claude Code 式 Agent" episode 4 (landscape deep-dive, 7:25, DeepSeek model for the demo). Post file: x-assistant/xhs-agent-series-ep4-post.md · scheduled for Wed 2026-11-18 12:00 SGT on 2026-11-18 ~07:50 SGT (Michael: "post it to xhs at 11.18 12 pm") · editor counter 846 body (855 with topics by count.py) · title 14/20
@@ -195,6 +203,7 @@ Topics (all linked): #Agent #ClaudeCode #AI编程 #Python #大模型 #AI工程
 Video: avatar-video/videos/2026-11-17-agent-ep4/renders/agent-ep4-upload.mp4 (8.9 MB 720p copy); cover = first Xiaohongshu 智能推荐封面. 内容类型声明 set to 笔记含AI合成内容. Note manager shows 定时发布 2026-11-18 12:00 (审核中).
 Style: video (preset H · article deep-dive, 16:9, with chart-draw architecture diagrams)
 Slot: off-plan (Michael's word; second note of the day after ep3 at 09:00) · Topic: main
+24h: views 205 · likes 1 · saves 3 · comments 3 (read 2026-11-25 09:32 · late, read at 166h)
 
 
 ## 2026-11-18 (YouTube, scheduled) — 从零到1做Agent第3集：笔记｜系统提示和 NOTES.md
@@ -215,6 +224,7 @@ Topics (all linked, #AI编程 picked from the suggestion list; it links the note
 Video: avatar-video/videos/2026-11-18-agent-ep5/renders/agent-ep5-upload.mp4 (7.9 MB 720p copy); no 智能推荐封面 appeared, so the first-frame cover (our designed cover card) stayed. 内容类型声明 set to 笔记含AI合成内容. Note manager shows 定时发布 2026/11/18 19:00 (审核中).
 Style: video (preset H · article deep-dive, 16:9, with chart-draw diagrams and a real tokens-per-turn chart)
 Slot: off-plan (Michael's word; third note of the day after ep3 at 09:00 and ep4 at 12:00) · Topic: main
+24h: views 634 · likes 16 · saves 24 · comments 2 (read 2026-11-25 09:32 · late, read at 159h)
 
 ## 2026-11-18 (YouTube, scheduled) — 从零到1做Agent第5集：上下文｜数 token、清旧结果、压缩
 Link: https://youtu.be/pPG8-q1phnY · scheduled public for Wed 2026-11-18 19:00 SGT (GMT+08:00), set ~15:05 SGT ("Yes" from Michael after seeing the text) · video, 5:59
@@ -228,6 +238,7 @@ Topics (all linked; #AI编程 needed one retype to link): #Agent #ClaudeCode #AI
 Video: avatar-video/videos/2026-11-19-agent-ep6/renders/agent-ep6-upload.mp4 (6.2 MB 720p copy); no 智能推荐封面 appeared, so the first-frame cover (our designed cover card) stayed. 内容类型声明 set to 笔记含AI合成内容. Page showed 发布成功. The note auto-linked to the campaign 独立开发者·报上Demo来.
 Style: video (preset H · article deep-dive, 16:9, with chart-draw diagrams)
 Slot: off-plan (Michael's word; published now) · Topic: main
+24h: views 221 · likes 2 · saves 3 · comments 1 (read 2026-11-25 09:32 · late, read at 144h)
 Humanizer pass: not run on this text.
 
 ## 2026-11-19 (YouTube) — 从零到1做Agent第6集：计划模式和任务清单｜真实测试
@@ -324,6 +335,7 @@ Topics: #Agent #ClaudeCode #AI编程 #大模型 #AI工程 (all five linked)
 Video: avatar-video/videos/2026-11-21-agent-ep12/renders/agent-ep12-xhs.mp4 (9.7 MB 720p copy) · cover: first frame
 Style: video
 Slot: off-plan (Michael: "post it to both platforms"; published now at about 11:08 SGT, 发布成功)
+24h: views 551 · likes 17 · saves 25 · comments 1 (read 2026-11-25 09:32 · late, read at 94h)
 AI-content declaration: 笔记含AI合成内容
 
 ## 2026-11-21 (YouTube) — 从零到1做Agent第12集：测试和调试｜改了一行，Agent 变好了吗？
@@ -338,6 +350,7 @@ Topics: #Agent #ClaudeCode #AI编程 #大模型 #AI工程 (all five linked; #AI�
 Video: avatar-video/videos/2026-11-21-agent-ep13/renders/agent-ep13-xhs.mp4 (8.7 MB 720p copy, mono audio) · cover: first frame
 Style: video
 Slot: off-plan (Michael: "post it to both platforms"; published now at about 14:45 SGT, 发布成功)
+24h: views 523 · likes 9 · saves 17 · comments 1 (read 2026-11-25 09:32 · late, read at 91h)
 AI-content declaration: 笔记含AI合成内容
 
 ## 2026-11-21 (YouTube) — 从零到1做Agent第13集：接在一起｜能聊、能接着聊的命令行 Agent
@@ -399,3 +412,20 @@ Style: video (preset G · app-UI cards, no avatar, vertical; third preset-G vide
 Slot: off-plan (Michael: "Ok post it"; published about 21:30 SGT, 发布成功)
 AI-content declaration: 笔记含AI合成内容 · public, not scheduled
 Comment (Michael: "Yes add the comment"): "MOE 官网（中一分配）：https://www.moe.gov.sg/secondary/s1-posting", posted as the author, verified on the note page
+
+## 2026-11-25 (Xiaohongshu, scheduled) — 新加坡教育好不好？看官方数据
+Post file: x-assistant/xhs-sg-edu-opinion-post.md (title 14/20, body+topics 434/1000 as approved)
+Topics: #新加坡教育 #新加坡 #陪读 #PISA (all four linked)
+Video: avatar-video/videos/2026-11-24-sg-edu-opinion/renders/sg-edu-xhs.mp4 (1080x1920 copy, 5.6 MB, 2:14) · cover: first frame (no recommended cover was shown)
+Style: video (preset G · app-UI cards, no avatar, vertical)
+Slot: 12:30 Wed 2026-11-25 · Topic: second (third second-topic note of the 23-29 Nov week, over the limit of 2; Michael was told before approving)
+AI-content declaration: 笔记含AI合成内容 · public, scheduled with 定时发布 (note list showed 审核中 · 定时发布 2026/11/25 12:30)
+
+## 2026-11-26 (Xiaohongshu, scheduled) — AI黑话11个，手绘动画看懂
+Post file: x-assistant/xhs-ai-words-cartoon-post.md (title 14/20, body+topics 362/1000 as approved)
+Topics: #ai #大模型 #AIAgent #AI编程 #人工智能 (all five linked; #AI was offered only as a new topic, so the existing #ai was used)
+Video: avatar-video/videos/2026-11-25-ai-words-handdraw/renders/ai-words-handdraw-xhs.mp4 (4.66 MB, 1:25) · cover: uploaded renders/cover-3x4.png, a frame at 5.05 s (no recommended cover was shown, and the first-frame crop cut off the title)
+Style: video (whiteboard hand-drawing, Buzzy pictures + HyperFrames, no avatar, vertical)
+Slot: 20:30 Thu 2026-11-26 · Topic: main (Michael: "Post it on xhs", 25 Nov; scheduled because 25 Nov already had a note)
+AI-content declaration: 笔记含AI合成内容 · public, scheduled with 定时发布 (note list showed 审核中 · 定时发布 2026/11/26 20:30)
+Note: #AI编程 auto-linked the campaign "独立开发者·报上Demo来"; it was unlinked before scheduling

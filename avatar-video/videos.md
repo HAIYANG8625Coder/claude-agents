@@ -252,3 +252,37 @@ Platform: xhs only (PUBLISHED 2026-11-24 about 21:30 SGT) · Length: 172.5 s (2:
 Source: SEAB (about-psle, important dates, 2026 exam timetable PDF), MOE (PSLE scoring system, S1 posting, how posting works, posting groups, Full SBB). RESEARCH.md: whether international students sit PSLE is NOT FOUND, so the line was cut at Michael's request.
 Script: script.json, 32 lines (33 proposed, line on international students removed by Michael). Voice: one take, pace 0.92.
 What to improve next time: scene cards with a head chip showed an empty white card before the first row; fixed by popping the card with its first row (rows_scene in build.py). The first contact sheets were sent before two small fixes (card 7 wrap, SEAB wording), so say so; the subagent first mislabelled 18 Dec as the PSLE results date, check dates on the page.
+
+## 2026-11-25 · sg-edu-opinion (Singapore education: official data + Michael's view)
+Platform: xhs only (SCHEDULED for 2026-11-25 12:30 SGT as v3) · Length: v3 133.5 s (2:14); v2 was 184.7 s (3:05) · 9:16 · Folder: videos/2026-11-24-sg-edu-opinion · Style: G · app-UI cards (PISA and TIMSS ranking tables, chapter bar 数据/改革/问题/我的看法)
+Source: MOE PISA 2022 press release and Annex A1, TIMSS 2023 official exhibits, MOE parliamentary replies and COS 2025 (RESEARCH.md). Opinion lines are labelled on screen.
+Script: script.json, 29 lines (v1 26 lines approved 2026-11-24, ranking-table lines 4, 7, 9 and cards approved 2026-11-25). Voice: one take, pace 0.92. Ending tail 1.8 s. Captions show digits.
+Render: renders/2026-11-24-sg-edu-opinion_2026-11-25_09-17-14.mp4
+Change 2026-11-25 (Michael: 去掉我的看法, keep the others): v3, 20 lines, opinion section (old lines 20-28) removed, line 2 reworded, 3 chapter tabs. Previous 29-line version kept in v2-with-opinion/. Cards sent for approval before the new voice take.
+v3 APPROVED (script and cards, Michael 'OK' 2026-11-25) and rendered: renders/2026-11-24-sg-edu-opinion_2026-11-25_09-27-06.mp4, new voice take at pace 0.92; the v2 takes are in v2-with-opinion/.
+What to improve next time: Michael dropped the opinion section after seeing the full video, so ask whether he wants an opinion part before writing one; the card text 「2024 年中一起」 reads like mid-2024, write 「从 2024 年的中一开始」 as in the post.
+
+## 2026-11-25 · ai-words-cartoon (11 AI words explained with a cartoon robot)
+Platform: xhs (rendered, waiting for Michael's verdict on the video, text and slot) · Length: 84.9 s (1:25) · 9:16 · Folder: videos/2026-11-25-ai-words-cartoon · Style: cartoon doodle (new look, drawn in SVG by build.py: cream dotted paper, ink outlines, a robot mascot, one chain from AI to Agent, cheat sheet at the end)
+Request: Michael, Telegram, "cartoon style" for AI, AI Agent and common AI words. References seen on search pages only (RESEARCH.md).
+Script: script.json, 14 lines, written without the video-scripter / video-reviewer agents; approved by Michael ("Okay", then "Ok" for the cards). Voice: one take, pace 0.92, the 0.93 s pause after line 1 cut by 0.42 s (.voice-heygen-full-0.92-trim). Ending tail 3 s.
+Render: renders/2026-11-25-ai-words-cartoon_2026-11-25_09-51-13.mp4 (xhs upload copy: renders/ai-words-xhs.mp4)
+What to improve next time: HeyGen may return "AI" as one word, so build.py matches beats letter by letter.
+
+## 2026-11-25 · ai-words-manga (same script and voice as ai-words-cartoon, black-and-white manga)
+Platform: xhs (rendered, waiting for Michael's verdict and slot) · Length: 84.9 s (1:25) · 9:16 · Folder: videos/2026-11-25-ai-words-manga · Style: manga (comic demo B, chosen by Michael over American comic and cute 4-panel; comic-demos/ in the cartoon folder): panels that appear on spoken words, screentone, speed lines, sound words, black caption bars, hard cuts
+Render: renders/2026-11-25-ai-words-manga_2026-11-25_10-01-51.mp4 (xhs upload copy: renders/ai-words-manga-xhs.mp4). Post text: x-assistant/xhs-ai-words-cartoon-post.md (卡通 changed to 漫画).
+This version replaces ai-words-cartoon, which was not posted.
+What to improve next time: offer style demos before drawing all scenes; a speech balloon needs a visible speaker in the same panel.
+
+
+## 2026-11-25 — AI words, whiteboard hand-drawing demo (one scene: Agent)
+Platform: xhs · Length: 9 s · Folder: videos/2026-11-25-ai-words-handdraw-demo · Demo only, not posted.
+Michael sent a Xiaohongshu whiteboard-drawing tutorial and asked for the AI words video in that style. Same voice (cut from the manga version), 1 line drawing + 1 green-screen hand (Buzzy, Nano Banana 2); `build.py` uncovers each drawing along a zigzag over its inked area with the hand following; `key.py` removes the green. Render: renders/2026-11-25-ai-words-handdraw-demo_2026-11-25_13-00-09.mp4.
+v2 (same day): Michael said the arm was too long at the top left. Now a mirrored hand draws the left column and the right hand the right column, with a much smaller arm stretch (2.5, was 7). Render: renders/2026-11-25-ai-words-handdraw-demo_2026-11-25_13-03-51.mp4.
+What to improve next time: bring the hand in from the nearest side so only a short arm shows; waiting for his verdict on v2.
+
+## 2026-11-25 — AI words, whiteboard hand-drawing, full video
+Platform: xhs · Length: 85 s · Folder: videos/2026-11-25-ai-words-handdraw · APPROVED (Michael: "Post it on xhs"); scheduled for Thu 2026-11-26 20:30 with a cover made from the 5.05 s frame (renders/cover-3x4.png).
+Same script, voice and timing as the manga version. 14 boards: 12 new line drawings (Buzzy, Nano Banana 2, 3:4, 2K, no retries) + the demo's Agent drawing and hand; the last board is a text list drawn by code. `build.py` finds each drawing's box, times it on the spoken words, uses a right hand for the right column and a mirrored hand for the left, and builds captions from `words.json`. Check passed (only short-caption "line_unread" warnings, captions follow the voice); qa: 84.9 s, peak -1.5 dB, no long silences. Render: renders/2026-11-25-ai-words-handdraw_2026-11-25_13-10-38.mp4; upload copy renders/ai-words-handdraw-xhs.mp4.
+What to improve next time: ask for exactly the grid wanted; 3 of 12 pictures came back with an extra row (left unused). Short on-picture labels are new text: show them to Michael.
