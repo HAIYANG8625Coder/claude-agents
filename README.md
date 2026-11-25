@@ -146,7 +146,9 @@ Videos where my AI twin (HeyGen avatar + my cloned voice) explains a topic, edit
 | `plugins/avatar-video/agents/video-scripter.md`, `video-reviewer.md` | Script writer and independent script check |
 | `plugins/avatar-video/skills/article-explainer/` | 4–8 min 16:9 deep-dive of one article or paper (style preset H), plus `scripts/takes.py` for one take per chapter |
 | `avatar-video/template-explainer/` | The 16:9 starter project for article-explainer |
-| `avatar-video/brand/DESIGN.md` | Video look: colors, safe zones, captions, the 3 effects, style presets A–H |
+| `plugins/avatar-video/skills/voice-video/` | Cloned-voice videos over graphics; `scripts/whiteboard.py` builds the whiteboard hand-drawing style (preset I) from a `boards.json`, how-to in `references/whiteboard.md` |
+| `avatar-video/brand/whiteboard/` | Preset I's AI-generated marker hand and an example `boards.json` |
+| `avatar-video/brand/DESIGN.md` | Video look: colors, safe zones, captions, the 3 effects, style presets A–I |
 | `avatar-video/brand/EXPLAINER-PLAYBOOK.md` | How the deep-dive format works (learned from a Xiaohongshu AI creator, 2026-11-15) |
 | `avatar-video/videos.md` | Every video made (avoids repeats, notes what to improve) |
 | `.claude/skills/hyperframes*`, `media-use`, `heygen-*` | Third-party skills from HeyGen, pinned in `skills-lock.json` |

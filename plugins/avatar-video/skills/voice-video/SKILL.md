@@ -1,6 +1,6 @@
 ---
 name: voice-video
-description: Voice a short vertical HyperFrames video in Michael's own cloned HeyGen voice (no face): one natural take of the whole script, gently slowed, with scenes and captions synced to every spoken word, then render and check. Use whenever Michael wants a video "in my voice" / 用我的声音, wants an existing video folder re-voiced, says the voice-over sounds choppy, laggy, too fast or too slow, or asks to make another video like the Singapore P1 one, even if he doesn't name this skill. Also use from /avatar-video for the voice step and for any no-avatar (voice + graphics) video.
+description: Voice a short vertical HyperFrames video in Michael's own cloned HeyGen voice (no face): one natural take of the whole script, gently slowed, with scenes and captions synced to every spoken word, then render and check. Use whenever Michael wants a video "in my voice" / 用我的声音, wants an existing video folder re-voiced, says the voice-over sounds choppy, laggy, too fast or too slow, asks to make another video like the Singapore P1 one, or asks for a 手绘动画 / whiteboard hand-drawing video, even if he doesn't name this skill. Also use from /avatar-video for the voice step and for any no-avatar (voice + graphics) video.
 ---
 
 # Voice video (Michael's cloned voice + HyperFrames graphics)
@@ -30,6 +30,7 @@ Scripts are in this skill's `scripts/` folder (call it `$S`: `.claude/skills/voi
 ## 1. The video folder
 - **Re-voicing an existing video:** first copy the current `timing.json`, `index.html` and `assets/vo.wav` into a backup subfolder named after the version (e.g. `heygen-v4/`), so Michael can go back.
 - **New video:** the script must already be approved (the `/avatar-video` steps 1–4 handle topic, script, review and approval). Make `avatar-video/videos/<YYYY-MM-DD>-<slug>/` and build `index.html` from the worked example of the **style preset** in the storyboard (`avatar-video/brand/DESIGN.md` → Style presets). Keep the sync conventions in step 4, but take the look from the preset, not from the last video: copying one example's styles made Michael's first two X videos look the same (2026-11-13).
+- **Whiteboard hand-drawing (style preset I, 手绘动画):** don't hand-build `index.html` and don't run `sync.py`. Follow `references/whiteboard.md`: write `boards.json`, get the pictures (paid, ask first), then `python3 -I $S/whiteboard.py <folder>`. Use it when Michael asks for 手绘动画, the whiteboard or hand-drawing style, or "the style of the AI words video".
 - **Re-styling an approved video** (same voice, new look): make a new folder `<date>-<slug>-<style>`, copy `script.json`, `timing.json`, `assets/vo.wav` (and `mix.wav` if the scene times are the same), plus the `.voice-heygen-full*` folders. Write the new `index.html` with plain captions, then run `sync.py`. No new HeyGen take is needed. Worked example: `videos/2026-11-13-nvda-huang-market/`.
 - `script.json` is the list of sentences: `[{"say": "…"}, …]`. Write it for the ear:
   - numbers as Chinese words (加六五, 十月二十号), because the voice reads what it sees;
