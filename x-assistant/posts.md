@@ -429,3 +429,19 @@ Style: video (whiteboard hand-drawing, Buzzy pictures + HyperFrames, no avatar, 
 Slot: 20:30 Thu 2026-11-26 · Topic: main (Michael: "Post it on xhs", 25 Nov; scheduled because 25 Nov already had a note)
 AI-content declaration: 笔记含AI合成内容 · public, scheduled with 定时发布 (note list showed 审核中 · 定时发布 2026/11/26 20:30)
 Note: #AI编程 auto-linked the campaign "独立开发者·报上Demo来"; it was unlinked before scheduling
+
+## 2026-11-25 (YouTube) — 两个人用同一个 AI Agent，A 读到了 B 的文件｜从零做企业级 Agent 第 1 集
+Link: https://youtu.be/W-82Pjn7EEI · Public · video, 10:20
+Post file: x-assistant/yt-s2-ep1-post.md (title 47/100, description 578/5000, 11 chapters, 14 tags)
+Video: avatar-video/videos/2026-11-25-agent-s2-ep1/renders/agent-s2-ep1-upload.mp4 (9.5 MB, 720p copy of the 35.3 MB render)
+Settings: not made for kids · no paid promotion · AI use Yes · playlist 从零做企业级 Agent（第二季） · category Science & Technology · language Chinese (Simplified) · thumbnail auto · copyright check: no issues
+
+## 2026-11-27 (Xiaohongshu, scheduled) — 两个人用Agent，读到别人的文件
+Post file: x-assistant/xhs-s2-ep1-post.md (title 17/20, body+topics 544/1000 as approved; the editor counted 526)
+Topics: #AIAgent #企业级Agent #AI编程 #从零做Agent (all four linked)
+Video: avatar-video/videos/2026-11-25-agent-s2-ep1/renders/agent-s2-ep1-upload.mp4 (9.5 MB, 720p, 10:20) · cover: first frame (the designed cover)
+Style: video (series 2 dark console look)
+Slot: 12:30 Fri 2026-11-27 · Topic: main (Michael: "OK" to the plan, 25 Nov)
+AI-content declaration: 笔记含AI合成内容 · public, scheduled with 定时发布 (note list showed 审核中 · 定时发布 2026/11/27 12:30)
+Note: #AI编程 auto-linked the campaign "独立开发者·报上Demo来"; it was unlinked before scheduling
+
